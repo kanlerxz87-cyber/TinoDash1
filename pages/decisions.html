@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision Log &amp; Missing Info Discovery — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <h1>Action Checklist, Decision &amp; Date Log, and Missing Information Q&amp;As</h1>
+        <p class="lead">Every action item records the chosen decision and date right next to it so a future reader knows what was decided and why. Saved locally in your browser.</p>
+      </div>
+      <div style="display:flex;gap:0.5rem;">
+        <button id="export-decisions-btn" type="button" class="btn btn-primary">Export Decision Log JSON</button>
+      </div>
+    </div>
+
+    <h2>1. Household Action Checklist &amp; Decision Log (With Decision + Date Columns)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Action Item &amp; Owner</th>
+            <th style="width:155px;">Status</th>
+            <th>Recorded Decision &amp; Rationale</th>
+            <th style="width:145px;">Decision Date</th>
+          </tr>
+        </thead>
+        <tbody id="decision-log-tbody"></tbody>
+      </table>
+    </div>
+
+    <h2>2. Missing Information &amp; Private Discovery Protocol (Zero PII Exposure)</h2>
+    <p class="lead">Questions that still need offline answers, why each changes the path ranking, and how to gather them privately without committing personal records to a public repo.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Domain</th>
+            <th>Missing Question</th>
+            <th>Why It Changes the Decision</th>
+            <th>Private Discovery Step</th>
+          </tr>
+        </thead>
+        <tbody id="missing-qa-tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-decisions.js"></script>
+</body>
+</html>

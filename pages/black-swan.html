@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Swan &amp; Phased Treasury Staging — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <h1>Black Swan Scenarios &amp; Phased Treasury Staging Lab</h1>
+    <p class="lead">Replaces straight-line 50-year projections with historical crash regimes (1929, 1973–82, 2000–09, 2020–23) and tests <strong>24–36 month Treasury staging</strong> with explicit <strong>Reinvestment Risk</strong> displayed beside every headline.</p>
+
+    <!-- STAGING CONTROLS -->
+    <section class="card">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="bs-regime">Active Macro / Black Swan Regime</label>
+          <select id="bs-regime">
+            <option value="baseline-nonconstant">Realistic Non-Constant Cyclical Baseline</option>
+            <option value="1929-depression">1929–1939 Great Depression Entry</option>
+            <option value="1973-stagflation">1973–1982 Stagflation &amp; CPI Spike</option>
+            <option value="2008-gfc-lost-decade">2000–2009 Double Crash &amp; GFC</option>
+            <option value="2020-2023-covid-rates">2020 V-Crash + 2022 Stock/Bond Shock</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="bs-months">Treasury Staging Window</label>
+          <select id="bs-months">
+            <option value="24">24 Months (2 Years)</option>
+            <option value="36">36 Months (3 Years)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="bs-instrument">Treasury Parking Vehicle (0% CA State Tax)</label>
+          <select id="bs-instrument">
+            <option value="2y-ladder">2Y Treasury Note Ladder (4.88% Nov 2026)</option>
+            <option value="3m-tbill">3M T-Bill Rolling (4.32% Nov 2026 — High Roll Risk)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEADLINE STAGING + REINVESTMENT RISK KPI CARD -->
+    <div id="bs-headline-card" class="card card-warning"></div>
+
+    <!-- VISUAL COMPARISON ACROSS ALL 5 REGIMES -->
+    <h2>1. Stress Test Comparison Across All 5 Historical &amp; Cyclical Regimes</h2>
+    <div class="chart-box">
+      <div id="bs-bars-chart"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Macro Regime (Transfer Entry Stress)</th>
+            <th class="num">Sell Lump Sum</th>
+            <th class="num">Sell + Staged (<span class="hdr-months">24</span>m)</th>
+            <th class="num">Crash Buffer / (Opp Drag)</th>
+            <th class="num">Reinvestment Risk (Rate Drop)</th>
+            <th class="num">Hold &amp; Rent A</th>
+            <th class="num">Live in A (Prop 19)</th>
+          </tr>
+        </thead>
+        <tbody id="bs-regimes-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- VERIFIED HISTORICAL MACRO BENCHMARKS -->
+    <h2>2. Official Historical Stress &amp; Yield Benchmarks</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Historical Benchmark / Series</th>
+            <th>Verified Metric</th>
+            <th>Relevance to Cupertino / SF / Portfolio Decision</th>
+            <th>Official Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>US Treasury Yield Curve (Nov 13, 2026)</strong></td>
+            <td>3M: <strong>4.32%</strong> · 2Y: <strong>4.88%</strong> · 10Y: <strong>5.15%</strong></td>
+            <td>Treasury interest is exempt from CA Form 540 up to 13.3% tax; 2Y notes lock yield against Fed cuts during 24–36m staging.</td>
+            <td><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026" target="_blank" rel="noopener">U.S. Treasury Daily Curve</a></td>
+          </tr>
+          <tr>
+            <td><strong>BLS CPI-U Stagflation (1968–1983)</strong></td>
+            <td><strong>7.3%/yr</strong> avg (+186.4% cum.), peak <strong>14.8%</strong> Mar 1980</td>
+            <td>Squeezes SF rent-controlled landlords (1.6%–3% rent caps vs surging CapEx, water, insurance) &amp; crushes real bond purchasing power.</td>
+            <td><a href="https://www.bls.gov/opub/mlr/2014/article/one-hundred-years-of-price-change-the-consumer-price-index-and-the-american-inflation-experience.htm" target="_blank" rel="noopener">BLS Monthly Labor Review</a></td>
+          </tr>
+          <tr>
+            <td><strong>BLS 2021–2022 Inflation Surge</strong></td>
+            <td>Peak <strong>9.1%</strong> CPI-U (June 2022)</td>
+            <td>Shows why 2022 hit both equities and long bonds simultaneously while short Treasuries reset upward cleanly.</td>
+            <td><a href="https://www.bls.gov/opub/btn/volume-11/exploring-price-increases-in-2021-and-previous-periods-of-inflation.htm" target="_blank" rel="noopener">BLS Beyond the Numbers</a></td>
+          </tr>
+          <tr>
+            <td><strong>FHFA Bay Area House Price Index (2026 Q2)</strong></td>
+            <td>San Jose 1Y <strong>-1.62%</strong> / 5Y <strong>+11.98%</strong> · SF 1Y <strong>-2.42%</strong> / 5Y <strong>+4.99%</strong></td>
+            <td>Proves Bay Area home prices experience negative real 5-year stretches even in modern cycles — non-constant RE volatility is real.</td>
+            <td><a href="https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q2" target="_blank" rel="noopener">FHFA HPI 2026 Q2 Report</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ANNUAL EXTREME SCENARIO REVIEW -->
+    <h2>3. Annual Extreme-Scenario Re-Run Protocol</h2>
+    <div class="card">
+      <ul style="margin:0;padding-left:1.2rem;">
+        <li><strong>Annual Check Date (Every November):</strong> Refresh U.S. Treasury 3M/2Y yields, FHFA Bay Area HPI, CA Form 540 brackets, and BOE Prop 19 biennial adjustment.</li>
+        <li><strong>Pre-Set Staging Rule:</strong> Decide BEFORE proceeds arrive whether 2Y ladders will fund 24–36 monthly equity buys mechanically regardless of headlines. Never roll 100% in 3M bills if rate cuts are underway without pricing reinvestment drag.</li>
+        <li><strong>Liquidity Buffer:</strong> Keep 9-month estate tax / CapEx reserve completely outside equity crash risk in short Treasuries.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-black-swan.js"></script>
+</body>
+</html>
