@@ -28,13 +28,13 @@ python3 verification/check_sensitive_values.py \
   --root /path/to/publication-root
 ```
 
-The scanner holds seeds in memory and prints file paths and match counts, **never the values**. It checks exact and nearest-$10 formatted numbers, filters history years and percentages, and exits nonzero for matches. Coincidences are common and transformed or derived figures may not match: review findings privately and do not treat a clean result as proof of anonymity. Do not publish a denylist or the seed JSON; that would repeat the leak. This command does not inspect PR descriptions, Git history, refs, builds, caches, or third-party copies.
+The scanner holds seeds in memory and prints file paths and match counts, **never the values**. It checks exact and nearest-$10 formatted numbers in a limited set of text file extensions, filters history years and percentages, and exits nonzero for matches. It does not scan binaries, images, PDFs, unlisted file types, or symlinks. Coincidences are common and transformed or derived figures may not match: review findings privately and do not treat a clean result as proof of anonymity. Do not publish a denylist or the seed JSON; that would repeat the leak. This command does not inspect PR descriptions, Git history, refs, builds, caches, or third-party copies.
 
 Static parsing cannot execute JavaScript, determine whether numeric examples are truly synthetic, identify every personal detail, assess the law, or audit prior exposure. Independently review content and model assumptions. Never paste private figures into CI logs, issue comments, PR text, or test fixtures.
 
 ## Offline browser checks
 
-For Linux x86-64 with Node.js 22.17 or later, the following uses a pinned headless Chromium package (a substantial npm download; browser files stay in ignored `node_modules` and temporary storage):
+For Linux x86-64 with Node.js 22.17–22.x, 24.x, or 26+, the following uses a pinned headless Chromium package (a substantial npm download; browser files stay in ignored `node_modules` and temporary storage):
 
 ```sh
 npm ci --prefix verification
