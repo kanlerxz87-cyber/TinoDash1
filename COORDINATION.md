@@ -77,7 +77,7 @@ Shared task board for parallel agent sessions. Update before starting work.
 | Decision model (scenarios, projections, sensitivities, black swan) | done (illustrative ranges) | fd4a10e1 | docs/scenarios.html, docs/black-swan.html, docs/decision-framework.html | Range-based illustrative model; includes mixed paths, phased Treasury+DCA path, reinvestment risk, distribution chart, what-if controls. Not advice. |
 | Static site (dashboard, subpages, tables, exports) | done | fd4a10e1 | docs/** | GitHub Pages static site with required pages, printable Attorney & CPA brief. |
 | Verification pass & flagged review page | done (initial) | fd4a10e1 | docs/flagged.html, docs/sources.html | Unverified/missing items flagged; no hallucinated confirmations. CA Form 540 instruction-specific sensitivity and Prop H current schedule need direct verification. |
-| Build/test/deploy/PR/merge | in progress | fd4a10e1 | all | Will commit, push, PR to main, merge, enable Pages, verify deploy. |
+| Build/test/deploy/PR/merge | done | fd4a10e1 | all | PR #11 created, conflict-resolved against moving main, merged successfully. Pages configured on main root (building). |
 
 ## Requests / Cross-file notes
 - None.
@@ -111,3 +111,8 @@ Shared task board for parallel agent sessions. Update before starting work.
 
 ## Log
 - 2026-11-25 fd4a10e1: Claimed full scope. Built privacy-first static dashboard in docs/. Added scenarios, black swan phased Treasury+DCA path, timeline, tax/legal references, questions, suggestions, printable brief, glossary, sources, flagged review. Rounded all published figures to nearest $10; anonymized Property A/B. Next: commit, push, PR, merge, deploy GitHub Pages.
+
+## Deploy
+- PR: https://github.com/kanlerxz87-cyber/TinoDash1/pull/11
+- Merge: merged to main (gh pr merge 11 --merge succeeded)
+- Pages: https://kanlerxz87-cyber.github.io/TinoDash1/ (source main /, legacy build)
