@@ -67,11 +67,20 @@ async function init() {
   `;
 
   // Populate 6-path comparison table
+  const pathSources = {
+    'sell-immediate': ['IRS Pub 551 (§1014)', 'https://www.irs.gov/publications/p551'],
+    'rent-hold': ['IRS Pub 527 (27.5-Yr)', 'https://www.irs.gov/publications/p527'],
+    'live-prop19': ['CA BOE Prop 19 (§63.2)', 'https://www.boe.ca.gov/prop19/'],
+    'mixed-live-then-sell': ['IRS Pub 523 (§121)', 'https://www.irs.gov/publications/p523'],
+    'mixed-phased-staging': ['US Treasury Yield Curve', 'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026'],
+    'mixed-rent-then-1031': ['IRS Form 8824 (§1031)', 'https://www.irs.gov/pub/irs-pdf/i8824.pdf']
+  };
   const tbody = document.getElementById('overview-paths-tbody');
   tbody.innerHTML = model.paths
     .map((res) => {
       const meta = scenarios.paths.find((m) => m.id === res.id);
       const isLeader = res.id === leader.id;
+      const [srcLabel, srcUrl] = pathSources[res.id] || ['IRS Pub 551', 'https://www.irs.gov/publications/p551'];
       return `
         <tr style="${isLeader ? 'background:#f0fdf4;' : ''}">
           <td>
@@ -89,6 +98,7 @@ async function init() {
           <td style="font-size:0.82rem;">
             ${meta.omiRisk}
             ${res.id === 'mixed-phased-staging' ? `<div style="margin-top:4px;color:var(--amber);font-weight:600;">Reinvestment Risk: ${fmtUsd(res.reinvestmentRiskDollars)}</div>` : ''}
+            <div style="margin-top:3px;"><a href="${srcUrl}" target="_blank" rel="noopener">${srcLabel} ↗</a></div>
           </td>
         </tr>
       `;
@@ -107,7 +117,7 @@ async function init() {
           <input type="checkbox" data-idx="${idx}" class="charter-chk" ${row.agreed ? 'checked' : ''} aria-label="Agree to ${row.pathLabel}" />
         </td>
         <td><strong>${row.pathLabel}</strong></td>
-        <td style="font-size:0.86rem;">${row.criterion}</td>
+        <td style="font-size:0.86rem;">${row.criterion} · <a href="https://www.boe.ca.gov/prop19/" target="_blank" rel="noopener">Official Rule ↗</a></td>
         <td>
           <input type="date" data-idx="${idx}" class="charter-date" value="${row.signedDate || ''}" style="width:140px;padding:0.25rem;border:1px solid #cbd5e1;border-radius:5px;" />
         </td>

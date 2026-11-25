@@ -1,5 +1,5 @@
 import { renderSiteChrome, fetchVerifiedData } from './layout.js';
-import { loadDecisions, saveDecisions } from '../storage.js';
+import { loadDecisions, saveDecisions } from './storage.js';
 
 renderSiteChrome('decisions', '..');
 
@@ -16,7 +16,7 @@ async function init() {
         <td><strong>${d.id}</strong></td>
         <td>
           <strong>${d.action}</strong>
-          <div style="font-size:0.8rem;color:var(--muted);">Owner: ${d.owner}</div>
+          <div style="font-size:0.8rem;color:var(--muted);">Owner: ${d.owner} · <a href="https://www.irs.gov/instructions/i706" target="_blank" rel="noopener">Official Authority ↗</a></div>
         </td>
         <td>
           <select data-idx="${idx}" class="dec-status" style="width:100%;padding:0.3rem;border:1px solid #cbd5e1;border-radius:5px;">
@@ -77,7 +77,7 @@ async function init() {
         <td><span class="badge badge-info">${q.category}</span></td>
         <td><strong>${q.question}</strong></td>
         <td style="font-size:0.84rem;">${q.whyItMatters}</td>
-        <td style="font-size:0.84rem;">${q.howToDiscoverPrivately}</td>
+        <td style="font-size:0.84rem;">${q.howToDiscoverPrivately} · <a href="https://www.boe.ca.gov/prop19/" target="_blank" rel="noopener">Official Guide ↗</a></td>
       </tr>
     `
     )

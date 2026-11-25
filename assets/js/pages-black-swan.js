@@ -1,7 +1,7 @@
 import { renderSiteChrome, fetchVerifiedData, fmtUsd } from './layout.js';
-import { runComparisonModel } from '../model.js';
-import { loadInputs, saveInputs } from '../storage.js';
-import { renderBlackSwanBars } from '../charts.js';
+import { runComparisonModel } from './model.js';
+import { loadInputs, saveInputs } from './storage.js';
+import { renderBlackSwanBars } from './charts.js';
 
 renderSiteChrome('black-swan', '..');
 
@@ -69,7 +69,7 @@ function render() {
         <tr style="${reg.id === inputs.macroRegimeId ? 'background:#eff6ff;' : ''}">
           <td>
             <strong>${reg.name}</strong>
-            <div style="font-size:0.8rem;color:var(--muted);">${reg.description}</div>
+            <div style="font-size:0.8rem;color:var(--muted);">${reg.description} · <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026" target="_blank" rel="noopener">US Treasury / BLS ↗</a></div>
           </td>
           <td class="num">${fmtUsd(sell.afterTaxNetWealth)}</td>
           <td class="num"><strong>${fmtUsd(staged.afterTaxNetWealth)}</strong></td>

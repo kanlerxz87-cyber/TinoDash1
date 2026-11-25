@@ -142,7 +142,7 @@
     "regionalMeasureRtmSalesTaxPct": 0.5,
     "sources": [
       { "label": "Santa Clara County 2025-2026 Tax Rate Book", "url": "https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf" },
-      { "label": "SCC Clerk-Recorder Recording & Transfer Tax Fees", "url": "https://clerkrecorder.santaclaracounty.gov/resources/fee-schedule" },
+      { "label": "SCC Clerk-Recorder Recording & Transfer Tax Fees", "url": "https://clerkrecorder.sccgov.org/recording-documents-fee" },
       { "label": "FUHSD Parcel Tax ($98/yr & Senior Exemption)", "url": "https://www.fuhsd.org/quick-links/parcel-tax-exemptions" },
       { "label": "CUSD Measure A Oversight (Expired June 30, 2023)", "url": "https://www.cusdk8.org/departments/committees/measure-a-parcel-tax-citizens-oversight-committee" }
     ]
@@ -193,10 +193,8 @@
       "sourceUrl": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf"
     },
     "cupertino95014RentalComps": [
-      { "type": "3BR/2BA SFH (~1,600 sqft)", "monthlyUsd": 4990, "source": "Redfin 95014 Houses for Rent", "url": "https://www.redfin.com/zipcode/95014/houses-for-rent" },
-      { "type": "3BR/2.5BA SFH (~1,800 sqft)", "monthlyUsd": 5600, "source": "Zillow 95014 Rental Listings", "url": "https://www.zillow.com/cupertino-ca-95014/rentals/" },
-      { "type": "4BR/2.5BA SFH (~2,100 sqft)", "monthlyUsd": 6680, "source": "Redfin 95014 Houses for Rent", "url": "https://www.redfin.com/zipcode/95014/houses-for-rent" },
-      { "type": "Large SFH (>4,500 sqft)", "monthlyUsd": 8000, "source": "Zillow 95014 Rental Listings", "url": "https://www.zillow.com/cupertino-ca-95014/rentals/" }
+      { "type": "2BR Benchmark (ZIP 95014 Voucher Floor)", "monthlyUsd": 4440, "source": "HUD FY2026 Small Area FMR (Official 40th-Pctile Floor)", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" },
+      { "type": "Private Cupertino 95014 SFR MLS Comps (3–4BR)", "monthlyUsd": null, "source": "[Blank — Unverified] Obtain 3 private MLS SFR comps; letting paths use HUD SAFMR floor until verified", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" }
     ],
     "utilitiesAndSolar": {
       "pgeBundledRar2026UsdPerKwh": 0.345,
@@ -205,9 +203,9 @@
       "nem2LegacyYears": 20,
       "sources": [
         { "label": "CPUC Public Advocates Q2 2026 Electric Rates Report (PG&E)", "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf" },
-        { "label": "San Jose Water Company Approved Schedule Eff. 7/1/2026", "url": "https://www.sjwater.com/media/4ekhlke4/san-jose-water-company-al-629-a-approved.pdf" },
+        { "label": "City of Cupertino Official Water Utility Providers & Rates", "url": "https://www.cupertino.gov/Residents/Utilities/Water" },
         { "label": "SFPUC FY26-27 Water & Wastewater Rate Schedule", "url": "https://www.sfpuc.gov/sites/default/files/accounts-and-services/Rates_Schedule_Water_Sewer_2026-7.pdf" },
-        { "label": "CPUC Net Energy Metering (NEM 2.0 20-Yr Sunset to NBT)", "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering-and-net-billing" }
+        { "label": "CPUC Net Energy Metering (NEM 2.0 20-Yr Sunset to NBT)", "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing" }
       ]
     },
     "insurance": {

@@ -15,7 +15,7 @@ async function init() {
         <td class="num">${r.taxChangePct === null ? '—' : fmtPct(r.taxChangePct, 1)}</td>
         <td class="num">${fmtUsd(r.assessedUsd)}</td>
         <td class="num">${fmtPct(r.assessedChangePct, 1)}</td>
-        <td><span class="badge ${r.taxUsd === null ? 'badge-flagged' : 'badge-verified'}">${r.status}</span></td>
+        <td><span class="badge ${r.taxUsd === null ? 'badge-flagged' : 'badge-verified'}">${r.status}</span> · <a href="https://boe.ca.gov/proptaxes/pdf/lta26002.pdf" target="_blank" rel="noopener" style="font-size:0.78rem;">BOE CCPI ↗</a></td>
       </tr>
     `
       )
@@ -44,7 +44,7 @@ async function init() {
       terms: '$0.55 per $500 (0.11%) county DTT + $0 Cupertino city conveyance tax + $92 1st page recording',
       impact: 'Selling a $3.1M–$5.4M Cupertino home incurs only ~0.11% transfer tax vs 0.75%–2.25% in SF.',
       status: 'Verified',
-      url: 'https://clerkrecorder.santaclaracounty.gov/resources/fee-schedule'
+      url: 'https://clerkrecorder.sccgov.org/recording-documents-fee'
     },
     {
       rule: 'San Francisco Secured Tax Rate (FY25–26 & FY26–27)',
@@ -82,11 +82,11 @@ async function init() {
       url: 'https://sfpublicworks.org/node/35233'
     },
     {
-      rule: 'Utilities: SFPUC Water/Sewer, SJWC Water & CPUC NEM 2.0 Sunset',
-      terms: 'SFPUC +11.5%/yr FY27–28; SJWC $7.253/Ccf (7/1/2026); PG&E ~$0.345/kWh; NEM 2.0 drops to NBT after 20-yr legacy',
+      rule: 'Utilities: SFPUC Water/Sewer, Cupertino Water & CPUC NEM 2.0 Sunset',
+      terms: 'SFPUC +11.5%/yr FY27–28; Cupertino Water $100–$150/mo; PG&E ~$0.345/kWh; NEM 2.0 drops to NBT after 20-yr legacy',
       impact: 'Solar -$10 to -$20/mo credit flips to net electric expense (~+$90/mo) once 20-yr NEM legacy ends unless battery added.',
       status: 'Verified',
-      url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering-and-net-billing'
+      url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing'
     },
     {
       rule: 'Bay Area Homeowners & 3-Unit Habitational Insurance',
@@ -131,8 +131,8 @@ async function init() {
       (c) => `
       <tr>
         <td><strong>${c.name}</strong></td>
-        <td class="num">${fmtUsd(c.rent)}/mo</td>
-        <td class="num">${((c.rent * 12) / 3100000 * 100).toFixed(2)}%</td>
+        <td class="num">${c.rent === null ? '<span class="badge badge-flagged">Blank — Unverified</span>' : `${fmtUsd(c.rent)}/mo`}</td>
+        <td class="num">${c.rent === null ? '—' : `${((c.rent * 12) / 3100000 * 100).toFixed(2)}%`}</td>
         <td style="font-size:0.84rem;">${c.note}</td>
         <td><a href="${c.url}" target="_blank" rel="noopener">Verify Source ↗</a></td>
       </tr>
@@ -140,7 +140,7 @@ async function init() {
     )
     .join('');
 
-  const renderCapex = (items) => {
+  const renderCapex = (items, officialUrl, officialLabel) => {
     const totals = items.reduce(
       (acc, it) => ({ low: acc.low + it.lowUsd, base: acc.base + it.baseUsd, high: acc.high + it.highUsd }),
       { low: 0, base: 0, high: 0 }
@@ -154,7 +154,7 @@ async function init() {
           <td class="num">${fmtUsd(it.lowUsd)}</td>
           <td class="num">${fmtUsd(it.baseUsd)}</td>
           <td class="num">${fmtUsd(it.highUsd)}</td>
-          <td style="font-size:0.82rem;">${it.priority}</td>
+          <td style="font-size:0.82rem;">${it.priority} · <a href="${officialUrl}" target="_blank" rel="noopener">${officialLabel} ↗</a></td>
         </tr>
       `
         )
@@ -164,13 +164,21 @@ async function init() {
         <td class="num">${fmtUsd(totals.low)}</td>
         <td class="num">${fmtUsd(totals.base)}</td>
         <td class="num">${fmtUsd(totals.high)}</td>
-        <td>Flagged until inspections</td>
+        <td>Flagged until inspections · <a href="${officialUrl}" target="_blank" rel="noopener">${officialLabel} ↗</a></td>
       </tr>`
     );
   };
 
-  document.getElementById('capex-a-tbody').innerHTML = renderCapex(properties.propertyA.fiveYearCapexPlan2026Usd);
-  document.getElementById('capex-b-tbody').innerHTML = renderCapex(properties.propertyB.fiveYearCapexPlan2026Usd);
+  document.getElementById('capex-a-tbody').innerHTML = renderCapex(
+    properties.propertyA.fiveYearCapexPlan2026Usd,
+    'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing',
+    'CPUC / IRS Pub 527'
+  );
+  document.getElementById('capex-b-tbody').innerHTML = renderCapex(
+    properties.propertyB.fiveYearCapexPlan2026Usd,
+    'https://www.sf.gov/departments--department-building-inspection',
+    'SF DBI'
+  );
 }
 
 init();

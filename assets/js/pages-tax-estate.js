@@ -1,6 +1,6 @@
 import { renderSiteChrome, fetchVerifiedData, fmtUsd } from './layout.js';
-import { runComparisonModel } from '../model.js';
-import { loadInputs } from '../storage.js';
+import { runComparisonModel } from './model.js';
+import { loadInputs } from './storage.js';
 
 renderSiteChrome('tax-estate', '..');
 

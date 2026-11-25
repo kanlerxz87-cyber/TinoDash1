@@ -18,5 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Run Privacy, Link & Unit Test Suite
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Node Privacy, ES-Module Import, Link & Unit Test Suite
         run: npm run check
+      - name: Run Python Annual Deterministic Model Rebuild & Official-Source Verification
+        run: |
+          python3 scripts/build_verified_model.py
+          python3 scripts/verify_repo.py

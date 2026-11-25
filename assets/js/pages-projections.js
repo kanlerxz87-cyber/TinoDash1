@@ -5,9 +5,9 @@ import {
   runMonteCarloDistribution,
   projectProp19Allowance,
   roundTo10
-} from '../model.js';
-import { loadInputs, saveInputs, resetInputs } from '../storage.js';
-import { renderTrajectoryChart, renderDistributionChart } from '../charts.js';
+} from './model.js';
+import { loadInputs, saveInputs, resetInputs } from './storage.js';
+import { renderTrajectoryChart, renderDistributionChart } from './charts.js';
 
 renderSiteChrome('projections', '..');
 
@@ -102,7 +102,7 @@ function renderAll() {
           <td class="num"><strong>${fmtUsd(bp.afterTaxNetWealth)}</strong></td>
           <td class="num">${fmtUsd(highModel.paths[idx].afterTaxNetWealth)}</td>
           <td class="num">${fmtUsd(bp.totalEconomicWealthInclImputed)}</td>
-          <td style="font-size:0.83rem;">${drivers[bp.id]}</td>
+          <td style="font-size:0.83rem;">${drivers[bp.id]} · <a href="https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html" target="_blank" rel="noopener">FTB / IRS ↗</a></td>
         </tr>
       `;
     })
@@ -153,7 +153,7 @@ function renderAll() {
 
     rows.push(`
       <tr style="${yr === tYear ? 'background:#eff6ff;font-weight:600;' : ''}">
-        <td>${yr}${yr === tYear ? ' (Transfer)' : ''}</td>
+        <td>${yr}${yr === tYear ? ' (Transfer)' : ''} · <a href="https://www.boe.ca.gov/prop19/" target="_blank" rel="noopener" style="font-size:0.76rem;">BOE §63.2</a></td>
         <td class="num">${fmtUsd(fmv)}</td>
         <td class="num">${fmtUsd(fbyv)}</td>
         <td class="num">${fmtUsd(allowance)}</td>

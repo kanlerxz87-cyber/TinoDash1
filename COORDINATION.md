@@ -128,4 +128,20 @@ Shared task board for parallel agent sessions. Update before starting work.
 - **Verification**: Internal link check 0 missing across 16 docs HTML pages. PII grep audit clean for ZIPs/unrounded raw values.
 - **Sources**: IRS (estate tax, 706, Pub 551/523/527, Topic 701/559, 1031), CA BOE (Prop 19, BOE-19-P, LTA 2025/009 cap $1,044,586 for 2/16/2025-2/15/2027), CA LegInfo RTC §63.2, CA FTB (2025 540 booklet, Behavioral Health Services Tax 1% over $1M, capital gains as ordinary income), CA SCO, Santa Clara County Clerk-Recorder/Assessor, SF Rent Board/SF.gov OMI, Federal Reserve History.
 - **Flagged/unresolved**: Property A/B estimates, historical taxes/assessments, rent/insurance/utilities are user-supplied unverified; Property A market rent missing; TRA/parcel-specific rate requires private lookup; Prop 19 eligibility fact-specific; estate total/prior gifts/portability unknown; "Prop H" measure ambiguous; Property B leases/rent-control status unverified; same-tax-year sale and 1031 need CPA/attorney; external prior data exposure unprovable from repo.
-- **Status**: PR #12 merged to `main` (merge commit). Resolved .gitignore/COORDINATION/README conflicts with origin/main; no other-session work discarded. Legacy GitHub Pages build succeeded (main:/, https://kanlerxz87-cyber.github.io/TinoDash1/). Removed incompatible `pages.yml` (actions deploy) and fixed broken `docs/sources.html` flagged link in follow-up PR.
+- **Status**: PR #12 & PR #13 merged to `main`. Legacy GitHub Pages build succeeded (`main:/`, https://kanlerxz87-cyber.github.io/TinoDash1/).
+
+---
+
+## Session `arena/ddd5451c-tinodash1` — Final Verification, Browser-Crash Repair & CI Integration Log (2026-11-25)
+- **Branch**: `arena/ddd5451c-tinodash1` (final verification & repair PR onto `main` after PRs #3–#13).
+- **Critical Production Bugs Caught and Fixed on `origin/main` (`51dcbab`)**:
+  1. **Fixed 6 Crashing Subpages (404 ES-Module Import Bug)**: Six primary subpage modules (`assets/js/pages-projections.js`, `pages-black-swan.js`, `pages-briefing.js`, `pages-decisions.js`, `pages-suggestions.js`, `pages-tax-estate.js`) imported `../model.js`, `../storage.js`, and `../charts.js` (resolving to non-existent `assets/*.js`) instead of `./model.js`, `./storage.js`, and `./charts.js`, causing 6 of 10 subpages to fail module evaluation in browsers. Fixed all 6 modules and added an automated relative ES-module `import` file-existence check to `scripts/link-audit.mjs` and `scripts/verify_repo.py`.
+  2. **Line-by-Line Official `.gov` Source Verification & Non-Official Link Purge**:
+     - Replaced broken 404 CPUC URL (`.../demand-side-management/net-energy-metering-and-net-billing`) with verified HTTP 200 URL (`.../demand-side-management/customer-generation/net-energy-metering-and-net-billing`).
+     - Removed commercial third-party rental-portal links from `index.html` and `data/verified-sources.json`, replacing them with official HUD FY2026 SAFMR (`huduser.gov`) floor + explicit `Blank — Unverified` private MLS comp flagging per strict verification rules.
+     - Verified and added official `.gov` / agency source links to **100% of static and JS-rendered `<tbody><tr>` rows** across `index.html`, `pages/*.html`, and `assets/js/pages-*.js`.
+  3. **Added Deterministic Python Annual-Rebuild & Verification Suite (`scripts/build_verified_model.py`, `scripts/verify_repo.py`, `data/model.json`)**:
+     - Computes all 7 pure & mixed strategies (10/20/30/50-yr horizons, Low/Base/High ranges, 500-run P10–P90 distribution, 5 Black-Swan crash backtests with 24m/36m 3M–2Y U.S. Treasury staging, and 11 sensitivity regimes printing `[MOVED]` vs `[UNCHANGED]`), strictly rounded to nearest **$10**.
+     - Wired both `npm run check` and `python3 scripts/build_verified_model.py && python3 scripts/verify_repo.py` into `.github/workflows/ci.yml`.
+- **Verification**: `npm run check` (PII/rounding + ES-module/DOM/subpath link audit + 9/9 unit tests) PASSED; `python3 scripts/verify_repo.py` PASSED.
+- **PR Link & Status**: [PR #14](https://github.com/kanlerxz87-cyber/TinoDash1/pull/14) (`arena/ddd5451c-tinodash1` → `main`) — CI verified green, merged to `main`, and live GitHub Pages (`https://kanlerxz87-cyber.github.io/TinoDash1/`) verified.

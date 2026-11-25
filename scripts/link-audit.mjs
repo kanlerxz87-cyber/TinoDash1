@@ -83,6 +83,23 @@ if (fs.existsSync(layoutPath)) {
   }
 }
 
+// Verify every relative ES-module import inside assets/js/*.js resolves to an existing file
+const jsDir = path.join(ROOT, 'assets/js');
+if (fs.existsSync(jsDir)) {
+  for (const fn of fs.readdirSync(jsDir)) {
+    if (!fn.endsWith('.js') && !fn.endsWith('.mjs')) continue;
+    const fullJs = path.join(jsDir, fn);
+    const srcJs = fs.readFileSync(fullJs, 'utf8');
+    for (const m of srcJs.matchAll(/\bfrom\s+['"](\.[^'"]+)['"]/g)) {
+      const imp = m[1];
+      const resolvedImp = path.resolve(jsDir, imp);
+      if (!fs.existsSync(resolvedImp)) {
+        errors.push(`[Broken ES-Module Import] assets/js/${fn}: target does not exist -> ${imp} (resolved ${path.relative(ROOT, resolvedImp)})`);
+      }
+    }
+  }
+}
+
 // Verify DOM ID bindings across page modules
 const pageBindings = [
   ['index.html', 'assets/js/pages-overview.js'],

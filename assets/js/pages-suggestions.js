@@ -1,5 +1,5 @@
 import { renderSiteChrome } from './layout.js';
-import { loadSuggestions, saveSuggestions } from '../storage.js';
+import { loadSuggestions, saveSuggestions } from './storage.js';
 
 renderSiteChrome('suggestions', '..');
 
@@ -14,7 +14,7 @@ function render() {
         <td><strong>${s.id}</strong></td>
         <td><span class="badge badge-info">${s.category}</span></td>
         <td><strong>${s.title}</strong></td>
-        <td style="font-size:0.85rem;">${s.rationale}</td>
+        <td style="font-size:0.85rem;">${s.rationale} · <a href="https://www.irs.gov/publications/p551" target="_blank" rel="noopener">IRS / BOE Ref ↗</a></td>
         <td>${s.effort}</td>
         <td>
           <select data-idx="${idx}" class="sug-select" style="width:100%;padding:0.35rem;border:1px solid #cbd5e1;border-radius:5px;">
