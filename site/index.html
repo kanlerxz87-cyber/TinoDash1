@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinoDash1 — Executive Summary &amp; What-If Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <h1>Executive Summary &amp; Inheritance Decision Dashboard</h1>
+    <p class="subtitle">
+      Comparing <strong>Property A</strong> (Cupertino, 95014 — inherited via trust ~2040–2050) alongside
+      <strong>Property B</strong> (San Francisco Outer Sunset, 94122 — already owned by the heir, 3 units with 2 rented at $7,150/mo + 1 owner-occupied unit).
+      All figures are anonymized and rounded to the nearest $10.
+    </p>
+
+    <!-- TOP KPIs -->
+    <div class="grid-4" style="margin-bottom:18px;">
+      <div class="kpi">
+        <div class="kpi-label">Property A Est. Value (Nov 2026)</div>
+        <div class="kpi-value">$3,100,000</div>
+        <div class="kpi-note">2026 Assessed: $550,540 (Prop 13) · Solar credit</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Property B Est. Value (Nov 2026)</div>
+        <div class="kpi-value">$1,800,000</div>
+        <div class="kpi-note">Already owned · $7,150/mo rent (2 units) + 1 free unit</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">2026 Federal Estate Exclusion</div>
+        <div class="kpi-value">$15,000,000</div>
+        <div class="kpi-note"><a href="https://www.irs.gov/instructions/i706" target="_blank" rel="noopener">IRS Form 706 (2026)</a> · $30M married w/ portability</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">CA Prop 19 Allowance (2025–27)</div>
+        <div class="kpi-value">$1,044,590</div>
+        <div class="kpi-note"><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank" rel="noopener">CA BOE ($1,044,586)</a> · Primary residence only</div>
+      </div>
+    </div>
+
+    <!-- WHAT WOULD CHANGE THE ANSWER (ON FIRST SCREEN) -->
+    <div class="card" style="border-left: 4px solid var(--primary);">
+      <h2 style="margin-top:0; border-bottom:none; padding-bottom:0;">What Would Change the Answer?</h2>
+      <p class="subtitle" style="margin-bottom:10px;">
+        Under baseline 2045 assumptions (15-year horizon), <strong>Sell Immediately (Same Tax Year)</strong> leads on median after-tax wealth,
+        followed closely by <strong>Mixed: Live 4 yrs → Sell (§121)</strong> and <strong>Sell + 30-Month Treasury Staging</strong>.
+        The recommendation flips if any of these four conditions hold:
+      </p>
+      <div class="grid-2">
+        <div>
+          <ul style="margin:0; padding-left:18px;">
+            <li><strong>Estate Exceeds Federal Exclusion ($15M+ indexed):</strong> Forces immediate liquidity planning (40% federal estate tax due in 9 months), strongly favoring a same-tax-year sale or liquidating non-RE assets first.</li>
+            <li><strong>Equity Crash Near Inheritance (1929 / 2008):</strong> Phasing sale proceeds through 3M–2Y Treasuries for 24–36 months outperforms Lump-Sum Sell by $1.5M–$3.2M, though it carries bull-market reinvestment drag.</li>
+          </ul>
+        </div>
+        <div>
+          <ul style="margin:0; padding-left:18px;">
+            <li><strong>Heir Wants to Live in Cupertino Long-Term + Rent 3rd SF Unit:</strong> Claiming Prop 19 + tax-free imputed rent + renting Property B's 3rd unit closes most of the gap with Selling.</li>
+            <li><strong>Cupertino Rent Comparables &gt; $7,500/mo (2026$):</strong> Only if verified CMA rents materially exceed baseline ($6,000/mo) does Renting Property A become competitive after full Prop 13 reassessment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE WHAT-IF CONTROLS -->
+    <div class="card">
+      <h2 style="margin-top:0;">Interactive What-If Controls</h2>
+      <p class="subtitle" style="margin-bottom:12px;">
+        Adjust transfer year, horizon, growth rates, rent, imputed rent, and tax toggles to test whether the ranking moves.
+      </p>
+      <div class="controls-grid">
+        <div class="control-item">
+          <label><span>Transfer Year</span><span id="lbl-ty">2045</span></label>
+          <input type="range" id="in-ty" min="2040" max="2050" step="1" value="2045" />
+        </div>
+        <div class="control-item">
+          <label><span>Horizon (Years)</span><span id="lbl-hz">15 yrs</span></label>
+          <input type="range" id="in-hz" min="10" max="30" step="1" value="15" />
+        </div>
+        <div class="control-item">
+          <label><span>Home Appreciation</span><span id="lbl-ha">3.8%</span></label>
+          <input type="range" id="in-ha" min="1.5" max="6.0" step="0.1" value="3.8" />
+        </div>
+        <div class="control-item">
+          <label><span>Equity Return</span><span id="lbl-eq">7.2%</span></label>
+          <input type="range" id="in-eq" min="4.0" max="10.0" step="0.1" value="7.2" />
+        </div>
+        <div class="control-item">
+          <label><span>Prop A Market Rent (2026$)</span><span id="lbl-mr">$6,000/mo</span></label>
+          <input type="range" id="in-mr" min="4800" max="8500" step="100" value="6000" />
+        </div>
+        <div class="control-item">
+          <label><span>Imputed Rent (Living Paths)</span><span id="lbl-ir">$5,800/mo</span></label>
+          <input type="range" id="in-ir" min="4000" max="8000" step="100" value="5800" />
+        </div>
+        <div class="control-item">
+          <label><span>Filing Status (IRC §121)</span></label>
+          <select id="in-fs">
+            <option value="mfj" selected>Married Filing Jointly ($500k excl.)</option>
+            <option value="single">Single ($250k excl.)</option>
+          </select>
+        </div>
+        <div class="control-item">
+          <label><span>Prop 19 &amp; Property B 3rd Unit</span></label>
+          <select id="in-p19">
+            <option value="both" selected>Prop 19 Eligible + Rent 3rd SF Unit</option>
+            <option value="p19only">Prop 19 Eligible (Keep 3rd SF Unit Vacant)</option>
+            <option value="none">No Prop 19 (Full Reassessment)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEAD-TO-HEAD COMPARISON TABLE (PURE + MIXED + REINVESTMENT RISK) -->
+    <div class="card">
+      <h2 style="margin-top:0;">Pure &amp; Mixed Path Comparison (Same Transfer Date &amp; Horizon)</h2>
+      <p id="comp-meta" class="subtitle" style="margin-bottom:10px;"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Path (Pure &amp; Mixed)</th>
+              <th>Type</th>
+              <th class="num">Projected Net Wealth</th>
+              <th>Reinvestment &amp; Concentration Risk (Beside Headline)</th>
+              <th>Key Tax Mechanics</th>
+            </tr>
+          </thead>
+          <tbody id="comp-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DISTRIBUTION CHART (P10 - P90 RANGES) -->
+    <div class="card">
+      <h2 style="margin-top:0;">Outcome Distribution Chart (2045 Transfer, 15-Yr Horizon — 400-Run Range)</h2>
+      <p class="subtitle" style="margin-bottom:12px;">
+        Light blue = P10 to P90 range · Dark blue = P25 to P75 interquartile range · Black bar = P50 median.
+        Models ranges rather than single point estimates.
+      </p>
+      <div id="dist-chart"></div>
+    </div>
+
+    <footer>
+      TinoDash1 · Privacy-First Decision Dashboard · Last updated 2026-11-25 ·
+      <a href="review.html">Flagged for Review</a> · <a href="brief.html">One-Page Attorney &amp; CPA Brief</a>
+    </footer>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+renderSidebar("index.html");
+
+let MODEL = null;
+
+function renderComparison() {
+  if (!MODEL) return;
+  const ty = parseInt(document.getElementById("in-ty").value, 10);
+  const hz = parseInt(document.getElementById("in-hz").value, 10);
+  const ha = parseFloat(document.getElementById("in-ha").value) / 100;
+  const eq = parseFloat(document.getElementById("in-eq").value) / 100;
+  const mr = parseInt(document.getElementById("in-mr").value, 10);
+  const ir = parseInt(document.getElementById("in-ir").value, 10);
+  const fs = document.getElementById("in-fs").value;
+  const p19Mode = document.getElementById("in-p19").value;
+
+  document.getElementById("lbl-ty").textContent = ty;
+  document.getElementById("lbl-hz").textContent = hz + " yrs";
+  document.getElementById("lbl-ha").textContent = (ha * 100).toFixed(1) + "%";
+  document.getElementById("lbl-eq").textContent = (eq * 100).toFixed(1) + "%";
+  document.getElementById("lbl-mr").textContent = "$" + mr.toLocaleString() + "/mo";
+  document.getElementById("lbl-ir").textContent = "$" + ir.toLocaleString() + "/mo";
+
+  const res = computeWhatIf(MODEL.base_assumptions, {
+    transferYear: ty,
+    horizon: hz,
+    homeAppr: ha,
+    equityReturn: eq,
+    marketRent: mr,
+    imputedRent: ir,
+    filingStatus: fs,
+    prop19Eligible: p19Mode !== "none",
+    rent3rdSf: p19Mode === "both",
+  });
+
+  document.getElementById("comp-meta").innerHTML =
+    `Transfer Year: <strong>${ty}</strong> · Horizon: <strong>${hz} yrs (to ${ty + hz})</strong> · ` +
+    `Est. Property A FMV at Transfer: <strong>${fmtUSD(res.fmv0)}</strong> · ` +
+    `Net Sale Proceeds (after 5% + 0.11% SCC transfer tax): <strong>${fmtUSD(res.netSale0)}</strong> · ` +
+    `Carried Prop 19 Allowance: <strong>${fmtUSD(res.p19Allow)}</strong>`;
+
+  const tbody = document.getElementById("comp-tbody");
+  tbody.innerHTML = res.paths.map((p, idx) => `
+    <tr>
+      <td><strong>#${idx + 1}</strong></td>
+      <td><strong>${p.name}</strong></td>
+      <td><span class="badge ${p.type === 'Pure' ? 'badge-blue' : 'badge-amber'}">${p.type}</span></td>
+      <td class="num"><strong>${fmtUSD(p.net)}</strong></td>
+      <td>${p.risk}</td>
+      <td>${p.tax}</td>
+    </tr>
+  `).join("");
+}
+
+function renderDistribution(dist) {
+  const labels = {
+    sell_lump: "Sell Immediately → Lump-Sum",
+    mixed_live_sell: "Mixed: Live 4 yrs → Sell (§121)",
+    sell_phased: "Sell → 30M Treasury Staging",
+    live_prop19: "Live Long-Term (Prop 19)",
+    mixed_rent_1031: "Mixed: Rent 7 yrs → §1031",
+    rent_hold: "Rent Long-Term Hold",
+  };
+  let maxVal = 0;
+  for (const k of Object.keys(dist)) maxVal = Math.max(maxVal, dist[k].p90);
+
+  const el = document.getElementById("dist-chart");
+  el.innerHTML = Object.keys(labels).map(k => {
+    const d = dist[k];
+    const left10 = (d.p10 / maxVal) * 100;
+    const width90 = ((d.p90 - d.p10) / maxVal) * 100;
+    const left25 = (d.p25 / maxVal) * 100;
+    const width75 = ((d.p75 - d.p25) / maxVal) * 100;
+    const med = (d.p50 / maxVal) * 100;
+    return `
+      <div class="dist-row">
+        <div><strong>${labels[k]}</strong><br><span style="color:var(--muted);font-size:12px;">P10: ${fmtUSD(d.p10)} · P90: ${fmtUSD(d.p90)}</span></div>
+        <div class="dist-track">
+          <div class="dist-range" style="left:${left10.toFixed(1)}%;width:${width90.toFixed(1)}%;"></div>
+          <div class="dist-iqr" style="left:${left25.toFixed(1)}%;width:${width75.toFixed(1)}%;"></div>
+          <div class="dist-median" style="left:${med.toFixed(1)}%;"></div>
+        </div>
+        <div class="num"><strong>${fmtUSD(d.p50)}</strong><br><span style="color:var(--muted);font-size:11px;">Median (P50)</span></div>
+      </div>
+    `;
+  }).join("");
+}
+
+loadModelData().then(data => {
+  MODEL = data;
+  renderComparison();
+  renderDistribution(data.distribution_2045);
+  ["in-ty", "in-hz", "in-ha", "in-eq", "in-mr", "in-ir", "in-fs", "in-p19"].forEach(id => {
+    document.getElementById(id).addEventListener("input", renderComparison);
+    document.getElementById(id).addEventListener("change", renderComparison);
+  });
+});
+</script>
+</body>
+</html>
