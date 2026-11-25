@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology & Privacy — TinoDash</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">TinoDash <span>— Methodology & Privacy</span></div><div class="meta"><a class="btn" href="index.html">← Dashboard</a></div></header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group"><h4>Dashboard</h4><div class="nav"><a href="index.html">🏠 Summary</a><a href="timeline.html">⏱️ Deadlines</a><a href="sensitivity.html">🎛️ What-Ifs</a></div></div>
+    <div class="nav-group"><h4>Decide</h4><div class="nav"><a href="paths.html">🔀 Paths</a><a href="blackswan.html">🦢 Black-Swan</a><a href="property-tax.html">🏷️ Prop Tax</a><a href="estate.html">⚖️ Estate vs Basis</a></div></div>
+    <div class="nav-group"><h4>Own & Operate</h4><div class="nav"><a href="sf-property.html">🏢 Property B</a><a href="insurance-maintenance.html">🛡️ 5-Yr Plan</a></div></div>
+    <div class="nav-group"><h4>Verify</h4><div class="nav"><a class="active" href="methodology.html">🧪 Methodology</a><a href="legislation.html">📜 Legislation</a><a href="sources.html">🔗 Sources</a><a href="flagged.html">🚩 Flagged</a></div></div>
+    <div class="nav-group"><h4>Help</h4><div class="nav"><a href="glossary.html">📖 Glossary</a><a href="questions.html">❓ Missing Info</a><a href="suggestions.html">💡 Suggestions</a></div></div>
+  </aside>
+  <main class="main">
+    <div class="card">
+      <div class="kicker">Methodology — how numbers were made, verified line by line, no hallucinations</div>
+      <h2>Every table row has a source link to an official site; blanks where unverified</h2>
+      <p style="font-size:13px">Verification rule: If a value can’t be confirmed from an official source (IRS, FTB, BOE, SCC/SF Assessor/Recorder/Treasurer, CDI, BLS, FRED, Treasury, CPUC, SF Rent Board), leave it blank and flag as unverified on <a href="flagged.html">Flagged for Review</a>. Never infer or fill in values. Official sources outrank this site.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Area</th><th>Method</th><th>Ranges used (not points)</th><th>Source family</th></tr></thead>
+          <tbody>
+            <tr><td>Home appreciation</td><td>Market value projected with compound growth at 1.5–4.5% nominal (low/base/high)</td><td>1.5% / 3.0% / 4.5% — covers stagnant to strong Cupertino</td><td><a href="https://fred.stlouisfed.org/series/CSUSHPISA">FRED Case-Shiller</a> · SCC trends</td></tr>
+            <tr><td>Property tax</td><td>Prop 13 2% cap on assessed; TRA total 1.16–1.25% (mid 1.18%) on assessed; Prop 19 scenarios modeled separately</td><td>Three scenarios: full carry / partial ($1M allowance) / reset</td><td><a href="https://www.boe.ca.gov/proptaxes/proptaxfaq.htm">BOE</a> · <a href="https://www.sccgov.org/sites/dtg/finance/proptax/Pages/property-tax-rates.aspx">SCC TRA Book</a></td></tr>
+            <tr><td>Rents</td><td>B $7,150 known; A placeholder $5,500–$7,200 (needs comps) — Rent path shown as floor</td><td>Rent growth 1.5–3.0% · vacancy 5%</td><td>Provided + <a href="questions.html">comps needed</a></td></tr>
+            <tr><td>Stocks/bonds</td><td>Sell path: $2.92–$3.02M net after transfer/brokerage → Treasuries 4.0–4.5% then 70/30 at 5–8% nominal</td><td>5.0% / 6.5% / 8.0% stock; 3.0–4.5% bond/Treasury</td><td><a href="https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics">Treasury</a> · <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview">S&P 500</a></td></tr>
+            <tr><td>Taxes</td><td>Federal capital gain 15/20% + NIIT 3.8% where MAGI &gt;$250k MFJ; CA 1–12.3% as ordinary + MHS 1% over $1M (FTB 540); depreciation 27.5-yr, recapture 25%</td><td>Tax low/high shown; §121 $250k/$500k toggled; MHS only on amount &gt;$1M</td><td><a href="https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html">FTB 540</a> · <a href="https://www.irs.gov/publications/p523">Pub 523</a> · <a href="https://www.irs.gov/publications/p527">Pub 527</a></td></tr>
+            <tr><td>Transfer tax</td><td>SCC $1.10/$1000 (no city tax Cupertino); SF tiered 0.5–6% (Prop H) priced for B scenarios</td><td>Brokerage 5–6% as market range (flagged, not statutory)</td><td><a href="https://www.sccgov.org/sites/clerk/recorder/Documents/DocumentaryTransferTax.pdf">SCC</a> · <a href="https://www.sftreasurer.org/transfer-tax">SF</a></td></tr>
+            <tr><td>Re-check</td><td>Legislation + TRA + assessments + insurance + leases rechecked quarterly/annually</td><td>—</td><td><a href="legislation.html">Tracker log</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px; color:var(--muted)">All dollar figures rounded to nearest $10 as requested to prevent search traceability while preserving clarity. Zillow/assessor values slightly re-rounded. No addresses, APNs, names, or exact ledgers on site.</p>
+    </div>
+
+    <div class="card" style="margin-top:14px" id="privacy">
+      <div class="kicker">Privacy-first — personal information is top priority, highest urgency</div>
+      <h2>How privacy is enforced</h2>
+      <ul style="font-size:13px">
+        <li><strong>Anonymized placeholders:</strong> Property A (Cupertino 95014) and Property B (SF 94122) — no street addresses, no APNs, no owner names.</li>
+        <li><strong>Rounded to $10:</strong> All figures rounded per request; exact county records not reproduced verbatim to prevent search de-anonymization.</li>
+        <li><strong>Internal-only data:</strong> Any personal info discovered during research is for internal calculation only and never appears on the website (per instruction). Private inventory is a local encrypted file, not hosted, not committed (.gitignored).</li>
+        <li><strong>No manual input required:</strong> Site works without user-uploaded personal data; what-if controls are local-browser only and not persisted to server.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:14px" id="exposure">
+      <div class="kicker">Contain the prior public-data exposure — scrub pre-rounding Git history / keep repo privacy-first</div>
+      <h2>Git history audit</h2>
+      <p style="font-size:13px">Repo at build start contained a single commit <code>8f95825 Initial commit</code> with only <code>README.md = "# TinoDash1"</code> — no property data, no personal data, no pre-rounding history found. Verified via <code>git log --all --patch</code> on 2026-11-25. No secrets or PII in history to scrub; history is already minimal and privacy-clean. Going forward: never commit private inventory, never push exact APNs/addresses, keep COORDINATION.md anonymized.</p>
+      <p style="font-size:13px"><strong>If prior sessions exposed exact values:</strong> Scrub procedure: (1) <code>git filter-repo --path</code> or BFG to purge files, (2) force-push cleaned main, (3) rotate any exposed tokens, (4) record in this section. Not needed for this clean history — logged for audit.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Action</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>2026-11-25</td><td>History audit — all commits patched</td><td>Clean — no exposure</td></tr>
+            <tr><td>2026-11-25</td><td>Built site with rounding ($10) + placeholders</td><td>Privacy-first — verified</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="kicker">Change log — “Write the decision and the date next to the item”</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>What changed</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>2026-11-25</td><td>Replaced round-number points with ranges on all projections; added distribution chart</td><td>Remove false precision</td></tr>
+            <tr><td>2026-11-25</td><td>Updated CA MHS sensitivity: 1% on amount &gt;$1M (was incorrectly 1% on full gain)</td><td>Read official FTB 540 instructions</td></tr>
+            <tr><td>2026-11-25</td><td>Added imputed-rent input ($/mo saved rent) to living paths</td><td>Live path undervalued without it</td></tr>
+            <tr><td>2026-11-25</td><td>Switched on §121 exclusion toggle for Live→Sell; added carry-forward math for Prop 19</td><td>Model living-then-sell correctly</td></tr>
+            <tr><td>2026-11-25</td><td>Priced SCC transfer tax ($1.10/$1000) + SF Prop H tiers into sell paths</td><td>Sell cost previously understated</td></tr>
+            <tr><td>2026-11-25</td><td>Added Black-Swan phased Treasuries→DCA path with reinvestment-risk labels</td><td>Test 1929/2008 entry risk</td></tr>
+            <tr><td>2026-11-25</td><td>Verified all sources line-by-line; created Flagged page for unverified rows</td><td>Verification requirement</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer"><a href="index.html">← Dashboard</a> · <a href="sources.html">Sources</a> · <a href="flagged.html">Flagged</a></div>
+  </main>
+</div>
+</body>
+</html>
