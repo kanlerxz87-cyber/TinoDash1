@@ -27,6 +27,7 @@ OFFICIAL_EXACT = {
     'sfmta.com', 'www.sfmta.com',
     'sfelections.org', 'www.sfelections.org',
 }
+CONFLICT_MARKER = re.compile(r'(?m)^(?:<{7}(?: .*)?|={7}|>{7}(?: .*)?)\s*$')
 PRIVACY_PATTERNS = {
     'possible street address': re.compile(
         r'\b\d{1,6}\s+(?:[A-Za-z][\w.\'-]*\s+){1,5}'
@@ -232,15 +233,19 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
                 if target in docs and fragment not in docs[target].ids:
                     findings.append(Finding('ERROR', name, ref.line, 'local fragment target not found'))
 
-    for path in files_under(root, {'.js', '.mjs', '.json'}):
+    text_extensions = {'.html', '.htm', '.js', '.mjs', '.json', '.css', '.md', '.py', '.yaml', '.yml'}
+    for path in files_under(root, text_extensions):
         name = path.relative_to(root).as_posix()
         try:
             text = path.read_text(encoding='utf-8')
         except UnicodeError:
             continue
-        # Do not emit the matching data, which could itself be sensitive.
-        findings.extend(check_privacy(text, name))
-        if path.suffix.lower() != '.json':
+        if CONFLICT_MARKER.search(text):
+            findings.append(Finding('ERROR', name, 1, 'unresolved merge-conflict marker in published source'))
+        if path.suffix.lower() in {'.js', '.mjs', '.json'}:
+            # Do not emit the matching data, which could itself be sensitive.
+            findings.extend(check_privacy(text, name))
+        if path.suffix.lower() in {'.js', '.mjs'}:
             if re.search(r'\b(fetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket\s*\()', text):
                 findings.append(Finding('WARN', name, 1, 'network API present; verify no private data leaves the browser'))
             if re.search(r'\b(localStorage|sessionStorage|indexedDB)\b', text):

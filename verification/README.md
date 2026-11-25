@@ -13,9 +13,35 @@ python3 verification/check_site.py /path/to/site-root
 python3 verification/check_site.py /path/to/site-root --remote
 ```
 
-The checker reports local links and fragments, table rows without their own HTTPS official-domain link, remote form actions, and obvious potential identifiers. It also flags external scripts, storage/network APIs, and generated rows for manual review. Match contents are deliberately suppressed. Lookalike-domain exclusions are tested; a short allowlist covers official agencies whose domain is not `.gov`. An official domain alone does **not** establish that a link supports the row. Search, social, CDN and archived sources are not accepted as official just because they link to government data. Warnings and inaccessible URLs need human review; blocked `HEAD` requests are *unconfirmed*, not automatically broken.
+The checker reports local links and fragments, unresolved conflict markers, table rows without their own HTTPS official-domain link, remote form actions, and obvious potential identifiers. It also flags external scripts, storage/network APIs, and generated rows for manual review. Match contents are deliberately suppressed. Lookalike-domain exclusions are tested; a short allowlist covers official agencies whose domain is not `.gov`. An official domain alone does **not** establish that a link supports the row. Search, social, CDN and archived sources are not accepted as official just because they link to government data. Warnings and inaccessible URLs need human review; blocked `HEAD` requests are *unconfirmed*, not automatically broken.
 
-Static parsing cannot execute JavaScript, determine whether numeric examples are truly synthetic, identify every personal detail, assess the law, or audit prior exposure. In particular, inspect programmatically generated tables **after rendering** and independently review content and model assumptions. All previews and scripts should avoid transmitting or persisting entered information. Never paste private figures into CI logs, issue comments, PR text, or these test fixtures.
+### Value-suppressed triage
+
+When an already-existing private JSON file contains data whose possible repetition needs screening, run locally and privately, with dot-separated field paths selected by the reviewer:
+
+```sh
+python3 verification/check_sensitive_values.py \
+  --seed-json /private/path/existing-input.json \
+  --field properties.property_a.history \
+  --field properties.property_b.history \
+  --root /path/to/publication-root
+```
+
+The scanner holds seeds in memory and prints file paths and match counts, **never the values**. It checks exact and nearest-$10 formatted numbers, filters history years and percentages, and exits nonzero for matches. Coincidences are common and transformed or derived figures may not match: review findings privately and do not treat a clean result as proof of anonymity. Do not publish a denylist or the seed JSON; that would repeat the leak. This command does not inspect PR descriptions, Git history, refs, builds, caches, or third-party copies.
+
+Static parsing cannot execute JavaScript, determine whether numeric examples are truly synthetic, identify every personal detail, assess the law, or audit prior exposure. Independently review content and model assumptions. Never paste private figures into CI logs, issue comments, PR text, or test fixtures.
+
+## Offline browser checks
+
+For Linux x86-64 with Node.js 22.17 or later, the following uses a pinned headless Chromium package (a substantial npm download; browser files stay in ignored `node_modules` and temporary storage):
+
+```sh
+npm ci --prefix verification
+npm test --prefix verification
+node verification/check_browser.cjs /path/to/site-root
+```
+
+The browser intercepts requests and serves local files under a virtual project subpath, blocks external resources and non-GET requests, suppresses browser console/error details, checks rendered data rows for their own official links, dispatches existing controls and scenario buttons without entering private data, and flags uncaught script errors and viewport overflow. Cookie/storage writes are review warnings. Do not load an untrusted site in this test: it is not a hardened security sandbox. It checks only a subset of interactions and cannot establish visual quality, anonymity, historical containment, or that linked sources substantiate claims. For real live verification use an authorized browser and inspect a safely published version separately.
 
 ## How to use results
 

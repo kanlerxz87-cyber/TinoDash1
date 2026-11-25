@@ -1,0 +1,13 @@
+{
+  "name": "tinodash-independent-verification",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Privacy-conscious runtime checks for a static Pages site",
+  "scripts": {
+    "test": "node --test test_browser.cjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "158.0.0",
+    "puppeteer-core": "25.18.1"
+  }
+}

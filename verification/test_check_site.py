@@ -74,6 +74,10 @@ class SiteAuditTests(unittest.TestCase):
         findings, _ = audit(self.root)
         self.assertTrue(any('runtime official-source-link audit' in f.message for f in findings))
 
+    def test_merge_conflicts_are_errors(self):
+        self.write('index.html', HEAD + '\n<<<<<<< HEAD\nfirst\n=======\nsecond\n>>>>>>> other\n' + TAIL)
+        self.assertIn('unresolved merge-conflict marker in published source', self.errors())
+
     def test_empty_site_is_not_a_success(self):
         findings, _ = audit(self.root)
         self.assertTrue(any(f.severity == 'ERROR' for f in findings))
