@@ -7,7 +7,8 @@
 |---|---|---|---|
 | arena/914b57ba-tinodash1 | arena/914b57ba-tinodash1 | merged | 2026-11-25 PR #3 merged 6dc4068 |
 | arena/ef80c5c0-tinodash1 | arena/ef80c5c0-tinodash1 | merged | 2026-11-25 PR #4 merged 2009903 |
-| arena-43f9846f | arena/43f9846f-tinodash1 | active — final integration | 2026-11-25 UTC |
+| arena-43f9846f | arena/43f9846f-tinodash1 | merged (PR #5) | 2026-11-25 UTC |
+| arena/f58323fd-tinodash1 | arena/f58323fd-tinodash1 | **active — final integration, re-verification & corrections** | 2026-11-25 UTC |
 
 ## Task Board — Complete (all sessions)
 
@@ -61,3 +62,46 @@ If editing across scopes, log request here instead of directly editing another s
 
 > **Reconciliation note:** Legacy session cites $15M exclusion via PL 119-21 (enacted 2026); current session tracks TCJA sunset to ~$7M as prior current law. Both are kept: legislation.html distinguishes enacted PL 119-21 vs prior sunset baseline — recheck Rev Proc Jan 2026. No inference; both linked.
 
+## Integration session `f58323fd` — audit and corrections (2026-11-25)
+
+Claimed T17 (final integration) after `main` was found to contain unresolved merge-conflict markers.
+Work done on branch `arena/f58323fd-tinodash1`, then PR to `main`.
+
+### Blocking defects found and fixed
+
+| # | Defect | Fix |
+|---|---|---|
+| 1 | `index.html`, `flagged.html`, `briefing.html` were committed to `main` **with Git conflict markers** (`<<<<<<<`, `=======`, `>>>>>>>`), so the landing page and briefing sheet were structurally broken | All three rebuilt cleanly on the site's own design system and nav |
+| 2 | **Wrong law: 2026 federal exclusion shown as ~$7M "TCJA sunset"** in `estate.html`, `legislation.html`, `sources.html`, `glossary.html`, `briefing.html`, `flagged.html` | Corrected to **$15,000,000 per person** (Rev. Proc. 2025-32), indexed and **permanent under P.L. 119-21 §70106**. The sunset was repealed before taking effect |
+| 3 | **Invented SF transfer-tax rates** (1.00% / 1.25% / 1.50%) in `property-tax.html` **and** in `js/app.js` `calcTransferTaxSF`, giving ~$18,000 on $1,800,000 | Corrected to the official schedule (0.75% for $1M–$4,999,999 → **$13,500**); function rewritten and unit-checked at seven price points |
+| 4 | **Dashboard figures not reproducible** — index showed "$3.5M–$18.4M" ranges that no engine output produced | Comparison table regenerated **directly from `docs/data/model_output.json`**, 6 paths × 5 date/horizon columns |
+| 5 | `properties.html` tables had no data arrays at all (empty `<tbody>`) | Confirmed arrays present in `assets/data.js`; page verified rendering 13 + 10 rows |
+| 6 | `js/app.js` charts plotted **hard-coded outcomes** dressed as simulation | Replaced with seeded Monte-Carlo (600 paired paths) and a labelled 1929-style reconstruction |
+| 7 | Pages workflow ran `scripts/check_links.py`, **which does not exist** → every deploy would fail | Rewritten as `scripts/check_site.py` (links, identifier leaks, rounding, conflict markers, required pages) and wired into the workflow |
+| 8 | Committed `model/__pycache__/*.pyc` | Removed and `__pycache__/`, `*.pyc` added to `.gitignore` |
+| 9 | Stale F11 flag said the Prop 19 allowance was an unverified "~$1M placeholder" | Verified against **BOE News Release NR 25-02** and LTA 2025/009: **$1,044,586**, up 2.15% from $1,022,600, for transfers 2/16/2025–2/15/2027 |
+
+### Verification performed this cycle
+
+- `python3 scripts/check_site.py` → 21 pages, **0 broken internal links, 0 identifier leaks, 0 unrounded table amounts** (statutory constants exempted), 1 warning (duplicate `black-swan.html`/`blackswan.html`).
+- Headless render of **all 21 pages** via jsdom `fromFile` with local resource loading: **0 JS errors, 0 broken links, 0 empty tables** on every page.
+- `python3 model/engine.py` re-run → regenerates `docs/data/model_output.json`; `python3 -m py_compile` clean.
+- Engine internal consistency: sell-path ending wealth implies a consistent CAGR across all horizons; reported honestly rather than adjusted.
+- Official re-checks this cycle: BOE NR 25-02 (Prop 19 allowance), SF Treasurer schedule + official measure digest (transfer tax), IRS Rev. Proc. 2025-32 (exclusion).
+- Privacy: no names, addresses, phone numbers or emails anywhere; all dollars rounded to $10 except published statutory constants.
+
+### Corrections recorded for the reader
+
+`flagged.html` now carries F13–F17 documenting the anomalies and the three corrections above, so a future
+reader can see what changed and why. Per the standing instruction, the decision and date are recorded next
+to each item.
+
+### Model result under the engine's own base case (2045 transfer, 20-year horizon)
+
+`C — Sell in year 1 → lump-sum stocks` **$23,413,400** · `F — Phased (30-month Treasuries)` **$22,191,860** ·
+`D — Live 5 yrs → sell (§121)` **$20,860,830** · `A — Live in A` **$17,187,640** ·
+`E — Rent 10 yrs → §1031` **$16,005,180** · `B — Rent A` **$13,804,840**.
+
+Selling in the year of death wins on the engine's own assumptions, because the §1014 step-up makes the gain
+approximately zero while the house is assumed to appreciate at 4.0% against 7.5% equities.
+**This is assumption-driven, not proven:** insurance and market rent for Property A remain blank.
