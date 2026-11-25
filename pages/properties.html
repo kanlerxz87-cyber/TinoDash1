@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Properties A &amp; B, Taxes, Utilities, Comps &amp; CapEx — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <h1>Properties A &amp; B: Verified Tax Histories, Local Rules, Comps &amp; 5-Year CapEx</h1>
+    <p class="lead">All personal identifiers removed. Every user-supplied dollar amount is rounded to the nearest <strong>$10</strong> increment; every external benchmark links to an official primary source.</p>
+
+    <!-- SIDE-BY-SIDE SUMMARY TABLE -->
+    <h2>1. Property Inventory &amp; Structural Baseline</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Property A (Cupertino, ZIP 95014)</th>
+            <th>Property B (San Francisco Outer Sunset, ZIP 94122)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Current Legal Ownership</strong></td>
+            <td>Family trust (projected transfer ~2040–2050)</td>
+            <td>Owned directly by prospective heir today (3-unit building)</td>
+          </tr>
+          <tr>
+            <td><strong>Est. Market Value (Nov 2026)</strong></td>
+            <td><strong>$3,100,000</strong> (range $2.85M – $3.35M)</td>
+            <td><strong>$1,800,000</strong> (range $1.65M – $2.00M)</td>
+          </tr>
+          <tr>
+            <td><strong>Latest Assessed Roll (Prop 13)</strong></td>
+            <td>2026: <strong>$550,540</strong> (+2.0%) · 2025: $539,740</td>
+            <td>2025: <strong>$114,250</strong> (+2.0%) · 2026 est.: ~$116,530</td>
+          </tr>
+          <tr>
+            <td><strong>Published County Ad Valorem Rate</strong></td>
+            <td>Prefix <code>013-xxx</code>: <strong>1.1671% – 1.1786%</strong> + 0.0039% SCVWD · <span class="badge badge-flagged">Exact Subcode Unverified</span></td>
+            <td>FY25–26: <strong>1.18268325%</strong> · FY26–27 (File 260971): <strong>1.18162182%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Transfer Tax at Sale</strong></td>
+            <td><strong>0.11%</strong> SCC ($0.55/$500) + <strong>$0</strong> Cupertino city tax + $92 recording</td>
+            <td><strong>0.75%</strong> ($1M–$4.99M) → jumps to <strong>2.25%</strong> at &ge;$5M!</td>
+          </tr>
+          <tr>
+            <td><strong>Rent / Occupancy Today</strong></td>
+            <td>Owner/grantor-occupied SFH; market rent est. <strong>$5,500–$7,200/mo</strong></td>
+            <td>2 units rented (<strong>$7,150/mo</strong> total) + 1 owner-usable unit (~$3,400/mo market)</td>
+          </tr>
+          <tr>
+            <td><strong>Utilities &amp; Solar (2026)</strong></td>
+            <td>Solar credit <strong>-$20 to -$10/mo</strong> (NEM 2.0 20-yr sunset → NBT risk); Water <strong>$100–$150/mo</strong></td>
+            <td>3-unit Water/Sewer <strong>$330–$400/mo</strong> (+11.5%/yr SFPUC hikes); Electric <strong>$30–$70/mo</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Insurance Assumption</strong></td>
+            <td>$1,500 guess <span class="badge badge-flagged">Flagged</span> → Model uses <strong>$2,800–$6,500/yr</strong></td>
+            <td>$1,500 guess <span class="badge badge-flagged">Flagged</span> → Model uses <strong>$4,800–$10,500/yr</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- $10-ROUNDED TAX HISTORIES -->
+    <h2>2. Anonymized Historical Property Tax &amp; Assessment Records ($10-Rounded)</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Property A (Cupertino, 95014) — 2014 to 2026</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th class="num">Property Tax ($10)</th>
+                <th class="num">YoY %</th>
+                <th class="num">Assessed ($10)</th>
+                <th class="num">YoY %</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="prop-a-history-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Property B (San Francisco, 94122) — 2016 to 2025</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th class="num">Property Tax ($10)</th>
+                <th class="num">YoY %</th>
+                <th class="num">Assessed ($10)</th>
+                <th class="num">YoY %</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="prop-b-history-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERIFIED LOCAL TAXES, RENT CONTROL & PROP H -->
+    <h2>3. Verified Local Property Taxes, Rent Control, SF Prop H &amp; Utilities</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Jurisdiction &amp; Rule</th>
+            <th>Verified Official Rate / Terms (Nov 2026)</th>
+            <th>Impact on Model &amp; Verification Status</th>
+            <th>Official Source</th>
+          </tr>
+        </thead>
+        <tbody id="local-rules-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- CUPERTINO RENTAL COMPS VS HUD SAFMR -->
+    <h2>4. Cupertino (95014) Market Rental Comps vs HUD FY2026 SAFMR</h2>
+    <p class="lead">Do not rely solely on HUD Section 8 Small Area Fair Market Rents (SAFMR); compare active private-market 95014 SFH rental comparables below.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Benchmark / Property Comparable</th>
+            <th class="num">Monthly Rent ($10)</th>
+            <th class="num">Gross Yield on $3.1M</th>
+            <th>Context &amp; Caveat</th>
+            <th>Official / Market Source</th>
+          </tr>
+        </thead>
+        <tbody id="rental-comps-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- 5-YEAR MAINTENANCE & CAPITAL PLAN -->
+    <h2>5. Five-Year Maintenance &amp; Capital Expenditure (CapEx) Plan — Both Buildings</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Property A (Cupertino) — 5-Year CapEx Reserve</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Capital System</th>
+                <th class="num">Low</th>
+                <th class="num">Base</th>
+                <th class="num">High</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="capex-a-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>Property B (SF 3-Unit) — 5-Year CapEx Reserve</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Capital System</th>
+                <th class="num">Low</th>
+                <th class="num">Base</th>
+                <th class="num">High</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="capex-b-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-properties.js"></script>
+</body>
+</html>
