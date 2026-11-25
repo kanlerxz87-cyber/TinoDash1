@@ -45,8 +45,11 @@ PRIVACY_PATTERNS = {
 
 def official(url: str) -> bool:
     """Only domains, not claims about a particular row, can be machine-checked."""
-    parsed = urllib.parse.urlsplit(url)
-    host = (parsed.hostname or '').lower().rstrip('.')
+    try:
+        parsed = urllib.parse.urlsplit(url)
+        host = (parsed.hostname or '').lower().rstrip('.')
+    except ValueError:
+        return False
     if parsed.scheme != 'https' or not host:
         return False
     return (host.endswith('.gov') or host.endswith('.mil') or host in OFFICIAL_EXACT or
@@ -121,8 +124,12 @@ class Document(HTMLParser):
         if attr and attrs.get(attr):
             ref = Ref(attrs[attr] or '', line, tag)
             self.refs.append(ref)
-            if tag == 'script' and urllib.parse.urlsplit(ref.url).scheme in ('http', 'https'):
-                self.external_scripts.append(ref)
+            if tag == 'script':
+                try:
+                    if urllib.parse.urlsplit(ref.url).scheme in ('http', 'https'):
+                        self.external_scripts.append(ref)
+                except ValueError:
+                    pass  # The reference pass reports malformed URLs without printing them.
 
     def handle_endtag(self, tag: str) -> None:
         if tag == 'tr' and self._rows:
@@ -201,7 +208,11 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
             if row.has_data and not any(official(url) for url in row.links):
                 findings.append(Finding('ERROR', name, row.line, 'table data row lacks its own HTTPS official-source link'))
         for line, action in doc.forms:
-            parsed = urllib.parse.urlsplit(action)
+            try:
+                parsed = urllib.parse.urlsplit(action)
+            except ValueError:
+                findings.append(Finding('ERROR', name, line, 'malformed form action; content suppressed'))
+                continue
             if parsed.scheme in ('http', 'https') or parsed.netloc:
                 findings.append(Finding('ERROR', name, line, 'form submits to a remote destination'))
             elif action:
@@ -212,7 +223,11 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
     for path, doc in docs.items():
         name = path.relative_to(root).as_posix()
         for ref in doc.refs:
-            parsed = urllib.parse.urlsplit(ref.url)
+            try:
+                parsed = urllib.parse.urlsplit(ref.url)
+            except ValueError:
+                findings.append(Finding('ERROR', name, ref.line, 'malformed URL; content suppressed'))
+                continue
             if parsed.scheme in ('http', 'https'):
                 external.add(urllib.parse.urldefrag(ref.url)[0])
                 if parsed.scheme != 'https':
@@ -256,20 +271,25 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
 
 
 def check_remote(urls: Iterable[str], timeout: float) -> list[Finding]:
-    """Network checks are opt-in; robots/403/timeouts are unconfirmed, not broken."""
+    """Opt-in network checks; URLs are sent to remote servers but never logged.
+
+    The caller must first inspect every URL privately, since path/query data may
+    itself be sensitive. Robots/403/timeouts are unconfirmed, not broken.
+    """
     findings: list[Finding] = []
-    for url in sorted(urls):
-        request = urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'DecisionDeskLinkAudit/1.0'})
+    for index, url in enumerate(sorted(urls), 1):
+        label = f'external link #{index}; URL suppressed'
         try:
+            request = urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'DecisionDeskLinkAudit/1.0'})
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 status = response.status
                 if status >= 400:
-                    findings.append(Finding('WARN', '<remote>', 1, f'HTTP {status}; manually review {url}'))
+                    findings.append(Finding('WARN', '<remote>', 1, f'HTTP {status}; {label}'))
         except urllib.error.HTTPError as exc:
             severity = 'ERROR' if exc.code in (404, 410) else 'WARN'
-            findings.append(Finding(severity, '<remote>', 1, f'HTTP {exc.code}; manually review {url}'))
-        except (urllib.error.URLError, TimeoutError, OSError) as exc:
-            findings.append(Finding('WARN', '<remote>', 1, f'unconfirmed ({type(exc).__name__}); manually review {url}'))
+            findings.append(Finding(severity, '<remote>', 1, f'HTTP {exc.code}; {label}'))
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
+            findings.append(Finding('WARN', '<remote>', 1, f'unconfirmed ({type(exc).__name__}); {label}'))
     return findings
 
 

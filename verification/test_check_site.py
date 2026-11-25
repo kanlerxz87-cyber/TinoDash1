@@ -2,9 +2,11 @@
 """Unit tests for the independent checker; all examples are fictitious."""
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
+from unittest.mock import patch
 
-from check_site import audit, check_privacy, official
+from check_site import audit, check_privacy, check_remote, official
 
 
 HEAD = '<!doctype html><html lang="en"><head><title>Test</title><meta name="viewport" content="width=device-width"></head><body>'
@@ -67,6 +69,22 @@ class SiteAuditTests(unittest.TestCase):
         findings = check_privacy(sample, 'page.html')
         self.assertTrue(findings)
         self.assertNotIn(sample, '\n'.join(map(str, findings)))
+
+    def test_malformed_urls_are_errors_not_exceptions(self):
+        self.write('index.html', HEAD + '<a href="https://[invalid">source</a><form action="https://[invalid"></form>' + TAIL)
+        self.assertFalse(official('https://[invalid'))
+        self.assertIn('malformed URL; content suppressed', self.errors())
+        self.assertIn('malformed form action; content suppressed', self.errors())
+
+    @patch('check_site.urllib.request.urlopen')
+    def test_remote_errors_suppress_urls_and_query_values(self, urlopen):
+        url = 'https://example.com/report?private=PRIVATE_TEST_VALUE'
+        urlopen.side_effect = urllib.error.HTTPError(url, 404, 'not found', None, None)
+        findings = check_remote([url], 1)
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].severity, 'ERROR')
+        self.assertNotIn('PRIVATE_TEST_VALUE', str(findings[0]))
+        self.assertNotIn('example.com', str(findings[0]))
 
     def test_generated_rows_get_manual_review_warning(self):
         self.write('index.html', HEAD + '<script src="app.js"></script>' + TAIL)

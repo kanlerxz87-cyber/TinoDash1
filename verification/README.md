@@ -9,11 +9,12 @@ Requires Python 3.9+ and no third-party packages. From the repository root:
 ```sh
 python3 -m unittest discover -s verification -p 'test_*.py' -v
 python3 verification/check_site.py /path/to/site-root
-# Optional, if outbound access to the official websites is permitted:
+# Optional, ONLY after privately verifying every URL contains no sensitive data:
+# This sends URL paths and queries to external servers.
 python3 verification/check_site.py /path/to/site-root --remote
 ```
 
-The checker reports local links and fragments, unresolved conflict markers, table rows without their own HTTPS official-domain link, remote form actions, and obvious potential identifiers. It also flags external scripts, storage/network APIs, and generated rows for manual review. Match contents are deliberately suppressed. Lookalike-domain exclusions are tested; a short allowlist covers official agencies whose domain is not `.gov`. An official domain alone does **not** establish that a link supports the row. Search, social, CDN and archived sources are not accepted as official just because they link to government data. Warnings and inaccessible URLs need human review; blocked `HEAD` requests are *unconfirmed*, not automatically broken.
+The checker reports local links and fragments, unresolved conflict markers, table rows without their own HTTPS official-domain link, remote form actions, and obvious potential identifiers. It also flags external scripts, storage/network APIs, and generated rows for manual review. Match contents are deliberately suppressed. Lookalike-domain exclusions are tested; a short allowlist covers official agencies whose domain is not `.gov`. An official domain alone does **not** establish that a link supports the row. Search, social, CDN and archived sources are not accepted as official just because they link to government data. Warnings and inaccessible URLs need human review; blocked `HEAD` requests are *unconfirmed*, not automatically broken. Optional remote-check output suppresses URLs, but the requests themselves transmit the complete URL to remote servers, so never enable them before independently reviewing those URLs for sensitive content.
 
 ### Value-suppressed triage
 
@@ -41,7 +42,7 @@ npm test --prefix verification
 node verification/check_browser.cjs /path/to/site-root
 ```
 
-The browser intercepts requests and serves local files under a virtual project subpath, blocks external resources and non-GET requests, suppresses browser console/error details, checks rendered data rows for their own official links, dispatches existing controls and scenario buttons without entering private data, and flags uncaught script errors and viewport overflow. Cookie/storage writes are review warnings. Do not load an untrusted site in this test: it is not a hardened security sandbox. It checks only a subset of interactions and cannot establish visual quality, anonymity, historical containment, or that linked sources substantiate claims. For real live verification use an authorized browser and inspect a safely published version separately.
+The browser serves local files under a virtual project subpath, intercepts external resources and non-GET requests, suppresses browser console/error details, checks rendered data rows for their own official links, dispatches existing controls and scenario buttons without entering private data, and flags uncaught script errors and viewport overflow. It also uses DNS and proxy restrictions as defense in depth, but this is not an OS network sandbox; use an isolated environment for sensitive material and never load untrusted sites. Cookie/storage writes are review warnings. The screen checks only a subset of interactions and cannot establish visual quality, anonymity, historical containment, or that linked sources substantiate claims. For real live verification use an authorized browser and inspect a safely published version separately.
 
 ## How to use results
 
