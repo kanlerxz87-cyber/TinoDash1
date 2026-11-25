@@ -1,0 +1,34 @@
+# Privacy incident and release advisory
+
+**Status: not contained.** Snapshot: 25 November 2026, UTC. This document deliberately excludes household data, addresses, parcel identifiers, property-specific amounts, and copies of sensitive material. It is a coordination aid, not confirmation that the site or its financial analysis is safe to use.
+
+## What was observed
+
+- This session started from an initial README-only commit. Multiple other sessions subsequently merged overlapping implementations to public `main`.
+- A value-suppressed comparison identified household-specific information in the publicly reachable repository. Rounding to $10 does not remove linkage risk. A further pull request with the same problem was closed without deleting its branch.
+- GitHub reported that the repository was public and the Pages deployment was built. A request to make the repository private and a request to delete the Pages site both returned HTTP 403, “Resource not accessible by integration.” Neither operation succeeded.
+- The situation is therefore **not contained**. A live site, a deletion in a later commit, or a passing build is not evidence of privacy.
+
+## Immediate response
+
+1. **An administrator should make the repository private and unpublish Pages immediately.** These are separate controls; verify both the repository visibility and the deployed endpoint afterward. GitHub documents the [visibility change consequences](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) and [unpublishing Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/unpublishing-a-github-pages-site). Depending on the plan, making the repository private may itself unpublish Pages; verify rather than assume.
+2. Halt further merges, deployments and pushes containing household information while the incident is investigated. Preserve work without reintroducing sensitive data. Do not put values or identifiers in public issues, pull requests, logs or advisory documents.
+3. Coordinate an authorized, repository-wide review and removal of sensitive material from the current trees **and history**, including all branches and tags, pull-request references, build artifacts and logs. Follow [GitHub’s sensitive-data-removal guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository). The required history rewrite affects commit hashes and can conflict with parallel work; a later deletion commit alone is insufficient.
+4. Ask GitHub Support about cached views and pull-request references as described in that guidance. Investigate forks, clones and third-party caches separately; cleanup cannot guarantee recall of copies already obtained. GitHub notes that public forks are not automatically made private when the upstream repository becomes private.
+5. Before any republication, obtain an independent privacy review of the complete public tree, relevant history and deployment artifacts. Use only fictional, explicitly labeled inputs and outputs in the public site; keep the actual estate inventory and analysis in an appropriately protected private environment. A successful string scan is not proof of anonymization. [NIST warns about linkage attacks on de-identified data](https://www.nist.gov/blogs/cybersecurity-insights/differential-privacy-privacy-preserving-data-analysis-introduction-our).
+
+This session cannot perform a repository-wide history rewrite or change other sessions’ branches. The needed repository-administration permission was not available to its GitHub integration.
+
+## Source corrections for the eventual integration owner
+
+These are official-source checks, not a complete audit of any site's claims or calculations. Legal and tax rules must be rechecked at the eventual transfer date.
+
+- [IRS Revenue Procedure 2026-35](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf) and the [IRS announcement](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts) publish a 2027 federal basic estate exclusion of $15,480,000. A deceased spouse's unused exclusion is conditional on the applicable facts and election; it is not an automatic second exemption. Future years are not verified merely by projecting inflation.
+- [California FTB Form 540 instructions](https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html) compute the 1% Behavioral Health Services Tax on taxable income above $1 million for the resident return. The [Schedule CA instructions](https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html) say California treats long- and short-term capital gains as regular income. Do not apply the 1% to the full transaction price or assume it applies to every gain.
+- [BOE Proposition 19 fact sheet](https://www.boe.ca.gov/pdf/pub801.pdf): the eligible transferee must establish primary residence within one year; delayed exemption or exclusion claims may have prospective effect. Do not incorrectly state that every late claim permanently loses all relief. Eligibility, facts and deadlines require assessor and adviser review.
+- San Francisco's November 2026 **Proposition H** is the Muni parcel-tax measure. Its [legal text](https://api.sf.gov/documents/52842/Legal_Text_3X0F1JU.pdf), section 1805, states the separate single-family and multifamily schedules; the [official results](https://www.sfelections.org/results/20261103w/index.html) were preliminary in the November 23 update. The single-family tier above 5,000 square feet is $1.99 per additional square foot in the legal text, whereas the [Controller's economic report](https://media.api.sf.gov/documents/MUNI_parcel_tax_economic_impact_final.pdf) says $1.19. Flag the discrepancy and rely on the legal text for the proposed formula, subject to final status and application. Do not confuse this measure with older propositions also labeled H.
+- For a Treasury staging illustration, [IRS Topic 403](https://www.irs.gov/taxtopics/tc403) says Treasury interest is federally taxable and exempt from state and local income taxes. The [SEC explains bond-price interest-rate risk](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-86). A staged investment can miss a rebound, and maturing bills may need to be reinvested at lower rates; neither the yield nor downside protection is guaranteed.
+
+## Release gate
+
+Do not represent the exposure as contained, the historic cleanup as complete, or the site as privacy-verified until independent checks confirm each claim. Do not recommend an actual household decision using synthetic illustrations or missing private records.

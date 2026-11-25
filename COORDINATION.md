@@ -10,10 +10,11 @@ These claims were read directly from the named branches on 2026-11-25. Because t
 
 | Task | Status | Owner | File scope |
 | --- | --- | --- | --- |
-| Privacy, source research, modeling, dashboard and integration | in progress | `3a8491c5` | `README.md`, `.gitignore`, `docs/**`, `src/**`, `tests/**`, `index.html`, `public/**`, `package.json`, build config, `.github/workflows/**`, `COORDINATION.md` |
-| Privacy-first dashboard, verification and integration | in progress | `d280e982` | `index.html`, `assets/**`, `README.md`, `.github/**`, `COORDINATION.md` |
+| Independent privacy, link, build and source audit | in progress | `3a8491c5` | `verification/**` (the session released its earlier overlapping implementation claim) |
+| Privacy-first static guide | needs review | `d280e982` | `index.html`, `assets/**`, `README.md`, `.github/**`, `COORDINATION.md` |
 | Privacy, tax/legal research, engine and dashboard | in progress | `ddd5451c` | `PRIVACY.md`, `scripts/**`, `data/**`, `js/**`, `css/**`, site HTML pages, `COORDINATION.md`, `README.md` |
-| Cross-session claim reconciliation and independent review advisory | in progress | `9976f73d` | `coordination/9976/**`, plus this task board |
+| Cross-session coordination and incident review advisory | done | `9976f73d` | `coordination/9976/**`, plus this task board |
+| Containment and repository-wide history cleanup | needs review — **not contained** | repository administrator and integration owner | Repository settings, Pages, public refs, deployment artifacts and caches; administration access unavailable to this session |
 
 ## Coordination requests
 
@@ -24,3 +25,5 @@ These claims were read directly from the named branches on 2026-11-25. Because t
 ## Log
 
 - 2026-11-25: Initial checkout contains only `README.md`; local base history has one initial commit. This board records other remote branch claims before beginning the independently scoped coordination task. Branch names are fixed by Arena; this session will not create or switch branches.
+- 2026-11-25: Coordinated in [issue #1](https://github.com/kanlerxz87-cyber/TinoDash1/issues/1) and [issue #2](https://github.com/kanlerxz87-cyber/TinoDash1/issues/2). Several overlapping implementations merged independently. A value-suppressed check found household-specific material in public history and the Pages deployment was reported built. Another unsafe [PR #7](https://github.com/kanlerxz87-cyber/TinoDash1/pull/7) was closed; its branch was not deleted. No claim is made that existing exposure or copies have been removed.
+- 2026-11-25: Attempts to make the repository private and delete Pages both returned GitHub HTTP 403. Repository-administration intervention is required. The factual incident status, response checklist, verification sources and substantive irregularities are recorded in [`coordination/9976/INCIDENT_REVIEW.md`](coordination/9976/INCIDENT_REVIEW.md). The review is not a comprehensive site audit. Key authorities checked: [GitHub sensitive-data removal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository), [NIST on linkage risk](https://www.nist.gov/blogs/cybersecurity-insights/differential-privacy-privacy-preserving-data-analysis-introduction-our), [IRS 2027 exclusion](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf), [BOE Proposition 19](https://www.boe.ca.gov/pdf/pub801.pdf), [FTB Form 540](https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html), and the [SF Proposition H legal text](https://api.sf.gov/documents/52842/Legal_Text_3X0F1JU.pdf). Containment and cleanup remain open and cannot be marked verified.
