@@ -16,7 +16,7 @@ const chromium = chromiumBundle.default;
 
 const ORIGIN = 'https://verification.invalid';
 const BASE = '/project/';
-const SKIP = new Set(['.git', 'node_modules', 'verification', '__pycache__', '.next', 'coverage']);
+const SKIP = new Set(['.git', 'node_modules', '__pycache__', '.next', 'coverage']);
 const EXACT_OFFICIAL = new Set([
   'sccassessor.org', 'www.sccassessor.org', 'sfmta.com', 'www.sfmta.com',
   'sfelections.org', 'www.sfelections.org'
@@ -207,12 +207,16 @@ async function checkPage(browser, root, file, delayMs) {
 async function main() {
   const args = process.argv.slice(2);
   if (!args.length || args.includes('--help')) {
-    console.log('Usage: node verification/check_browser.cjs SITE_ROOT [--wait-ms N]');
+    console.log('Usage: node verification/check_browser.cjs SITE_ROOT [--wait-ms N] [--show-paths]');
     return args.includes('--help') ? 0 : 2;
   }
   const rootArg = args[0];
-  let delayMs = 150;
-  if (args[1] === '--wait-ms') delayMs = Number(args[2]);
+  let delayMs = 150, showPaths = false;
+  for (let i = 1; i < args.length; i++) {
+    if (args[i] === '--show-paths') showPaths = true;
+    else if (args[i] === '--wait-ms' && i + 1 < args.length) delayMs = Number(args[++i]);
+    else { console.error('ERROR: invalid option'); return 2; }
+  }
   if (!Number.isFinite(delayMs) || delayMs < 0 || delayMs > 5000) {
     console.error('ERROR: invalid delay'); return 2;
   }
@@ -226,10 +230,11 @@ async function main() {
   catch (error) { console.error(`ERROR: browser could not launch (${error.name}); check platform and shared-library prerequisites`); return 2; }
   let errors = 0, warnings = 0, controlCount = 0, buttonCount = 0;
   try {
-    for (const file of pages) {
+    for (const [index, file] of pages.entries()) {
       const {relative, events, result} = await checkPage(browser, root, file, delayMs);
+      const label = showPaths ? relative : `<file #${index + 1}>`;
       function report(level, message) {
-        console.log(`${level}: ${relative}: ${message}`);
+        console.log(`${level}: ${label}: ${message}`);
         if (level === 'ERROR') errors++; else warnings++;
       }
       if (!result) { report('ERROR', 'page did not finish loading or executing'); continue; }

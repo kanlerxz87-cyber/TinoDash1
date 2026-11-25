@@ -15,8 +15,11 @@ import sys
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from pathlib import Path
 
-EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', 'verification', '.next'}
-TEXT_EXTENSIONS = {'.html', '.htm', '.js', '.mjs', '.json', '.css', '.md', '.txt', '.csv', '.py', '.yml', '.yaml'}
+EXCLUDED_DIRS = {'.git', 'node_modules', '__pycache__', '.next'}
+TEXT_EXTENSIONS = {
+    '.html', '.htm', '.js', '.mjs', '.cjs', '.jsx', '.ts', '.tsx', '.json',
+    '.css', '.md', '.txt', '.csv', '.py', '.yml', '.yaml', '.svg', '.xml',
+}
 # Prevent years, rates and unit counts from being mistaken for monetary seeds.
 NON_AMOUNT_KEY = re.compile(r'(?:^|_)(?:year|years|yr|date|rate|ratio|pct|percent|percentage|chg|change|month|months|units|index)(?:_|$)', re.I)
 

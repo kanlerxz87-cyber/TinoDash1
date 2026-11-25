@@ -21,8 +21,8 @@ function fixture(content, extras = {}) {
   }
   return root;
 }
-function run(root) {
-  return spawnSync(process.execPath, [script, root, '--wait-ms', '80'], {encoding: 'utf8', timeout: 30000});
+function run(root, extra = []) {
+  return spawnSync(process.execPath, [script, root, '--wait-ms', '80', ...extra], {encoding: 'utf8', timeout: 30000});
 }
 
 test('official URL allowlist rejects lookalikes', () => {
@@ -85,6 +85,17 @@ test('POST, beacons and socket attempts are blocked without printing their conte
     assert.match(result.stdout, /non-GET request/);
     assert.match(result.stdout, /a beacon, socket or peer connection was blocked/);
     assert.doesNotMatch(result.stdout + result.stderr, /PRIVATE_TEST_VALUE|example\.invalid/);
+  } finally { fs.rmSync(root, {recursive: true, force: true}); }
+});
+
+test('potentially identifying filenames are hidden unless explicitly requested', () => {
+  const root = fixture('', {'private-filename.html': head + '<table><tr><td>Sample</td></tr></table>' + tail});
+  try {
+    const hidden = run(root);
+    const shown = run(root, ['--show-paths']);
+    assert.equal(hidden.status, 1, hidden.stderr + hidden.stdout);
+    assert.doesNotMatch(hidden.stdout + hidden.stderr, /private-filename/);
+    assert.match(shown.stdout, /private-filename\.html/);
   } finally { fs.rmSync(root, {recursive: true, force: true}); }
 });
 

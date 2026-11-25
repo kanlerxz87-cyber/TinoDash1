@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Unit tests for the independent checker; all examples are fictitious."""
+import subprocess
+import sys
 import tempfile
 import unittest
 import urllib.error
@@ -91,6 +93,23 @@ class SiteAuditTests(unittest.TestCase):
         self.write('app.js', "document.body.innerHTML = '<table><tr><td>sample</td></tr></table>';\n")
         findings, _ = audit(self.root)
         self.assertTrue(any('runtime official-source-link audit' in f.message for f in findings))
+
+    def test_cli_hides_potentially_identifying_filenames_by_default(self):
+        self.write('private-filename.html', HEAD + '<table><tr><td>Example</td></tr></table>' + TAIL)
+        base = [sys.executable, str(Path(__file__).with_name('check_site.py')), str(self.root)]
+        hidden = subprocess.run(base, capture_output=True, text=True)
+        shown = subprocess.run(base + ['--show-paths'], capture_output=True, text=True)
+        self.assertEqual(hidden.returncode, 1)
+        self.assertIn('<file #1>', hidden.stdout)
+        self.assertNotIn('private-filename', hidden.stdout)
+        self.assertIn('private-filename.html', shown.stdout)
+
+    def test_published_verification_folder_and_extra_text_types_are_screened(self):
+        self.write('index.html', HEAD + '<h1>Hello</h1>' + TAIL)
+        self.write('verification/fixture.cjs', "const sample = '9876 Fictional Avenue';")
+        findings, _ = audit(self.root)
+        self.assertTrue(any(f.path == 'verification/fixture.cjs' and 'possible street address' in f.message for f in findings))
+        self.assertNotIn('9876 Fictional Avenue', '\n'.join(map(str, findings)))
 
     def test_merge_conflicts_are_errors(self):
         self.write('index.html', HEAD + '\n<<<<<<< HEAD\nfirst\n=======\nsecond\n>>>>>>> other\n' + TAIL)

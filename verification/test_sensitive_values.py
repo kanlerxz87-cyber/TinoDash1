@@ -50,6 +50,18 @@ class SensitiveValueTests(unittest.TestCase):
             self.assertIn('private-[number suppressed].html', shown.stdout)
             self.assertNotIn('12673', shown.stdout)
 
+    def test_public_verification_directory_and_cjs_are_scanned(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'site'
+            (root / 'verification').mkdir(parents=True)
+            seed = Path(tmp) / 'private.json'
+            seed.write_text(json.dumps({'amount': 12673}))
+            (root / 'verification' / 'fixture.cjs').write_text('const x = 12673;')
+            result = subprocess.run([sys.executable, str(SCRIPT), '--seed-json', str(seed), '--field', 'amount', '--root', str(root)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 1)
+            self.assertIn('1 content', result.stdout)
+            self.assertNotIn('12673', result.stdout)
+
     def test_clean_scan_and_no_seeds_are_distinct(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / 'site'

@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Iterable
 
-SKIP_DIRS = {'.git', 'node_modules', 'verification', '__pycache__', '.next', 'coverage'}
+SKIP_DIRS = {'.git', 'node_modules', '__pycache__', '.next', 'coverage'}
 OFFICIAL_EXTRA = ('stlouisfed.org', 'federalreservehistory.org')
 # Official agency domains that do not end in .gov. Exact host matches only:
 # the county assessor redirects to asr.santaclaracounty.gov; SFMTA and the
@@ -145,7 +145,7 @@ class Document(HTMLParser):
 def files_under(root: Path, suffixes: Iterable[str]) -> Iterable[Path]:
     for path in sorted(root.rglob('*')):
         relative = path.relative_to(root)
-        if path.is_file() and not any(part in SKIP_DIRS for part in relative.parts) and path.suffix.lower() in suffixes:
+        if path.is_file() and not path.is_symlink() and not any(part in SKIP_DIRS for part in relative.parts) and path.suffix.lower() in suffixes:
             yield path
 
 
@@ -248,7 +248,10 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
                 if target in docs and fragment not in docs[target].ids:
                     findings.append(Finding('ERROR', name, ref.line, 'local fragment target not found'))
 
-    text_extensions = {'.html', '.htm', '.js', '.mjs', '.json', '.css', '.md', '.py', '.yaml', '.yml'}
+    text_extensions = {
+        '.html', '.htm', '.js', '.mjs', '.cjs', '.jsx', '.ts', '.tsx', '.json',
+        '.css', '.md', '.txt', '.csv', '.py', '.yaml', '.yml', '.svg', '.xml',
+    }
     for path in files_under(root, text_extensions):
         name = path.relative_to(root).as_posix()
         try:
@@ -257,10 +260,10 @@ def audit(root: Path) -> tuple[list[Finding], set[str]]:
             continue
         if CONFLICT_MARKER.search(text):
             findings.append(Finding('ERROR', name, 1, 'unresolved merge-conflict marker in published source'))
-        if path.suffix.lower() in {'.js', '.mjs', '.json'}:
-            # Do not emit the matching data, which could itself be sensitive.
+        if path.suffix.lower() not in {'.html', '.htm'}:
+            # HTML was screened above; do not emit matched data from any file.
             findings.extend(check_privacy(text, name))
-        if path.suffix.lower() in {'.js', '.mjs'}:
+        if path.suffix.lower() in {'.js', '.mjs', '.cjs', '.jsx', '.ts', '.tsx'}:
             if re.search(r'\b(fetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket\s*\()', text):
                 findings.append(Finding('WARN', name, 1, 'network API present; verify no private data leaves the browser'))
             if re.search(r'\b(localStorage|sessionStorage|indexedDB)\b', text):
@@ -298,6 +301,7 @@ def main() -> int:
     parser.add_argument('root', nargs='?', default='.', help='static site root to audit')
     parser.add_argument('--remote', action='store_true', help='also check external HTTP URLs; blocked requests remain unconfirmed')
     parser.add_argument('--timeout', type=float, default=8.0, help='timeout per remote request in seconds')
+    parser.add_argument('--show-paths', action='store_true', help='include paths ONLY after reviewing names for personal information')
     args = parser.parse_args()
     root = Path(args.root)
     if not root.is_dir():
@@ -306,8 +310,13 @@ def main() -> int:
     findings, urls = audit(root)
     if args.remote:
         findings.extend(check_remote(urls, args.timeout))
+    labels: dict[str, str] = {}
     for finding in findings:
-        print(finding)
+        if args.show_paths or finding.path in {'.', '<remote>'}:
+            path_label = finding.path
+        else:
+            path_label = labels.setdefault(finding.path, f'<file #{len(labels) + 1}>')
+        print(f'{finding.severity}: {path_label}:{finding.line}: {finding.message}')
     errors = sum(item.severity == 'ERROR' for item in findings)
     warnings = sum(item.severity == 'WARN' for item in findings)
     print(f'Checked {len(list(files_under(root.resolve(), {".html", ".htm"})))} HTML files; '
