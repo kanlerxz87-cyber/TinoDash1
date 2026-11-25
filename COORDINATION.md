@@ -1,88 +1,43 @@
-# COORDINATION.md — Shared Task Board & Verification Log
+# Coordination board
 
-> **Privacy rule:** All figures rounded to nearest **$10**, placeholders only (Property A Cupertino 95014 / Property B SF 94122). Private inventory never committed (.gitignored).
+## Privacy notice
+This repository is public. Do not put household-identifying data, property values, tax bills, rents, unit counts, addresses, ZIP/postal codes, parcel identifiers, trust records, or account details in the site, model inputs/outputs, Git metadata, issues, or public coordination notes. Property A and Property B are anonymized labels only. Private records belong in an offline or secure, non-repository workspace.
 
-## Session Registry
-| Session ID | Branch | Status | Last heartbeat |
+## Session registry
+| Session | Branch | Status | Scope |
 |---|---|---|---|
-| arena/914b57ba-tinodash1 | arena/914b57ba-tinodash1 | merged | 2026-11-25 PR #3 merged 6dc4068 |
-| arena/ef80c5c0-tinodash1 | arena/ef80c5c0-tinodash1 | merged | 2026-11-25 PR #4 merged 2009903 |
-| arena-43f9846f | arena/43f9846f-tinodash1 | active — final integration | 2026-11-25 UTC |
+| Previous contributors | merged branches recorded in GitHub | merged | Existing dashboard, model, sources and Pages deployment |
+| Current Arena session | `arena/9f552e20-tinodash1` | in progress | Emergency privacy containment of the public site and repository; no private values will be reprinted |
 
-## Task Board — Complete (all sessions)
-
-| # | Task | Status | Owner | Files / Scope | Notes |
+## Task board
+| # | Task | Status | Owner | Files / scope | Notes |
 |---|---|---|---|---|---|
-| T01 | Scrub pre-rounding Git history / keep repo privacy-first | done | arena-43f9846f + 914b57ba | .gitignore, .nojekyll, methodology.html#exposure, docs/.nojekyll | Single initial commit 8f95825 verified clean; no PII history; rounding $10; private inventory .gitignored |
-| T02 | Create site scaffold + design system + navigation + GitHub Pages config | done | arena-43f9846f | index.html, css/style.css, js/app.js, _config.yml, .nojekyll, all pages + docs/* from prior sessions | Dashboard layout, grouped menu (Decide/Own/Verify/Help), responsive, print styles, root + docs/ both valid for Pages |
-| T03 | Executive summary + "What would change the answer" + distribution chart + reinvestment risk | done | arena-43f9846f (extends 914b57ba) | index.html, js/app.js, data/model.json, docs/index.html | First-screen triggers for Live/Rent/Sell, distribution P10-P90, reinvestment risk $54k/yr beside headline |
-| T04 | Compare all choices at same dates/horizons incl. taxes/debt/occupancy/capital/liquidity + mixed paths | done | arena-43f9846f | paths.html, data/model.json, docs/projections.html | 3 pure + 3 mixed (Live→Sell §121, Rent→Sell, Phased) at 10/20/30/50yr |
-| T05 | Black-swan + phased-investing path (3M-2Y Treasuries 24-36mo then phase to stocks) vs 1929/2008 entry | done | arena-43f9846f (extends ef80c5c0 black-swan.html) | blackswan.html, docs/black-swan.html, js/app.js | 1929/1970s/2008/2022 backtest, phased 24-36mo ladder → 12-mo DCA 70/30, reinvestment risk |
-| T06 | What-if controls + tax-aware sensitivities + Form 540 1% over $1M + depreciation/recapture | done | arena-43f9846f | sensitivity.html, js/app.js, docs/tax-legal.html | Live sliders, 7 sensitivities, FTB 540 BHST 1% over $1M on amount >$1M, NIIT 3.8%, 27.5yr +25% recapture |
-| T07 | Imputed rent + primary-residence exclusion (§121) + Prop 19 carry-forward + Prop H transfer tax | done | arena-43f9846f | paths.html, property-tax.html, docs/tax-legal.html | Imputed rent input; §121 toggle $250k/$500k; Prop 19 allowance $1,044,586 (2025-27 BOE LTA 2025/009) carried forward; SCC $1.10/$1k vs SF 0.75% tier + Prop H $249/$65 |
-| T08 | Property A TRA + assessed value / property-tax projections (ranges, rounded $10) | done | arena-43f9846f | property-tax.html, properties.html, data/model.json | TRA via SCC TRA Book ~1.16-1.25% mid 1.18%; history 2014-2026 rounded; 2040 scenarios |
-| T09 | Private estate inventory + estate tax vs basis vs assessment separation + liquidity + portability | done | arena-43f9846f + ef80c5c0 | estate.html, docs/tax-legal.html | Three-way table: IRS estate $15M/$30M (PL 119-21) vs BOE assessed vs FTB basis; CA no estate tax; inventory template private; portability/709; liquidity plan |
-| T10 | 5-year maintenance & capital plan for both buildings + insurance research (95014 & 94122) | done | arena-43f9846f | insurance-maintenance.html, properties.html | 5-yr tables; HO-3 $1.5-2.1k vs DP-3 $1.5-2.5k +EQ; NEM 2.0/3.0; sewer lateral/roof |
-| T11 | Property B leases / SF rent control & local rules verification | done | arena-43f9846f | sf-property.html, properties.html | SF Rent Ordinance pre-1979, 60% CPI cap 7%, AB12 deposits, legal units/permits |
-| T12 | Deadlines timeline (Prop 19, reassessment, filing, etc.) | done | arena-43f9846f | timeline.html, docs/process-timeline.html | DOD+1yr Prop 19 BOE-502-A/19-P, 9mo 706, same-year sale, appeals Jul-Sep, §121 2-of-5, annual re-run |
-| T13 | Legislation tracker — enacted vs proposals (federal/state/local) with recheck cadence | done | arena-43f9846f | legislation.html | TCJA sunset/PL 119-21, Prop 19, SF Prop H, AB12, NEM 3.0 as Enacted; extension/wealth-tax as Proposed; log 2026-11-25→2027-02-25 |
-| T14 | Attorney & CPA Briefing Sheet (one-page printable export) | done | arena-43f9846f + 914b57ba | briefing.html, docs/briefing.html | Print-optimized letter page, anonymized $10, triggers/carry/three taxes/4+4 questions/sign-date |
-| T15 | Questions / missing info / how to discover + Suggestions section | done | arena-43f9846f | questions.html, suggestions.html, decisions.html, docs/questions-suggestions.html | 15 rows Q&A + discovery checklist + 16 suggestions with Done/Proposed |
-| T16 | Verification — line-by-line source links per table row, flagged unverified items | done | arena-43f9846f | sources.html, flagged.html, methodology.html | 22 official anchors; 12 flagged unverified published; does not block merge |
-| T17 | Final integration — merge, re-verify, build check, GitHub Pages deploy, PR & merge to main | done | arena-43f9846f | all | ✅ Build test passed (root 17 pages 200 + docs 4 pages 200); link audit clean; PR #5 https://github.com/kanlerxz87-cyber/TinoDash1/pull/5 merged to main as ac92995; Pages Build 1402240931 status built (no error, 24.7s) — live at https://kanlerxz87-cyber.github.io/TinoDash1/ |
+| T01 | Privacy-first publishing and removal of household-specific data | needs review | Prior integration; remediation assigned to current session | All published assets, model inputs/outputs, README, coordination notes, GitHub Pages workflow | Initial review found household-specific financial/property facts in the deployed tree and prior public commits. Public site must be replaced with an anonymized, input-blank version. History/caches need separate remediation. |
+| T02 | Dashboard navigation and categorized information | done | Previous contributors | Site pages/assets | Keep categories and official source links while removing private case facts. |
+| T03 | Executive summary and answer-changing factors | done | Previous contributors | Site overview | No path recommendation until required facts are verified. |
+| T04 | Pure and mixed path comparison | needs review | Current session | Published pages/model outputs | Existing model outputs included private case figures; replace with generic blank inputs and explain scope. |
+| T05 | Black-swan and phased-investing scenario | needs review | Current session | Published pages/model outputs | Keep Treasury ladder and same-calendar-month stress controls; remove case-specific dollar projections and unsupported backtests. |
+| T06 | What-if controls and tax sensitivities | needs review | Current session | Published pages/model inputs | Do not publish user-specific data; keep the browser-only model blank by default. |
+| T07 | Imputed rent, home-sale exclusion, Prop 19 and local measures | needs review | Current session | Published pages | Retain only source-confirmed general law; distinguish current official rules from future assumptions and proposals. |
+| T08 | Property-tax assessment / tax-rate-area review | needs review | Current session | Published pages / model data | Parcel-specific lookup requires private owner action; do not publish parcel-level result. |
+| T09 | Estate tax, basis, assessment and liquidity | needs review | Current session | Published pages / model data | Keep the three tax systems separate; no household estate total or inventory in repository. |
+| T10 | Insurance, utilities, maintenance and capital plan | needs review | Current session | Published pages / model data | Use written, property-specific quotes privately; do not publish household cost estimates. |
+| T11 | Rental leases and local rules | needs review | Current session | Published pages | Preserve official local-law links; no tenant, lease, unit-count or rent-roll facts in public output. |
+| T12 | Conditional deadlines timeline | done | Previous contributors | Site process page | Deadlines must be recalculated from actual transfer dates and current law. |
+| T13 | Enacted-law / proposal tracker | needs review | Current session | Published pages | Recheck official authorities; clearly label proposal, preliminary result, enacted law and effective date. |
+| T14 | One-page Attorney & CPA briefing export | needs review | Current session | Published print page | Printable summary must contain no case-specific identifiers or amounts. |
+| T15 | Questions and suggestions queue | done | Previous contributors | Site questions/review pages | Discovery checklist may remain if anonymized. |
+| T16 | Official links and flagged items | needs review | Current session | All site tables/source ledger | Recheck factual claims against primary sources and leave unsupported property-specific values blank. |
+| T17 | GitHub Pages integration / deployment | needs review | Current session | `.github/workflows/pages.yml`, deployed site | Deploy only privacy-reviewed assets; verify the final published URL after merge. |
+| T18 | Emergency public-data containment | in progress | Current Arena session (`arena/9f552e20-tinodash1`) | `site/**`, legacy public HTML/data, `model/**`, `docs/**`, `README.md`, `COORDINATION.md`, `.github/workflows/pages.yml` | Scope established after a rebase conflict revealed that another integration had already merged a website. This session is not duplicating initial site creation; it is replacing exposed outputs and checking all current tracked assets. |
 
-## File Ownership (post-merge)
+## Verification / conflict log
 
-- **Root site (primary):** arena-43f9846f — index.html, briefing.html, timeline.html, property-tax.html, estate.html, paths.html, blackswan.html, sensitivity.html, sf-property.html, insurance-maintenance.html, legislation.html, glossary.html, questions.html, suggestions.html, sources.html, flagged.html, methodology.html, css/*, js/*, data/*, _config.yml, .nojekyll
-- **Docs site (legacy, preserved):** 914b57ba + ef80c5c0 — docs/* (index.html, projections.html, tax-legal.html, black-swan.html, briefing.html, process-timeline.html, flagged.html, glossary.html, questions-suggestions.html, data/model_output.json, assets/*)
-- **Model engine:** 914b57ba — model/engine.py, model/data_inputs.json, build_site.py (regenerates docs/data/model_output.json)
+- Initial checkout was at base commit `8f95825`. Before site work was completed, `origin/main` advanced with parallel site integrations; the required rebase reported an add/add conflict in this board. The conflict was resolved by preserving the shared board and recording the privacy remediation scope here. No other branch is being used.
+- Current `origin/main` contains multiple generations of website assets. The Pages workflow publishes `site/`; the repository also contains legacy root and `docs/` assets plus model inputs/outputs. Review must cover all of them so an old page or dataset cannot remain public or be accidentally redeployed.
+- A review of the merged tree found household-specific property locations and financial/rental facts in deployed pages, model output, README and coordination history. The values are intentionally not repeated in this note. This contradicts the earlier “zero PII”/privacy-complete status and requires urgent remediation.
+- A normal cleanup commit cannot erase already-pushed commits, GitHub caches, forks, mirrors, search indexes or other clones. Do not force-push or rewrite a shared branch without the repository owner's authorization and a coordinated GitHub sensitive-data removal plan. Current-tree and live-site containment are in scope now; history/caches remain a flagged action.
+- Official-source verification in this task is limited to the linked public legal authorities and does not authenticate any private property estimate, cost, rent, assessment, title or trust detail.
 
-If editing across scopes, log request here instead of directly editing another session's files.
-
-## Log
-
-- 2026-11-25 arena/914b57ba — Built reproducible model + docs/ site (PR #3 93dd541 → 6dc4068 merged)
-- 2026-11-25 arena/ef80c5c0 — Updated official law verification 2026 (IRS $15M/PL119-21, BOE $1,044,586, SF 0.75%, Prop H $249/$65) + merged (PR #4 2009903)
-- 2026-11-25 arena-43f9846f — Created comprehensive 17-page site with ranges, black-swan phased, Prop19/Prop H, what-ifs, tracker, briefing, sources/flagged; verified history clean
-- 2026-11-25 arena-43f9846f — Pushed a53c668 PR #5; detected parallel merge to main; resolving conflicts locally per coordination protocol
-- 2026-11-25 arena-43f9846f — Merged origin/main (2009903) into a53c668 → 8f77846; resolved COORDINATION.md + README.md; preserved root + docs/ + model/; pushed 8f77846
-- 2026-11-25 arena-43f9846f — PR #5 merged: https://github.com/kanlerxz87-cyber/TinoDash1/pull/5 → ac92995 on main; Pages Build 1402240931 built successfully (commit ac92995, 2026-11-25T12:51:31Z, no error) — site live at https://kanlerxz87-cyber.github.io/TinoDash1/
-
-## Review Flags
-
-- Flagged items published on flagged.html (root) + docs/flagged.html (legacy): market rent comps, TRA exact, leases, permits, estate size/DSUE/709, insurance quotes, NEM PTO, capital inspections, brokerage, exclusion figures, Prop19 indexed allowance, debt assumption. Each flagged with official source link and next step.
-
-## Official Sources Consolidated
-
-1. **IRS Estate & Gift (2026):** $15M individual / $30M married with portability, 40% top, $19k annual gift exclusion — PL 119-21, IRC §2010(c)(3) (see legacy docs/tax-legal.html) AND $13.99M→~$7M sunset under TCJA §11061 if PL 119-21 not enacted — see estate.html for distinction (enacted vs prior law).
-2. **CA BOE Prop 19:** $1,044,586 exclusion cap 2025–27 (BOE LTA 2025/009); 1-yr move-in + BOE-19-P within 3yr; See BOE Prop19.
-3. **FTB Form 540:** Gains as ordinary 1–12.3% + BHST 1% over $1M → 13.3% top (FTB 540 Booklet).
-4. **SCC Clerk-Recorder:** $0.55 per $500 ($1.10/$1k =0.11%); Cupertino 0% city.
-5. **SF Treasurer:** Tiered 0.75% for $1M–$4.999M (plus Prop H $249/$65 parcel tax).
-6. All other sources: BOE Prop13 FAQ, SCC Assessor/TRA Book/Assessment Appeals, SF Assessor, CDI Residential Guide 2024, SF Rent Board, Treasury yields, FRED/CSUSHPISA, BLS CPI, CPUC NEM, TCJA statute, SEC, FEMA.
-
-> **Reconciliation note:** Legacy session cites $15M exclusion via PL 119-21 (enacted 2026); current session tracks TCJA sunset to ~$7M as prior current law. Both are kept: legislation.html distinguishes enacted PL 119-21 vs prior sunset baseline — recheck Rev Proc Jan 2026. No inference; both linked.
-
-
-## Additional session tasks (current session arena/f83e6979-tinodash1)
-
-| # | Task | Status | Owner | Files | Notes |
-|---|---|---|---|---|---|
-| F1 | Property A (Cupertino 95014) page — valuation/cost/Prop 19 | done | arena/f83e6979-tinodash1 | property-a.html | $3.1M Nov 2026 (user data), verified anchors |
-| F2 | Property B (SF 94122) page — valuation, rental profile, net cash flow | done | arena/f83e6979-tinodash1 | property-b.html | Rental $7,150/mo, 2 units of 3 |
-| F3 | Costs page — water/electricity/insurance/maintenance (rounded $10, flagged) | done | arena/f83e6979-tinodash1 | costs.html | Research: Baysano, LendingTree, gethomeinsurancequotes.com |
-| F4 | Paths page — path comparison + mixed paths + Black Swan + what-ifs + distribution chart | done | arena/f83e6979-tinodash1 | paths.html | Staging 3M–2Y Treasuries 24–36 mo before stocks |
-| F5 | Questions/Suggestions — discovery suggestions, What-would-change-the-answer, yearly review checklist | done | arena/f83e6979-tinodash1 | questions.html | 16+ discovery items |
-| F6 | Time check — deadline integration | done | arena/f83e6979-tinodash1 | timeline.html, COORDINATION.md | Prop 19 occupancy 1y, transfer 2040–2050, annual review |
-
-## Session 796979 — conflicts resolved (2026-11-25): for duplicate filenames (index/paths/questions/flagged/README/COORDINATION) we kept origin/main's versions; this session's files retained where unique.
-
-
----
-## Session `arena-51f65152` Integration Log (2026-11-25)
-- **Branch**: `arena/51f65152-tinodash1` (PR #8)
-- **Deliverables**:
-  - `model/run_model.py` & `site/data/model_data.json`: Privacy-first deterministic financial & tax projection model (all figures rounded to nearest $10; 6 pure & mixed paths, 400-run P10–P90 distribution, 5 Black Swan regimes with 24–36M Treasury phased investing, SF Prop H Nov 2026, CA Prop 19 biennial allowance $1,044,586, IRS Form 706 $15M 2026 exclusion, CA Form 540 1% MHSA >$1M).
-  - `site/` (8-page dashboard): `index.html` (Overview, What Would Change the Answer, What-If Controls, Distribution Chart), `properties.html`, `taxes.html`, `blackswan.html`, `process.html`, `questions.html`, `brief.html` (1-page printable Attorney & CPA Brief), `review.html` (Flagged for Review & Glossary).
-  - `.github/workflows/pages.yml`: GitHub Actions Pages deployment workflow.
-- **Verification**: Privacy check (0 unrounded numbers), link check (8/8 pages), and JSON model validation passed.
+## Final verification record
+Pending. Add the final site build/link/privacy checks, deployment run and PR URL after completion. No private household values are to be written into this board.
