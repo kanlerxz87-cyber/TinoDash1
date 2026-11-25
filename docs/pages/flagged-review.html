@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flagged for Review | Estate Decision Dashboard</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <p class="brand">Estate Decision Dashboard</p><p class="brand-sub">Privacy-first analysis. No personal identifiers.</p>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-group">Overview</div><a href="../index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="briefing-sheet.html">Attorney &amp; CPA Briefing Sheet</a>
+      <div class="nav-group">Analysis</div><a href="inheritance-process.html">Inheritance Process</a><a href="property-comparison.html">Property Comparison</a><a href="projections.html">Projections &amp; Scenarios</a><a href="black-swan.html">Black Swan Scenarios</a><a href="tax-legal.html">Tax &amp; Legal Rules</a><a href="timeline.html">Deadlines Timeline</a>
+      <div class="nav-group">Decision Support</div><a href="decision-framework.html">Decision Framework</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions &amp; Improvements</a>
+      <div class="nav-group">Reference</div><a href="glossary.html">Glossary</a><a href="sources.html">Sources Registry</a><a href="flagged-review.html">Flagged for Review</a><a href="privacy.html">Privacy &amp; Data Handling</a>
+    </nav>
+  </aside>
+  <main class="main" id="content">
+    <header class="page-header"><p class="eyebrow">Review Required</p><h1>Flagged for Review</h1><p class="lead">Items that are unverified, ambiguous, privacy-sensitive, or require professional confirmation. These items do not block publication, but they block confident decision-making.</p></header>
+
+    <div class="banner banner-danger"><strong>Do not treat flagged items as facts.</strong> Verify with official records or qualified professionals before using in decisions.</div>
+
+    <section class="section">
+      <h2>Flagged Items</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>ID</th><th>Item</th><th>Why flagged</th><th>Impact</th><th>How to verify</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>F-001</td><td>Property A estimated value (~$3,100,000, Nov 2026)</td><td>User estimate; no appraisal/CMA source.</td><td>High - affects all paths.</td><td>Licensed appraisal and/or CMA; keep report private.</td><td>Unverified</td></tr>
+          <tr><td>F-002</td><td>Property B estimated value (~$1,800,000, Nov 2026)</td><td>User estimate; no appraisal/CMA source.</td><td>Medium - affects net worth/risk capacity.</td><td>Independent valuation.</td><td>Unverified</td></tr>
+          <tr><td>F-003</td><td>Property A/B historical tax and assessment tables</td><td>User-supplied; rounded for privacy; not matched to official assessor extracts in-session.</td><td>Medium - baseline for tax projections.</td><td>Santa Clara County Assessor/Tax Collector; SF Assessor-Recorder official records.</td><td>Unverified</td></tr>
+          <tr><td>F-004</td><td>Property A market rent</td><td>No rent provided; model uses placeholder.</td><td>High - rent path currently speculative.</td><td>Independent rent comps/property manager analysis.</td><td>Missing</td></tr>
+          <tr><td>F-005</td><td>Insurance premiums (A and B)</td><td>User rough guesses; market varies widely in CA.</td><td>Medium-High.</td><td>Obtain primary residence and landlord quotes.</td><td>Missing</td></tr>
+          <tr><td>F-006</td><td>Property A TRA/published effective property tax rate</td><td>Parcel-specific; private lookup required; not published here for privacy.</td><td>Medium.</td><td>Santa Clara County Assessor/Tax Collector private parcel lookup.</td><td>Missing</td></tr>
+          <tr><td>F-007</td><td>Prop 19 eligibility facts</td><td>Depends on actual transfer facts, occupancy, and filings.</td><td>High.</td><td>CA estate attorney + county assessor confirmation.</td><td>Unknown</td></tr>
+          <tr><td>F-008</td><td>Total estate value / prior gifts / portability</td><td>User stated "considerable amount of money" but no inventory.</td><td>High - federal estate tax/liquidity.</td><td>Private estate inventory; CPA/attorney Form 706 analysis.</td><td>Missing</td></tr>
+          <tr><td>F-009</td><td>SF "Prop H" exact measure intended</td><td>"Prop H" is ambiguous across years/measures; 1992 CPI rule may be relevant, but user intent not explicit.</td><td>Medium - local rent rule modeling.</td><td>Identify exact proposition year/title; verify on SF.gov/Rent Board official records.</td><td>Ambiguous</td></tr>
+          <tr><td>F-010</td><td>Property B rent-control/legal status and lease constraints</td><td>User-described occupancy/rent; no lease/rent-board documentation.</td><td>High for B assumptions.</td><td>Lease review, SF Rent Board status check, counsel.</td><td>Missing</td></tr>
+          <tr><td>F-011</td><td>Same-tax-year sale tax outcome</td><td>Requires private tax profile and actual gain/basis.</td><td>High.</td><td>CPA scenario model.</td><td>Missing</td></tr>
+          <tr><td>F-012</td><td>1031 exchange eligibility</td><td>Depends on investment-use intent and strict timing rules.</td><td>Medium.</td><td>Qualified intermediary + CPA/attorney before sale.</td><td>Unknown</td></tr>
+          <tr><td>F-013</td><td>Git history / prior public data exposure</td><td>Current repo history audited: only initial commit with README.md; no sensitive strings found by grep audit. Prior external exposure outside this repo cannot be proven from here.</td><td>High privacy.</td><td>Review GitHub repo history, forks, caches, issues, PRs, and any external copies; rotate/remove exposed data where possible.</td><td>Partially reviewed</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <footer class="footer"><p>Flagged items are published for transparency and review. They should be resolved before major decisions.</p></footer>
+  </main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

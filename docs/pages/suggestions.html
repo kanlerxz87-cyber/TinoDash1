@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Suggestions & Improvements | Estate Decision Dashboard</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <p class="brand">Estate Decision Dashboard</p><p class="brand-sub">Privacy-first analysis. No personal identifiers.</p>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-group">Overview</div><a href="../index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="briefing-sheet.html">Attorney &amp; CPA Briefing Sheet</a>
+      <div class="nav-group">Analysis</div><a href="inheritance-process.html">Inheritance Process</a><a href="property-comparison.html">Property Comparison</a><a href="projections.html">Projections &amp; Scenarios</a><a href="black-swan.html">Black Swan Scenarios</a><a href="tax-legal.html">Tax &amp; Legal Rules</a><a href="timeline.html">Deadlines Timeline</a>
+      <div class="nav-group">Decision Support</div><a href="decision-framework.html">Decision Framework</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions &amp; Improvements</a>
+      <div class="nav-group">Reference</div><a href="glossary.html">Glossary</a><a href="sources.html">Sources Registry</a><a href="flagged-review.html">Flagged for Review</a><a href="privacy.html">Privacy &amp; Data Handling</a>
+    </nav>
+  </aside>
+  <main class="main" id="content">
+    <header class="page-header"><p class="eyebrow">Review Before Implementing</p><h1>Suggestions &amp; Site Improvements</h1><p class="lead">A dedicated review section for improvements. Nothing here should be implemented blindly; each suggestion has impact, privacy risk, required evidence, and a review status field.</p></header>
+
+    <div class="banner banner-info"><strong>Review rule:</strong> Mark a suggestion "Approved", "Rejected", or "Needs more info" and record date/reason in a private decision log before implementation.</div>
+
+    <section class="section">
+      <h2>Decision-Making Suggestions (Priority)</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>ID</th><th>Suggestion</th><th>Why it improves decisions</th><th>Evidence needed</th><th>Privacy/risk</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>S1</td><td>Obtain independent Property A appraisal and rent comp report.</td><td>Replaces estimate with defensible range; rent path currently speculative.</td><td>Licensed appraisal, rent comps, vacancy assumptions.</td><td>Keep reports private; publish only rounded ranges.</td><td>Needs review</td></tr>
+          <tr><td>S2</td><td>Run a CPA same-tax-year sale model before listing.</td><td>Captures CA 1% over $1M, NIIT, recapture, basis, deductions.</td><td>Tax profile, basis, projected sale date/price.</td><td>Private tax data; do not commit.</td><td>Needs review</td></tr>
+          <tr><td>S3</td><td>Create written IPS before any sale proceeds arrive.</td><td>Prevents emotional timing and sequence-risk mistakes.</td><td>Risk tolerance, horizon, liquidity needs.</td><td>Keep account details private.</td><td>Needs review</td></tr>
+          <tr><td>S4</td><td>Use phased Treasury parking (24-36m) as default sell-and-invest stress test.</td><td>Makes reinvestment risk visible and manageable.</td><td>IPS, Treasury ladder plan, DCA schedule.</td><td>Low; no PII.</td><td>Needs review</td></tr>
+          <tr><td>S5</td><td>Build a 5-year capex plan for both properties.</td><td>Avoids underestimating ownership costs.</td><td>Inspections, contractor estimates, reserve schedule.</td><td>Keep vendor quotes private.</td><td>Needs review</td></tr>
+          <tr><td>S6</td><td>Model imputed rent explicitly for live-in path.</td><td>Makes live-in comparable to rent/sell.</td><td>Market rent equivalent, occupancy plans.</td><td>Low.</td><td>Needs review</td></tr>
+          <tr><td>S7</td><td>Run Prop 19 eligibility review with assessor/counsel.</td><td>High-impact property tax outcome.</td><td>Transfer docs, residency evidence plan, filing dates.</td><td>Private legal docs.</td><td>Needs review</td></tr>
+          <tr><td>S8</td><td>Create estate liquidity plan if estate may exceed federal exclusion.</td><td>Avoids forced sale at bad time.</td><td>Asset inventory, debts, estimated taxes, cash reserves.</td><td>Highly sensitive; private only.</td><td>Needs review</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="section">
+      <h2>Site / Dashboard Improvements</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>ID</th><th>Improvement</th><th>User benefit</th><th>Implementation note</th><th>Priority</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>U1</td><td>Add private local-only data input file (not committed) for real ranges.</td><td>Replaces assumptions without exposing PII.</td><td>Use `.gitignore`d `private/` JSON; client-side load only in local dev.</td><td>High</td><td>Needs review</td></tr>
+          <tr><td>U2</td><td>Add scenario save/export as PDF from briefing sheet.</td><td>Easy adviser sharing.</td><td>Print CSS already included; add "Export PDF" button using browser print.</td><td>Medium</td><td>Needs review</td></tr>
+          <tr><td>U3</td><td>Add Monte Carlo distribution chart with documented assumptions.</td><td>Better uncertainty visualization.</td><td>Client-side JS; clearly label as simulation, not prediction.</td><td>Medium</td><td>Needs review</td></tr>
+          <tr><td>U4</td><td>Add source freshness checker (last checked date, next check date).</td><td>Keeps legal/tax rules current.</td><td>Small JSON registry + manual/CI reminders.</td><td>High</td><td>Needs review</td></tr>
+          <tr><td>U5</td><td>Add sensitivity tornado chart for top 8 variables.</td><td>Shows what actually moves recommendation.</td><td>Use current what-if engine; static SVG export.</td><td>Medium</td><td>Needs review</td></tr>
+          <tr><td>U6</td><td>Add separate "private inventory" template download (local only).</td><td>Captures missing data without publishing it.</td><td>Provide blank CSV/Markdown template; emphasize no PII in repo.</td><td>High</td><td>Needs review</td></tr>
+          <tr><td>U7</td><td>Add accessibility audit (WCAG contrast/keyboard/focus).</td><td>Improves usability.</td><td>Run axe/ Lighthouse in CI; fix issues.</td><td>Medium</td><td>Needs review</td></tr>
+          <tr><td>U8</td><td>Add changelog and decision log page with date-stamped entries.</td><td>Audit trail for why recommendation changed.</td><td>Public entries must remain anonymized.</td><td>Medium</td><td>Needs review</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="section">
+      <h2>Implementation Guardrails</h2>
+      <div class="callout callout-danger"><strong>Never implement a suggestion that introduces PII into git history, commits, issues, PRs, or deployed pages.</strong> Any private data workflow must remain local/ignored and reviewed before use.</div>
+    </section>
+    <footer class="footer"><p>Suggestions are for review only. No suggestion is implemented automatically.</p></footer>
+  </main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

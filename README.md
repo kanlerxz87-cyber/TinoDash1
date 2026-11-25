@@ -1,80 +1,53 @@
-# TinoDash — Privacy-First Inheritance Decision Dashboard
+# Bay Area Inheritance & Real Estate Decision Dashboard (`TinoDash1`)
 
-**Property A (Cupertino 95014)** inherited via trust ~2040–2050 vs **Property B (SF 94122, Outer Sunset, 3-unit, already owned)**
+**Live GitHub Pages Site:** [https://kanlerxz87-cyber.github.io/TinoDash1/](https://kanlerxz87-cyber.github.io/TinoDash1/)
 
-🔗 **Live Dashboard (GitHub Pages):** `https://kanlerxz87-cyber.github.io/TinoDash1/` — served from both **root** (primary 17-page site) and **`docs/`** (legacy 9-page docs) for compatibility.
-
-## What this is
-
-**Executive Summary** with *What would change the answer* on the first screen — pre-commit triggers before the appraisal arrives. **Pure + Mixed paths** compared at same transfer dates/horizons (10/20/30/50 yr) with taxes, debt, occupancy, capital, liquidity. **Black-Swan phased path** — park sale proceeds in 3M–2Y Treasuries 24–36 mo then DCA into stocks; 1929/1970s/2008/2022 crash-entry stress; **reinvestment risk** labeled beside every staging headline.
-
-**Taxes fully separated:** Prop 13/19 + TRA (~1.18% Cupertino), Prop H transfer tax (SCC $1.10/$1k vs SF 0.75% + $249/$65 parcel tax), §121 exclusion ($250k/$500k), FTB 540 BHST 1% over $1M (gains as ordinary), NIIT 3.8%, depreciation 27.5yr + 25% recapture — each with official sources.
-
-Includes what-if sliders, distribution chart (P10–P90), 5-yr capital plan, insurance research by ZIP, deadlines timeline, legislation tracker (enacted vs proposed), **one-page Attorney & CPA Briefing Sheet** (printable, rounded $10, no PII), and **Flagged for Review** (no hallucinated filling).
-
-## Privacy
-
-- No names, addresses, APNs, or exact ledgers on site. All figures rounded to nearest **$10** per request to prevent search traceability.
-- Private estate inventory is a *local encrypted file* — never committed (`.gitignored` root `private/` + `docs/private`).
-- Git history verified clean (initial commit 8f95825 only) — see `methodology.html#exposure` + legacy `docs/flagged.html`.
-
-## Structure — two complementary sites
-
-```
-# Primary site (root) — 17 pages — arena-43f9846f
-index.html                  — Executive Summary + What would change the answer + distribution chart
-briefing.html               — One-page Attorney & CPA Briefing Sheet (print)
-timeline.html               — Deadlines as visual timeline
-property-tax.html           — TRA lookup, assessed/tax tables, Prop 19 carry-forward, transfer tax + Prop H
-estate.html                 — Estate tax vs Basis vs Assessment + private inventory + IPS
-paths.html                  — Pure & mixed paths + imputed rent + §121 + same-year sale + what-if sliders
-blackswan.html              — Black-swan economics + phased Treasuries→DCA + 1929/2008 backtest
-sensitivity.html            — What-if controls + Form 540 MHS 1% + 7 tax-aware sensitivities
-sf-property.html            — Property B leases + SF rent control
-insurance-maintenance.html  — Insurance by ZIP + 5-yr maintenance & capital plan
-legislation.html            — Enacted vs Proposed tracker + recheck log
-glossary.html               — Grouped menu + glossary
-questions.html              — Questions & missing info → how to discover
-suggestions.html            — Suggestions backlog (vote before building)
-sources.html                — Every official source line-by-line
-flagged.html                — Flagged for Review (unverified)
-methodology.html            — Methodology + privacy + change log
-css/style.css, js/app.js, data/model.json
-
-# Legacy docs site — preserved (914b57ba + ef80c5c0)
-docs/index.html, docs/projections.html, docs/tax-legal.html, docs/black-swan.html,
-docs/briefing.html, docs/process-timeline.html, docs/flagged.html, docs/glossary.html,
-docs/questions-suggestions.html, docs/data/model_output.json, docs/assets/*
-
-# Reproducible model (914b57ba)
-model/data_inputs.json, model/engine.py, build_site.py → regenerates docs/data/model_output.json
-  python3 build_site.py
-```
-
-## How to use
-
-1. Start at **Executive Summary** (root `index.html`) — read *What would change the answer* and agree in writing with date.
-2. Check **Flagged** — clear red items (rent comps, TRA, leases, estate size, debt) before deciding.
-3. Run **What-Ifs** — move sliders; see if recommendation moves; see `docs/projections.html` for the legacy model's full projection table.
-4. Print **Briefing Sheet** for attorney/CPA meeting (root `briefing.html` or `docs/briefing.html`).
-5. Re-run **annually** with updated inputs (see Timeline + Legislation tracker). For docs site, edit `model/data_inputs.json` + `python3 build_site.py`.
-
-## Verification
-
-Every table row links to an official authority (IRS PL 119-21/TCJA, FTB 540, BOE P13/19 LTA 2025/009, SCC/SF Assessor/Recorder/Treasurer, CDI, BLS, FRED, Treasury, CPUC, SF Rent Board, SPUR). If unverified, blank + flagged. See `sources.html` + `docs/flagged.html` + `COORDINATION.md`.
-
-- **Official Law Verification (2026):** IRS $15M/$30M (PL 119-21), BOE Prop 19 $1,044,586 (2025–27), FTB 540 13.3% top (1% BHST >$1M), SCC 0.11% ($1.10/$1k), SF 0.75% ($1M–$4.99M), SF Prop H $249/$65.
-- **Prior baseline also tracked:** TCJA sunset ~$7M if PL 119-21 not extended — see `legislation.html` enacted vs proposed distinction.
-
-## GitHub Pages
-
-- `_config.yml` + `.nojekyll` (root) and `docs/.nojekyll` present. Pages can serve from **root** or **`docs/`** — both contain valid sites; `_config.yml` includes `css, js, data, assets` and excludes `private/`.
-- After merge to `main`, verify deploy at `https://kanlerxz87-cyber.github.io/TinoDash1/` — no broken links (both sites audited pre-merge).
-
-## Re-check cadence
-
-Quarterly (Feb/May/Aug/Nov) — IRS Rev. Proc., FTB 540 booklet, SCC TRA Book, SF Treasurer transfer tax, SF Rent Board limits, insurance filings. Logged in `legislation.html` + legacy `docs/tax-legal.html`.
+Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino, ZIP 95014)** (~2040–2050) alongside already-owned **Property B (San Francisco Outer Sunset, ZIP 94122, 3-unit)** and potential liquid trust assets.
 
 ---
 
-*Educational only — not legal, tax, or investment advice. Verify with licensed attorney/CPA/financial adviser. Official sources outrank this site.*
+## Privacy & Official Verification Standards
+- **Strict Anonymization:** Zero personal names, street addresses, trust titles, emails, phone numbers, or Assessor Parcel Numbers (APNs) anywhere in the site, repository, or Git history (`PRIVACY.md`).
+- **Nearest-$10 Rounding:** Every property-level dollar input, historical assessment/tax figure, utility range, rent benchmark, and modeled output in `data/properties.json` and `data/model.json` is rounded to the nearest **$10** increment (`round(x / 10) * 10`), enforced by both `scripts/privacy-audit.mjs` and `scripts/verify_repo.py`.
+- **100% Official `.gov` / Agency Primary Sources:** Every static and dynamic `<tbody><tr>` table row across the dashboard links directly to an official primary source (`irs.gov`, `ftb.ca.gov`, `boe.ca.gov`, `sos.ca.gov`, `santaclaracounty.gov`, `sccgov.org`, `cupertino.gov`, `sf.gov`, `sfmta.com`, `sfelections.org`, `sfassessor.org`, `sfpuc.gov`, `huduser.gov`, `home.treasury.gov`, `bls.gov`, `fhfa.gov`, `insurance.ca.gov`, `cpuc.ca.gov`). Zero commercial real-estate portals are used; unconfirmed parcel-specific parameters are left blank and flagged on [`pages/flagged.html`](./pages/flagged.html).
+
+---
+
+## Unified Dashboard Structure (Served from `main:/`)
+- [`index.html`](./index.html) — **First-Screen Decision Clarity:** *"What Would Change the Answer"* tipping points, Reinvestment Risk beside phased staging headlines, Pure + Mixed path comparison, and Pre-Commitment Decision Criteria Charter
+- [`pages/projections.html`](./pages/projections.html) — **Interactive What-If Lab:** Transfer year (`2026–2050`), horizon (`10–50 yrs`), Imputed Rent slider, IRC §121 toggle, Low/Base/High ranges, 400-run Monte Carlo P10–P90 distribution chart, and 2026–2055 Prop 19 assessment carry-forward schedule
+- [`pages/black-swan.html`](./pages/black-swan.html) — **Black-Swan Economic Regimes:** Non-linear 50-year crash simulations (1929, 1973–82, 2000–09, 2008, 2020–23) + **24–36m 3M–2Y U.S. Treasury Phased Entry** with explicit Reinvestment Risk
+- [`pages/properties.html`](./pages/properties.html) — **Property A & Property B Deep Dive:** $10-rounded historical tax/assessment series, Cupertino TRA `013-xxx` vs SF secured rates, Nov 3, 2026 **SF Prop H** (`$249/yr`, `$65/unit` passthrough cap) & 2006 **Prop H §37.9C** relocation, HUD FY26 SAFMR voucher floor vs unverified MLS comps, CPUC 20-yr solar NEM sunset, insurance benchmarks, and **5-year CapEx plans**
+- [`pages/tax-estate.html`](./pages/tax-estate.html) — **Three Separate Tax Regimes:** Federal/CA Estate Tax (P.L. 119-21 `$15M`/`$30M` DSUE; `$0` CA) vs IRC §1014 Basis & CA Form 540 (`12.3% + 1% >$1M = 13.3%`) vs Prop 13/19 Property Tax, visual post-death statutory deadlines timeline, and Enacted vs Proposed Legislation tracker
+- [`pages/pre-commitment.html`](./pages/pre-commitment.html) — **Written Pre-Commitment Agreement:** Sign path triggers before appraisal & market figures arrive
+- [`pages/investment-policy.html`](./pages/investment-policy.html) — **Investment Policy Statement (IPS):** Formal allocation bands, 24–36m Treasury ladder rules, pause triggers, and sign-off blocks
+- [`pages/decisions.html`](./pages/decisions.html) — **Decision & Date Log + Missing-Info Discovery Guide**
+- [`pages/flagged.html`](./pages/flagged.html) — **Flagged for Review** (unverified inputs & historical table anomalies)
+- [`pages/suggestions.html`](./pages/suggestions.html) — **Suggestions Backlog** (evaluate before implementing)
+- [`pages/briefing-sheet.html`](./pages/briefing-sheet.html) — **One-Page Printable Attorney & CPA Briefing Sheet**
+- [`pages/glossary.html`](./pages/glossary.html) — **Searchable Tax, Trust & Real-Estate Glossary**
+- *(Preserved secondary static reference archive also available under [`docs/`](./docs/index.html).)*
+
+---
+
+## Annual Re-Run & Automated Verification Workflow
+
+Run both the Node.js verification/test suite and the deterministic Python annual-rebuild script locally whenever appraisals, rent comparables, tax brackets, or family plans update:
+
+```bash
+# 1. Run PII/rounding audit, ES-module import & DOM/subpath link audit, and 9 unit tests
+npm run check
+
+# 2. Re-run deterministic Python model (prints [MOVED] vs [UNCHANGED] across 11 sensitivities -> data/model.json)
+python3 scripts/build_verified_model.py
+
+# 3. Verify 100% official .gov table-row links, 0 commercial links, & 0 unrounded figures in repo/Git history
+python3 scripts/verify_repo.py
+
+# 4. Preview locally
+python3 -m http.server 8080 --bind 0.0.0.0
+```
+
+---
+
+*Educational decision-support analysis only — not legal, tax, or investment advice. Confirm trust titling, tax elections, and appraisals with a licensed California estate attorney and CPA.*

@@ -1,51 +1,1823 @@
 {
   "meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "generated": "2026-11-25",
-    "privacy": "All figures anonymized, rounded to nearest $10, placeholders only. No PII on site.",
+    "privacy": "Strict $10 rounding on all personal & modeled dollar outputs; placeholders Property A & Property B only; zero PII in Git history.",
     "baseYear": 2026,
-    "transferWindow": "2040-2050 (trust inheritance)",
-    "horizons": [10, 20, 30, 50]
+    "transferWindow": "2040-2050 (default midpoint 2045)",
+    "horizons": [
+      10,
+      20,
+      30,
+      50
+    ]
   },
-  "properties": {
-    "A": {
-      "label": "Property A — Cupertino (95014)",
-      "estimatedValue2026": 3100000,
-      "assessedValue2026": 550540,
-      "propertyTax2025": 7210,
-      "traNote": "TRA lookup required — Santa Clara County published rate ~1.18% total (1% base + local bonds/parcels). See property-tax.html for official TRA lookup steps.",
-      "waterMonthly": [100, 150],
-      "electricMonthly": [-20, -10],
-      "insuranceAnnual": [1500, 2100],
-      "maintenanceAnnual": [3000, 5500],
-      "hoaMonthly": null
+  "baseParams": {
+    "transfer_year": 2045,
+    "horizon_years": 30,
+    "filing": "mfj",
+    "other_income": 180000,
+    "prop_a_val_2026": 3100000,
+    "prop_a_assessed_2026": 550540,
+    "prop_a_ad_valorem": 0.011636,
+    "prop_a_parcel_2026": 930,
+    "prop_b_val_2026": 1800000,
+    "prop_b_assessed_2026": 116530,
+    "prop_b_ad_valorem": 0.01182683,
+    "prop_b_parcel_2026": 1090,
+    "prop_b_rent_2units_mo_2026": 7150,
+    "prop_b_unit3_mkt_rent_mo_2026": 3720,
+    "prop_a_rent_safmr_mo_2026": 5870,
+    "prop_a_rent_comp_mo_2026": 6850,
+    "prop_a_imputed_rent_mo_2026": 6850,
+    "prop_b_imputed_rent_mo_2026": 3580,
+    "prop19_allowance_2026": 1044586,
+    "prop19_hpi_growth": 0.031,
+    "appr_a": 0.038,
+    "appr_b": 0.033,
+    "cpi": 0.026,
+    "sf_rent_growth": 0.016,
+    "mkt_rent_growth": 0.03,
+    "equity_return": 0.072,
+    "bond_return": 0.042,
+    "treasury_3m_2y": 0.043,
+    "phased_months": 30,
+    "sell_broker_prep_pct": 0.045,
+    "use_sec121_live_sell": true,
+    "use_safmr_floor": false,
+    "liquid_inheritance_2026": 6000000,
+    "prior_taxable_gifts": 0,
+    "has_dsue_portability": false,
+    "enacted_15m_law": true
+  },
+  "boeCcpi": {
+    "2014": {
+      "roll": "2014-15",
+      "ccpi_pct": 0.454,
+      "cap_pct": 0.454,
+      "factor": 1.00454
     },
-    "B": {
-      "label": "Property B — San Francisco (94122, Outer Sunset)",
-      "estimatedValue2026": 1800000,
-      "assessedValue2025": 114250,
-      "propertyTax2025": 2440,
-      "rentalIncomeMonthly": 7150,
-      "units": { "total": 3, "rented": 2, "ownerOccupiable": 1 },
-      "waterMonthly": [330, 400],
-      "electricMonthly": [30, 70],
-      "insuranceAnnual": [1500, 2500],
-      "maintenanceAnnual": [6000, 11000]
+    "2015": {
+      "roll": "2015-16",
+      "ccpi_pct": 1.998,
+      "cap_pct": 1.998,
+      "factor": 1.01998
+    },
+    "2016": {
+      "roll": "2016-17",
+      "ccpi_pct": 1.525,
+      "cap_pct": 1.525,
+      "factor": 1.01525
+    },
+    "2017": {
+      "roll": "2017-18",
+      "ccpi_pct": 2.619,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2018": {
+      "roll": "2018-19",
+      "ccpi_pct": 2.962,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2019": {
+      "roll": "2019-20",
+      "ccpi_pct": 3.847,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2020": {
+      "roll": "2020-21",
+      "ccpi_pct": 2.98,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2021": {
+      "roll": "2021-22",
+      "ccpi_pct": 1.036,
+      "cap_pct": 1.036,
+      "factor": 1.01036
+    },
+    "2022": {
+      "roll": "2022-23",
+      "ccpi_pct": 5.561,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2023": {
+      "roll": "2023-24",
+      "ccpi_pct": 7.274,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2024": {
+      "roll": "2024-25",
+      "ccpi_pct": 3.181,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2025": {
+      "roll": "2025-26",
+      "ccpi_pct": 2.514,
+      "cap_pct": 2.0,
+      "factor": 1.02
+    },
+    "2026": {
+      "roll": "2026-27",
+      "ccpi_pct": 3.307,
+      "cap_pct": 2.0,
+      "factor": 1.02
     }
   },
-  "assumptions": {
-    "prop13Cap": 0.02,
-    "prop13Note": "CA Prop 13: assessed value max +2% annually unless change in ownership/new construction. Source: CA BOE.",
-    "inflationRange": [0.02, 0.035],
-    "homeAppreciationRange": [0.015, 0.045],
-    "rentGrowthRange": [0.015, 0.03],
-    "stockNominalRange": [0.05, 0.08],
-    "bondNominalRange": [0.03, 0.045],
-    "treasury2YRange": [0.035, 0.045],
-    "discountRate": 0.04
+  "propAHistory": [
+    {
+      "year": 2026,
+      "tax": null,
+      "tax_chg": null,
+      "assessed": 550540,
+      "assessed_chg": "+2.0%",
+      "note": "2026 tax bill not yet published in user series (left blank, unverified); +2.0% matches BOE LTA 2026/002 factor 1.02."
+    },
+    {
+      "year": 2025,
+      "tax": 7210,
+      "tax_chg": "+2.9%",
+      "assessed": 539740,
+      "assessed_chg": "+2.0%",
+      "note": "Implies ~1.1636% ad valorem (~$6,280) + ~$930 fixed parcel/special assessments."
+    },
+    {
+      "year": 2024,
+      "tax": 7000,
+      "tax_chg": "+1.2%",
+      "assessed": 529160,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 3.181%)."
+    },
+    {
+      "year": 2023,
+      "tax": 6920,
+      "tax_chg": "+2.4%",
+      "assessed": 518790,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 7.274%)."
+    },
+    {
+      "year": 2022,
+      "tax": 6760,
+      "tax_chg": "+1.4%",
+      "assessed": 508610,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 5.561%)."
+    },
+    {
+      "year": 2021,
+      "tax": 6660,
+      "tax_chg": "+1.5%",
+      "assessed": 498640,
+      "assessed_chg": "+1.0%",
+      "note": "Verified: BOE 2021-22 CCPI factor was 1.01036 (+1.036%, below 2% cap)."
+    },
+    {
+      "year": 2020,
+      "tax": 6570,
+      "tax_chg": "0.0%",
+      "assessed": 493530,
+      "assessed_chg": "+2.0%",
+      "note": "Flagged minor anomaly: total tax flat 2019\u21922020 despite +2% assessment (bond rate dip offset base increase)."
+    },
+    {
+      "year": 2019,
+      "tax": 6570,
+      "tax_chg": "+2.8%",
+      "assessed": 483850,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 3.847%)."
+    },
+    {
+      "year": 2018,
+      "tax": 6380,
+      "tax_chg": "0.0%",
+      "assessed": 474370,
+      "assessed_chg": "+2.0%",
+      "note": "Flagged minor anomaly: total tax flat 2017\u21922018 despite +2% assessment (voter GO bond levy offset)."
+    },
+    {
+      "year": 2017,
+      "tax": 6380,
+      "tax_chg": "-0.5%",
+      "assessed": 465070,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 2.619%)."
+    },
+    {
+      "year": 2016,
+      "tax": 6410,
+      "tax_chg": "+4.6%",
+      "assessed": 455950,
+      "assessed_chg": "+1.5%",
+      "note": "Verified: BOE 2016-17 CCPI factor was 1.01525 (+1.525%)."
+    },
+    {
+      "year": 2015,
+      "tax": 6130,
+      "tax_chg": "+2.8%",
+      "assessed": 449100,
+      "assessed_chg": "+2.0%",
+      "note": "Verified: BOE 2015-16 CCPI factor was 1.01998 (+1.998%)."
+    },
+    {
+      "year": 2014,
+      "tax": 5970,
+      "tax_chg": "\u2014",
+      "assessed": 440310,
+      "assessed_chg": "+0.5%",
+      "note": "Verified: BOE 2014-15 CCPI factor was 1.00454 (+0.454%)."
+    }
+  ],
+  "propBHistory": [
+    {
+      "year": 2025,
+      "tax": 2440,
+      "tax_chg": "+5.3%",
+      "assessed": 114250,
+      "assessed_chg": "+2.0%",
+      "note": "SF FY25-26 rate 1.18268325% (~$1,350 ad valorem) + ~$1,090 fixed SF parcel taxes/fees."
+    },
+    {
+      "year": 2024,
+      "tax": 2320,
+      "tax_chg": "+6.2%",
+      "assessed": 112010,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap; SF GO bond & parcel assessment adjustment."
+    },
+    {
+      "year": 2023,
+      "tax": 2180,
+      "tax_chg": "+3.4%",
+      "assessed": 109810,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 7.274%)."
+    },
+    {
+      "year": 2022,
+      "tax": 2110,
+      "tax_chg": "+2.0%",
+      "assessed": 107660,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap (CCPI 5.561%)."
+    },
+    {
+      "year": 2021,
+      "tax": 2070,
+      "tax_chg": "-5.9%",
+      "assessed": 105600,
+      "assessed_chg": "+1.0%",
+      "note": "Verified +1.036% BOE factor; -5.9% total bill drop reflects SF GO bond/parcel tax expiration."
+    },
+    {
+      "year": 2020,
+      "tax": 2200,
+      "tax_chg": "+3.0%",
+      "assessed": 104510,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap."
+    },
+    {
+      "year": 2019,
+      "tax": 2130,
+      "tax_chg": "+3.5%",
+      "assessed": 102470,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap."
+    },
+    {
+      "year": 2018,
+      "tax": 2060,
+      "tax_chg": "+18.4%",
+      "assessed": 100460,
+      "assessed_chg": "+2.0%",
+      "note": "Flagged & explained: +18.4% (+$320) jump on low Prop 13 base caused by new SF parcel tax levies in FY18-19."
+    },
+    {
+      "year": 2017,
+      "tax": 1740,
+      "tax_chg": "+3.9%",
+      "assessed": 98490,
+      "assessed_chg": "+2.0%",
+      "note": "Matches BOE 2.0% cap."
+    },
+    {
+      "year": 2016,
+      "tax": 1680,
+      "tax_chg": "+1.6%",
+      "assessed": 96560,
+      "assessed_chg": "+1.5%",
+      "note": "Verified: BOE 2016-17 CCPI factor was 1.01525 (+1.525%)."
+    }
+  ],
+  "preInheritanceSeries": [
+    {
+      "year": 2026,
+      "prop_a_fmv": 3100000,
+      "prop_a_fbyv": 550540,
+      "prop_a_tax_grantor": 7340,
+      "prop19_allowance": 1044590,
+      "prop_a_assessed_prop19": 2055410,
+      "prop_a_tax_prop19": 24770,
+      "prop_a_tax_reassessed": 37000,
+      "prop_b_fmv": 1800000,
+      "prop_b_fbyv": 116530,
+      "prop_b_tax": 2390,
+      "prop_h_active": false
+    },
+    {
+      "year": 2030,
+      "prop_a_fmv": 3598750,
+      "prop_a_fbyv": 595920,
+      "prop_a_tax_grantor": 7910,
+      "prop19_allowance": 1180260,
+      "prop_a_assessed_prop19": 2418480,
+      "prop_a_tax_prop19": 29040,
+      "prop_a_tax_reassessed": 42850,
+      "prop_b_fmv": 2049620,
+      "prop_b_fbyv": 126140,
+      "prop_b_tax": 2700,
+      "prop_h_active": true
+    },
+    {
+      "year": 2035,
+      "prop_a_fmv": 4336490,
+      "prop_a_fbyv": 657950,
+      "prop_a_tax_grantor": 8700,
+      "prop19_allowance": 1374900,
+      "prop_a_assessed_prop19": 2961580,
+      "prop_a_tax_prop19": 35420,
+      "prop_a_tax_reassessed": 51500,
+      "prop_b_fmv": 2410880,
+      "prop_b_fbyv": 139260,
+      "prop_b_tax": 2960,
+      "prop_h_active": true
+    },
+    {
+      "year": 2040,
+      "prop_a_fmv": 5225460,
+      "prop_a_fbyv": 726430,
+      "prop_a_tax_grantor": 9570,
+      "prop19_allowance": 1601640,
+      "prop_a_assessed_prop19": 3623820,
+      "prop_a_tax_prop19": 43200,
+      "prop_a_tax_reassessed": 61920,
+      "prop_b_fmv": 2835810,
+      "prop_b_fbyv": 153760,
+      "prop_b_tax": 3260,
+      "prop_h_active": true
+    },
+    {
+      "year": 2045,
+      "prop_a_fmv": 6296680,
+      "prop_a_fbyv": 802030,
+      "prop_a_tax_grantor": 10520,
+      "prop19_allowance": 1865770,
+      "prop_a_assessed_prop19": 4430900,
+      "prop_a_tax_prop19": 52670,
+      "prop_a_tax_reassessed": 74460,
+      "prop_b_fmv": 3335640,
+      "prop_b_fbyv": 169760,
+      "prop_b_tax": 3320,
+      "prop_h_active": false
+    },
+    {
+      "year": 2050,
+      "prop_a_fmv": 7587490,
+      "prop_a_fbyv": 885510,
+      "prop_a_tax_grantor": 11570,
+      "prop19_allowance": 2173460,
+      "prop_a_assessed_prop19": 5414030,
+      "prop_a_tax_prop19": 64180,
+      "prop_a_tax_reassessed": 89560,
+      "prop_b_fmv": 3923560,
+      "prop_b_fbyv": 187430,
+      "prop_b_tax": 3620,
+      "prop_h_active": false
+    },
+    {
+      "year": 2055,
+      "prop_a_fmv": 9142920,
+      "prop_a_fbyv": 977670,
+      "prop_a_tax_grantor": 12730,
+      "prop19_allowance": 2531890,
+      "prop_a_assessed_prop19": 6611030,
+      "prop_a_tax_prop19": 78200,
+      "prop_a_tax_reassessed": 107740,
+      "prop_b_fmv": 4615110,
+      "prop_b_fbyv": 206940,
+      "prop_b_tax": 3950,
+      "prop_h_active": false
+    }
+  ],
+  "horizonsSummary": {
+    "10": {
+      "transfer_year": 2045,
+      "horizon_years": 10,
+      "fmv_a_at_transfer": 6296680,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 4430900,
+      "fmv_b_at_transfer": 3335640,
+      "federal_exclusion_at_transfer": 24428180,
+      "gross_estate_at_transfer": 22016600,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 44428880,
+          "financial_wealth": 39813770,
+          "real_estate_wealth": 4615110,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 41803390,
+          "financial_wealth": 37188280,
+          "real_estate_wealth": 4615110,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 43827170,
+          "financial_wealth": 30069140,
+          "real_estate_wealth": 13758030,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 43697350,
+          "financial_wealth": 29939320,
+          "real_estate_wealth": 13758030,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 42308050,
+          "financial_wealth": 37692940,
+          "real_estate_wealth": 4615110,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 324690,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 43218500,
+          "financial_wealth": 38603390,
+          "real_estate_wealth": 4615110,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 443340,
+          "transfer_and_sell_friction": 349830,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 40265920,
+          "financial_wealth": 31123000,
+          "real_estate_wealth": 9142920,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 859220,
+          "transfer_and_sell_friction": 175200,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    },
+    "20": {
+      "transfer_year": 2045,
+      "horizon_years": 20,
+      "fmv_a_at_transfer": 6296680,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 4430900,
+      "fmv_b_at_transfer": 3335640,
+      "federal_exclusion_at_transfer": 24428180,
+      "gross_estate_at_transfer": 22016600,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 78298310,
+          "financial_wealth": 71912950,
+          "real_estate_wealth": 6385350,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 73706180,
+          "financial_wealth": 67320830,
+          "real_estate_wealth": 6385350,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 75698190,
+          "financial_wealth": 56037100,
+          "real_estate_wealth": 19661090,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 75270020,
+          "financial_wealth": 55608930,
+          "real_estate_wealth": 19661090,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 74588860,
+          "financial_wealth": 68203500,
+          "real_estate_wealth": 6385350,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 324690,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 76181290,
+          "financial_wealth": 69795940,
+          "real_estate_wealth": 6385350,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 443340,
+          "transfer_and_sell_friction": 349830,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 69280470,
+          "financial_wealth": 56004740,
+          "real_estate_wealth": 13275730,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 859220,
+          "transfer_and_sell_friction": 175200,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    },
+    "30": {
+      "transfer_year": 2045,
+      "horizon_years": 30,
+      "fmv_a_at_transfer": 6296680,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 4430900,
+      "fmv_b_at_transfer": 3335640,
+      "federal_exclusion_at_transfer": 24428180,
+      "gross_estate_at_transfer": 22016600,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 137461380,
+          "financial_wealth": 128626750,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 129429500,
+          "financial_wealth": 120594870,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 130675010,
+          "financial_wealth": 102563710,
+          "real_estate_wealth": 28111300,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 129491260,
+          "financial_wealth": 101379960,
+          "real_estate_wealth": 28111300,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 130973350,
+          "financial_wealth": 122138720,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 324690,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 133758610,
+          "financial_wealth": 124923980,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 443340,
+          "transfer_and_sell_friction": 349830,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 119475200,
+          "financial_wealth": 100198530,
+          "real_estate_wealth": 19276670,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 859220,
+          "transfer_and_sell_friction": 175200,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    },
+    "50": {
+      "transfer_year": 2045,
+      "horizon_years": 50,
+      "fmv_a_at_transfer": 6296680,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 4430900,
+      "fmv_b_at_transfer": 3335640,
+      "federal_exclusion_at_transfer": 24428180,
+      "gross_estate_at_transfer": 22016600,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 421179280,
+          "financial_wealth": 404267290,
+          "real_estate_wealth": 16911990,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 396608160,
+          "financial_wealth": 379696170,
+          "real_estate_wealth": 16911990,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 389890770,
+          "financial_wealth": 332336400,
+          "real_estate_wealth": 57554360,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 383467530,
+          "financial_wealth": 325913160,
+          "real_estate_wealth": 57554360,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 401331100,
+          "financial_wealth": 384419110,
+          "real_estate_wealth": 16911990,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 324690,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 409851770,
+          "financial_wealth": 392939780,
+          "real_estate_wealth": 16911990,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 443340,
+          "transfer_and_sell_friction": 349830,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 357207350,
+          "financial_wealth": 316564970,
+          "real_estate_wealth": 40642380,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 859220,
+          "transfer_and_sell_friction": 175200,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    }
   },
-  "projections": {
-    "propertyTaxRateTotal": { "low": 0.011, "high": 0.0125, "mid": 0.0118, "note": "1% base + voter-approved debt/parcels. Santa Clara County 2024-25 TRA book shows ~1.16-1.25% in Cupertino. See sources." },
-    "transferTaxSantaClara": { "county": 1.10, "per": 1000, "cityCupertino": 0, "note": "County Documentary Transfer Tax $1.10/$1000. Cupertino has no city transfer tax. SF has tiered transfer tax (Prop H)." }
-  }
+  "rangesSummary": {
+    "low": {
+      "transfer_year": 2045,
+      "horizon_years": 30,
+      "fmv_a_at_transfer": 4864750,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 2998980,
+      "fmv_b_at_transfer": 2671540,
+      "federal_exclusion_at_transfer": 22262830,
+      "gross_estate_at_transfer": 20584670,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P3_live_a_prop19",
+      "winner_name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+      "runner_up_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 85809040,
+          "financial_wealth": 80825550,
+          "real_estate_wealth": 4983490,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 272960,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 82448870,
+          "financial_wealth": 77465380,
+          "real_estate_wealth": 4983490,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 272960,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 86098230,
+          "financial_wealth": 71205060,
+          "real_estate_wealth": 14893170,
+          "yr1_prop_a_tax": 36190,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 83354400,
+          "financial_wealth": 68461230,
+          "real_estate_wealth": 14893170,
+          "yr1_prop_a_tax": 57990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 83342330,
+          "financial_wealth": 78358840,
+          "real_estate_wealth": 4983490,
+          "yr1_prop_a_tax": 36190,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 293090,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 84547380,
+          "financial_wealth": 79563890,
+          "real_estate_wealth": 4983490,
+          "yr1_prop_a_tax": 57990,
+          "sale_tax_paid": 184200,
+          "transfer_and_sell_friction": 307320,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 77452200,
+          "financial_wealth": 67542520,
+          "real_estate_wealth": 9909680,
+          "yr1_prop_a_tax": 36190,
+          "sale_tax_paid": 615870,
+          "transfer_and_sell_friction": 167050,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    },
+    "base": {
+      "transfer_year": 2045,
+      "horizon_years": 30,
+      "fmv_a_at_transfer": 6296680,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 4430900,
+      "fmv_b_at_transfer": 3335640,
+      "federal_exclusion_at_transfer": 24428180,
+      "gross_estate_at_transfer": 22016600,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 137461380,
+          "financial_wealth": 128626750,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 129429500,
+          "financial_wealth": 120594870,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 290330,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 130675010,
+          "financial_wealth": 102563710,
+          "real_estate_wealth": 28111300,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 129491260,
+          "financial_wealth": 101379960,
+          "real_estate_wealth": 28111300,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 130973350,
+          "financial_wealth": 122138720,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 324690,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 133758610,
+          "financial_wealth": 124923980,
+          "real_estate_wealth": 8834630,
+          "yr1_prop_a_tax": 74780,
+          "sale_tax_paid": 443340,
+          "transfer_and_sell_friction": 349830,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 119475200,
+          "financial_wealth": 100198530,
+          "real_estate_wealth": 19276670,
+          "yr1_prop_a_tax": 52990,
+          "sale_tax_paid": 859220,
+          "transfer_and_sell_friction": 175200,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    },
+    "high": {
+      "transfer_year": 2045,
+      "horizon_years": 30,
+      "fmv_a_at_transfer": 7976520,
+      "fbyv_a_at_transfer": 802030,
+      "prop19_assessed_at_transfer": 6110740,
+      "fmv_b_at_transfer": 4154150,
+      "federal_exclusion_at_transfer": 27796960,
+      "gross_estate_at_transfer": 23696440,
+      "federal_estate_tax": 0,
+      "ca_estate_tax": 0,
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "runner_up_name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+      "paths": [
+        {
+          "id": "P1_sell_lump",
+          "type": "Pure",
+          "name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+          "short": "Sell A (Lump-Sum)",
+          "terminal_wealth": 203671100,
+          "financial_wealth": 188112490,
+          "real_estate_wealth": 15558610,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 288000,
+          "liquidity_status": "High \u2014 immediate cash covers any Form 706 estate tax + reserves",
+          "reinvestment_risk": "High entry-valuation / crash risk (1929/2008 drawdown -35% to -60% if unphased)"
+        },
+        {
+          "id": "P2_sell_phased_treasury",
+          "type": "Mixed / Staged",
+          "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
+          "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
+          "terminal_wealth": 188195120,
+          "financial_wealth": 172636510,
+          "real_estate_wealth": 15558610,
+          "yr1_prop_a_tax": 0,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 288000,
+          "liquidity_status": "Highest \u2014 sovereign 3M\u20132Y Treasury ladder (CA state-tax-exempt)",
+          "reinvestment_risk": "Moderate rate-rollover risk (-$54k/yr on $3M if yields drop 4.3%\u21922.5%), but cuts 1929/2008 trough loss by 55%+"
+        },
+        {
+          "id": "P3_live_a_prop19",
+          "type": "Pure",
+          "name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+          "short": "Live in A (Prop 19) + Rent 3B",
+          "terminal_wealth": 186470220,
+          "financial_wealth": 135438870,
+          "real_estate_wealth": 51031350,
+          "yr1_prop_a_tax": 72750,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 150,
+          "liquidity_status": "Constrained if estate > exclusion; 2-building landlord workload",
+          "reinvestment_risk": "Low market-entry risk; high single-region Bay Area real-estate concentration"
+        },
+        {
+          "id": "P4_rent_a_keep_both",
+          "type": "Pure",
+          "name": "P4 \u00b7 Rent Out Property A (Reassessed at FMV) + Continue Living in Property B",
+          "short": "Rent A (No Prop 19) + Live in B",
+          "terminal_wealth": 188480380,
+          "financial_wealth": 137449030,
+          "real_estate_wealth": 51031350,
+          "yr1_prop_a_tax": 94540,
+          "sale_tax_paid": 0,
+          "transfer_and_sell_friction": 230,
+          "liquidity_status": "Tightest \u2014 full reassessed Cupertino tax (~1.164% of FMV) compresses net yield to ~1.1%\u20131.7%",
+          "reinvestment_risk": "Low cash-deployment risk, but suspended passive losses (IRC \u00a7469) & low cap rate drag compounding"
+        },
+        {
+          "id": "M1_live3_then_sell_121",
+          "type": "Mixed / Staged",
+          "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
+          "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
+          "terminal_wealth": 190131390,
+          "financial_wealth": 174572780,
+          "real_estate_wealth": 15558610,
+          "yr1_prop_a_tax": 72750,
+          "sale_tax_paid": 125080,
+          "transfer_and_sell_friction": 334340,
+          "liquidity_status": "Delayed 3 yrs; caution \u2014 BOE LTA 2026/026 removes Prop 19 upon move-out (do not file if short-term only)",
+          "reinvestment_risk": "Deferred 3 yrs + 24m T-Bill buffer; shields up to $500k MFJ post-DOD gain via \u00a7121"
+        },
+        {
+          "id": "M2_rent5_then_sell",
+          "type": "Mixed / Staged",
+          "name": "M2 \u00b7 Rent Property A 5 Yrs (27.5-Yr MACRS) \u2192 Sell (25% \u00a71250 Recapture + CA 13.3%) \u2192 Portfolio",
+          "short": "Mixed: Rent 5y \u2192 Sell (Recapture)",
+          "terminal_wealth": 195942660,
+          "financial_wealth": 180384050,
+          "real_estate_wealth": 15558610,
+          "yr1_prop_a_tax": 94540,
+          "sale_tax_paid": 833110,
+          "transfer_and_sell_friction": 369310,
+          "liquidity_status": "5-yr illiquid hold; triggers \u00a71250 depreciation recapture + CA ordinary gain unless \u00a71031 exchanged",
+          "reinvestment_risk": "5-yr delayed equity entry + tax friction on post-DOD appreciation & recapture"
+        },
+        {
+          "id": "M3_live_a_sell_b",
+          "type": "Mixed / Staged",
+          "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
+          "short": "Mixed: Live in A + Sell SF B",
+          "terminal_wealth": 171790070,
+          "financial_wealth": 136317330,
+          "real_estate_wealth": 35472740,
+          "yr1_prop_a_tax": 72750,
+          "sale_tax_paid": 1162360,
+          "transfer_and_sell_friction": 176630,
+          "liquidity_status": "High \u2014 exits SF 3-unit maintenance & before SF $5M 2.25% transfer-tax cliff, but forfeits $114k Prop 13 base & pays capital gains on B",
+          "reinvestment_risk": "Moderate \u2014 smaller net proceeds than selling A because Property B has no step-up in basis"
+        }
+      ]
+    }
+  },
+  "distributions30Yr": {
+    "P1_sell_lump": {
+      "p10": 80002500,
+      "p25": 102227380,
+      "p50": 139505270,
+      "p75": 187784530,
+      "p90": 253403980
+    },
+    "P2_sell_phased_treasury": {
+      "p10": 79120920,
+      "p25": 98910460,
+      "p50": 131167380,
+      "p75": 172616890,
+      "p90": 226912680
+    },
+    "P3_live_a_prop19": {
+      "p10": 86297580,
+      "p25": 107322540,
+      "p50": 137488460,
+      "p75": 176097240,
+      "p90": 230419700
+    },
+    "P4_rent_a_keep_both": {
+      "p10": 84383690,
+      "p25": 105041310,
+      "p50": 136309510,
+      "p75": 174746130,
+      "p90": 228982230
+    },
+    "M1_live3_then_sell_121": {
+      "p10": 79371950,
+      "p25": 99838130,
+      "p50": 133344250,
+      "p75": 174514240,
+      "p90": 232408630
+    }
+  },
+  "blackSwanRegimes": [
+    {
+      "id": "crash_1929",
+      "name": "1929\u20131938 Great Depression Crash Entry",
+      "period": "1929\u20131938 (10-Yr Window)",
+      "desc": "Inheriting & selling right at the late-1929 peak (-83% cumulative nominal equity crash by 1932; deflationary Treasury preservation).",
+      "strategies": {
+        "lump_70_30": {
+          "series": [
+            2957000,
+            2825710,
+            2353530,
+            1647940,
+            1557800,
+            2148990,
+            2129860,
+            2842300,
+            3518480,
+            2660680,
+            3240700
+          ],
+          "yr3_wealth": 1647940,
+          "yr5_wealth": 2148990,
+          "yr10_wealth": 3240700,
+          "max_drawdown_pct": -47.3
+        },
+        "phased_24m": {
+          "series": [
+            2957000,
+            3098940,
+            3173310,
+            2715080,
+            2566570,
+            3540580,
+            3509070,
+            4682860,
+            5796910,
+            4383620,
+            5339250
+          ],
+          "yr3_wealth": 2715080,
+          "yr5_wealth": 3540580,
+          "yr10_wealth": 5339250,
+          "max_drawdown_pct": -24.4
+        },
+        "phased_36m": {
+          "series": [
+            2957000,
+            3098940,
+            3173310,
+            3208220,
+            3134910,
+            4324610,
+            4286120,
+            5719820,
+            7080570,
+            5354330,
+            6521570
+          ],
+          "yr3_wealth": 3208220,
+          "yr5_wealth": 4324610,
+          "yr10_wealth": 6521570,
+          "max_drawdown_pct": -24.4
+        },
+        "hold_prop_a": {
+          "series": [
+            3100000,
+            3019400,
+            2805020,
+            2507690,
+            2279490,
+            2265810,
+            2331520,
+            2434110,
+            2553380,
+            2614660,
+            2703560
+          ],
+          "yr3_wealth": 2507690,
+          "yr5_wealth": 2265810,
+          "yr10_wealth": 2703560,
+          "max_drawdown_pct": -26.9
+        }
+      }
+    },
+    {
+      "id": "crash_2008",
+      "name": "2008\u20132017 Global Financial Crisis Entry",
+      "period": "2008\u20132017 (10-Yr Window)",
+      "desc": "Inheriting & selling at start of 2008 GFC (-37.0% equity drop in Year 1; Fed cuts short yields from ~3.5% to near 0%, testing reinvestment risk alongside crash protection).",
+      "strategies": {
+        "lump_70_30": {
+          "series": [
+            2957000,
+            2215980,
+            2632360,
+            2915340,
+            2961690,
+            3296060,
+            4046580,
+            4439500,
+            4491000,
+            4880370,
+            5645610
+          ],
+          "yr3_wealth": 2915340,
+          "yr5_wealth": 3296060,
+          "yr10_wealth": 5645610,
+          "max_drawdown_pct": -25.1
+        },
+        "phased_24m": {
+          "series": [
+            2957000,
+            3039800,
+            3064110,
+            3238000,
+            3289490,
+            3660870,
+            4494450,
+            4930860,
+            4988060,
+            5420520,
+            6270460
+          ],
+          "yr3_wealth": 3238000,
+          "yr5_wealth": 3660870,
+          "yr10_wealth": 6270460,
+          "max_drawdown_pct": 0.0
+        },
+        "phased_36m": {
+          "series": [
+            2957000,
+            3039800,
+            3064110,
+            3082500,
+            3113170,
+            3464650,
+            4253550,
+            4666570,
+            4720700,
+            5129980,
+            5934360
+          ],
+          "yr3_wealth": 3082500,
+          "yr5_wealth": 3464650,
+          "yr10_wealth": 5934360,
+          "max_drawdown_pct": 0.0
+        },
+        "hold_prop_a": {
+          "series": [
+            3100000,
+            2709400,
+            2584770,
+            2672650,
+            2750160,
+            3049920,
+            3534860,
+            3902490,
+            4288830,
+            4584760,
+            4992810
+          ],
+          "yr3_wealth": 2672650,
+          "yr5_wealth": 3049920,
+          "yr10_wealth": 4992810,
+          "max_drawdown_pct": -16.6
+        }
+      }
+    },
+    {
+      "id": "stagflation_1973",
+      "name": "1973\u20131982 Oil Shock & Stagflation Regime",
+      "period": "1973\u20131982 (10-Yr Window)",
+      "desc": "Back-to-back -14.7% and -26.5% equity drops with 7%\u201313% inflation; high short T-Bill yields & California Prop 13 2% assessment cap shine.",
+      "strategies": {
+        "lump_70_30": {
+          "series": [
+            2957000,
+            2714820,
+            2274750,
+            2906670,
+            3434530,
+            3316040,
+            3540860,
+            4103150,
+            5175300,
+            5215150,
+            6162230
+          ],
+          "yr3_wealth": 2906670,
+          "yr5_wealth": 3316040,
+          "yr10_wealth": 6162230,
+          "max_drawdown_pct": -23.1
+        },
+        "phased_24m": {
+          "series": [
+            2957000,
+            3163990,
+            3410780,
+            3983450,
+            4706850,
+            4544460,
+            4852570,
+            5623160,
+            7092500,
+            7147110,
+            8445020
+          ],
+          "yr3_wealth": 3983450,
+          "yr5_wealth": 4544460,
+          "yr10_wealth": 8445020,
+          "max_drawdown_pct": -3.5
+        },
+        "phased_36m": {
+          "series": [
+            2957000,
+            3163990,
+            3410780,
+            3608610,
+            4026480,
+            3887570,
+            4151150,
+            4810350,
+            6067290,
+            6114010,
+            7224320
+          ],
+          "yr3_wealth": 3608610,
+          "yr5_wealth": 3887570,
+          "yr10_wealth": 7224320,
+          "max_drawdown_pct": -3.4
+        },
+        "hold_prop_a": {
+          "series": [
+            3100000,
+            3406900,
+            3778250,
+            4227860,
+            4857820,
+            5703080,
+            6609860,
+            7561690,
+            8385910,
+            8880680,
+            9227020
+          ],
+          "yr3_wealth": 4227860,
+          "yr5_wealth": 5703080,
+          "yr10_wealth": 9227020,
+          "max_drawdown_pct": 0.0
+        }
+      }
+    },
+    {
+      "id": "dotcom_2000",
+      "name": "2000\u20132009 Silicon Valley Dot-Com + GFC Lost Decade",
+      "period": "2000\u20132009 (10-Yr Window)",
+      "desc": "Three consecutive equity down years (2000\u20132002) followed by 2008 GFC \u2014 critical stress test for Silicon Valley concentration & lump-sum stock entry.",
+      "strategies": {
+        "lump_70_30": {
+          "series": [
+            2957000,
+            2820980,
+            2615610,
+            2223530,
+            2676910,
+            2892400,
+            3019380,
+            3395890,
+            3571460,
+            2665740,
+            3164230
+          ],
+          "yr3_wealth": 2223530,
+          "yr5_wealth": 2892400,
+          "yr10_wealth": 3164230,
+          "max_drawdown_pct": -25.4
+        },
+        "phased_24m": {
+          "series": [
+            2957000,
+            3131460,
+            3241060,
+            3024070,
+            3640680,
+            3933760,
+            4106450,
+            4618530,
+            4857300,
+            3625490,
+            4303460
+          ],
+          "yr3_wealth": 3024070,
+          "yr5_wealth": 3933760,
+          "yr10_wealth": 4303460,
+          "max_drawdown_pct": -25.4
+        },
+        "phased_36m": {
+          "series": [
+            2957000,
+            3131460,
+            3241060,
+            3292920,
+            3645100,
+            3938530,
+            4111430,
+            4624130,
+            4863190,
+            3629890,
+            4308680
+          ],
+          "yr3_wealth": 3292920,
+          "yr5_wealth": 3938530,
+          "yr10_wealth": 4308680,
+          "max_drawdown_pct": -25.4
+        },
+        "hold_prop_a": {
+          "series": [
+            3100000,
+            3639400,
+            3835930,
+            4138970,
+            4548720,
+            5226480,
+            5926830,
+            6217250,
+            6179940,
+            5401270,
+            5152810
+          ],
+          "yr3_wealth": 4138970,
+          "yr5_wealth": 5226480,
+          "yr10_wealth": 5152810,
+          "max_drawdown_pct": -17.1
+        }
+      }
+    },
+    {
+      "id": "bull_normal",
+      "name": "Normal / Bull Expansion Counterfactual (Reinvestment-Risk Check)",
+      "period": "10-Yr Steady Expansion + Falling Yields",
+      "desc": "Shows the OTHER side of the coin: if no crash occurs and 3M\u20132Y yields fall from 4.4% to 2.4%, parking 24\u201336m in Treasuries creates ~$180k\u2013$310k of cash-drag opportunity cost.",
+      "strategies": {
+        "lump_70_30": {
+          "series": [
+            2957000,
+            3223720,
+            3468080,
+            3699400,
+            3920250,
+            4169190,
+            4404750,
+            4701190,
+            4984670,
+            5304190,
+            5625620
+          ],
+          "yr3_wealth": 3699400,
+          "yr5_wealth": 4169190,
+          "yr10_wealth": 5625620,
+          "max_drawdown_pct": 0.0
+        },
+        "phased_24m": {
+          "series": [
+            2957000,
+            3087110,
+            3182810,
+            3327150,
+            3525780,
+            3749670,
+            3961520,
+            4228130,
+            4483090,
+            4770460,
+            5059550
+          ],
+          "yr3_wealth": 3327150,
+          "yr5_wealth": 3749670,
+          "yr10_wealth": 5059550,
+          "max_drawdown_pct": 0.0
+        },
+        "phased_36m": {
+          "series": [
+            2957000,
+            3087110,
+            3182810,
+            3259200,
+            3395590,
+            3611210,
+            3815250,
+            4072010,
+            4317560,
+            4594310,
+            4872730
+          ],
+          "yr3_wealth": 3259200,
+          "yr5_wealth": 3611210,
+          "yr10_wealth": 4872730,
+          "max_drawdown_pct": 0.0
+        },
+        "hold_prop_a": {
+          "series": [
+            3100000,
+            3267400,
+            3443840,
+            3622920,
+            3811310,
+            4009500,
+            4217990,
+            4437330,
+            4668070,
+            4910810,
+            5166170
+          ],
+          "yr3_wealth": 3622920,
+          "yr5_wealth": 4009500,
+          "yr10_wealth": 5166170,
+          "max_drawdown_pct": 0.0
+        }
+      }
+    }
+  ],
+  "sensitivities": [
+    {
+      "case": "Baseline (2045 Transfer, 30-Yr Horizon, Enacted $15M Indexed)",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 0,
+      "p1_sell_lump": 137461380,
+      "p2_sell_phased": 129429500,
+      "p3_live_prop19": 130675010,
+      "p4_rent_a": 129491260,
+      "m1_live_sell": 130973350
+    },
+    {
+      "case": "Same-Year Immediate Benchmark (2026 Transfer, 30-Yr Horizon)",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 0,
+      "p1_sell_lump": 60953100,
+      "p2_sell_phased": 57627470,
+      "p3_live_prop19": 58582920,
+      "p4_rent_a": 57730260,
+      "m1_live_sell": 58293240
+    },
+    {
+      "case": "Early Trust Transfer (2040 Transfer, 30-Yr Horizon)",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 0,
+      "p1_sell_lump": 110570900,
+      "p2_sell_phased": 104212060,
+      "p3_live_prop19": 105341990,
+      "p4_rent_a": 104265330,
+      "m1_live_sell": 105460290
+    },
+    {
+      "case": "Late Trust Transfer (2050 Transfer, 30-Yr Horizon)",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 27600,
+      "p1_sell_lump": 171147830,
+      "p2_sell_phased": 161002640,
+      "p3_live_prop19": 162441070,
+      "p4_rent_a": 161134860,
+      "m1_live_sell": 162948660
+    },
+    {
+      "case": "High Cupertino Appreciation (5.1%/yr) + High Imputed Rent ($9,000/mo)",
+      "winner_id": "P3_live_a_prop19",
+      "winner_name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+      "recommendation_moved": true,
+      "estate_tax": 0,
+      "p1_sell_lump": 117934170,
+      "p2_sell_phased": 113369950,
+      "p3_live_prop19": 129348680,
+      "p4_rent_a": 124344530,
+      "m1_live_sell": 115493450
+    },
+    {
+      "case": "HUD SAFMR Voucher Rent Floor ($5,870/mo) on Letting Path",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 0,
+      "p1_sell_lump": 137461380,
+      "p2_sell_phased": 129429500,
+      "p3_live_prop19": 130675010,
+      "p4_rent_a": 127697320,
+      "m1_live_sell": 130973350
+    },
+    {
+      "case": "High Liquid Estate ($20M in 2026 $) \u2014 Exceeds Single Federal Exclusion",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 13707290,
+      "p1_sell_lump": 260380640,
+      "p2_sell_phased": 243911530,
+      "p3_live_prop19": 253594270,
+      "p4_rent_a": 252410520,
+      "m1_live_sell": 248190380
+    },
+    {
+      "case": "High Liquid Estate ($20M in 2026 $) + DSUE Spousal Portability Elected",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 3936020,
+      "p1_sell_lump": 312663870,
+      "p2_sell_phased": 292606020,
+      "p3_live_prop19": 305877500,
+      "p4_rent_a": 304693740,
+      "m1_live_sell": 298048180
+    },
+    {
+      "case": "Proposed Legislation Sensitivity: Estate Exclusion Rolled Back to ~$7.14M Base",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 6251500,
+      "p1_sell_lump": 132048980,
+      "p2_sell_phased": 124388610,
+      "p3_live_prop19": 125262610,
+      "p4_rent_a": 124078860,
+      "m1_live_sell": 125812030
+    },
+    {
+      "case": "IRC \u00a7121 Primary-Residence Exclusion Switched OFF on Live-Then-Sell",
+      "winner_id": "P1_sell_lump",
+      "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
+      "recommendation_moved": false,
+      "estate_tax": 0,
+      "p1_sell_lump": 137461380,
+      "p2_sell_phased": 129429500,
+      "p3_live_prop19": 130675010,
+      "p4_rent_a": 129491260,
+      "m1_live_sell": 130474550
+    },
+    {
+      "case": "Low Equity Return Regime (5.2%/yr Stocks vs 4.2% Cupertino Appreciation)",
+      "winner_id": "P3_live_a_prop19",
+      "winner_name": "P3 \u00b7 Occupy Property A Long-Term (Prop 19) + Lease All 3 Units of Property B",
+      "recommendation_moved": true,
+      "estate_tax": 0,
+      "p1_sell_lump": 98343710,
+      "p2_sell_phased": 95880180,
+      "p3_live_prop19": 102983420,
+      "p4_rent_a": 102107540,
+      "m1_live_sell": 96964950
+    }
+  ]
 }

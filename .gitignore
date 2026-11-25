@@ -1,22 +1,25 @@
-# Privacy & hygiene
-private/
-_private/
-estate-inventory*.pdf
-estate-inventory*.xlsx
-*.env
+# OS/editor
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
 
-# Build artifacts (keep site static — no build required)
-.node_modules/
+# Dependencies / builds
+node_modules/
+__pycache__/
+*.pyc
 dist/
-.next/
-out/
+build/
+.cache/
+.playwright-cli/
 
-# Logs
-*.log
-npm-debug.log*
-
-# Allow GitHub Pages files
-!.nojekyll
-!docs/
+# Private/local working files - never commit raw PII
+private/
+private-*
+*.private.*
+*.secret.*
+*.local.json
+.env
+.env.*

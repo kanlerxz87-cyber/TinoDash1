@@ -1,0 +1,13 @@
+{
+  "name": "tinodash1-inheritance-decision-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-first, source-verified Bay Area real estate & trust inheritance decision dashboard",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "audit:privacy": "node scripts/privacy-audit.mjs",
+    "audit:links": "node scripts/link-audit.mjs",
+    "check": "npm run audit:privacy && npm run audit:links && npm test"
+  }
+}
