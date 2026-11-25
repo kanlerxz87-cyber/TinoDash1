@@ -76,3 +76,13 @@ If editing across scopes, log request here instead of directly editing another s
 | F6 | Time check — deadline integration | done | arena/f83e6979-tinodash1 | timeline.html, COORDINATION.md | Prop 19 occupancy 1y, transfer 2040–2050, annual review |
 
 ## Session 796979 — conflicts resolved (2026-11-25): for duplicate filenames (index/paths/questions/flagged/README/COORDINATION) we kept origin/main's versions; this session's files retained where unique.
+
+
+---
+## Session `arena-51f65152` Integration Log (2026-11-25)
+- **Branch**: `arena/51f65152-tinodash1` (PR #8)
+- **Deliverables**:
+  - `model/run_model.py` & `site/data/model_data.json`: Privacy-first deterministic financial & tax projection model (all figures rounded to nearest $10; 6 pure & mixed paths, 400-run P10–P90 distribution, 5 Black Swan regimes with 24–36M Treasury phased investing, SF Prop H Nov 2026, CA Prop 19 biennial allowance $1,044,586, IRS Form 706 $15M 2026 exclusion, CA Form 540 1% MHSA >$1M).
+  - `site/` (8-page dashboard): `index.html` (Overview, What Would Change the Answer, What-If Controls, Distribution Chart), `properties.html`, `taxes.html`, `blackswan.html`, `process.html`, `questions.html`, `brief.html` (1-page printable Attorney & CPA Brief), `review.html` (Flagged for Review & Glossary).
+  - `.github/workflows/pages.yml`: GitHub Actions Pages deployment workflow.
+- **Verification**: Privacy check (0 unrounded numbers), link check (8/8 pages), and JSON model validation passed.

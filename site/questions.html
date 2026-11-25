@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinoDash1 — Questions, Missing Info &amp; Improvement Suggestions</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <h1>Questions, Information Gaps &amp; Site Improvement Suggestions</h1>
+    <p class="subtitle">
+      What we already know, what is missing before a reasonable decision can be made, how to discover each missing item privately, and proposed improvements for review.
+    </p>
+
+    <!-- QUESTIONS & DISCOVERY TABLE -->
+    <div class="card">
+      <h2 style="margin-top:0;">Critical Questions &amp; Missing Information Discovery Plan</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What We Have</th>
+              <th>What Is Missing (Must Answer Before Deciding)</th>
+              <th>Suggested Discovery Action (Keep Private / Offline)</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Private Estate Inventory &amp; Federal Tax</strong></td>
+              <td>Property A (~$3.1M) + "considerable liquid/other assets" possibly above $15M exclusion.</td>
+              <td>Total gross estate value, prior taxable gifts (Form 709), predeceased spouse <strong>Portability (DSUE)</strong>, trust terms (revocable vs. irrevocable/AB trust).</td>
+              <td>Build an offline encrypted Private Estate Inventory spreadsheet; ask estate attorney now about DSUE portability and prior gifts.</td>
+              <td><span class="badge badge-red">Critical</span></td>
+            </tr>
+            <tr>
+              <td><strong>2. Property A Tax Rate Area (TRA)</strong></td>
+              <td>Rounded 2014–2026 tax &amp; assessed values (implied ~1.34% effective rate).</td>
+              <td>Exact Santa Clara County TRA (prefix 013-xxx) separating 1% base + voter debt vs. fixed parcel taxes.</td>
+              <td>Look up APN privately on <a href="https://payments.sccgov.org/propertytax/TaxAllocation/SearchByAddress" target="_blank" rel="noopener">SCC Tax Allocation</a> and read published rate.</td>
+              <td><span class="badge badge-amber">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>3. Cupertino Market Rent Comparables</strong></td>
+              <td>Model baseline range ($5,200–$6,800/mo; $6,000/mo midpoint).</td>
+              <td>Independent evidence-based market rent comparables for Property A (beds/baths/lot/school district).</td>
+              <td>Obtain 3–5 local Cupertino (95014) single-family rental comps from a local property manager or appraiser so Rent path isn't ranked on a floor estimate.</td>
+              <td><span class="badge badge-amber">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>4. Property B Leases &amp; SF Rent Control</strong></td>
+              <td>3 livable units; 2 rented at $7,150/mo; 1 available for owner-occupancy.</td>
+              <td>Exact lease terms, building construction year (pre-June 1979 = SF Rent Ordinance), tenant tenure, and 3rd unit market rent / legalization status.</td>
+              <td>Review written leases and verify unit status with <a href="https://www.sf.gov/departments/rent-board" target="_blank" rel="noopener">SF Rent Board</a> &amp; SF DBI records privately.</td>
+              <td><span class="badge badge-amber">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>5. Insurance Quotes (Both Properties)</strong></td>
+              <td>CA statewide avg $1,660 (<a href="https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm" target="_blank" rel="noopener">CDI</a>); model ranges $2.8k–$4.5k (A) &amp; $3.5k–$5.5k (B).</td>
+              <td>Actual replacement-cost homeowners quote (HO-3/HO-5) for Cupertino and 3-unit owner-occupied/landlord policy (DP-3) + umbrella for SF.</td>
+              <td>Request blind broker quotes using zip codes 95014 &amp; 94122 and replacement-cost specs; check earthquake insurance deductibles.</td>
+              <td><span class="badge badge-blue">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>6. Prop 19 Eligibility &amp; Family Plans</strong></td>
+              <td>Heir currently has free unit in Property B (SF).</td>
+              <td>Is Property A the Grantor's principal residence at death? Will Heir actually occupy Property A as primary residence within 1 year and stay long-term?</td>
+              <td>Confirm Grantor occupancy and document household pre-commitment criteria on the <a href="process.html">Process page</a>.</td>
+              <td><span class="badge badge-red">Critical</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- DEDICATED IMPROVEMENT SUGGESTIONS SECTION -->
+    <div class="card">
+      <h2 style="margin-top:0;">Site &amp; Analysis Improvement Suggestions (Review Before Implementing)</h2>
+      <p class="subtitle" style="margin-bottom:10px;">
+        Review these candidate enhancements and select which ones to implement in future iterations:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Proposed Improvement</th>
+              <th>Decision-Making Benefit</th>
+              <th>Effort</th>
+              <th>Recommendation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>S1</strong></td>
+              <td><strong>Offline Private Inputs Override (Local-Only JSON)</strong></td>
+              <td>Allows the household to load exact private estate totals, exact TRA, and exact CMA rents locally in browser (`localStorage` / file upload) without ever committing private numbers to GitHub.</td>
+              <td>Low</td>
+              <td><span class="badge badge-green">Recommended First</span></td>
+            </tr>
+            <tr>
+              <td><strong>S2</strong></td>
+              <td><strong>Interactive Estate Tax Liquidity Waterfall</strong></td>
+              <td>Visualizes how a 40% federal estate tax bill (if estate &gt; $15M) is funded across cash, brokerage, and Property A sale proceeds within the 9-month IRS deadline.</td>
+              <td>Medium</td>
+              <td><span class="badge badge-green">Recommended</span></td>
+            </tr>
+            <tr>
+              <td><strong>S3</strong></td>
+              <td><strong>Annual Automated Re-Run Checklist &amp; Diff Report</strong></td>
+              <td>Generates a year-over-year diff showing how updated BOE Prop 19 allowances, IRS Form 706 exclusions, and Bay Area HPI changed the #1 ranked path.</td>
+              <td>Low</td>
+              <td><span class="badge badge-blue">Good for Annual Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>S4</strong></td>
+              <td><strong>Multi-Heir / Sibling Buyout Module</strong></td>
+              <td>If Property A is shared among multiple beneficiaries, models trust loan / Prop 19 sibling buyout mechanics (avoiding parent-to-child exclusion loss on sibling-to-sibling transfers).</td>
+              <td>Medium</td>
+              <td><span class="badge badge-gray">Only if Multiple Heirs</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      TinoDash1 · <a href="index.html">Overview</a> · <a href="brief.html">Attorney &amp; CPA Brief</a> · <a href="review.html">Flagged for Review</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+<script>renderSidebar("questions.html");</script>
+</body>
+</html>
