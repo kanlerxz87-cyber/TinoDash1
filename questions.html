@@ -1,126 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Questions &amp; Missing Information — TinoDash1</title>
-<link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions & Missing Info — TinoDash</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="top"><div class="wrap">
-  <div class="brand">TinoDash1<small>Private inheritance decision dashboard</small></div>
-  <nav class="menu" aria-label="Main menu">
-    <span class="grp">Decide</span>
-    <a href="index.html">Dashboard</a>
-    <a href="model.html">Model &amp; What-Ifs</a>
-    <a href="black-swan.html">Black Swan</a>
-    <span class="grp">Taxes &amp; Law</span>
-    <a href="taxes.html">Taxes</a>
-    <a href="glossary.html">Glossary</a>
-    <span class="grp">Properties</span>
-    <a href="properties.html">Properties</a>
-    <span class="grp">Process</span>
-    <a href="process.html">Steps &amp; Deadlines</a>
-    <a href="questions.html" aria-current="page">Questions</a>
-    <a href="suggestions.html">Suggestions</a>
-    <span class="grp">For Advisers</span>
-    <a href="briefing.html">Briefing Sheet</a>
-    <a href="flagged.html">Flagged for Review</a>
-  </nav>
-</div></header>
-<main id="main"><div class="wrap">
+<header class="topbar"><div class="brand">TinoDash <span>— Questions & Missing Info</span></div><div class="meta"><a class="btn" href="index.html">← Dashboard</a></div></header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group"><h4>Dashboard</h4><div class="nav"><a href="index.html">🏠 Summary</a><a href="timeline.html">⏱️ Deadlines</a><a href="sensitivity.html">🎛️ What-Ifs</a></div></div>
+    <div class="nav-group"><h4>Decide</h4><div class="nav"><a href="paths.html">🔀 Paths</a><a href="blackswan.html">🦢 Black-Swan</a><a href="property-tax.html">🏷️ Prop Tax</a><a href="estate.html">⚖️ Estate vs Basis</a></div></div>
+    <div class="nav-group"><h4>Own & Operate</h4><div class="nav"><a href="sf-property.html">🏢 Property B</a><a href="insurance-maintenance.html">🛡️ 5-Yr Plan</a></div></div>
+    <div class="nav-group"><h4>Verify</h4><div class="nav"><a href="methodology.html">🧪 Methodology</a><a href="legislation.html">📜 Legislation</a><a href="sources.html">🔗 Sources</a><a href="flagged.html">🚩 Flagged</a></div></div>
+    <div class="nav-group"><h4>Help</h4><div class="nav"><a href="glossary.html">📖 Glossary</a><a class="active" href="questions.html">❓ Missing Info</a><a href="suggestions.html">💡 Suggestions</a></div></div>
+  </aside>
+  <main class="main">
+    <div class="card">
+      <div class="kicker">Clear list of questions, informations & answers needed before any decision can be reasonably made</div>
+      <h2>What we have vs what we don’t — and how to discover it</h2>
+      <p style="font-size:13px">No decision can be reasonably made until the red rows below are answered. Yellow rows are estimated with ranges. Green rows are verified from provided history. “How to discover” tells you exactly where to look, with official sources.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Status</th><th>Question / Information Needed</th><th>What we have</th><th>What’s missing / to discover</th><th>How to discover (official / private)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge live">Have</span></td><td>Property A value, assessment, tax history (95014)</td><td>2026 $3,100,000 · Assessed $550,540 → +2% Cap · Taxes $5,970–$7,210 (2014–2025)</td><td>—</td><td>Provided history; rounded $10</td></tr>
+            <tr><td><span class="badge live">Have</span></td><td>Property B value, assessment, rent roll (94122)</td><td>2026 $1,800,000 · Assessed $114,250 · Rent $7,150/mo (2 units, 3rd occupiable)</td><td>—</td><td>Provided</td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>Market rent on Property A (Cupertino) — voucher vs evidence?</td><td>None obtained; model uses placeholder $5,500–$7,200/mo (Redfin-range floor)</td><td>Need independent comps: 3BR/4BR 95014 SFR, 1,600–2,200 sq ft, similar lot</td><td>Order broker rent comps (2 sources) or appraiser rent study; check <a href="https://www.rentometer.com/" target="_blank">Rentometer</a> + MLS comps (private); log in inventory</td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>Property A TRA & total rate (official)</td><td>Estimated 1.16–1.25%, mid 1.18% — not yet looked up</td><td>Need published TRA rate from SCC TRA Book</td><td><a href="https://www.sccgov.org/sites/dtg/finance/proptax/Pages/property-tax-rates.aspx" target="_blank">SCC TRA Book</a> → find APN’s TRA (private)</td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>Prop 19 eligibility validation</td><td>Unknown: was A parent’s principal residence at death? Will heir occupy?</td><td>Need attorney confirmation + BOE filing check</td><td><a href="https://www.boe.ca.gov/prop19/" target="_blank">BOE Prop 19</a> · <a href="https://www.sccassessor.org/index.php/transfer-of-property/propositions-19">SCC filing</a> — answer within 1 yr</td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>DOD valuation of Property A</td><td>Not yet — future event (2040–50 window)</td><td>Will need licensed appraisal at DOD ($500–$900)</td><td><a href="https://mylicense.ca.gov/Verification/" target="_blank">CA BREA verifier</a> — pre-select appraiser now</td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>B’s leases & SF local rules verified?</td><td>Rent roll $7,150 known; leases not seen; Rent Board coverage unknown</td><td>Need written leases, building permits, Rent Board status</td><td><a href="https://www.sf.gov/departments/rent-board" target="_blank">SF Rent Board</a> (call 415-703-8634 privately) · <a href="https://sfplanning.org/permits">SF Planning permits</a></td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>Estate size vs federal exclusion & prior gifts</td><td>“Considerable money” over exclusion — exact size private; prior gifts/portability unknown</td><td>Need private inventory totals + attorney asks: DSUE? 709s? Trust language?</td><td>Attorney + CPA: <a href="https://www.irs.gov/instructions/i706">Form 706</a> · <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax">IRS exclusion</a></td></tr>
+            <tr><td><span class="flag">Missing</span></td><td>Like-kind exchange wanted? Take advice before selling.</td><td>Undecided</td><td>Need decision logged before any listing — QI required pre-sale</td><td><a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges">IRS 1031</a> — decide now</td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>Home insurance by ZIP (real figures, not round assumptions)</td><td>Provided $1,500/yr each; research range $1,500–$2,500 (CA market 2024–26)</td><td>Need 2 written quotes per ZIP with identical coverage</td><td><a href="https://www.insurance.ca.gov/01-consumers/105-type/95-guides/02-res/2024-Residential-Guide.cfm">CDI Guide</a> — re-quote annually</td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>PG&E solar true-up (NEM 2.0 vs 3.0)</td><td>Self-reported $10–$20/mo credit; PTO date unknown</td><td>Need PG&E bill NEM true-up to verify credit and grandfather status</td><td>PG&E bill (private) · <a href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering">CPUC NEM</a></td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>5-yr maintenance & capital (leak, roof, sewer lateral)</td><td>Placeholder ranges $3k–$11k/yr routine + lumps</td><td>Need inspections: roof, sewer lateral (SFPUC), termite</td><td>Local inspectors; <a href="https://www.sfpuc.gov/programs/sewer-lateral">SFPUC</a> · contractor bids</td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>Transfer tax & recording fees priced into sell path</td><td>SCC county $1.10/$1000 priced; SF Prop H priced; brokerage 5–6% range not statutory</td><td>Confirm SCC has no city tax; verify SF tier table annually</td><td><a href="https://www.sccgov.org/sites/clerk/recorder/Documents/DocumentaryTransferTax.pdf">SCC transfer tax</a> · <a href="https://www.sftreasurer.org/transfer-tax">SF Treasurer</a></td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>Investment policy for proceeds before money arrives</td><td>None written</td><td>Need signed IPS (Treasuries→DCA schedule) before inheritance</td><td><a href="estate.html#ips">IPS template</a> · CPA/adviser review</td></tr>
+            <tr><td><span class="badge warn">Estimate</span></td><td>Mental Health Services Tax 1% over $1M — Form 540 treatment</td><td>Modeled correctly per 540 booklet (1% on amount &gt;$1M)</td><td>Re-check FTB 540 booklet annually — brackets/allowances index</td><td><a href="https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html">FTB 540</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">Rule: No decision until red rows are resolved. Yellow rows use ranges — rebuild model after each one is filled with a real figure and see if recommendation moved (<a href="sensitivity.html">What-ifs</a>). Keep all missing info as “flagged” on <a href="flagged.html">Flagged for Review</a> until verified.</div>
+    </div>
 
-<h1>Questions, information, and answers needed before deciding</h1>
-<p class="lede">What we know, what we do not know, and exactly how to find each missing piece. A path is not
-chosen until every <strong>Blocking</strong> item is closed. Each row names an owner action and a source to
-request — no value is filled in until it comes from a primary document.</p>
+    <div class="card" style="margin-top:14px">
+      <div class="kicker">Suggestions to discover missing information — prioritized</div>
+      <ol style="font-size:13px">
+        <li><strong>This quarter:</strong> Attorney meeting — Prop 19, trust language, portability, DSUE, prior gifts, 1031 intent. Bring anonymized briefing sheet (<a href="briefing.html">Print</a>). Write decision/date log.</li>
+        <li><strong>This quarter:</strong> CPA meeting — estate liquidity at $7M vs $14M exclusion, same-year sale tax, depreciation land-share, §121 filing status.</li>
+        <li><strong>Next 30 days:</strong> Obtain 2 rent comps for 95014 (broker or appraiser); call SF Rent Board privately about B’s coverage.</li>
+        <li><strong>Next 60 days:</strong> Pull SCC TRA book for A’s rate; get 2 HO-3/DP-3 insurance quotes; pull PG&E true-up + permit history for B.</li>
+        <li><strong>Next 90 days:</strong> Draft & sign IPS; fund $15–$25k reserve per property; schedule 5-yr inspection cycle.</li>
+        <li><strong>Annually:</strong> Re-run model, recheck legislation, review black-swan IPS triggers.</li>
+      </ol>
+    </div>
 
-<h2>Pre-commit criteria (write these down before the figures arrive)</h2>
-<div class="card">
-<p>The household agrees <em>now</em>, in writing, what would make it choose each path. This prevents the
-outcome being reverse-engineered from whichever projection looks best.</p>
-<table>
-<thead><tr><th>Path</th><th>We choose it if… (fill in and sign)</th><th>Date agreed</th></tr></thead>
-<tbody>
-<tr><td>Live in A</td><td>The heir will genuinely reside there for 5+ years; commute/family fit; carrying cost is affordable at the low end of income; and the imputed-rent benefit is valued above the investment return of selling.</td><td>____________</td></tr>
-<tr><td>Rent A</td><td>Verified market rent clears all-in carrying cost + reassessed tax by a stated margin, and the heir is willing to be a landlord for 10+ years.</td><td>____________</td></tr>
-<tr><td>Sell A → reinvest</td><td>Same-year sale keeps gain ≈ $0; the household prefers liquidity and diversification; no occupancy intent.</td><td>____________</td></tr>
-<tr><td>Mixed (live then sell / rent then sell)</td><td>The §121 exclusion or occupancy window is worth more than the transaction cost of selling later.</td><td>____________</td></tr>
-</tbody></table>
-<p class="note">Signing this table is a decision in itself — record the date and keep a copy. See
-<a href="suggestions.html">Suggestions</a> S-01.</p>
+    <div class="footer"><a href="index.html">← Dashboard</a> · <a href="flagged.html">Flagged items</a></div>
+  </main>
 </div>
-
-<h2>Blocking questions (cannot decide without these)</h2>
-<div class="card">
-<table>
-<thead><tr><th>ID</th><th>Question</th><th>Why it blocks</th><th>How to get the answer</th><th>Source to request</th></tr></thead>
-<tbody>
-<tr><td><strong>Q-01</strong></td><td>Will the heir actually live in A for 5+ years?</td><td>Decides Prop 19 eligibility; changes property tax by $20,000–$30,000/yr</td><td>Household conversation; record the date</td><td><a href="https://www.boe.ca.gov/prop19/">BOE Prop 19</a></td></tr>
-<tr class="alt"><td><strong>Q-02</strong></td><td>Is A occupied at inheritance, and by whom? Any tenants?</td><td>Tenancy blocks owner-occupancy and Prop 19</td><td>Trustee inspection; lease copies</td><td>Leases / rent roll</td></tr>
-<tr><td><strong>Q-03</strong></td><td>Are there mortgages, liens, or reverse mortgages on A or B?</td><td>Debt changes net proceeds and liquidity; the model assumes $0</td><td>Title report on each property</td><td>Preliminary title report</td></tr>
-<tr class="alt"><td><strong>Q-04</strong></td><td>What is the official Tax Rate Area and assessment breakdown for A (and B)?</td><td>Resolves the implied-rate irregularity (F-06, F-07) and fixes the tax rate</td><td>Order the current tax bill; read the TRA and the ad-valorem breakdown</td><td><a href="https://www.sccgov.org">Santa Clara County DTT</a> · <a href="https://www.sfassessor.org">SF Assessor</a></td></tr>
-<tr><td><strong>Q-05</strong></td><td>Which units of B are rent-controlled, and what do the leases say?</td><td>Determines lawful rent increases and eviction limits</td><td>Read each lease; check the Rent Board housing inventory by address</td><td><a href="https://sf.gov/rent-board-housing-inventory">SF Rent Board inventory</a></td></tr>
-<tr class="alt"><td><strong>Q-06</strong></td><td>What is A's written date-of-death valuation?</td><td>Sets basis <em>and</em> the Prop 19 market value</td><td>Order appraisal as of the date of death (cannot be obtained retroactively well)</td><td>Appraisal report</td></tr>
-<tr><td><strong>Q-07</strong></td><td>What is the real market rent for A?</td><td>Without it, the rent path is a floor, not a competitor</td><td>Three independent local rental opinions / CMAs</td><td>Broker CMAs, appraiser rent survey</td></tr>
-<tr class="alt"><td><strong>Q-08</strong></td><td>What condition is A in — deferred maintenance and capital needs?</td><td>Drives the five-year capital plan and the true cost of holding</td><td>Licensed home inspection + contractor bids</td><td>Inspection report</td></tr>
-<tr><td><strong>Q-09</strong></td><td>Has portability been used? Any prior taxable gifts (Form 709)?</td><td>Changes the effective exclusion available at death</td><td>Ask the decedent's CPA now; pull gift-tax returns</td><td>Form 709 history; <a href="https://www.irs.gov/instructions/i706">Form 706 instructions</a></td></tr>
-<tr class="alt"><td><strong>Q-10</strong></td><td>What is the total estate value, and could it exceed the federal exclusion?</td><td>If yes, a liquidity plan is mandatory (40% tax, 9-month deadline)</td><td>Full asset inventory with a CPA</td><td><a href="https://www.irs.gov/publications/p559">IRS Pub. 559</a></td></tr>
-</tbody></table>
-</div>
-
-<h2>Non-blocking but material questions</h2>
-<div class="card">
-<table>
-<thead><tr><th>ID</th><th>Question</th><th>Why it matters</th><th>How to answer</th></tr></thead>
-<tbody>
-<tr><td>Q-11</td><td>Is a §1031 like-kind exchange wanted?</td><td>Defers gain but locks capital into real estate; must be decided before closing</td><td>Advice from CPA/attorney plus a written policy — <a href="https://www.irs.gov/instructions/i8824">IRS Form 8824</a></td></tr>
-<tr class="alt"><td>Q-12</td><td>What is the investing policy for sale proceeds?</td><td>Prevents ad-hoc decisions; sets the phased-entry ladder</td><td>Write a one-page IPS: target allocation, Treasury ladder length, rebalancing, draw needs</td></tr>
-<tr><td>Q-13</td><td>What liquidity does the household need in the first 24 months?</td><td>May force a sale regardless of returns</td><td>12-month cash-flow budget</td></tr>
-<tr class="alt"><td>Q-14</td><td>Who inherits what share, and does the trust require a sale to divide?</td><td>A trust that mandates equal division may require liquidation</td><td>Read the trust instrument with the attorney</td></tr>
-<tr><td>Q-15</td><td>What is the fire/hazard insurance situation for A and B?</td><td>Wildfire non-renewal risk; premiums are the biggest unpriced cost</td><td>Bind quotes for both; check FAIR Plan availability — <a href="https://www.insurance.ca.gov">CA DOI</a></td></tr>
-<tr class="alt"><td>Q-16</td><td>What capital work will B need in the next 5 years?</td><td>Competes with A for cash</td><td>Inspection + contractor bids; see <a href="properties.html">Properties</a></td></tr>
-<tr><td>Q-17</td><td>Will the heir's income exceed the $1M CA BHST threshold in a sale year?</td><td>Adds 1% CA tax on income above $1M (marginal)</td><td>Project income for the sale year — <a href="https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html">FTB 540</a></td></tr>
-<tr class="alt"><td>Q-18</td><td>What is the plan if the property cannot be insured at any reasonable price?</td><td>Uninsurable = unsellable/unmortgageable</td><td>Ask a broker for a contingency plan</td></tr>
-</tbody></table>
-</div>
-
-<h2>Information we already have (and how good it is)</h2>
-<div class="card">
-<table>
-<thead><tr><th>Item</th><th>Value</th><th>Confidence</th></tr></thead>
-<tbody>
-<tr><td>Property A market value (Nov 2026)</td><td>$3,100,000</td><td><span class="badge b-warn">Owner estimate — replace with appraisal</span></td></tr>
-<tr><td>Property B market value (Nov 2026)</td><td>$1,800,000</td><td><span class="badge b-warn">Owner estimate</span></td></tr>
-<tr><td>A and B tax/assessment history 2014–2026</td><td>See <a href="properties.html">Properties</a></td><td><span class="badge b-info">Owner records — cross-check county</span></td></tr>
-<tr><td>B rental income</td><td>~$7,150/mo (2 of 3 units)</td><td><span class="badge b-info">Owner records</span></td></tr>
-<tr><td>Utilities A/B</td><td>See Properties</td><td><span class="badge b-warn">Owner estimate</span></td></tr>
-<tr><td>Insurance A/B</td><td><strong>blank</strong></td><td><span class="badge b-bad">Unverified — quote needed</span></td></tr>
-<tr><td>Market rent for A</td><td><strong>blank</strong></td><td><span class="badge b-bad">Unverified — comparables needed</span></td></tr>
-<tr><td>Federal exclusion 2026</td><td>$15,000,000</td><td><span class="badge b-ok">Verified — IRS</span></td></tr>
-<tr><td>Prop 19 cap 2025–2027</td><td>$1,044,586</td><td><span class="badge b-ok">Verified — BOE</span></td></tr>
-</tbody></table>
-</div>
-
-<h2>Discovery plan — suggestions to close the gaps</h2>
-<div class="card">
-<ol>
-<li><strong>One meeting, three documents.</strong> Take the <a href="briefing.html">Briefing Sheet</a> to the
-attorney and CPA in a single session; ask them to answer Q-03, Q-09, Q-10, Q-11, Q-14 in writing.</li>
-<li><strong>Order the county documents this month.</strong> Tax bills for A and B, and preliminary title reports
-— they resolve three of the ten blocking questions.</li>
-<li><strong>Commission the appraisals early.</strong> An appraisal dated to the date of death is only credible
-if ordered promptly; a later "retrospective" appraisal is weaker evidence for the IRS.</li>
-<li><strong>Get three rent opinions and two insurance quotes</strong> in the same month, so the ranges are
-comparable and dated.</li>
-<li><strong>Use the model's sensitivity range</strong> rather than a single number whenever a value is still
-blank; the <a href="model.html">Model page</a> is built for exactly that.</li>
-<li><strong>Record every answer with a date</strong> next to the item, so a future reader can see what was known
-when the decision was made.</li>
-</ol>
-</div>
-
-</div></main>
-<footer><div class="wrap">TinoDash1 · Questions register — no values inferred · $ rounded to $10</div></footer>
-</body></html>
+</body>
+</html>

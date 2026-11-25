@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generated": "2026-11-25",
+    "privacy": "All figures anonymized, rounded to nearest $10, placeholders only. No PII on site.",
+    "baseYear": 2026,
+    "transferWindow": "2040-2050 (trust inheritance)",
+    "horizons": [10, 20, 30, 50]
+  },
+  "properties": {
+    "A": {
+      "label": "Property A — Cupertino (95014)",
+      "estimatedValue2026": 3100000,
+      "assessedValue2026": 550540,
+      "propertyTax2025": 7210,
+      "traNote": "TRA lookup required — Santa Clara County published rate ~1.18% total (1% base + local bonds/parcels). See property-tax.html for official TRA lookup steps.",
+      "waterMonthly": [100, 150],
+      "electricMonthly": [-20, -10],
+      "insuranceAnnual": [1500, 2100],
+      "maintenanceAnnual": [3000, 5500],
+      "hoaMonthly": null
+    },
+    "B": {
+      "label": "Property B — San Francisco (94122, Outer Sunset)",
+      "estimatedValue2026": 1800000,
+      "assessedValue2025": 114250,
+      "propertyTax2025": 2440,
+      "rentalIncomeMonthly": 7150,
+      "units": { "total": 3, "rented": 2, "ownerOccupiable": 1 },
+      "waterMonthly": [330, 400],
+      "electricMonthly": [30, 70],
+      "insuranceAnnual": [1500, 2500],
+      "maintenanceAnnual": [6000, 11000]
+    }
+  },
+  "assumptions": {
+    "prop13Cap": 0.02,
+    "prop13Note": "CA Prop 13: assessed value max +2% annually unless change in ownership/new construction. Source: CA BOE.",
+    "inflationRange": [0.02, 0.035],
+    "homeAppreciationRange": [0.015, 0.045],
+    "rentGrowthRange": [0.015, 0.03],
+    "stockNominalRange": [0.05, 0.08],
+    "bondNominalRange": [0.03, 0.045],
+    "treasury2YRange": [0.035, 0.045],
+    "discountRate": 0.04
+  },
+  "projections": {
+    "propertyTaxRateTotal": { "low": 0.011, "high": 0.0125, "mid": 0.0118, "note": "1% base + voter-approved debt/parcels. Santa Clara County 2024-25 TRA book shows ~1.16-1.25% in Cupertino. See sources." },
+    "transferTaxSantaClara": { "county": 1.10, "per": 1000, "cityCupertino": 0, "note": "County Documentary Transfer Tax $1.10/$1000. Cupertino has no city transfer tax. SF has tiered transfer tax (Prop H)." }
+  }
+}

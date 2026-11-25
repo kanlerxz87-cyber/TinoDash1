@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projections & What-If — TinoDash1 Inheritance Decision Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">TinoDash1</div>
+      <div class="brand-sub">Property A (95014) &amp; Property B (94122)<br/>Inheritance Decision Dashboard</div>
+      <div class="nav-group"><div class="nav-group-title">Overview</div><a class="nav-link" href="index.html">Executive Summary</a><a class="nav-link" href="briefing.html">Attorney & CPA 1-Page Brief</a></div><div class="nav-group"><div class="nav-group-title">Financial & Risk Analysis</div><a class="nav-link active" href="projections.html">Projections, What-If & Distribution</a><a class="nav-link" href="black-swan.html">Black Swan & Phased Investing</a></div><div class="nav-group"><div class="nav-group-title">Tax, Legal & Process</div><a class="nav-link" href="tax-legal.html">Tax, Prop 19, Prop H & Laws</a><a class="nav-link" href="process-timeline.html">Process, Deadlines & 5-Yr Plan</a></div><div class="nav-group"><div class="nav-group-title">Review & Reference</div><a class="nav-link" href="questions-suggestions.html">Questions & Suggestions</a><a class="nav-link" href="flagged.html">Flagged for Review</a><a class="nav-link" href="glossary.html">Glossary</a></div>
+      <div class="privacy-badge">
+        <strong>Privacy-First Mode</strong><br/>
+        Anonymized placeholders only. All tax, assessment &amp; cost figures rounded to $10 increments.
+      </div>
+    </aside>
+    <main class="main">
+      
+    <h1>Projections, Interactive What-If Controls &amp; Distribution Chart</h1>
+    <p class="lead">Compare all 6 paths (Pure + Mixed) at identical transfer dates and horizons using Low / Base / High ranges rather than single-point assumptions.</p>
+
+    <div id="whatif-app">
+      <div class="controls">
+        <div class="ctrl-group">
+          <label for="ctrl-year">Transfer Year</label>
+          <select id="ctrl-year">
+            <option value="2040">2040</option>
+            <option value="2045" selected>2045 (Midpoint)</option>
+            <option value="2050">2050</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label for="ctrl-horizon">Horizon</label>
+          <select id="ctrl-horizon">
+            <option value="10">10 Years</option>
+            <option value="20" selected>20 Years</option>
+            <option value="30">30 Years</option>
+            <option value="50">50 Years</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label for="ctrl-scenario">Assumption Range</label>
+          <select id="ctrl-scenario">
+            <option value="low">Low (Conservative)</option>
+            <option value="base" selected>Base (Central)</option>
+            <option value="high">High (Optimistic)</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label for="ctrl-eq">Equity Return Shift: <span id="lbl-eq">+0.0%</span></label>
+          <input id="ctrl-eq" type="range" min="-3" max="3" step="0.5" value="0" />
+        </div>
+        <div class="ctrl-group">
+          <label for="ctrl-home">Home Appreciation Shift: <span id="lbl-home">+0.0%</span></label>
+          <input id="ctrl-home" type="range" min="-2" max="2" step="0.5" value="0" />
+        </div>
+        <div class="ctrl-group">
+          <label for="ctrl-imputed">Imputed Rent Weight: <span id="lbl-imputed">100%</span></label>
+          <input id="ctrl-imputed" type="range" min="0" max="1.2" step="0.2" value="1" />
+        </div>
+      </div>
+
+      <div class="callout accent"><strong id="whatif-headline">Loading model...</strong></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rank &amp; Path</th><th class="num">Ending Wealth</th><th class="num">vs. Leader</th><th>Notes</th></tr></thead>
+          <tbody id="whatif-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Outcome Distribution Chart (Monte Carlo: 500 Trials, 2045 Transfer, 20-Yr Horizon)</h2>
+    <div class="card">
+      <p class="kpi-sub" style="margin-bottom:14px;">Light blue = P10 to P90 range · Dark blue = P25 to P75 interquartile range · Black tick = Median (P50). All values rounded to $10.</p>
+      
+        <div class="dist-row">
+          <div class="dist-label">
+            <span>Pure 3: Sell Immediate (Lump Sum Equity)</span>
+            <span>P10: $7,400,820 · <strong>Median (P50): $18,584,880</strong> · P90: $45,833,890</span>
+          </div>
+          <div class="dist-track">
+            <div class="dist-p10-90" style="left:16.1%; width:83.9%;"></div>
+            <div class="dist-p25-75" style="left:24.0%; width:41.5%;"></div>
+            <div class="dist-p50" style="left:40.5%;"></div>
+          </div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-label">
+            <span>Mixed 3: Sell + Phased Treasuries (30m)</span>
+            <span>P10: $7,156,080 · <strong>Median (P50): $17,560,750</strong> · P90: $39,512,000</span>
+          </div>
+          <div class="dist-track">
+            <div class="dist-p10-90" style="left:15.6%; width:70.6%;"></div>
+            <div class="dist-p25-75" style="left:23.7%; width:36.5%;"></div>
+            <div class="dist-p50" style="left:38.3%;"></div>
+          </div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-label">
+            <span>Pure 1: Live in Property A (Prop 19)</span>
+            <span>P10: $11,999,940 · <strong>Median (P50): $16,637,780</strong> · P90: $24,123,340</span>
+          </div>
+          <div class="dist-track">
+            <div class="dist-p10-90" style="left:26.2%; width:26.5%;"></div>
+            <div class="dist-p25-75" style="left:30.6%; width:14.3%;"></div>
+            <div class="dist-p50" style="left:36.3%;"></div>
+          </div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-label">
+            <span>Pure 2: Rent Property A (Reassessed)</span>
+            <span>P10: $11,099,550 · <strong>Median (P50): $15,411,110</strong> · P90: $22,376,210</span>
+          </div>
+          <div class="dist-track">
+            <div class="dist-p10-90" style="left:24.2%; width:24.6%;"></div>
+            <div class="dist-p25-75" style="left:28.3%; width:13.3%;"></div>
+            <div class="dist-p50" style="left:33.6%;"></div>
+          </div>
+        </div>
+    </div>
+
+    <h2>Property A (Cupertino 95014) Year-by-Year Projection (Base Case, $10 Rounded)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Year</th><th class="num">Est. FMV</th><th class="num">Prop 13 FBYV</th><th class="num">Prop 19 Cap (Indexed)</th><th class="num">Tax w/ Prop 19</th><th class="num">Tax No Prop 19</th><th class="num">Annual Savings</th><th>Official Source</th></tr>
+        </thead>
+        <tbody><tr>
+              <td>2026</td>
+              <td class="num">$3,100,000</td>
+              <td class="num">$550,540</td>
+              <td class="num">$1,044,590</td>
+              <td class="num">$25,390</td>
+              <td class="num">$37,930</td>
+              <td class="num">$12,540</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr><tr>
+              <td>2030</td>
+              <td class="num">$3,626,560</td>
+              <td class="num">$595,920</td>
+              <td class="num">$1,153,030</td>
+              <td class="num">$30,500</td>
+              <td class="num">$44,330</td>
+              <td class="num">$13,840</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr><tr>
+              <td>2035</td>
+              <td class="num">$4,412,270</td>
+              <td class="num">$657,950</td>
+              <td class="num">$1,304,540</td>
+              <td class="num">$38,230</td>
+              <td class="num">$53,880</td>
+              <td class="num">$15,650</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr><tr>
+              <td>2040</td>
+              <td class="num">$5,368,200</td>
+              <td class="num">$726,430</td>
+              <td class="num">$1,475,970</td>
+              <td class="num">$47,780</td>
+              <td class="num">$65,490</td>
+              <td class="num">$17,710</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr><tr>
+              <td>2045</td>
+              <td class="num">$6,531,230</td>
+              <td class="num">$802,030</td>
+              <td class="num">$1,669,930</td>
+              <td class="num">$59,570</td>
+              <td class="num">$79,610</td>
+              <td class="num">$20,040</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr><tr>
+              <td>2050</td>
+              <td class="num">$7,946,240</td>
+              <td class="num">$885,510</td>
+              <td class="num">$1,889,370</td>
+              <td class="num">$74,100</td>
+              <td class="num">$96,770</td>
+              <td class="num">$22,670</td>
+              <td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE Prop 19</a></td>
+            </tr></tbody>
+      </table>
+    </div>
+
+    <h2>Property B (SF Outer Sunset 94122, Already Owned) Projection (Base Case, $10 Rounded)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Year</th><th class="num">Est. FMV</th><th class="num">Assessed (Prop 13)</th><th class="num">Total Prop Tax</th><th class="num">Prop H Parcel Tax</th><th class="num">2-Unit Rent/Yr</th><th class="num">Est. Maint/Yr</th><th>Official Source</th></tr>
+        </thead>
+        <tbody><tr>
+              <td>2026</td>
+              <td class="num">$1,800,000</td>
+              <td class="num">$116,540</td>
+              <td class="num">$2,850</td>
+              <td class="num">$350</td>
+              <td class="num">$85,800</td>
+              <td class="num">$21,600</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr><tr>
+              <td>2030</td>
+              <td class="num">$2,065,540</td>
+              <td class="num">$126,140</td>
+              <td class="num">$3,130</td>
+              <td class="num">$390</td>
+              <td class="num">$96,570</td>
+              <td class="num">$24,790</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr><tr>
+              <td>2035</td>
+              <td class="num">$2,453,220</td>
+              <td class="num">$139,270</td>
+              <td class="num">$3,530</td>
+              <td class="num">$450</td>
+              <td class="num">$111,950</td>
+              <td class="num">$29,440</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr><tr>
+              <td>2040</td>
+              <td class="num">$2,913,650</td>
+              <td class="num">$153,770</td>
+              <td class="num">$3,980</td>
+              <td class="num">$520</td>
+              <td class="num">$129,780</td>
+              <td class="num">$34,960</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr><tr>
+              <td>2045</td>
+              <td class="num">$3,460,500</td>
+              <td class="num">$169,770</td>
+              <td class="num">$4,490</td>
+              <td class="num">$590</td>
+              <td class="num">$150,450</td>
+              <td class="num">$41,530</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr><tr>
+              <td>2050</td>
+              <td class="num">$4,109,990</td>
+              <td class="num">$187,440</td>
+              <td class="num">$5,070</td>
+              <td class="num">$680</td>
+              <td class="num">$174,410</td>
+              <td class="num">$49,320</td>
+              <td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Rate</a> / <a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">Prop H</a></td>
+            </tr></tbody>
+      </table>
+    </div>
+    
+    </main>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

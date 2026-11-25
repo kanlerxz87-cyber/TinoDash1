@@ -1,49 +1,80 @@
-# TinoDash1 — Cupertino / San Francisco inheritance decision dashboard
+# TinoDash — Privacy-First Inheritance Decision Dashboard
 
-A privacy-first, static GitHub Pages site that organises the analysis for a household deciding what to do
-with a Cupertino house inherited by trust around 2040–2050, given that a San Francisco house is already owned
-by the heir and produces rental income.
+**Property A (Cupertino 95014)** inherited via trust ~2040–2050 vs **Property B (SF 94122, Outer Sunset, 3-unit, already owned)**
 
-**Live site:** https://kanlerxz87-cyber.github.io/TinoDash1/
+🔗 **Live Dashboard (GitHub Pages):** `https://kanlerxz87-cyber.github.io/TinoDash1/` — served from both **root** (primary 17-page site) and **`docs/`** (legacy 9-page docs) for compatibility.
 
-## Privacy rules (non-negotiable)
+## What this is
 
-- Placeholders only: **Property A** (Cupertino 95014), **Property B** (San Francisco 94122), **Heir**,
-  **Decedent**, **Trustee**. No names, street addresses, account numbers, or anything else identifying.
-- All dollar amounts rounded to the nearest **$10** so no figure can be matched back to a public record.
-- The private estate inventory lives offline, **outside** this repository.
+**Executive Summary** with *What would change the answer* on the first screen — pre-commit triggers before the appraisal arrives. **Pure + Mixed paths** compared at same transfer dates/horizons (10/20/30/50 yr) with taxes, debt, occupancy, capital, liquidity. **Black-Swan phased path** — park sale proceeds in 3M–2Y Treasuries 24–36 mo then DCA into stocks; 1929/1970s/2008/2022 crash-entry stress; **reinvestment risk** labeled beside every staging headline.
 
-## Pages
+**Taxes fully separated:** Prop 13/19 + TRA (~1.18% Cupertino), Prop H transfer tax (SCC $1.10/$1k vs SF 0.75% + $249/$65 parcel tax), §121 exclusion ($250k/$500k), FTB 540 BHST 1% over $1M (gains as ordinary), NIIT 3.8%, depreciation 27.5yr + 25% recapture — each with official sources.
 
-| Page | Purpose |
-|---|---|
-| `index.html` | Dashboard, executive summary, "what would change the answer" |
-| `model.html` | Interactive model: what-if controls, mixed paths, distribution chart |
-| `black-swan.html` | Crash/stagflation cases + phased-investing (Treasury parking) test |
-| `taxes.html` | Estate tax, income-tax basis, property-tax assessment kept separate; law-change tracker |
-| `properties.html` | Both properties: tax history, projections, five-year capital plans, utilities |
-| `process.html` | Step-by-step inheritance by trust + deadline timeline |
-| `questions.html` | Questions, missing information, discovery plan, pre-commit criteria |
-| `suggestions.html` | Suggestions register — review and choose before implementing |
-| `briefing.html` | One-page printable Attorney & CPA Briefing Sheet |
-| `flagged.html` | Flagged for Review: everything unverified or irregular |
-| `glossary.html` | Plain-language definitions |
+Includes what-if sliders, distribution chart (P10–P90), 5-yr capital plan, insurance research by ZIP, deadlines timeline, legislation tracker (enacted vs proposed), **one-page Attorney & CPA Briefing Sheet** (printable, rounded $10, no PII), and **Flagged for Review** (no hallucinated filling).
 
-## Verification standard
+## Privacy
 
-Every factual row carries a link to an official source (IRS, FTB, BOE, Treasury, HUD, county, city).
-Where an official value does not exist, the cell is left **blank** and listed on `flagged.html`.
-No value is inferred.
+- No names, addresses, APNs, or exact ledgers on site. All figures rounded to nearest **$10** per request to prevent search traceability.
+- Private estate inventory is a *local encrypted file* — never committed (`.gitignored` root `private/` + `docs/private`).
+- Git history verified clean (initial commit 8f95825 only) — see `methodology.html#exposure` + legacy `docs/flagged.html`.
 
-## Local preview
+## Structure — two complementary sites
 
-```bash
-python3 -m http.server 8000
+```
+# Primary site (root) — 17 pages — arena-43f9846f
+index.html                  — Executive Summary + What would change the answer + distribution chart
+briefing.html               — One-page Attorney & CPA Briefing Sheet (print)
+timeline.html               — Deadlines as visual timeline
+property-tax.html           — TRA lookup, assessed/tax tables, Prop 19 carry-forward, transfer tax + Prop H
+estate.html                 — Estate tax vs Basis vs Assessment + private inventory + IPS
+paths.html                  — Pure & mixed paths + imputed rent + §121 + same-year sale + what-if sliders
+blackswan.html              — Black-swan economics + phased Treasuries→DCA + 1929/2008 backtest
+sensitivity.html            — What-if controls + Form 540 MHS 1% + 7 tax-aware sensitivities
+sf-property.html            — Property B leases + SF rent control
+insurance-maintenance.html  — Insurance by ZIP + 5-yr maintenance & capital plan
+legislation.html            — Enacted vs Proposed tracker + recheck log
+glossary.html               — Grouped menu + glossary
+questions.html              — Questions & missing info → how to discover
+suggestions.html            — Suggestions backlog (vote before building)
+sources.html                — Every official source line-by-line
+flagged.html                — Flagged for Review (unverified)
+methodology.html            — Methodology + privacy + change log
+css/style.css, js/app.js, data/model.json
+
+# Legacy docs site — preserved (914b57ba + ef80c5c0)
+docs/index.html, docs/projections.html, docs/tax-legal.html, docs/black-swan.html,
+docs/briefing.html, docs/process-timeline.html, docs/flagged.html, docs/glossary.html,
+docs/questions-suggestions.html, docs/data/model_output.json, docs/assets/*
+
+# Reproducible model (914b57ba)
+model/data_inputs.json, model/engine.py, build_site.py → regenerates docs/data/model_output.json
+  python3 build_site.py
 ```
 
-Then open <http://localhost:8000>.
+## How to use
 
-## Notes
+1. Start at **Executive Summary** (root `index.html`) — read *What would change the answer* and agree in writing with date.
+2. Check **Flagged** — clear red items (rent comps, TRA, leases, estate size, debt) before deciding.
+3. Run **What-Ifs** — move sliders; see if recommendation moves; see `docs/projections.html` for the legacy model's full projection table.
+4. Print **Briefing Sheet** for attorney/CPA meeting (root `briefing.html` or `docs/briefing.html`).
+5. Re-run **annually** with updated inputs (see Timeline + Legislation tracker). For docs site, edit `model/data_inputs.json` + `python3 build_site.py`.
 
-- Not tax, legal, or investment advice. Consult a licensed attorney and CPA.
-- Re-verify all rates and thresholds annually; see `suggestions.html` S-04/S-05.
+## Verification
+
+Every table row links to an official authority (IRS PL 119-21/TCJA, FTB 540, BOE P13/19 LTA 2025/009, SCC/SF Assessor/Recorder/Treasurer, CDI, BLS, FRED, Treasury, CPUC, SF Rent Board, SPUR). If unverified, blank + flagged. See `sources.html` + `docs/flagged.html` + `COORDINATION.md`.
+
+- **Official Law Verification (2026):** IRS $15M/$30M (PL 119-21), BOE Prop 19 $1,044,586 (2025–27), FTB 540 13.3% top (1% BHST >$1M), SCC 0.11% ($1.10/$1k), SF 0.75% ($1M–$4.99M), SF Prop H $249/$65.
+- **Prior baseline also tracked:** TCJA sunset ~$7M if PL 119-21 not extended — see `legislation.html` enacted vs proposed distinction.
+
+## GitHub Pages
+
+- `_config.yml` + `.nojekyll` (root) and `docs/.nojekyll` present. Pages can serve from **root** or **`docs/`** — both contain valid sites; `_config.yml` includes `css, js, data, assets` and excludes `private/`.
+- After merge to `main`, verify deploy at `https://kanlerxz87-cyber.github.io/TinoDash1/` — no broken links (both sites audited pre-merge).
+
+## Re-check cadence
+
+Quarterly (Feb/May/Aug/Nov) — IRS Rev. Proc., FTB 540 booklet, SCC TRA Book, SF Treasurer transfer tax, SF Rent Board limits, insurance filings. Logged in `legislation.html` + legacy `docs/tax-legal.html`.
+
+---
+
+*Educational only — not legal, tax, or investment advice. Verify with licensed attorney/CPA/financial adviser. Official sources outrank this site.*
