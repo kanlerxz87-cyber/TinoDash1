@@ -28,9 +28,27 @@ class SensitiveValueTests(unittest.TestCase):
             (root / 'page.html').write_text('<p>Illustrative only: $12,670</p>')
             result = subprocess.run([sys.executable, str(SCRIPT), '--seed-json', str(seed), '--field', 'history', '--root', str(root)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 1)
-            self.assertIn('page.html', result.stdout)
+            self.assertIn('file #1', result.stdout)
+            self.assertNotIn('page.html', result.stdout)
             self.assertNotIn('12,670', result.stdout)
             self.assertNotIn('12673', result.stdout)
+
+    def test_matching_filename_is_detected_and_path_is_hidden_by_default(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'site'
+            root.mkdir()
+            seed = Path(tmp) / 'private.json'
+            seed.write_text(json.dumps({'amount': 12673}))
+            (root / 'private-12673.html').write_text('<p>Nothing here.</p>')
+            base = [sys.executable, str(SCRIPT), '--seed-json', str(seed), '--field', 'amount', '--root', str(root)]
+            hidden = subprocess.run(base, capture_output=True, text=True)
+            shown = subprocess.run(base + ['--show-paths'], capture_output=True, text=True)
+            self.assertEqual(hidden.returncode, 1)
+            self.assertIn('1 path match', hidden.stdout)
+            self.assertNotIn('private-', hidden.stdout)
+            self.assertNotIn('12673', hidden.stdout)
+            self.assertIn('private-[number suppressed].html', shown.stdout)
+            self.assertNotIn('12673', shown.stdout)
 
     def test_clean_scan_and_no_seeds_are_distinct(self):
         with tempfile.TemporaryDirectory() as tmp:

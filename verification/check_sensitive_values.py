@@ -98,9 +98,10 @@ def scan(root: Path, pattern: re.Pattern):
             text = path.read_text(encoding='utf-8')
         except (OSError, UnicodeError):
             continue
-        count = len(pattern.findall(text))
-        if count:
-            hits.append((rel.as_posix(), count))
+        content_count = len(pattern.findall(text))
+        path_count = len(pattern.findall(rel.as_posix()))
+        if content_count or path_count:
+            hits.append((rel.as_posix(), content_count, path_count))
     return hits
 
 
@@ -110,6 +111,7 @@ def main() -> int:
     parser.add_argument('--field', action='append', required=True, help='dot-separated path to a monetary value or history (repeatable)')
     parser.add_argument('--root', default='.', help='directory to check')
     parser.add_argument('--minimum', type=Decimal, default=Decimal('1000'), help='minimum absolute positive amount to match; default 1000')
+    parser.add_argument('--show-paths', action='store_true', help='include paths ONLY after reviewing names for personal information')
     args = parser.parse_args()
     if not args.root or not Path(args.root).is_dir() or not args.minimum.is_finite() or args.minimum <= 0:
         print('ERROR: invalid scan directory or minimum', file=sys.stderr)
@@ -128,8 +130,11 @@ def main() -> int:
         print('ERROR: no eligible seed amounts; nothing was checked', file=sys.stderr)
         return 2
     hits = scan(Path(args.root), pattern)
-    for path, count in hits:
-        print(f'POSSIBLE: {path}: {count} numeric token match(es); content suppressed')
+    for index, (path, content_count, path_count) in enumerate(hits, 1):
+        # Paths can themselves identify a household. They are hidden by default;
+        # even --show-paths must be used only after private filename review.
+        label = pattern.sub('[number suppressed]', path) if args.show_paths else f'file #{index}'
+        print(f'POSSIBLE: {label}: {content_count} content and {path_count} path match(es); values suppressed')
     print(f'Scanned text files against {len(amounts)} numeric seeds; {len(hits)} files have possible matches.')
     print('Matches require private review and may be coincidental. A clean result does not certify privacy, remove history, or detect derived values.')
     return 1 if hits else 0
