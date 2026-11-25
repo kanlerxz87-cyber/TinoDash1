@@ -1,0 +1,147 @@
+{
+  "paths": [
+    {
+      "id": "sell-immediate",
+      "category": "Pure",
+      "name": "Path 1: Immediate Sale & Diversified Equity Reinvestment",
+      "shortName": "Sell & Reinvest (Yr 0)",
+      "summary": "Sell Property A in the year of trust transfer under IRC §1014 stepped-up basis (near-zero capital gains), pay ~5.6% brokerage + SCC transfer/recording fees, invest net proceeds in a low-cost diversified equity/bond portfolio, and keep living in Property B Unit 3.",
+      "prop19Claimed": false,
+      "sec121Claimed": false,
+      "omiRisk": "None (stay in Property B Unit 3)"
+    },
+    {
+      "id": "rent-hold",
+      "category": "Pure",
+      "name": "Path 2: Hold & Rent Property A (Full Prop 19 Reassessment)",
+      "shortName": "Hold & Rent A",
+      "summary": "Keep living in Property B Unit 3 and lease Property A at Cupertino market rent. Because the heir does not occupy Property A as primary residence within 1 year, Prop 19 fails and Property A reassesses to 100% FMV (~1.171% + direct fees). Uses 27.5-year MACRS depreciation on ~40% building value; exposed to post-NEM 2.0 solar bills, CapEx, and §1250 recapture if ever sold.",
+      "prop19Claimed": false,
+      "sec121Claimed": false,
+      "omiRisk": "None (stay in Property B Unit 3)"
+    },
+    {
+      "id": "live-prop19",
+      "category": "Pure",
+      "name": "Path 3: Move Into Property A & Claim Prop 19 + Rent Property B Unit 3",
+      "shortName": "Live in A (Prop 19) + Rent B3",
+      "summary": "Occupy Property A within 1 year as long-term principal residence, file BOE-19-P to preserve FBYV + indexed Prop 19 allowance (~$1.045M today, indexed forward), and lease out Property B's 3rd unit (market initial rent under Costa-Hawkins, then SF Rent Ordinance 1.6%/yr cap if pre-1979). Includes explicit imputed-rent housing value for Property A.",
+      "prop19Claimed": true,
+      "sec121Claimed": false,
+      "omiRisk": "High if ever moving back to B3 (SF Prop H OMI ~$8.25k–$24.7k/unit; blocked for elderly/disabled long-term tenants)"
+    },
+    {
+      "id": "mixed-live-then-sell",
+      "category": "Mixed",
+      "name": "Path 4: Live in Property A (5 Yrs w/ Prop 19 + §121), Then Sell & Return/Invest",
+      "shortName": "Live 5 Yrs -> Sell (§121)",
+      "summary": "Move into Property A for 5 years (securing Prop 19 savings while renting Property B Unit 3), then sell Property A claiming IRC §121 ($250k/$500k tax-free gain above §1014 basis). Accounts for brokerage/transfer costs, SF Prop H OMI relocation risk to recover Property B Unit 3, and reinvesting net sale proceeds.",
+      "prop19Claimed": true,
+      "sec121Claimed": true,
+      "omiRisk": "Material — reclaiming Property B Unit 3 after 5 yrs triggers OMI rules & relocation fees"
+    },
+    {
+      "id": "mixed-phased-staging",
+      "category": "Mixed",
+      "name": "Path 5: Sell Property A at Transfer + 24–36 Mo Treasury Staging Into Equities",
+      "shortName": "Sell + Treasury Staging (24–36m)",
+      "summary": "Sell Property A at §1014 step-up and park net proceeds in 3M T-Bills or a 2Y Treasury Ladder (currently 4.32%–4.88% Nov 2026) while phasing into diversified stocks over 24–36 months. Softens 1929/2008 entry crashes while explicitly quantifying Reinvestment Risk (yield drop during Fed cuts) and Opportunity Drag in bull markets.",
+      "prop19Claimed": false,
+      "sec121Claimed": false,
+      "omiRisk": "None (stay in Property B Unit 3)"
+    },
+    {
+      "id": "mixed-rent-then-1031",
+      "category": "Mixed",
+      "name": "Path 6: Rent Property A 5 Yrs + IRC §1031 Exchange Into Higher-Yield Assets",
+      "shortName": "Rent 5 Yrs -> §1031 Exchange",
+      "summary": "Operate Property A as a full-reassessment rental for 5 years (capturing 27.5-yr depreciation), then execute an IRC §1031 tax-deferred exchange (45-day ID / 180-day close; FTB Form 3840 if out of state) into a higher-cap-rate diversified income portfolio (~4.8% net yield vs ~2.0% Cupertino net cap rate).",
+      "prop19Claimed": false,
+      "sec121Claimed": false,
+      "omiRisk": "None (stay in Property B Unit 3)"
+    }
+  ],
+  "blackSwanRegimes": [
+    {
+      "id": "baseline-nonconstant",
+      "name": "Realistic Non-Constant 50-Yr Baseline (Cycle-Varying Growth & Inflation)",
+      "description": "Models alternating 7–10 yr expansions, recessions, and sticky inflation regimes instead of straight-line growth. Mean ~7.2% nominal equity, ~3.4% Bay Area RE, ~2.8% CPI-U, ~4.0% short Treasuries.",
+      "shockSummary": "Realistic cyclical volatility (20%–30% occasional pullbacks)"
+    },
+    {
+      "id": "1929-depression",
+      "name": "1929–1939 Great Depression Entry Shock",
+      "description": "Severe equity collapse in Years 1–3 (-45%, -28%, -35% nominal path) followed by deflationary/slow recovery; Bay Area RE drops -28% over 4 yrs; short Treasury rates collapse from 4.3% to 0.3% (acute 3M T-bill reinvestment risk!).",
+      "shockSummary": "-80% peak equity drawdown; T-bill yields drop near 0%"
+    },
+    {
+      "id": "1973-stagflation",
+      "name": "1973–1982 Stagflation & Rate Shock (BLS CPI 7.3%–14.8%)",
+      "description": "Two inflation waves (1974 +11% & 1979–80 +13.3%–14.8% CPI), -38% real stock drop in Yrs 1–2, surging insurance/maintenance/CapEx costs (+9%/yr) while SF rent control caps existing tenancies at 1.6%–3%!",
+      "shockSummary": "High CPI erodes real bond returns & squeezes rent-controlled cash flow"
+    },
+    {
+      "id": "2008-gfc-lost-decade",
+      "name": "2000–2009 Double Crash & 2008 GFC Entry",
+      "description": "Repeated equity drawdowns (Yr 1–2 -38%, Yr 6 -37%) combined with Bay Area housing correction (-22%) and zero-interest-rate policy cutting 3M T-bill rolls from 4.8% down to 0.15% (severe reinvestment risk!).",
+      "shockSummary": "Lost-decade equity volatility + 22% RE drop + 0.15% T-bill cliff"
+    },
+    {
+      "id": "2020-2023-covid-rates",
+      "name": "2020 V-Crash + 2022 Inflation/Duration Shock",
+      "description": "Year 1 sharp -34% V-drop reversing +48% within 12 months (testing staging opportunity drag!), followed in Year 3 by +9.1% CPI and -19% equities / -13% long bonds simultaneously.",
+      "shockSummary": "Fast V-rebound creates high staging lag + simultaneous 2022 stock/bond hit"
+    }
+  ],
+  "missingInfoQuestions": [
+    {
+      "id": "Q1",
+      "category": "Estate Tax & Trust Structure",
+      "question": "What is the estimated total gross estate (liquid securities, retirement accounts, business interests, Property A, life insurance) and are there prior Form 709 taxable gifts?",
+      "whyItMatters": "Determines whether estate clears the 2026 $15M / $30M married federal exclusion or faces a 40% estate tax due 9 months post-death—requiring an Estate Liquidity Plan or §6166/borrowing.",
+      "howToDiscoverPrivately": "Review latest family trust schedules, brokerage year-end statements, and CPA Form 709 records offline; enter only $10k-rounded buckets into local sliders."
+    },
+    {
+      "id": "Q2",
+      "category": "Trust Mechanics & Portability (DSUE)",
+      "question": "Is the trust a single survivor's trust, revocable living trust, or split A/B bypass trust? Did a predeceased spouse leave unused DSUE portability on Form 706?",
+      "whyItMatters": "Bypass (B) trust assets may NOT receive a second IRC §1014 step-up in basis at the surviving spouse's death, completely flipping Sell-vs-Hold capital gains math.",
+      "howToDiscoverPrivately": "Have estate attorney inspect trust agreement and verify whether Form 706 portability election was timely filed (or qualifies under 5-yr Rev. Proc. 2022-32)."
+    },
+    {
+      "id": "Q3",
+      "category": "Property A Exact TRA & Direct Parcel Taxes",
+      "question": "What is Property A's exact 6-digit Santa Clara County Tax Rate Area (013-xxx) and itemized direct parcel assessments on the 2025–2026 / 2026–2027 tax bill?",
+      "whyItMatters": "County TRA rates in Cupertino vary from ~1.1671% to 1.1786%+ plus SCVWD & parcel taxes; separates ad valorem reassessment from fixed charges.",
+      "howToDiscoverPrivately": "Look up the secured bill via Santa Clara County DTAC portal locally using APN (never paste APN or PDF into GitHub)."
+    },
+    {
+      "id": "Q4",
+      "category": "Property A Specs, Solar & CapEx Age",
+      "question": "What are Property A's exact beds/baths/sqft/lot size, land-vs-improvement assessor split, roof/HVAC/plumbing age, and solar NEM 2.0 interconnection date?",
+      "whyItMatters": "Land share sets 27.5-yr depreciation deduction; exact beds/sqft tighten Cupertino rental comps ($5.0k vs $8.0k/mo); solar PTO date sets when the 20-year NEM 2.0 legacy ends.",
+      "howToDiscoverPrivately": "Check original PG&E PTO email, building permit history on Cupertino city portal, and Santa Clara County Assessor notice."
+    },
+    {
+      "id": "Q5",
+      "category": "Property B Rent Control, SqFt & Tenants",
+      "question": "Was Property B built before June 13, 1979? What is its total building square footage? Do current tenants hold protected status (60+/disabled 10+ yrs, or SFUSD family)?",
+      "whyItMatters": "Pre-1979 status locks 1.6% SF Rent Board caps & bans OMI on protected tenants; total >5,000 sqft triggers extra $0.195/sqft under Nov 2026 SF Prop H starting July 1, 2027.",
+      "howToDiscoverPrivately": "Check Property B Certificate of Occupancy / DBI permit record and existing written leases offline with SF landlord counsel."
+    },
+    {
+      "id": "Q6",
+      "category": "Real Insurance Declarations (Both Buildings)",
+      "question": "What are actual 2026 renewal quotes for homeowners/landlord liability + umbrella + earthquake (CEA) policies on Property A and 3-unit habitational coverage on Property B?",
+      "whyItMatters": "The $1,500/yr assumption is severely below 2026 Bay Area market reality ($2.8k–$6.5k for A; $4.8k–$10.5k for 3-unit B), distorting net cash flow by $5k–$12k/yr.",
+      "howToDiscoverPrivately": "Obtain 2 independent broker quotes (admitted carrier + FAIR Plan/DIC fallback) for both personal residence and landlord forms."
+    },
+    {
+      "id": "Q7",
+      "category": "Heir Tax Profile & Residency Commitment",
+      "question": "What is the heir's expected marginal AGI/MAGI at transfer (triggering 3.8% NIIT >$200k/$250k and CA +1% surtax >$1M) and genuine 5–10+ yr willingness to live in Cupertino?",
+      "whyItMatters": "Prop 19 exclusion is lost immediately if the heir moves out; Form 540 combined 13.3% rate heavily penalizes non-sheltered capital gains or depreciation recapture.",
+      "howToDiscoverPrivately": "Run private Form 1040 / Form 540 projections with CPA and formalize the written Pre-Commitment Decision Criteria."
+    }
+  ]
+}

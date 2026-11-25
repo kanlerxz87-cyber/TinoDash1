@@ -1,0 +1,91 @@
+{
+  "privacyNote": "All property details are anonymized and all dollar values are rounded to the nearest $10 increment.",
+  "propertyA": {
+    "id": "property-a",
+    "label": "Property A",
+    "municipality": "Cupertino",
+    "zip": "95014",
+    "ownershipStatus2026": "Held in family trust (anticipated inheritance ~2040–2050)",
+    "type": "Single-Family Residence (with rooftop solar)",
+    "estimatedValueNov2026Usd": { "low": 2850000, "base": 3100000, "high": 3350000 },
+    "assessedValue2026Usd": 550540,
+    "assumedLandRatioPct": 60,
+    "assumedImprovementRatioPct": 40,
+    "traCodeStatus": "Unverified (City of Cupertino prefix 013-xxx confirmed; exact 6-digit TRA pending private bill check)",
+    "adValoremRatePct": 1.171,
+    "impliedDirectAssessmentsUsd": 910,
+    "monthlyUtilities2026Usd": {
+      "solarElectricity": { "low": -20, "base": -10, "high": 0, "postNem2SunsetBase": 90 },
+      "water": { "low": 100, "base": 120, "high": 150 }
+    },
+    "insurancePlaceholderUserUsd": 1500,
+    "insuranceRealisticRangeUsd": { "low": 2800, "base": 4200, "high": 6500 },
+    "marketRentMonthly2026Usd": { "low": 5500, "base": 6300, "high": 7200 },
+    "fiveYearCapexPlan2026Usd": [
+      { "item": "Roof / Exterior Envelope Reserve", "lowUsd": 15000, "baseUsd": 24000, "highUsd": 35000, "priority": "Inspect & verify age" },
+      { "item": "Solar Inverter / Battery Retrofit (post-NEM 2.0 sunset prep)", "lowUsd": 8000, "baseUsd": 16000, "highUsd": 26000, "priority": "Verify interconnection date" },
+      { "item": "HVAC / Electrical Panel / Plumbing Modernization", "lowUsd": 10000, "baseUsd": 18000, "highUsd": 28000, "priority": "Pre-rental or move-in" },
+      { "item": "Tree / Drainage / Hardscape & Sewer Lateral", "lowUsd": 4000, "baseUsd": 9000, "highUsd": 15000, "priority": "Routine capital reserve" }
+    ],
+    "taxHistoryRounded": [
+      { "year": 2026, "taxUsd": null, "taxChangePct": null, "assessedUsd": 550540, "assessedChangePct": 2.0, "status": "Tax bill pending" },
+      { "year": 2025, "taxUsd": 7210, "taxChangePct": 2.9, "assessedUsd": 539740, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2024, "taxUsd": 7000, "taxChangePct": 1.2, "assessedUsd": 529160, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2023, "taxUsd": 6920, "taxChangePct": 2.4, "assessedUsd": 518790, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2022, "taxUsd": 6760, "taxChangePct": 1.4, "assessedUsd": 508610, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2021, "taxUsd": 6660, "taxChangePct": 1.5, "assessedUsd": 498640, "assessedChangePct": 1.0, "status": "Rounded to $10" },
+      { "year": 2020, "taxUsd": 6570, "taxChangePct": 0.0, "assessedUsd": 493530, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2019, "taxUsd": 6570, "taxChangePct": 2.8, "assessedUsd": 483850, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2018, "taxUsd": 6380, "taxChangePct": 0.0, "assessedUsd": 474370, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2017, "taxUsd": 6380, "taxChangePct": -0.5, "assessedUsd": 465070, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2016, "taxUsd": 6410, "taxChangePct": 4.6, "assessedUsd": 455950, "assessedChangePct": 1.5, "status": "Rounded to $10" },
+      { "year": 2015, "taxUsd": 6130, "taxChangePct": 2.8, "assessedUsd": 449100, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2014, "taxUsd": 5970, "taxChangePct": null, "assessedUsd": 440310, "assessedChangePct": 0.5, "status": "Rounded to $10" }
+    ]
+  },
+  "propertyB": {
+    "id": "property-b",
+    "label": "Property B",
+    "municipality": "San Francisco (Outer Sunset)",
+    "zip": "94122",
+    "ownershipStatus2026": "Already owned directly by prospective heir",
+    "type": "3-Unit Multi-Family Residential Building (2 rented units + 1 owner-usable unit)",
+    "estimatedValueNov2026Usd": { "low": 1650000, "base": 1800000, "high": 2000000 },
+    "assessedValue2025Usd": 114250,
+    "assumedBuildingSqft": { "low": 3200, "base": 3800, "high": 4500, "status": "Unverified — verify for SF Prop H threshold >5,000 sqft" },
+    "rentControlYearBuiltStatus": "Unverified — pre-June 13, 1979 assumption applied conservatively",
+    "adValoremRateFy2627Pct": 1.18162182,
+    "impliedDirectAssessmentsUsd": 1090,
+    "rentedUnitsTwoMonthly2026Usd": 7150,
+    "thirdUnitMarketRentMonthly2026Usd": { "low": 2900, "base": 3400, "high": 3900 },
+    "monthlyUtilities2026Usd": {
+      "waterThreeUnits": { "low": 330, "base": 360, "high": 400 },
+      "electricCommon": { "low": 30, "base": 50, "high": 70 }
+    },
+    "insurancePlaceholderUserUsd": 1500,
+    "insuranceRealisticRangeUsd": { "low": 4800, "base": 7200, "high": 10500 },
+    "fiveYearCapexPlan2026Usd": [
+      { "item": "Coastal Exterior Stucco / Fog-Exposure Waterproofing & Windows", "lowUsd": 20000, "baseUsd": 35000, "highUsd": 55000, "priority": "Outer Sunset exposure" },
+      { "item": "Seismic Soft-Story / Lateral Bracing & Foundation Check", "lowUsd": 15000, "baseUsd": 30000, "highUsd": 65000, "priority": "Verify DBI tier/compliance" },
+      { "item": "Roof Membrane & Plumbing/Sewer Main Replacement", "lowUsd": 18000, "baseUsd": 28000, "highUsd": 45000, "priority": "3-unit shared infrastructure" },
+      { "item": "Owner-Unit / Vacancy Turn & Sub-Metering Assessment", "lowUsd": 8000, "baseUsd": 16000, "highUsd": 28000, "priority": "Before renting 3rd unit" }
+    ],
+    "taxHistoryRounded": [
+      { "year": 2025, "taxUsd": 2440, "taxChangePct": 5.3, "assessedUsd": 114250, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2024, "taxUsd": 2320, "taxChangePct": 6.2, "assessedUsd": 112010, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2023, "taxUsd": 2180, "taxChangePct": 3.4, "assessedUsd": 109810, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2022, "taxUsd": 2110, "taxChangePct": 2.0, "assessedUsd": 107660, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2021, "taxUsd": 2070, "taxChangePct": -5.9, "assessedUsd": 105600, "assessedChangePct": 1.0, "status": "Rounded to $10" },
+      { "year": 2020, "taxUsd": 2200, "taxChangePct": 3.0, "assessedUsd": 104510, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2019, "taxUsd": 2130, "taxChangePct": 3.5, "assessedUsd": 102470, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2018, "taxUsd": 2060, "taxChangePct": 18.4, "assessedUsd": 100460, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2017, "taxUsd": 1740, "taxChangePct": 3.9, "assessedUsd": 98490, "assessedChangePct": 2.0, "status": "Rounded to $10" },
+      { "year": 2016, "taxUsd": 1680, "taxChangePct": 1.6, "assessedUsd": 96560, "assessedChangePct": 1.5, "status": "Rounded to $10" }
+    ]
+  },
+  "liquidInheritance": {
+    "status": "Unverified — family trust estate size relative to $15M / $30M exclusion unknown",
+    "illustrativeRangeUsd": { "low": 4000000, "base": 10000000, "high": 22000000 },
+    "priorTaxableGiftsKnown": false
+  }
+}

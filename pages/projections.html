@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Projections &amp; What-If Lab — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <h1>Financial Projections, Range Modeling &amp; What-If Lab</h1>
+        <p class="lead">Model ranges rather than point estimates across identical transfer dates &amp; horizons. Every toggle persists live across the Briefing Sheet and Overview.</p>
+      </div>
+      <div style="display:flex;gap:0.5rem;">
+        <button id="reset-controls-btn" type="button" class="btn">Reset Defaults</button>
+        <a href="./briefing-sheet.html" class="btn btn-primary">View 1-Page Briefing Sheet</a>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE WHAT-IF CONTROLS -->
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.65rem;flex-wrap:wrap;gap:0.5rem;">
+        <h2 style="margin:0;border:none;padding:0;">1. Interactive What-If Controls (Persisted Locally)</h2>
+        <span class="badge badge-info">All Dollar Outputs Rounded to $10</span>
+      </div>
+      <div class="controls-grid" id="whatif-controls">
+        <div class="control-group">
+          <label for="ctrl-transferYear">Transfer Year <span id="lbl-transferYear">2042</span></label>
+          <input id="ctrl-transferYear" type="range" min="2027" max="2055" step="1" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-horizonYears">Post-Transfer Horizon <span id="lbl-horizonYears">25 yrs</span></label>
+          <input id="ctrl-horizonYears" type="range" min="10" max="35" step="5" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-scenarioMode">Range Scenario Mode</label>
+          <select id="ctrl-scenarioMode">
+            <option value="low">Low / Conservative Range</option>
+            <option value="base">Base Realistic Range</option>
+            <option value="high">High / Optimistic Range</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-filingStatus">Tax Filing Status</label>
+          <select id="ctrl-filingStatus">
+            <option value="mfj">Married Filing Jointly ($500k §121)</option>
+            <option value="single">Single ($250k §121)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-totalGrossEstate2026Usd">Total Gross Estate (2026$) <span id="lbl-totalGrossEstate2026Usd">$14.5M</span></label>
+          <input id="ctrl-totalGrossEstate2026Usd" type="range" min="5000000" max="40000000" step="500000" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-useMarriedPortabilityDsue">DSUE Estate Portability ($30M vs $15M)</label>
+          <select id="ctrl-useMarriedPortabilityDsue">
+            <option value="true">Yes — Married Portability ($30M 2026 cap)</option>
+            <option value="false">No — Single $15M 2026 cap</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-trustReceivesStepUp1014">Trust IRC §1014 Basis Step-Up</label>
+          <select id="ctrl-trustReceivesStepUp1014">
+            <option value="true">Yes — Full FMV Step-Up at Transfer</option>
+            <option value="false">No — Bypass Trust Carryover Trap ($450k)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-claimProp19WhenLiving">Claim Prop 19 When Living in A</label>
+          <select id="ctrl-claimProp19WhenLiving">
+            <option value="true">Yes — Long-Term Principal Residence (&ge;1 yr)</option>
+            <option value="false">No — Not Primary Residence (Full FMV)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-indexProp19AllowanceWithHpi">Carry Prop 19 Allowance Forward</label>
+          <select id="ctrl-indexProp19AllowanceWithHpi">
+            <option value="true">Yes — Indexed w/ HPI ($1.045M → future)</option>
+            <option value="false">No — Frozen at $1,044,586 (Stress Test)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-sec121EnabledOnMixed">IRC §121 on Live-Then-Sell Path</label>
+          <select id="ctrl-sec121EnabledOnMixed">
+            <option value="true">On — Claim $250k/$500k Exclusion</option>
+            <option value="false">Off — No §121 Exclusion</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-propAImputedRentPctOfMarket">Imputed Rent on Living Paths <span id="lbl-propAImputedRentPctOfMarket">100%</span></label>
+          <input id="ctrl-propAImputedRentPctOfMarket" type="range" min="0" max="125" step="10" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-propARentMonthly2026Usd">Prop A Rent (2026$ / mo) <span id="lbl-propARentMonthly2026Usd">$6,300</span></label>
+          <input id="ctrl-propARentMonthly2026Usd" type="range" min="4800" max="8500" step="100" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-propAInsurance2026Usd">Prop A Insurance (2026$ / yr) <span id="lbl-propAInsurance2026Usd">$4,200</span></label>
+          <input id="ctrl-propAInsurance2026Usd" type="range" min="1500" max="8000" step="100" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-propBInsurance2026Usd">Prop B 3-Unit Insurance (2026$/yr) <span id="lbl-propBInsurance2026Usd">$7,200</span></label>
+          <input id="ctrl-propBInsurance2026Usd" type="range" min="1500" max="12000" step="100" />
+        </div>
+        <div class="control-group">
+          <label for="ctrl-caTopTaxRatePct">CA Form 540 Top Rate</label>
+          <select id="ctrl-caTopTaxRatePct">
+            <option value="13.3">13.3% (12.3% + 1% Line 62 &gt;$1M)</option>
+            <option value="12.3">12.3% (Under $1M Surtax)</option>
+            <option value="9.3">9.3% (Mid-Bracket)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="ctrl-propertyMgmtFeePct">Property Mgmt Fee</label>
+          <select id="ctrl-propertyMgmtFeePct">
+            <option value="0">0% (Self-Managed)</option>
+            <option value="7">7% (Professional Manager)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANGE COMPARISON MATRIX (LOW / BASE / HIGH) -->
+    <h2>2. Low / Base / High Range Sensitivity (No Point-Estimate Illusion)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th class="num">Low Range (After-Tax)</th>
+            <th class="num">Base Range (After-Tax)</th>
+            <th class="num">High Range (After-Tax)</th>
+            <th class="num">Base Incl. Imputed Housing</th>
+            <th>Primary Sensitivity Driver</th>
+          </tr>
+        </thead>
+        <tbody id="range-matrix-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- TRAJECTORY & DISTRIBUTION CHARTS -->
+    <h2>3. Wealth Trajectory &amp; Monte Carlo Outcome Distribution (400 Cyclical Trials)</h2>
+    <div class="grid-2">
+      <div class="chart-box">
+        <h3>Pre-Tax Net Worth Trajectory (<span id="traj-window-lbl">2042–2067</span>)</h3>
+        <div id="trajectory-chart"></div>
+      </div>
+      <div class="chart-box">
+        <h3>After-Tax Distribution Chart (P10 / P25–P75 / P50 / P90)</h3>
+        <div id="distribution-chart"></div>
+      </div>
+    </div>
+
+    <!-- YEAR-BY-YEAR ASSESSED & TAX SCHEDULE -->
+    <h2>4. Year-by-Year Property A Assessment &amp; Property Tax Projection (2026–2055)</h2>
+    <p class="lead">Shows how Prop 13 (+2%/yr max) runs until inheritance, then diverges sharply between <strong>Full FMV Reassessment</strong> (Rent/Hold) and <strong>Prop 19 Primary Residence</strong> (with carried-forward allowance).</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th class="num">Projected Prop A FMV</th>
+            <th class="num">Prop 13 FBYV Roll</th>
+            <th class="num">Carried Prop 19 Cap</th>
+            <th class="num">Assessed (Prop 19 Claimed)</th>
+            <th class="num">Tax (Prop 19)</th>
+            <th class="num">Assessed (Full FMV Rental)</th>
+            <th class="num">Tax (Full FMV Rental)</th>
+          </tr>
+        </thead>
+        <tbody id="yearly-tax-tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-projections.js"></script>
+</body>
+</html>

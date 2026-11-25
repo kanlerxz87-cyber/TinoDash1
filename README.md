@@ -1,26 +1,40 @@
-# TinoDash — Privacy-First Inheritance Decision Dashboard
+# Bay Area Inheritance & Real Estate Decision Dashboard (`TinoDash1`)
 
-**Property A (Cupertino 95014)** inherited via trust ~2040–2050 vs **Property B (SF 94122, Outer Sunset, 3-unit, already owned)**
+**Live GitHub Pages Site:** [https://kanlerxz87-cyber.github.io/TinoDash1/](https://kanlerxz87-cyber.github.io/TinoDash1/)
 
-🔗 **Live Dashboard (GitHub Pages):** `https://kanlerxz87-cyber.github.io/TinoDash1/` — served from both **root** (primary 17-page site) and **`docs/`** (legacy 9-page docs) for compatibility.
+Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino, ZIP 95014)** alongside already-owned **Property B (San Francisco Outer Sunset, ZIP 94122)** and potential liquid trust assets.
 
-## What this is
+## Privacy & Verification Standards
+- **Strict Anonymization:** Zero personal names, street addresses, trust titles, emails, or Assessor Parcel Numbers (APNs).
+- **$10-Increment Rounding:** Every property-level dollar input and historical assessment/tax figure in `data/properties.json` is rounded to the nearest **$10** increment and enforced by `scripts/privacy-audit.mjs`.
+- **Verified Official Citations Only:** Statutory, ballot, tax-rate, rental, utility, insurance, and macroeconomic figures link directly to primary official sources (`irs.gov`, `ftb.ca.gov`, `boe.ca.gov`, `santaclaracounty.gov`, `sf.gov`, `sfelections.org`, `huduser.gov`, `home.treasury.gov`, `bls.gov`, `fhfa.gov`, `insurance.ca.gov`, `cpuc.ca.gov`). Unconfirmed assumptions are explicitly listed on [`pages/flagged.html`](./pages/flagged.html).
 
-**Executive Summary** with *What would change the answer* on the first screen — pre-commit triggers before the appraisal arrives. **Pure + Mixed paths** compared at same transfer dates/horizons (10/20/30/50 yr) with taxes, debt, occupancy, capital, liquidity. **Black-Swan phased path** — park sale proceeds in 3M–2Y Treasuries 24–36 mo then DCA into stocks; 1929/1970s/2008/2022 crash-entry stress; **reinvestment risk** labeled beside every staging headline.
+## Dashboard Structure
+- [`index.html`](./index.html) — Executive Summary, *"What Would Change the Answer"* triggers, Pure + Mixed 6-path comparison, and Pre-Commitment Decision Criteria Charter
+- [`pages/projections.html`](./pages/projections.html) — Interactive What-If Lab, Low/Base/High range sensitivity, Monte Carlo distribution chart, and 2026–2055 assessment projections
+- [`pages/black-swan.html`](./pages/black-swan.html) — Non-constant macro regimes (1929, 1973–82, 2000–09, 2020–23) and 24–36 month Treasury staging with Reinvestment Risk
+- [`pages/properties.html`](./pages/properties.html) — Property A vs B profiles, $10-rounded historical tax tables, SCC TRA `013-xxx`, SF Prop H & OMI rules, 95014 rental comps vs HUD SAFMR, utilities/solar, and 5-year CapEx plans
+- [`pages/tax-estate.html`](./pages/tax-estate.html) — Separation of Estate Tax vs §1014 Basis vs Prop 19, DSUE liquidity check, inheritance deadline timeline, Nov 2026 legislative watchlist, and IPS template
+- [`pages/decisions.html`](./pages/decisions.html) — Action Checklist with recorded Decision & Date log + 7 Missing-Info Discovery Q&As
+- [`pages/flagged.html`](./pages/flagged.html) — Flagged for Review (unverified parameters & anomalies)
+- [`pages/suggestions.html`](./pages/suggestions.html) — Improvement suggestions to evaluate before implementation
+- [`pages/briefing-sheet.html`](./pages/briefing-sheet.html) — One-page printable Attorney & CPA Briefing Sheet
+- [`pages/glossary.html`](./pages/glossary.html) — Searchable glossary & repository privacy governance
 
-**Taxes fully separated:** Prop 13/19 + TRA (~1.18% Cupertino), Prop H transfer tax (SCC $1.10/$1k vs SF 0.75% + $249/$65 parcel tax), §121 exclusion ($250k/$500k), FTB 540 BHST 1% over $1M (gains as ordinary), NIIT 3.8%, depreciation 27.5yr + 25% recapture — each with official sources.
+## Local Checks & Running Locally
+```bash
+npm run check
+# Runs:
+# 1. node scripts/privacy-audit.mjs   (PII scan + strict $10 rounding check)
+# 2. node scripts/link-audit.mjs      (Relative subpath, DOM binding & HTTPS link audit)
+# 3. node --test tests/*.test.mjs     (Financial, tax, Prop 19 & Black Swan unit tests)
 
-Includes what-if sliders, distribution chart (P10–P90), 5-yr capital plan, insurance research by ZIP, deadlines timeline, legislation tracker (enacted vs proposed), **one-page Attorney & CPA Briefing Sheet** (printable, rounded $10, no PII), and **Flagged for Review** (no hallucinated filling).
-
-## Privacy
-
-- No names, addresses, APNs, or exact ledgers on site. All figures rounded to nearest **$10** per request to prevent search traceability.
-- Private estate inventory is a *local encrypted file* — never committed (`.gitignored` root `private/` + `docs/private`).
-- Git history verified clean (initial commit 8f95825 only) — see `methodology.html#exposure` + legacy `docs/flagged.html`.
-
-## Structure — two complementary sites
-
+python3 -m http.server 4173 --bind 0.0.0.0
 ```
+
+
+---
+## Merged note (fd4a10e1)
 # Primary site (root) — 17 pages — arena-43f9846f
 index.html                  — Executive Summary + What would change the answer + distribution chart
 briefing.html               — One-page Attorney & CPA Briefing Sheet (print)
