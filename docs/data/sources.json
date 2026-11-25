@@ -1,0 +1,18 @@
+{
+  "generated": "2026-11-25",
+  "privacy": "No PII. Official sources only for legal/tax rules.",
+  "sources": [
+    {"id":"S-IRS-001","authority":"IRS","title":"Estate Tax","url":"https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax","last_checked":"2026-11-25"},
+    {"id":"S-IRS-002","authority":"IRS","title":"What's New - Estate and Gift Tax","url":"https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax","last_checked":"2026-11-25"},
+    {"id":"S-IRS-003","authority":"IRS","title":"Form 706 Instructions","url":"https://www.irs.gov/instructions/i706","last_checked":"2026-11-25"},
+    {"id":"S-IRS-004","authority":"IRS","title":"Publication 551 Basis of Assets","url":"https://www.irs.gov/publications/p551","last_checked":"2026-11-25"},
+    {"id":"S-BOE-001","authority":"CA BOE","title":"Proposition 19","url":"https://www.boe.ca.gov/prop19/","last_checked":"2026-11-25"},
+    {"id":"S-BOE-002","authority":"CA BOE","title":"Form BOE-19-P","url":"https://www.boe.ca.gov/proptaxes/pdf/boe19p.pdf","last_checked":"2026-11-25"},
+    {"id":"S-BOE-003","authority":"CA BOE","title":"LTA 2025/009","url":"https://www.boe.ca.gov/pdf/lta25009.pdf","last_checked":"2026-11-25"},
+    {"id":"S-CA-LEG-001","authority":"CA Legislature","title":"RTC 63.2","url":"https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=63.2","last_checked":"2026-11-25"},
+    {"id":"S-FTB-001","authority":"CA FTB","title":"2025 Form 540 Booklet","url":"https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html","last_checked":"2026-11-25"},
+    {"id":"S-SCO-001","authority":"CA State Controller","title":"Estate Tax","url":"https://www.sco.ca.gov/ardtax_estate_tax.html","last_checked":"2026-11-25"},
+    {"id":"S-SCC-001","authority":"Santa Clara County Clerk-Recorder","title":"Recording Document Fees","url":"https://clerkrecorder.santaclaracounty.gov/recording-documents/recording-document-fees","last_checked":"2026-11-25"},
+    {"id":"S-SF-001","authority":"SF Rent Board","title":"Rent Board","url":"https://www.sf.gov/departments--rent-board","last_checked":"2026-11-25"}
+  ]
+}
