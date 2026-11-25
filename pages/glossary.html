@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary &amp; Privacy Governance — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <h1>Glossary of Legal, Tax &amp; Financial Terms + Privacy Policy</h1>
+    <p class="lead">Plain-English definitions of every statute, tax rule, and modeling metric used across the dashboard, plus the repository privacy &amp; git-containment checklist.</p>
+
+    <div class="card" style="margin-bottom:1rem;">
+      <label for="glossary-search" style="font-weight:600;display:block;margin-bottom:0.35rem;">Filter Glossary Terms</label>
+      <input id="glossary-search" type="search" placeholder="Search e.g. Prop 19, DSUE, Reinvestment Risk, §1250, Prop H, OMI..." style="width:100%;padding:0.5rem 0.7rem;border:1px solid #cbd5e1;border-radius:7px;font-size:0.92rem;" />
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:230px;">Term / Acronym</th>
+            <th>Category</th>
+            <th>Plain-English Meaning &amp; Practical Impact</th>
+            <th>Official Reference</th>
+          </tr>
+        </thead>
+        <tbody id="glossary-tbody"></tbody>
+      </table>
+    </div>
+
+    <h2>Repository Privacy &amp; Git History Containment Protocol</h2>
+    <div class="card card-highlight">
+      <ul style="margin:0;padding-left:1.2rem;">
+        <li><strong>Strict Public-Repo Anonymization:</strong> No personal names, street addresses, APNs, emails, or trust names appear anywhere in tracked files or commit history on this branch.</li>
+        <li><strong>$10-Increment Rounding Gate:</strong> Automated CI check (<code>scripts/privacy-audit.mjs</code>) verifies every user-asset currency figure in <code>data/properties.json</code> is divisible by 10.</li>
+        <li><strong>Independent Historical Branches Containment:</strong> If an earlier session branch exists in GitHub's remote branches with pre-rounding user figures, repository owners should (a) prune stale non-main branches via <code>git push origin --delete &lt;old-branch&gt;</code>, (b) verify repository visibility (<code>Private</code> recommended once private tax bills/APNs are added offline), and (c) contact GitHub Support to clear cached reflogs if any sensitive branch was once public.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-glossary.js"></script>
+</body>
+</html>

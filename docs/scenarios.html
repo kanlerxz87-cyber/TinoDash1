@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scenarios & Projections | TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="topbar"><div class="wrap"><div class="brand">TinoDash1 <span>Estate Decision Dashboard</span></div><nav id="site-nav"></nav></div></header>
+<main class="wrap">
+
+<section class="hero"><h1>Scenarios & Projections</h1><p>Range-based comparison of pure and mixed paths. All published values are rounded to nearest $10 and are illustrative planning ranges, not predictions or advice. Every row should be read with its assumptions and verification status.</p></section>
+
+<div class="callout warn"><strong>Model integrity rules:</strong> Compare all choices at same transfer dates and horizons; include taxes, debt, occupancy changes, capital costs, and liquidity; show ranges (low/base/high); show reinvestment risk next to staging headlines; separate estate tax, income-tax basis, and property-tax assessment. No figure here is final until verified by independent appraisals, trust documents, CPA/tax counsel, and local counsel.</div>
+
+<div class="section card">
+  <h2>Common assumptions (editable in private model; published as ranges)</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Assumption</th><th>Low</th><th>Base</th><th>High</th><th>Notes / Status</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Transfer window</td><td>2040</td><td>2045</td><td>2050</td><td>User-provided planning window.</td><td>User input</td></tr>
+      <tr><td>Property A current estimated value (Nov 2026)</td><td>$2,790,000</td><td>$3,100,000</td><td>$3,410,000</td><td>±10% sensitivity around user estimate; rounded to $10. <span class="pill bad">Unverified</span></td><td>User input; appraisal required</td></tr>
+      <tr><td>Property B current estimated value (Nov 2026)</td><td>$1,620,000</td><td>$1,800,000</td><td>$1,980,000</td><td>±10% sensitivity; rounded. <span class="pill bad">Unverified</span></td><td>User input; appraisal required</td></tr>
+      <tr><td>Annual home appreciation (nominal)</td><td>1.5%</td><td>3.5%</td><td>5.5%</td><td>Illustrative range; not forecast. Historical real estate varies by cycle/location.</td><td><a href="https://www.fhfa.gov/data/hpi">FHFA HPI</a> (method context); <span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Annual inflation</td><td>2.0%</td><td>3.0%</td><td>5.0%</td><td>Used for expense/tax-cap sensitivity; not a CPI forecast.</td><td><a href="https://www.bls.gov/cpi/">BLS CPI</a>; <span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Property A gross rent (monthly, if rented)</td><td>$6,500</td><td>$8,500</td><td>$10,500</td><td><span class="pill bad">Placeholder range</span>. Independent Cupertino comps required before using.</td><td>Unverified - obtain comps</td></tr>
+      <tr><td>Vacancy/credit loss</td><td>3%</td><td>5%</td><td>8%</td><td>Higher for turnover/lease-up risk.</td><td><span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Property management</td><td>0%</td><td>7%</td><td>10%</td><td>0% if self-managed; opportunity cost not fully modeled.</td><td><span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Maintenance/capex reserve (% of value/yr)</td><td>0.8%</td><td>1.2%</td><td>2.0%</td><td>Older homes and deferred maintenance can exceed this.</td><td><span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Property A insurance (annual)</td><td>$1,200</td><td>$1,800</td><td>$3,000</td><td>User gave ~$1,500; range used pending quote. <span class="pill bad">Unverified</span></td><td>User input; insurer quote required</td></tr>
+      <tr><td>Selling costs (% of price)</td><td>5%</td><td>6%</td><td>8%</td><td>Includes agent commissions, transfer/closing costs; SF/CA specifics vary.</td><td><span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Equity portfolio nominal return</td><td>4%</td><td>7%</td><td>10%</td><td>Long-run illustrative range; sequence risk matters.</td><td><span class="pill warn">Scenario assumption</span></td></tr>
+      <tr><td>Intermediate Treasury ladder yield (24-36 mo park)</td><td>2.5%</td><td>4.0%</td><td>5.5%</td><td>Yield at time of sale unknown; reinvestment risk applies.</td><td><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve">U.S. Treasury yield curve</a>; <span class="pill warn">Scenario assumption</span></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="section card">
+  <h2>Pure path comparison (same horizon, illustrative 10-year post-transfer view)</h2>
+  <p class="small muted">Illustrative only. Assumes transfer at base year in window, no mortgage debt, no forced estate sale, and simplified tax treatment. Actual results depend on verified inputs.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Path</th><th>10-yr net benefit range (low/base/high)</th><th>Liquidity</th><th>Reinvestment risk</th><th>Operational burden</th><th>Tax/assessment sensitivity</th><th>Confidence</th></tr></thead>
+    <tbody>
+      <tr><td>A1 Live in Property A</td><td>$150,000 / $420,000 / $780,000 (imputed housing value minus carrying/capex; not cash)</td><td><span class="pill warn">Low-Medium</span></td><td>Low (no sale proceeds to time)</td><td>Medium</td><td>High (Prop 19 eligibility, insurance/capex)</td><td><span class="pill bad">Low</span></td></tr>
+      <tr><td>A2 Rent Property A</td><td>$-120,000 / $260,000 / $690,000 (net cash flow + appreciation - costs/taxes)</td><td><span class="pill warn">Low-Medium</span></td><td>Low</td><td>High</td><td>High (reassessment, rent, capex, income tax)</td><td><span class="pill bad">Low</span></td></tr>
+      <tr><td>A3 Sell + lump sum invest</td><td>$180,000 / $650,000 / $1,250,000 (after-tax proceeds invested; highly path dependent)</td><td><span class="pill good">High</span></td><td><span class="pill bad">High</span></td><td>Low</td><td>High (basis, cap gains, entry timing)</td><td><span class="pill bad">Low</span></td></tr>
+      <tr><td>M4 Sell + phased invest (24-36 mo Treasury ladder then DCA)</td><td>$140,000 / $590,000 / $1,120,000</td><td><span class="pill good">High</span></td><td><span class="pill good">Lower than lump sum</span></td><td>Low-Medium</td><td>Medium-High (yields, basis, DCA rules)</td><td><span class="pill bad">Low</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Ranges are directional scenario outputs for comparison only. They intentionally overlap because inputs are uncertain. Do not use as point forecasts.</p>
+</div>
+
+<div class="section card">
+  <h2>Mixed path comparison</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Path</th><th>When it fits</th><th>5-year focus</th><th>30-year focus</th><th>Reinvestment risk</th><th>Key trigger / exit rule</th></tr></thead>
+    <tbody>
+      <tr><td>M1 Live then sell</td><td>Prop 19 may apply; heir wants to test living in Property A.</td><td>Confirm occupancy, file exemptions/claims, track true carrying costs.</td><td>Sell after planned hold; redeploy with phased strategy.</td><td>Medium (deferred)</td><td>Exit if occupancy/cost/eligibility assumptions fail by date [TBD].</td></tr>
+      <tr><td>M2 Live then rent</td><td>Uncertain long-term occupancy; wants optionality.</td><td>Document primary residence period; evaluate conversion costs.</td><td>Rental cash flow + appreciation; possible later sale.</td><td>Low</td><td>Convert only after insurance, lease, tax, and Prop 19 review.</td></tr>
+      <tr><td>M3 Rent then sell</td><td>Strong rent now; possible future sale when conditions/taxes favorable.</td><td>Stabilize lease, reserves, capex plan.</td><td>Harvest appreciation then diversify.</td><td>Medium at sale</td><td>Sell if capex/rent/regulatory drag exceeds threshold [TBD].</td></tr>
+      <tr><td>M4 Sell + phased invest</td><td>Want liquidity/diversification but fear bad entry point.</td><td>Treasury ladder 24-36 mo; monthly/quarterly DCA.</td><td>Broad diversified portfolio per IPS.</td><td>Lower than lump sum; cash drag possible</td><td>Pre-commit DCA schedule; do not market-time ad hoc.</td></tr>
+      <tr><td>M5 1031 exchange</td><td>Property treated as investment property; wants deferral.</td><td>Identify replacement within deadlines; QI engaged before sale.</td><td>Deferred gain; continued property concentration.</td><td>Low market-entry, high property concentration</td><td>Abort if no suitable replacement or counsel advises against.</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="section card">
+  <h2>What-if controls (illustrative)</h2>
+  <p class="small muted">Simple sensitivity controls for planning discussion only. Outputs are rounded to nearest $10 and are not forecasts. Verify with a CPA/advisor model before decisions.</p>
+  <div class="grid g3">
+    <div><label class="small muted">Property A value ($)</label><input id="w_value" type="number" value="3100000" step="10000" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+    <div><label class="small muted">Annual appreciation (%)</label><input id="w_app" type="number" value="3.5" step="0.1" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+    <div><label class="small muted">Gross monthly rent ($)</label><input id="w_rent" type="number" value="8500" step="100" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+    <div><label class="small muted">Vacancy (%)</label><input id="w_vac" type="number" value="5" step="0.5" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+    <div><label class="small muted">OpEx+capex (% of value/yr)</label><input id="w_opex" type="number" value="1.5" step="0.1" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+    <div><label class="small muted">Sale proceeds invest return (%)</label><input id="w_ret" type="number" value="7" step="0.1" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px"></div>
+  </div>
+  <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" onclick="runWhatIf()">Run what-if</button>
+    <span class="small muted">10-year horizon, simplified, no tax/transaction-cost precision.</span>
+  </div>
+  <div id="whatif-out" class="callout" style="margin-top:12px">Adjust inputs and click <strong>Run what-if</strong>.</div>
+</div>
+
+<div class="section card">
+  <h2>Distribution chart (illustrative)</h2>
+  <p class="small muted">Illustrative 10-year outcome distribution bands (not Monte Carlo from real data). Shows why range/distribution matters more than a single point.</p>
+  <svg viewBox="0 0 900 280" width="100%" height="280" role="img" aria-label="Illustrative distribution chart">
+    <rect x="0" y="0" width="900" height="280" fill="#fff"/>
+    <g font-family="system-ui, sans-serif" font-size="12" fill="#334155">
+      <text x="20" y="30" font-size="14" font-weight="700">Illustrative 10-year net outcome bands (relative)</text>
+      <text x="20" y="70">Live (imputed)</text><rect x="170" y="56" width="220" height="18" fill="#bfdbfe"/><rect x="240" y="56" width="90" height="18" fill="#60a5fa"/><text x="470" y="70">Low/Base/High overlap</text>
+      <text x="20" y="110">Rent</text><rect x="150" y="96" width="260" height="18" fill="#fde68a"/><rect x="220" y="96" width="110" height="18" fill="#f59e0b"/><text x="470" y="110">Wide range; capex/rent sensitive</text>
+      <text x="20" y="150">Sell + lump sum</text><rect x="180" y="136" width="360" height="18" fill="#fecaca"/><rect x="300" y="136" width="120" height="18" fill="#ef4444"/><text x="560" y="150">High upside, high sequence risk</text>
+      <text x="20" y="190">Sell + phased DCA</text><rect x="175" y="176" width="320" height="18" fill="#bbf7d0"/><rect x="290" y="176" width="110" height="18" fill="#22c55e"/><text x="520" y="190">Narrower left tail than lump sum</text>
+      <text x="20" y="230">Mixed live then sell</text><rect x="170" y="216" width="260" height="18" fill="#ddd6fe"/><rect x="250" y="216" width="100" height="18" fill="#8b5cf6"/><text x="470" y="230">Optionality-dependent</text>
+      <text x="170" y="265" fill="#64748b">Worse ← illustrative outcome band → Better (not to scale; verify with real model)</text>
+    </g>
+  </svg>
+</div>
+
+<div class="section card">
+  <h2>Reinvestment risk (shown beside staging headline)</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Strategy</th><th>Headline</th><th>Reinvestment / sequence risk</th><th>When it hurts</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Lump sum after sale</td><td>Highest expected return in many long horizons</td><td><span class="pill bad">High</span></td><td>Large drawdown shortly after investing proceeds (e.g., 1929/2008-style entry).</td><td>Pre-written IPS; consider phased entry; avoid forced sale timing.</td></tr>
+      <tr><td>24-36 mo Treasury ladder + DCA</td><td>Lower bad-timing risk, possible cash drag</td><td><span class="pill good">Moderate-low</span></td><td>Strong bull market immediately after sale while cash waits.</td><td>Fixed DCA schedule; keep ladder short/intermediate; reassess yields.</td></tr>
+      <tr><td>All-cash / savings</td><td>Maximum liquidity, low volatility</td><td><span class="pill warn">Inflation/reinvestment risk</span></td><td>Inflation erodes purchasing power; rates fall when reinvesting.</td><td>Use only for near-term reserves/liquidity bucket.</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+<script>
+function r10(x){return Math.round(x/10)*10;}
+function fmt(x){const s=r10(x).toLocaleString('en-US'); return '$'+s;}
+function runWhatIf(){
+  const v=+document.getElementById('w_value').value||0;
+  const app=(+document.getElementById('w_app').value||0)/100;
+  const rent=+document.getElementById('w_rent').value||0;
+  const vac=(+document.getElementById('w_vac').value||0)/100;
+  const opex=(+document.getElementById('w_opex').value||0)/100;
+  const ret=(+document.getElementById('w_ret').value||0)/100;
+  const years=10;
+  const fv=v*Math.pow(1+app,years);
+  const gross=rent*12*years;
+  const netRent=gross*(1-vac) - (v*opex*years);
+  const sellInvest=v*Math.pow(1+ret,years); // simplified, ignores taxes/costs
+  const out=document.getElementById('whatif-out');
+  out.innerHTML = `<strong>Illustrative 10-year outputs (simplified, before taxes/transaction costs):</strong><br>
+  Property A future value: <strong>${fmt(fv)}</strong><br>
+  Rent path gross rent (10 yr): <strong>${fmt(gross)}</strong>; rough net after vacancy/opex: <strong>${fmt(netRent)}</strong><br>
+  Sell-now-and-invest (simplified): <strong>${fmt(sellInvest)}</strong><br>
+  <span class="small muted">Warning: excludes income/capital gains taxes, selling costs, Prop 19 reassessment impacts, financing, imputed rent, and sequence risk. Use only for sensitivity discussion.</span>`;
+}
+</script>
+</body></html>

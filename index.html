@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bay Area Inheritance Decision Dashboard — Executive Summary</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1rem;">
+      <div>
+        <h1>Executive Summary &amp; What Would Change the Answer</h1>
+        <p class="lead">Apples-to-apples analysis of inheriting <strong>Property A (Cupertino, 95014)</strong> while owning <strong>Property B (San Francisco Outer Sunset, 94122)</strong> plus trust liquidity.</p>
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <a href="./pages/projections.html" class="btn btn-primary">Open What-If Lab</a>
+        <a href="./pages/briefing-sheet.html" class="btn">1-Page Attorney/CPA Sheet</a>
+        <a href="./pages/flagged.html" class="btn">Review Flagged Items</a>
+      </div>
+    </div>
+
+    <!-- FIRST SCREEN: WHAT WOULD CHANGE THE ANSWER -->
+    <section class="card card-highlight">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.6rem;">
+        <h2 style="margin:0;border:none;padding:0;">1. What Would Change the Answer? (Top 6 Tipping Points)</h2>
+        <span class="badge badge-info">Updated Live From Your What-If Controls</span>
+      </div>
+      <p style="margin-top:0;color:var(--muted);font-size:0.9rem;">Before picking a path, inspect the exact assumptions that flip the financial winner between Selling, Renting, Living w/ Prop 19, or Mixed Strategies:</p>
+      <div class="table-wrap" style="margin-bottom:0;">
+        <table>
+          <thead>
+            <tr>
+              <th>Trigger / Assumption</th>
+              <th>Current Baseline</th>
+              <th>Threshold That Flips the Answer</th>
+              <th>Source / Verification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Trust IRC §1014 Step-Up vs Bypass Trust</strong></td>
+              <td>Full FMV step-up assumed at inheritance (~2040–2050)</td>
+              <td>If Property A sits in an irrevocable <strong>B-Trust</strong> with carryover basis, immediate sale triggers up to <strong>37.1% combined Fed+NIIT+CA tax</strong>, shifting advantage toward Hold/§1031 or Live+§121.</td>
+              <td><a href="https://www.irs.gov/pub/irs-pdf/i8971.pdf" target="_blank" rel="noopener">IRS Form 8971 / §1014(f)</a> · <span class="badge badge-flagged">Verify Trust</span></td>
+            </tr>
+            <tr>
+              <td><strong>2. Gross Estate vs $15M / $30M Federal Exclusion</strong></td>
+              <td>OBBBA 2026: <strong>$15M</strong> single / <strong>$30M</strong> married w/ DSUE (indexed)</td>
+              <td>If total trust estate (Liquid + Property A) exceeds exclusion, <strong>40% estate tax due in 9 months</strong> forces liquidity sale unless §6166 or estate borrowing is arranged.</td>
+              <td><a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener">IRS Rev. Proc. 2025-32</a> · <span class="badge badge-flagged">Verify Liquid Estate</span></td>
+            </tr>
+            <tr>
+              <td><strong>3. Heir Residency Duration &amp; Prop 19 Cap</strong></td>
+              <td>$1,044,586 exclusion (2025–27, indexed forward)</td>
+              <td>Prop 19 saves ~$20k+/yr ONLY if heir moves in within <strong>1 year</strong> and stays long term; moving out loses Prop 19, and returning to SF B3 triggers <strong>Prop H OMI ($8.2k–$24.7k)</strong> or protected-tenant block.</td>
+              <td><a href="https://www.boe.ca.gov/prop19/" target="_blank" rel="noopener">CA BOE Prop 19</a> · <a href="https://www.sf.gov/information--evictions-based-owner-or-relative-move" target="_blank" rel="noopener">SF Rent Board Topic 204</a></td>
+            </tr>
+            <tr>
+              <td><strong>4. Cupertino Rental Yield vs Liquid Equities</strong></td>
+              <td>~$6,300/mo comp (~2.4% gross / ~0.7%–1.1% net cap rate after FMV tax)</td>
+              <td>Rent-and-Hold trails Sale+Equities unless Cupertino RE + net rent outperforms equities by ~3%/yr, or Property A achieves higher rent with low CapEx &amp; battery-backed solar.</td>
+              <td><a href="https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" target="_blank" rel="noopener">HUD FY26 SAFMR</a> · <a href="https://www.redfin.com/zipcode/95014/houses-for-rent" target="_blank" rel="noopener">95014 Comps</a></td>
+            </tr>
+            <tr>
+              <td><strong>5. Insurance Reality &amp; Post-NEM 2.0 Sunset</strong></td>
+              <td>$1,500/yr guess <span class="badge badge-flagged">Flagged</span> vs $4.2k (A) &amp; $7.2k (B) market est.</td>
+              <td>Actual 3-unit SF habitational + Cupertino FAIR Plan/DIC policies plus post-20-yr NEM 2.0 sunset ($90+/mo electric) can erase $8k–$15k/yr of projected rental cash flow.</td>
+              <td><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2026/" target="_blank" rel="noopener">CA CDI 2026</a> · <a href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering-and-net-billing" target="_blank" rel="noopener">CPUC NEM/NBT</a></td>
+            </tr>
+            <tr>
+              <td><strong>6. Sequence Crash vs Phased Staging Reinvestment Risk</strong></td>
+              <td>Nov 2026 Treasuries: 3M <strong>4.32%</strong> · 2Y <strong>4.88%</strong></td>
+              <td>24–36m Treasury staging protects millions in <strong>1929/2008</strong> entry crashes, but lags lump-sum in 2020 V-rebounds and suffers <strong>reinvestment risk</strong> if rolling 3M T-bills when rates drop to 0.2%.</td>
+              <td><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026" target="_blank" rel="noopener">US Treasury 2026 Curve</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE SNAPSHOT KPI CARDS -->
+    <div id="exec-kpis" class="grid-4" style="margin-top:1rem;"></div>
+
+    <!-- EXECUTIVE SUMMARY & ASYMMETRY -->
+    <h2>2. Executive Summary &amp; Asset Asymmetry</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Property A — Cupertino (ZIP 95014) · Future Trust Inheritance</h3>
+        <ul style="margin:0.4rem 0 0;padding-left:1.15rem;">
+          <li><strong>Timeline:</strong> Currently held in family trust; anticipated transfer ~<strong>2040–2050</strong> (modeled default <code>2042</code>, adjustable).</li>
+          <li><strong>2026 Est. Market Value &amp; Prop 13 Base:</strong> <strong>$3,100,000</strong> value vs <strong>$550,540</strong> assessed roll (2025 rounded tax <strong>$7,210</strong>).</li>
+          <li><strong>SCC Tax Rate Area:</strong> Prefix <code>013-xxx</code> (~<strong>1.1671%–1.1786%</strong> + 0.0039% SCVWD + FUHSD $98 parcel tax; exact parcel subcode flagged for offline check).</li>
+          <li><strong>Sell Friction Advantage:</strong> County DTT is only <strong>0.11%</strong> ($0.55/$500) with <strong>$0 Cupertino city transfer tax</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Property B — SF Outer Sunset (ZIP 94122) · Already Owned by Heir</h3>
+        <ul style="margin:0.4rem 0 0;padding-left:1.15rem;">
+          <li><strong>Ownership &amp; Income:</strong> 3-unit building owned today (est. <strong>$1,800,000</strong>; 2025 rounded tax <strong>$2,440</strong> on <strong>$114,250</strong> roll). Two units rented at <strong>$7,150/mo</strong>; 1 unit owner-usable.</li>
+          <li><strong>SF Local Rules:</strong> FY26–27 ad valorem <strong>1.18162182%</strong>; Nov 2026 <strong>Prop H Muni Tax passed (74.4%)</strong> adding $249/yr (+ $0.195/sqft &gt;5,000 sqft) from July 2027; SF Rent Cap <strong>1.6%</strong> (Mar 2026–Feb 2027).</li>
+          <li><strong>Cross-Property Trap:</strong> Renting out Unit 3 to move into Cupertino invokes SF Rent Control &amp; <strong>OMI relocation rules ($8,245–$24,733/unit)</strong> if ever returning.</li>
+          <li><strong>Empty Homes Tax (Prop M):</strong> Overturned by CA Court of Appeal (<code>A172067</code>, Sept 11, 2026).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- UNIFIED 6-PATH COMPARISON TABLE -->
+    <h2>3. Pure &amp; Mixed Path Comparison (Identical Transfer Date &amp; Horizon)</h2>
+    <p id="model-subtitle" class="lead" style="margin-bottom:0.75rem;"></p>
+
+    <div id="staging-headline-banner" class="card card-highlight" style="margin-bottom:1rem;"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Path (Pure &amp; Mixed)</th>
+            <th>Prop 19 Applied?</th>
+            <th class="num">Yr-0 Prop A Assessed</th>
+            <th class="num">Cum. Cash Taxes</th>
+            <th class="num">SF OMI Friction</th>
+            <th class="num">After-Tax Net Wealth</th>
+            <th class="num">Incl. Imputed Housing</th>
+            <th>Key Trade-Off &amp; Official Basis</th>
+          </tr>
+        </thead>
+        <tbody id="overview-paths-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- PRE-COMMITMENT DECISION RULES CHARTER -->
+    <h2>4. Pre-Commitment Household Decision Criteria (Agree in Writing First)</h2>
+    <div class="card card-warning">
+      <p style="margin-top:0;">To avoid reverse-engineering assumptions from a single spreadsheet run, agree on these threshold rules in writing <strong>before</strong> locking numbers. Changes save locally in your browser.</p>
+      <div class="table-wrap" style="margin-bottom:0.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:65px;">Agreed</th>
+              <th>Decision Rule</th>
+              <th>Pre-Agreed Objective Trigger</th>
+              <th style="width:155px;">Sign-Off Date</th>
+            </tr>
+          </thead>
+          <tbody id="charter-tbody"></tbody>
+        </table>
+      </div>
+      <div style="display:flex;gap:0.5rem;justify-content:flex-end;">
+        <button id="export-charter-btn" type="button" class="btn">Export Charter JSON</button>
+      </div>
+    </div>
+
+    <!-- EXPLORE ALL CATEGORY SUBPAGES -->
+    <h2>5. Dashboard Directory by Category</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3><a href="./pages/projections.html">Financial Projections &amp; What-If Lab →</a></h3>
+        <p style="margin:0;color:var(--muted);">Interactive sliders (Prop 19 carry-forward, §121 toggle, imputed rent, Form 540 1% &gt;$1M, §1250 recapture, bypass trust test), year-by-year tax schedules &amp; Monte Carlo Distribution Chart.</p>
+      </div>
+      <div class="card">
+        <h3><a href="./pages/black-swan.html">Black Swan &amp; Phased Staging Lab →</a></h3>
+        <p style="margin:0;color:var(--muted);">Non-constant 50-yr cycles + 1929, 1973, 2008, and 2020–2023 stress tests comparing lump-sum entry vs 24–36m 3M/2Y Treasury staging with explicit Reinvestment Risk.</p>
+      </div>
+      <div class="card">
+        <h3><a href="./pages/properties.html">Properties A &amp; B, Costs &amp; Comps →</a></h3>
+        <p style="margin:0;color:var(--muted);">$10-rounded historical tax tables, SCC 013-xxx TRA, SF Prop H &amp; OMI math, 95014 SFH rental comps vs HUD SAFMR, NEM 2.0 sunset &amp; 5-yr CapEx plans.</p>
+      </div>
+      <div class="card">
+        <h3><a href="./pages/tax-estate.html">Estate, Basis, Timeline &amp; Legislation →</a></h3>
+        <p style="margin:0;color:var(--muted);">Clean 3-layer separation (Estate Tax vs §1014 Basis vs Prop 19), Form 706/8971 deadlines, Nov 2026 ballot outcomes (Prop 40, Prop 3, Prop H, RTM) &amp; IPS policy.</p>
+      </div>
+      <div class="card">
+        <h3><a href="./pages/decisions.html">Decision Log &amp; Discovery Q&amp;As →</a></h3>
+        <p style="margin:0;color:var(--muted);">Action checklist with recorded decisions &amp; dates, plus the 7 missing-info discovery questions with private verification steps.</p>
+      </div>
+      <div class="card">
+        <h3><a href="./pages/flagged.html">Flagged for Review</a> · <a href="./pages/suggestions.html">Suggestions →</a></h3>
+        <p style="margin:0;color:var(--muted);">Dedicated registry of unverified inputs/anomalies (e.g. $1,500 insurance guesses, exact TRA, trust type) plus proposed model upgrades to review before editing.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="./assets/js/pages-overview.js"></script>
+</body>
+</html>

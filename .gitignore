@@ -6,15 +6,20 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Dependencies / builds (excluded from snapshots too, but keep explicit)
+# Dependencies / builds
 node_modules/
+__pycache__/
+*.pyc
 dist/
 build/
 .cache/
+.playwright-cli/
 
 # Private/local working files - never commit raw PII
 private/
+private-*
 *.private.*
 *.secret.*
+*.local.json
 .env
 .env.*

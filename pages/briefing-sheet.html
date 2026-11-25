@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1-Page Printable Attorney &amp; CPA Briefing Sheet — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/print.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.85rem;">
+      <div>
+        <h1 style="margin:0;">One-Page Attorney &amp; CPA Briefing Sheet</h1>
+        <p style="margin:0.15rem 0 0;color:var(--muted);font-size:0.88rem;">Synced live with your What-If inputs &amp; Decision Log. Designed to fit cleanly on US Letter when printed/saved to PDF.</p>
+      </div>
+      <div style="display:flex;gap:0.5rem;">
+        <button id="print-sheet-btn" type="button" class="btn btn-primary">Print / Save 1-Page PDF</button>
+        <button id="download-briefing-json" type="button" class="btn">Download JSON Snapshot</button>
+      </div>
+    </div>
+
+    <article class="card" style="padding:1.1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--navy);padding-bottom:0.45rem;margin-bottom:0.55rem;">
+        <div>
+          <h1 style="font-size:1.25rem;margin:0;">CONFIDENTIAL ESTATE &amp; REAL ESTATE BRIEFING SHEET (ANONYMIZED)</h1>
+          <div style="font-size:0.82rem;color:var(--muted);">Prepared for Estate Attorney, Trust Counsel &amp; Tax CPA · Verified Statutory Baseline: Nov 25, 2026</div>
+        </div>
+        <div style="text-align:right;font-size:0.8rem;">
+          <strong>Dollar Rounding:</strong> Nearest $10<br/>
+          <strong>Active Scenario:</strong> <span id="bs-scenario-meta">—</span>
+        </div>
+      </div>
+
+      <div class="grid-2" style="gap:0.65rem;margin-bottom:0.55rem;">
+        <div class="card" style="margin:0;padding:0.65rem;">
+          <h3 style="margin:0 0 0.25rem;">Asset A — Cupertino, CA (95014) · Trust Inheritance</h3>
+          <div style="font-size:0.82rem;" id="bs-asset-a"></div>
+        </div>
+        <div class="card" style="margin:0;padding:0.65rem;">
+          <h3 style="margin:0 0 0.25rem;">Asset B — San Francisco, CA (94122) · Already Owned</h3>
+          <div style="font-size:0.82rem;" id="bs-asset-b"></div>
+        </div>
+      </div>
+
+      <h2 style="margin:0.4rem 0 0.3rem;font-size:1rem;">1. Path Comparison Snapshot (<span id="bs-window">2042–2067</span>)</h2>
+      <div class="table-wrap" style="margin-bottom:0.5rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>Path</th>
+              <th>Prop 19</th>
+              <th class="num">Yr-0 Prop A Roll</th>
+              <th class="num">Cash Taxes Paid</th>
+              <th class="num">After-Tax Net Wealth</th>
+              <th class="num">Incl. Imputed Rent</th>
+            </tr>
+          </thead>
+          <tbody id="bs-paths-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="gap:0.65rem;margin-bottom:0.45rem;">
+        <div>
+          <h2 style="margin:0.35rem 0 0.25rem;font-size:0.98rem;">2. Three-Layer Legal Checklist</h2>
+          <ul style="margin:0;padding-left:1.05rem;font-size:0.8rem;">
+            <li><strong>Estate Tax (Form 706, 9 mo):</strong> 2026 OBBBA cap $15M/person ($30M w/ DSUE). Est. gross estate <span id="bs-estate-est">—</span> → est. estate tax <span id="bs-estate-tax">—</span>.</li>
+            <li><strong>Income Basis (§1014 / Form 8971, +30d):</strong> Confirm 100% step-up vs A/B bypass trust trap; CA Form 540 taxes LTCG up to 13.3% (+1% &gt;$1M).</li>
+            <li><strong>Property Tax (Prop 19, 1 yr occupy):</strong> Carries FBYV + $1,044,586 (indexed) ONLY if primary residence; lost if rented/vacated.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 style="margin:0.35rem 0 0.25rem;font-size:0.98rem;">3. Priority Counsel Questions &amp; Sign-Off</h2>
+          <ol style="margin:0;padding-left:1.1rem;font-size:0.8rem;">
+            <li>Verify Revocable/Survivor vs A/B Bypass trust terms &amp; predeceased Form 706 DSUE portability.</li>
+            <li>Verify Form 709 prior gifts &amp; 9-month Estate Liquidity Plan (if &gt;$15M/$30M).</li>
+            <li>Confirm Cupertino <code>013-xxx</code> TRA bill, Prop B pre-1979 status, Prop H sqft, &amp; insurance quotes.</li>
+            <li>Document Household Decision Criteria &amp; IPS sign-off before transfer.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border);padding-top:0.4rem;font-size:0.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+        <span><strong>Household / Trustee Review Date:</strong> __________________</span>
+        <span><strong>Estate Counsel Initials:</strong> __________________</span>
+        <span><strong>CPA Initials:</strong> __________________</span>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-briefing.js"></script>
+</body>
+</html>
