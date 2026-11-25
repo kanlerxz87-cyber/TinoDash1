@@ -70,6 +70,8 @@ export function renderSiteChrome(activeId, basePrefix = '.') {
               <a href="${p('pages/flagged.html')}" class="${activeId === 'flagged' ? 'active' : ''}">Flagged for Review (Unverified)</a>
               <a href="${p('pages/suggestions.html')}" class="${activeId === 'suggestions' ? 'active' : ''}">Suggestions (Evaluate Before Editing)</a>
               <a href="${p('pages/glossary.html')}" class="${activeId === 'glossary' ? 'active' : ''}">Glossary &amp; Privacy Governance</a>
+              <a href="${p('pages/pre-commitment.html')}" class="${activeId === 'pre-commitment' ? 'active' : ''}">Pre-Commitment Agreement (Sign First)</a>
+              <a href="${p('pages/investment-policy.html')}" class="${activeId === 'investment-policy' ? 'active' : ''}">Investment Policy Statement (Proceeds)</a>
             </div>
           </div>
 

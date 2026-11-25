@@ -32,6 +32,12 @@ npm run check
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
+## Additions from session arena/62714618 (PR #10)
+
+- `pages/pre-commitment.html` — pre-commitment agreement: sign the path triggers (Live / Rent / Same-year Sell / 24–36-month Treasury ladder + phase-in / Mixed M1–M3) **before** the figures arrive; Part 2 "what would change our minds" checkboxes; signature blocks; annual review cadence.
+- `pages/investment-policy.html` — Investment Policy Statement for Property A sale proceeds: objectives in order, target 55/10/15/0/10/10 with bands, day-0 25/25/25/25 Treasury ladder (2026-11-24 curve: 3M 4.36% · 1Y 4.59% · 2Y 4.63%), months 13–36 phase-in at 1/24th per month, pause (never cancel) triggers, hard prohibitions, pre-acknowledged reinvestment risk, annual January review, IPS amendment requires all signatories.
+- Both pages ship in the unified design system, are linked from the "Governance & Review" menu, and pass `npm run check`.
+- Also included in PR #10: a one-character-class bugfix — every `assets/js/pages-*.js` module imported `../layout.js` (resolves to `assets/layout.js`, which does not exist), so no page's header/nav/footer chrome could render in the browser; imports now point at `./layout.js` (`assets/js/layout.js`). `scripts/link-audit.mjs` was extended so the two new pages are held to the same shell-ID binding checks.
 
 ---
 ## Merged note (fd4a10e1)
