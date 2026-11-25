@@ -1,0 +1,29 @@
+theme: jekyll-theme-primer
+title: TinoDash — Inheritance Decision Lab
+description: Private, anonymized decision dashboard for Property A (Cupertino 95014) inherited via trust ~2040-2050 vs Property B (SF 94122). Prop 13/19, estate tax vs basis, mixed paths, black-swan phased investing, what-if controls.
+url: https://kanlerxz87-cyber.github.io
+baseurl: /TinoDash1
+
+# GitHub Pages — serve all HTML as-is (no build)
+future: true
+
+# Ensure CSS/JS/data pass through
+include: ["css", "js", "data", "assets"]
+
+# Exclude private material (never publish)
+exclude:
+  - private
+  - _private
+  - estate-inventory-private.xlsx
+  - "*.env"
+  - .git
+  - .github
+  - node_modules
+  - vendor
+
+# Defaults for verify-ability
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: none
