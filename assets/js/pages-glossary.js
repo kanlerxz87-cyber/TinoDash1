@@ -1,4 +1,4 @@
-import { renderSiteChrome } from '../layout.js';
+import { renderSiteChrome } from './layout.js';
 
 renderSiteChrome('glossary', '..');
 

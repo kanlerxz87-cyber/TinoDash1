@@ -1,4 +1,4 @@
-import { renderSiteChrome, fetchVerifiedData, fmtUsd, fmtPct } from '../layout.js';
+import { renderSiteChrome, fetchVerifiedData, fmtUsd, fmtPct } from './layout.js';
 
 renderSiteChrome('properties', '..');
 

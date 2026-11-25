@@ -1,4 +1,4 @@
-import { renderSiteChrome, fetchVerifiedData } from '../layout.js';
+import { renderSiteChrome, fetchVerifiedData } from './layout.js';
 import { loadDecisions, saveDecisions } from '../storage.js';
 
 renderSiteChrome('decisions', '..');

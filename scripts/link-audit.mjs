@@ -93,7 +93,9 @@ const pageBindings = [
   ['pages/decisions.html', 'assets/js/pages-decisions.js'],
   ['pages/suggestions.html', 'assets/js/pages-suggestions.js'],
   ['pages/briefing-sheet.html', 'assets/js/pages-briefing.js'],
-  ['pages/glossary.html', 'assets/js/pages-glossary.js']
+  ['pages/glossary.html', 'assets/js/pages-glossary.js'],
+  ['pages/pre-commitment.html', 'assets/js/pages-pre-commitment.js'],
+  ['pages/investment-policy.html', 'assets/js/pages-investment-policy.js']
 ];
 
 for (const [htmlRel, jsRel] of pageBindings) {

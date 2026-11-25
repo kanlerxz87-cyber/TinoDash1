@@ -1,4 +1,4 @@
-import { renderSiteChrome } from '../layout.js';
+import { renderSiteChrome } from './layout.js';
 import { loadSuggestions, saveSuggestions } from '../storage.js';
 
 renderSiteChrome('suggestions', '..');

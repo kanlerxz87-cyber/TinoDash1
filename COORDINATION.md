@@ -34,3 +34,15 @@
 - **Flagged for Review (`pages/flagged.html`):** `$1,500/yr` insurance guesses (A & B), Property A exact `013-xxx` TRA subcode & 2026 tax bill, Property A beds/sqft/land ratio/solar PTO date, Property B pre-1979 status/total sqft/tenant ages, trust A/B vs survivor terms & Form 709 gifts, physical CapEx bids, SF 2018/2021 historical tax variance.
 - **PR Link:** [PR #9](https://github.com/kanlerxz87-cyber/TinoDash1/pull/9) (`arena/fec96e14-tinodash1` -> `main`)
 - **Merge Result:** _Merging PR #9 & verifying live `https://kanlerxz87-cyber.github.io/TinoDash1/`_
+
+---
+
+## Session `arena/62714618-tinodash1` — Integration Log (2026-11-25, PR #10)
+- **Branch**: `arena/62714618-tinodash1` (PR #10, base `main`).
+- **History**: This session built a parallel 20-page implementation against the pre-unification `main` (through `d889203`). This branch was then merged with the unified `main` shipped in PR #9. **All conflicts were resolved in favor of `origin/main`**: the parallel design system, duplicate root pages, `site/`/`docs/` trees, and the stale integration notes were dropped; nothing from the unified dashboard was overwritten.
+- **Net contribution to `main` (additive only)**: `pages/pre-commitment.html` and `pages/investment-policy.html` (plus their `assets/js/pages-pre-commitment.js` / `assets/js/pages-investment-policy.js` modules), two new entries in the "Governance & Review" menu in `assets/js/layout.js`, `PRIVACY.md`, a README addition, and this log.
+  - `pages/pre-commitment.html`: pre-commitment agreement — sign the path triggers (Live / Rent / same-year Sell / 24–36-month Treasury ladder + phase-in / Mixed M1–M3) **before** the figures arrive; "what would change our minds" checkboxes; signature blocks; annual review cadence.
+  - `pages/investment-policy.html`: IPS for Property A sale proceeds — objectives in order (preservation → liquidity → growth → tax efficiency), target 55/10/15/0/10/10 with bands, day-0 25/25/25/25 Treasury ladder (2026-11-24 curve: 3M 4.36 / 1Y 4.59 / 2Y 4.63), months 13–36 phase-in at 1/24th per month, pause-never-cancel triggers, hard prohibitions, pre-acknowledged reinvestment risk, annual January review, IPS amendment requires all signatories.
+- **Figures**: $10-rounded; placeholders only; no PII. `npm run check` was run on this branch before push (see PR checks).
+- **Not in this PR**: the previously drafted Decision-Lab pages (assumptions, compare, taxes, Prop 19 deep-dive, law tracker, inheritance steps, projections) were intentionally **not** carried over — they duplicate the unified dashboard's functionality and would have re-introduced parallel trees.
+- **Status**: PR #10 merged without touching the unified dashboard's files (additive diff). GitHub Pages remains `legacy` / `main` / `/` (verified via API 2026-11-25); the two new pages deploy at `https://kanlerxz87-cyber.github.io/TinoDash1/pages/pre-commitment.html` and `.../pages/investment-policy.html`.

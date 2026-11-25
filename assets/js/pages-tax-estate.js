@@ -1,4 +1,4 @@
-import { renderSiteChrome, fetchVerifiedData, fmtUsd } from '../layout.js';
+import { renderSiteChrome, fetchVerifiedData, fmtUsd } from './layout.js';
 import { runComparisonModel } from '../model.js';
 import { loadInputs } from '../storage.js';
 
