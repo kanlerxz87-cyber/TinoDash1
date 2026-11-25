@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="privacy-banner" role="note" style="background:#7f1d1d;color:#fff;padding:10px 14px;font-size:12px;line-height:1.4">
+<strong>SYNTHETIC DEMONSTRATION — no real household data.</strong> Every property value, tax history,
+rent, utility figure and ZIP code on this site is invented for demonstration. No parcel number, address,
+or real figure is published here; the real inputs are held in a private inventory outside this repository.
+State and federal tax rates are real and cited to official sources.</div>
 <header class="topbar"><div class="brand">TinoDash <span>— Methodology & Privacy</span></div><div class="meta"><a class="btn" href="index.html">← Dashboard</a></div></header>
 <div class="layout">
   <aside class="sidebar">
@@ -26,7 +31,7 @@
           <tbody>
             <tr><td>Home appreciation</td><td>Market value projected with compound growth at 1.5–4.5% nominal (low/base/high)</td><td>1.5% / 3.0% / 4.5% — covers stagnant to strong Cupertino</td><td><a href="https://fred.stlouisfed.org/series/CSUSHPISA">FRED Case-Shiller</a> · SCC trends</td></tr>
             <tr><td>Property tax</td><td>Prop 13 2% cap on assessed; TRA total 1.16–1.25% (mid 1.18%) on assessed; Prop 19 scenarios modeled separately</td><td>Three scenarios: full carry / partial ($1M allowance) / reset</td><td><a href="https://www.boe.ca.gov/proptaxes/proptaxfaq.htm">BOE</a> · <a href="https://www.sccgov.org/sites/dtg/finance/proptax/Pages/property-tax-rates.aspx">SCC TRA Book</a></td></tr>
-            <tr><td>Rents</td><td>B $7,150 known; A placeholder $5,500–$7,200 (needs comps) — Rent path shown as floor</td><td>Rent growth 1.5–3.0% · vacancy 5%</td><td>Provided + <a href="questions.html">comps needed</a></td></tr>
+            <tr><td>Rents</td><td>B $5,600 known; A placeholder $5,500–$7,200 (needs comps) — Rent path shown as floor</td><td>Rent growth 1.5–3.0% · vacancy 5%</td><td>Provided + <a href="questions.html">comps needed</a></td></tr>
             <tr><td>Stocks/bonds</td><td>Sell path: $2.92–$3.02M net after transfer/brokerage → Treasuries 4.0–4.5% then 70/30 at 5–8% nominal</td><td>5.0% / 6.5% / 8.0% stock; 3.0–4.5% bond/Treasury</td><td><a href="https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics">Treasury</a> · <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview">S&P 500</a></td></tr>
             <tr><td>Taxes</td><td>Federal capital gain 15/20% + NIIT 3.8% where MAGI &gt;$250k MFJ; CA 1–12.3% as ordinary + MHS 1% over $1M (FTB 540); depreciation 27.5-yr, recapture 25%</td><td>Tax low/high shown; §121 $250k/$500k toggled; MHS only on amount &gt;$1M</td><td><a href="https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html">FTB 540</a> · <a href="https://www.irs.gov/publications/p523">Pub 523</a> · <a href="https://www.irs.gov/publications/p527">Pub 527</a></td></tr>
             <tr><td>Transfer tax</td><td>SCC $1.10/$1000 (no city tax Cupertino); SF tiered 0.5–6% (Prop H) priced for B scenarios</td><td>Brokerage 5–6% as market range (flagged, not statutory)</td><td><a href="https://www.sccgov.org/sites/clerk/recorder/Documents/DocumentaryTransferTax.pdf">SCC</a> · <a href="https://www.sftreasurer.org/transfer-tax">SF</a></td></tr>
@@ -41,7 +46,7 @@
       <div class="kicker">Privacy-first — personal information is top priority, highest urgency</div>
       <h2>How privacy is enforced</h2>
       <ul style="font-size:13px">
-        <li><strong>Anonymized placeholders:</strong> Property A (Cupertino 95014) and Property B (SF 94122) — no street addresses, no APNs, no owner names.</li>
+        <li><strong>Anonymized placeholders:</strong> Property A (Cupertino 00000) and Property B (SF 00000) — no street addresses, no APNs, no owner names.</li>
         <li><strong>Rounded to $10:</strong> All figures rounded per request; exact county records not reproduced verbatim to prevent search de-anonymization.</li>
         <li><strong>Internal-only data:</strong> Any personal info discovered during research is for internal calculation only and never appears on the website (per instruction). Private inventory is a local encrypted file, not hosted, not committed (.gitignored).</li>
         <li><strong>No manual input required:</strong> Site works without user-uploaded personal data; what-if controls are local-browser only and not persisted to server.</li>

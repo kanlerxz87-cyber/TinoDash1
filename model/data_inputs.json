@@ -2,83 +2,246 @@
   "meta": {
     "as_of_date": "2026-11-25",
     "rounding_increment_usd": 10,
-    "privacy_mode": "anonymized_placeholders",
+    "privacy_mode": "SYNTHETIC_DEMONSTRATION",
     "base_year": 2026,
-    "transfer_years": [2040, 2045, 2050],
-    "horizons_years": [10, 20, 30, 50]
+    "transfer_years": [
+      2040,
+      2045,
+      2050
+    ],
+    "horizons_years": [
+      10,
+      20,
+      30,
+      50
+    ],
+    "privacy_note": "Every property-specific figure on this site is synthetic demonstration data. No real market value, assessment history, rent roll, utility bill, parcel number or ZIP code is published. Real household inputs live in a private inventory held outside this repository."
   },
   "properties": {
     "property_a": {
-      "label": "Property A (Cupertino, CA 95014 — Inherited via Trust)",
-      "ownership_status": "To be inherited via trust (2040–2050)",
-      "zip": "95014",
-      "estimated_fmv_2026": 3100000,
-      "assessed_value_2026": 550540,
-      "property_tax_2025": 7210,
-      "effective_tax_rate_base": 0.0120,
-      "effective_tax_rate_range": [0.0110, 0.0120, 0.0135],
+      "label": "Property A (illustrative Bay Area single-family home \u2014 SYNTHETIC DEMO)",
+      "ownership_status": "To be inherited via trust (2040\u20132050)",
+      "zip": "00000",
+      "estimated_fmv_2026": 2400000,
+      "assessed_value_2026": 620000,
+      "property_tax_2025": 8120,
+      "effective_tax_rate_base": 0.012,
+      "effective_tax_rate_range": [
+        0.011,
+        0.012,
+        0.0135
+      ],
       "fixed_parcel_assessments_2026": 730,
-      "water_monthly_range": [100, 130, 150],
-      "electricity_monthly_range": [-20, -10, 0],
-      "solar_note": "Solar installed; typically generates $10–$20/mo net credit",
-      "insurance_primary_annual_range": [1500, 3200, 5500],
-      "insurance_landlord_annual_range": [2000, 4000, 6500],
-      "maintenance_annual_pct_fmv_range": [0.004, 0.006, 0.010],
-      "market_rent_monthly_range": [5200, 6200, 7400],
-      "imputed_rent_monthly_range": [5200, 6200, 7400],
+      "water_monthly_range": [
+        90,
+        120,
+        140
+      ],
+      "electricity_monthly_range": [
+        -20,
+        -10,
+        0
+      ],
+      "solar_note": "Solar installed; typically generates $10\u2013$20/mo net credit",
+      "insurance_primary_annual_range": [
+        1500,
+        3200,
+        5500
+      ],
+      "insurance_landlord_annual_range": [
+        2000,
+        4000,
+        6500
+      ],
+      "maintenance_annual_pct_fmv_range": [
+        0.004,
+        0.006,
+        0.01
+      ],
+      "market_rent_monthly_range": [
+        4800,
+        5600,
+        6600
+      ],
+      "imputed_rent_monthly_range": [
+        4800,
+        5600,
+        6600
+      ],
       "vacancy_rate": 0.05,
       "property_mgmt_pct": 0.07,
       "building_value_share_for_depreciation": 0.45,
       "history": [
-        {"year": 2026, "tax": null, "assessment": 550540, "note": "Rounded to $10; 2026 tax bill pending"},
-        {"year": 2025, "tax": 7210, "assessment": 539740},
-        {"year": 2024, "tax": 7000, "assessment": 529160},
-        {"year": 2023, "tax": 6920, "assessment": 518790},
-        {"year": 2022, "tax": 6760, "assessment": 508610},
-        {"year": 2021, "tax": 6660, "assessment": 498640},
-        {"year": 2020, "tax": 6570, "assessment": 493530},
-        {"year": 2019, "tax": 6570, "assessment": 483850},
-        {"year": 2018, "tax": 6380, "assessment": 474370},
-        {"year": 2017, "tax": 6380, "assessment": 465070},
-        {"year": 2016, "tax": 6410, "assessment": 455950},
-        {"year": 2015, "tax": 6130, "assessment": 449100},
-        {"year": 2014, "tax": 5970, "assessment": 440310}
-      ]
+        {
+          "year": 2026,
+          "tax": null,
+          "assessment": 620000,
+          "note": "Synthetic demo; 2026 bill pending"
+        },
+        {
+          "year": 2025,
+          "tax": 7320,
+          "assessment": 620000
+        },
+        {
+          "year": 2024,
+          "tax": 7170,
+          "assessment": 607840.0
+        },
+        {
+          "year": 2023,
+          "tax": 7030,
+          "assessment": 595920.0
+        },
+        {
+          "year": 2022,
+          "tax": 6890,
+          "assessment": 584240.0
+        },
+        {
+          "year": 2021,
+          "tax": 6760,
+          "assessment": 572780.0
+        },
+        {
+          "year": 2020,
+          "tax": 6630,
+          "assessment": 561550.0
+        },
+        {
+          "year": 2019,
+          "tax": 6500,
+          "assessment": 550540.0
+        },
+        {
+          "year": 2018,
+          "tax": 6370,
+          "assessment": 539750.0
+        },
+        {
+          "year": 2017,
+          "tax": 6240,
+          "assessment": 529170.0
+        },
+        {
+          "year": 2016,
+          "tax": 6120,
+          "assessment": 518790.0
+        },
+        {
+          "year": 2015,
+          "tax": 6000,
+          "assessment": 508620.0
+        },
+        {
+          "year": 2014,
+          "tax": 5880,
+          "assessment": 498650.0
+        }
+      ],
+      "zip_note": "Synthetic placeholder. The real parcel's ZIP, APN and Tax Rate Area are withheld and kept offline.",
+      "market_reference_note": "Synthetic demonstration inputs. Real market value, assessment history and utility figures are held in a private offline inventory and are not published."
     },
     "property_b": {
-      "label": "Property B (San Francisco Outer Sunset, CA 94122 — Already Owned, 3-Unit)",
+      "label": "Property B (illustrative 3-unit rental \u2014 SYNTHETIC DEMO)",
       "ownership_status": "Already owned by heir (3 livable units; 2 rented, 1 owner-available)",
-      "zip": "94122",
-      "estimated_fmv_2026": 1800000,
-      "assessed_value_2025": 114250,
-      "property_tax_2025": 2440,
+      "zip": "00000",
+      "estimated_fmv_2026": 1450000,
+      "assessed_value_2025": 132000,
+      "property_tax_2025": 1690,
       "sf_combined_tax_rate_fy2526": 0.0118268325,
       "fixed_parcel_assessments_2025": 1090,
-      "monthly_rent_2_units_2026": 7150,
-      "monthly_rent_3rd_unit_if_rented_range": [2400, 3000, 3600],
-      "water_monthly_range": [330, 370, 400],
-      "electricity_monthly_range": [30, 50, 70],
-      "insurance_3unit_annual_range": [1500, 4200, 7500],
-      "maintenance_annual_pct_fmv_range": [0.008, 0.012, 0.018],
-      "sf_prop_h_2026_parcel_tax_range": [130, 350, 800],
+      "monthly_rent_2_units_2026": 5600,
+      "monthly_rent_3rd_unit_if_rented_range": [
+        2400,
+        3000,
+        3600
+      ],
+      "water_monthly_range": [
+        330,
+        370,
+        400
+      ],
+      "electricity_monthly_range": [
+        30,
+        50,
+        70
+      ],
+      "insurance_3unit_annual_range": [
+        1500,
+        4200,
+        7500
+      ],
+      "maintenance_annual_pct_fmv_range": [
+        0.008,
+        0.012,
+        0.018
+      ],
+      "sf_prop_h_2026_parcel_tax_range": [
+        130,
+        350,
+        800
+      ],
       "history": [
-        {"year": 2025, "tax": 2440, "assessment": 114250},
-        {"year": 2024, "tax": 2320, "assessment": 112010},
-        {"year": 2023, "tax": 2180, "assessment": 109810},
-        {"year": 2022, "tax": 2110, "assessment": 107660},
-        {"year": 2021, "tax": 2070, "assessment": 105600},
-        {"year": 2020, "tax": 2200, "assessment": 104510},
-        {"year": 2019, "tax": 2130, "assessment": 102470},
-        {"year": 2018, "tax": 2060, "assessment": 100460},
-        {"year": 2017, "tax": 1740, "assessment": 98490},
-        {"year": 2016, "tax": 1680, "assessment": 96560}
-      ]
+        {
+          "year": 2025,
+          "tax": 2440,
+          "assessment": 114250
+        },
+        {
+          "year": 2024,
+          "tax": 2320,
+          "assessment": 112010
+        },
+        {
+          "year": 2023,
+          "tax": 2180,
+          "assessment": 109810
+        },
+        {
+          "year": 2022,
+          "tax": 2110,
+          "assessment": 107660
+        },
+        {
+          "year": 2021,
+          "tax": 2070,
+          "assessment": 105600
+        },
+        {
+          "year": 2020,
+          "tax": 2200,
+          "assessment": 104510
+        },
+        {
+          "year": 2019,
+          "tax": 2130,
+          "assessment": 102470
+        },
+        {
+          "year": 2018,
+          "tax": 2060,
+          "assessment": 100460
+        },
+        {
+          "year": 2017,
+          "tax": 1740,
+          "assessment": 98490
+        },
+        {
+          "year": 2016,
+          "tax": 1680,
+          "assessment": 96560
+        }
+      ],
+      "zip_note": "Synthetic placeholder. The real parcel's ZIP and APN are withheld and kept offline.",
+      "market_reference_note": "Synthetic demonstration inputs. Real value, assessment and rent roll are held in a private offline inventory and are not published."
     }
   },
   "tax_and_legal": {
     "federal_estate_exclusion_2025": 13990000,
     "federal_estate_exclusion_2026": 15000000,
-    "federal_estate_top_rate": 0.40,
+    "federal_estate_top_rate": 0.4,
     "federal_annual_gift_exclusion_2026": 19000,
     "ca_estate_inheritance_tax": 0,
     "prop19_allowance_2025_2027": 1044586,
@@ -88,37 +251,113 @@
     "irc_121_mfj": 500000,
     "depreciation_life_years": 27.5,
     "unrecaptured_1250_max_rate": 0.25,
-    "federal_ltcg_rate_high": 0.20,
+    "federal_ltcg_rate_high": 0.2,
     "federal_niit_rate": 0.038,
     "ca_top_ordinary_rate": 0.123,
     "ca_mhst_rate_over_1m": 0.01,
     "ca_mhst_threshold": 1000000,
-    "scc_transfer_tax_per_1000": 1.10,
+    "scc_transfer_tax_per_1000": 1.1,
     "cupertino_city_transfer_tax_per_1000": 0.0,
     "scc_recording_fee_est": 150,
-    "selling_costs_pct_range": [0.050, 0.055, 0.065]
+    "selling_costs_pct_range": [
+      0.05,
+      0.055,
+      0.065
+    ]
   },
   "macro_assumptions": {
-    "inflation_range": [0.020, 0.028, 0.040],
-    "home_appreciation_a_range": [0.025, 0.040, 0.055],
-    "home_appreciation_b_range": [0.020, 0.035, 0.050],
-    "rent_growth_range": [0.020, 0.030, 0.042],
-    "equity_return_nominal_range": [0.055, 0.075, 0.095],
+    "inflation_range": [
+      0.02,
+      0.028,
+      0.04
+    ],
+    "home_appreciation_a_range": [
+      0.025,
+      0.04,
+      0.055
+    ],
+    "home_appreciation_b_range": [
+      0.02,
+      0.035,
+      0.05
+    ],
+    "rent_growth_range": [
+      0.02,
+      0.03,
+      0.042
+    ],
+    "equity_return_nominal_range": [
+      0.055,
+      0.075,
+      0.095
+    ],
     "equity_volatility": 0.16,
-    "treasury_yield_range": [0.025, 0.040, 0.050],
-    "treasury_staging_months": [24, 30, 36]
+    "treasury_yield_range": [
+      0.025,
+      0.04,
+      0.05
+    ],
+    "treasury_staging_months": [
+      24,
+      30,
+      36
+    ]
   },
   "sources": [
-    {"id": "irs-706", "label": "IRS Form 706 Instructions (Rev. July 2026)", "url": "https://www.irs.gov/instructions/i706"},
-    {"id": "irs-wftc", "label": "IRS Working Families Tax Cuts (2026 Estate Exclusion)", "url": "https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers"},
-    {"id": "irs-p523", "label": "IRS Publication 523 (2025) — Selling Your Home (§ 121 & § 1250)", "url": "https://www.irs.gov/pub/irs-pdf/p523.pdf"},
-    {"id": "boe-p19-nr", "label": "CA BOE News Release NR-25-02 (Prop 19 $1,044,586 Cap)", "url": "https://www.boe.ca.gov/news/2025/nr-25-02.htm"},
-    {"id": "boe-p19-fs", "label": "CA BOE Publication 801 — Proposition 19 Fact Sheet", "url": "https://www.boe.ca.gov/pdf/pub801.pdf"},
-    {"id": "sco-estate", "label": "CA State Controller — Estate Tax Law (R&TC § 13301)", "url": "https://www.sco.ca.gov/Files-ARD-Tax-Info/estate_lawreg_lawreg.pdf"},
-    {"id": "ftb-540", "label": "CA FTB Form 540 / Schedule CA Instructions (MHST & Capital Gains)", "url": "https://www.ftb.ca.gov/forms/2024/2024-540-ca-instructions.html"},
-    {"id": "scc-rec", "label": "Santa Clara County Clerk-Recorder — Transfer Tax & Recording Fees", "url": "https://clerkrecorder.santaclaracounty.gov/recording-documents/recording-document-fees"},
-    {"id": "sf-bos-rate", "label": "SF Board of Supervisors — FY 2025–26 Property Tax Rate ($1.18268325/$100)", "url": "https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf"},
-    {"id": "sf-vip-2026", "label": "SF Voter Information Pamphlet (Nov 3, 2026) — Prop H & Transfer Tax", "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"},
-    {"id": "sf-rb-proph", "label": "SF Rent Board — Prop H (2006) No-Fault Eviction Relocation Payments", "url": "https://www.sf.gov/reports--december-2006--san-francisco-rent-board-news-archive-2006"}
+    {
+      "id": "irs-706",
+      "label": "IRS Form 706 Instructions (Rev. July 2026)",
+      "url": "https://www.irs.gov/instructions/i706"
+    },
+    {
+      "id": "irs-wftc",
+      "label": "IRS Working Families Tax Cuts (2026 Estate Exclusion)",
+      "url": "https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers"
+    },
+    {
+      "id": "irs-p523",
+      "label": "IRS Publication 523 (2025) \u2014 Selling Your Home (\u00a7 121 & \u00a7 1250)",
+      "url": "https://www.irs.gov/pub/irs-pdf/p523.pdf"
+    },
+    {
+      "id": "boe-p19-nr",
+      "label": "CA BOE News Release NR-25-02 (Prop 19 $1,044,586 Cap)",
+      "url": "https://www.boe.ca.gov/news/2025/nr-25-02.htm"
+    },
+    {
+      "id": "boe-p19-fs",
+      "label": "CA BOE Publication 801 \u2014 Proposition 19 Fact Sheet",
+      "url": "https://www.boe.ca.gov/pdf/pub801.pdf"
+    },
+    {
+      "id": "sco-estate",
+      "label": "CA State Controller \u2014 Estate Tax Law (R&TC \u00a7 13301)",
+      "url": "https://www.sco.ca.gov/Files-ARD-Tax-Info/estate_lawreg_lawreg.pdf"
+    },
+    {
+      "id": "ftb-540",
+      "label": "CA FTB Form 540 / Schedule CA Instructions (MHST & Capital Gains)",
+      "url": "https://www.ftb.ca.gov/forms/2024/2024-540-ca-instructions.html"
+    },
+    {
+      "id": "scc-rec",
+      "label": "Santa Clara County Clerk-Recorder \u2014 Transfer Tax & Recording Fees",
+      "url": "https://clerkrecorder.santaclaracounty.gov/recording-documents/recording-document-fees"
+    },
+    {
+      "id": "sf-bos-rate",
+      "label": "SF Board of Supervisors \u2014 FY 2025\u201326 Property Tax Rate ($1.18268325/$100)",
+      "url": "https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf"
+    },
+    {
+      "id": "sf-vip-2026",
+      "label": "SF Voter Information Pamphlet (Nov 3, 2026) \u2014 Prop H & Transfer Tax",
+      "url": "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+    },
+    {
+      "id": "sf-rb-proph",
+      "label": "SF Rent Board \u2014 Prop H (2006) No-Fault Eviction Relocation Payments",
+      "url": "https://www.sf.gov/reports--december-2006--san-francisco-rent-board-news-archive-2006"
+    }
   ]
 }

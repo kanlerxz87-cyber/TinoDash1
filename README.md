@@ -1,8 +1,20 @@
+# TinoDash1 — Cupertino / San Francisco inheritance decision dashboard
+
+> ## ⚠️ SYNTHETIC DEMONSTRATION DATA — NOT THE HOUSEHOLD'S FIGURES
+>
+> This public repository and its GitHub Pages site contain **invented demonstration values only**.
+> Property values, assessment histories, rents, utility costs and ZIP codes are all synthetic.
+> **No real parcel, address, or household figure is published here.** Rounding to $10 does not
+> anonymise a unique figure, so real inputs are deliberately absent and live only in a private
+> inventory held outside this repository.
+>
+> State and federal tax rates *are* real, and each is cited to the official source.
+
 # TinoDash — Privacy-First Inheritance Decision Dashboard
 
-**Property A (Cupertino 95014)** inherited via trust ~2040–2050 vs **Property B (SF 94122, Outer Sunset, 3-unit, already owned)**
+**Property A (an illustrative Bay Area home)** inherited via trust ~2040–2050 vs **Property B (an illustrative 3-unit rental, already owned)** — demonstration values only
 
-🔗 **Live Dashboard (GitHub Pages):** `https://kanlerxz87-cyber.github.io/TinoDash1/` — served from both **root** (primary 17-page site) and **`docs/`** (legacy 9-page docs) for compatibility.
+🔗 **Live site (GitHub Pages):** `https://kanlerxz87-cyber.github.io/TinoDash1/` — the root site is the current one. `docs/` holds a superseded, **synthetic** legacy copy kept for compatibility.
 
 ## What this is
 

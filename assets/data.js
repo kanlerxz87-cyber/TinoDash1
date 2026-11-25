@@ -50,10 +50,10 @@ function renderNav(activePage) {
   `;
 }
 
-// Property A: Cupertino 95014 (Inherited via Trust ~2040-2050)
+// Property A: Cupertino 00000 (Inherited via Trust ~2040-2050)
 // All historical values rounded to nearest $10 for privacy.
 const PROPERTY_A_HISTORY = [
-  { year: 2026, tax: null, taxNote: "Pending", assessed: 550540, assNote: "+2.0%" },
+  { year: 2026, tax: null, taxNote: "Pending", assessed: 620000, assNote: "+2.0%" },
   { year: 2025, tax: 7210, taxNote: "+2.9%", assessed: 539740, assNote: "+2.0%" },
   { year: 2024, tax: 7000, taxNote: "+1.2%", assessed: 529160, assNote: "+2.0%" },
   { year: 2023, tax: 6920, taxNote: "+2.4%", assessed: 518790, assNote: "+2.0%" },
@@ -68,7 +68,7 @@ const PROPERTY_A_HISTORY = [
   { year: 2014, tax: 5970, taxNote: "Base", assessed: 440310, assNote: "+0.5%" }
 ];
 
-// Property B: San Francisco Outer Sunset 94122 (Already Owned, 3-unit building)
+// Property B: San Francisco Outer Sunset 00000 (Already Owned, 3-unit building)
 // All historical values rounded to nearest $10 for privacy.
 const PROPERTY_B_HISTORY = [
   { year: 2025, tax: 2440, taxNote: "+5.3%", assessed: 114250, assNote: "+2.0%" },

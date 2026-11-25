@@ -62,7 +62,7 @@ function updateWhatIf(){
 
   // Property A base
   const baseVal = 3100000;
-  const baseAssessed = 550540;
+  const baseAssessed = 620000;
   const years = holdYears;
 
   // Project market vs assessed

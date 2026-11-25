@@ -140,7 +140,7 @@ function runModel() {
       type: "Pure",
       endWealth: propValRent + rentCash,
       taxProfile: "Full Prop 19 reassessment to FMV; 27.5-yr depreciation & § 1250 recapture on exit.",
-      risk: "Concentration risk in 95014 + landlord/vacancy risk. Low liquidity.",
+      risk: "Concentration risk in a single Bay Area sub-market + landlord/vacancy risk. Low liquidity.",
       badge: "badge-warning"
     },
     {

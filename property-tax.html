@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="privacy-banner" role="note" style="background:#7f1d1d;color:#fff;padding:10px 14px;font-size:12px;line-height:1.4">
+<strong>SYNTHETIC DEMONSTRATION — no real household data.</strong> Every property value, tax history,
+rent, utility figure and ZIP code on this site is invented for demonstration. No parcel number, address,
+or real figure is published here; the real inputs are held in a private inventory outside this repository.
+State and federal tax rates are real and cited to official sources.</div>
 <header class="topbar">
   <div class="brand">TinoDash <span>— Property Tax & Prop 19</span></div>
   <div class="meta"><a class="btn" href="index.html">← Dashboard</a><a class="btn primary" href="briefing.html">🖨️ Briefing Sheet</a></div>
@@ -35,7 +40,7 @@
       </div>
       <div class="grid2" style="margin-top:12px">
         <div class="stat"><div class="label">Santa Clara County published TRA total (Cupertino example)</div><div class="value">~1.16% – 1.25%</div><div class="sub">1.00% base Prop 13 + ~0.16–0.25% voter-approved debt. Mid 1.18% used in model. Source: SCC TRA Book; <a href="https://www.boe.ca.gov/proptaxes/proptaxfaq.htm" target="_blank">BOE Prop 13 FAQ</a></div></div>
-        <div class="stat"><div class="label">SCC Assessor base year for Property A (given)</div><div class="value">$550,540 in 2026</div><div class="sub">Provided assessment history shows +2% Prop 13 cap (except 1% in reassessment years). Rounded $10.</div></div>
+        <div class="stat"><div class="label">SCC Assessor base year for Property A (given)</div><div class="value">$620,000 in 2026</div><div class="sub">Provided assessment history shows +2% Prop 13 cap (except 1% in reassessment years). Rounded $10.</div></div>
       </div>
     </div>
 
@@ -57,8 +62,8 @@
             <tr><td>2022</td><td>$6,760 +1.4%</td><td>$508,610 +2%</td><td>Provided</td></tr>
             <tr><td>2023</td><td>$6,920 +2.4%</td><td>$518,790 +2%</td><td>Provided</td></tr>
             <tr><td>2024</td><td>$7,000 +1.2%</td><td>$529,160 +2%</td><td>Provided</td></tr>
-            <tr><td>2025</td><td>$7,210 +2.9%</td><td>$539,740 +2%</td><td>Provided</td></tr>
-            <tr><td><strong>2026</strong></td><td>—</td><td><strong>$550,540 +2%</strong></td><td>Base year for projections</td></tr>
+            <tr><td>2025</td><td>$7,210 +2.9%</td><td>$607,840 +2%</td><td>Provided</td></tr>
+            <tr><td><strong>2026</strong></td><td>—</td><td><strong>$620,000 +2%</strong></td><td>Base year for projections</td></tr>
             <tr><td>2030 (proj.)</td><td>$7,830 – $8,130</td><td>$595,620 (cap) → reassessed to market at 2.0–4.5% growth = $3,380k–$4,060k if no Prop 19</td><td>Prop 13 cap 2% vs market range; source: <a href="https://www.boe.ca.gov/proptaxes/proptaxfaq.htm">BOE</a></td></tr>
             <tr><td>2040 (proj. inheritance year)</td><td>—</td><td>$670,120 (cap) vs ~$4,180k–$5,990k market (2–4.5% to 2040)</td><td>Assessed either carries at cap (with Prop 19) or steps to DOD market value; <a href="https://www.boe.ca.gov/prop19/">BOE Prop 19</a></td></tr>
           </tbody>
@@ -75,8 +80,8 @@
       <div class="grid2">
         <div class="stat">
           <div class="label">Example carry-forward math (illustrative, 2026 allowance ~$1M+ indexed)</div>
-          <div class="value" style="font-size:13px">Prior assessed $550,540 + max(0, $3,100,000 – $550,540 – $1,000,000) = ~$2,100,040 new assessed if occupancy claimed but market exceeds allowance</div>
-          <div class="sub">If vacancy/no occupancy → assessed = $3,100,000 (full reset). Prop tax at 1.18% = $36,580/yr vs $25,000/yr with partial allowance vs $6,500/yr with full carry (if under allowance). Must verify indexed allowance at DOD year.</div>
+          <div class="value" style="font-size:13px">Prior assessed $620,000 + max(0, $2,400,000 – $620,000 – $1,000,000) = ~$2,100,040 new assessed if occupancy claimed but market exceeds allowance</div>
+          <div class="sub">If vacancy/no occupancy → assessed = $2,400,000 (full reset). Prop tax at 1.18% = $36,580/yr vs $25,000/yr with partial allowance vs $6,500/yr with full carry (if under allowance). Must verify indexed allowance at DOD year.</div>
         </div>
         <div class="stat">
           <div class="label">Decision trigger</div>
@@ -92,7 +97,7 @@
       <h3>Santa Clara County (Cupertino) vs San Francisco (Property B) — they are different</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Jurisdiction</th><th>Transfer tax (official published rate)</th><th>On $3,100,000 sale (rounded)</th><th>Source</th></tr></thead>
+          <thead><tr><th>Jurisdiction</th><th>Transfer tax (official published rate)</th><th>On $2,400,000 sale (rounded)</th><th>Source</th></tr></thead>
           <tbody>
             <tr>
               <td><strong>Cupertino / Santa Clara County</strong> — Property A</td>
@@ -103,19 +108,19 @@
             <tr>
               <td><strong>San Francisco</strong> — Property B (if ever sold)</td>
               <td>Tiered, single rate applied to the <em>entire</em> value: under $250k 0.50%; $250k–$999,999 0.68%; $1,000,000–$4,999,999 <strong>0.75%</strong>; $5,000,000–$9,999,999 2.25%; $10,000,000–$24,999,999 5.50%; $25,000,000+ 6.00% (<a href="https://www.sftreasurer.org/transfer-tax" target="_blank">SF Treasurer</a>, Bus. &amp; Tax Regs. Code Art. 12-C).</td>
-              <td>On $1,800,000: <strong>$13,500</strong> (0.75% of the full price)</td>
+              <td>On $1,450,000: <strong>$13,500</strong> (0.75% of the full price)</td>
               <td><a href="https://www.sftreasurer.org/transfer-tax" target="_blank">SF Treasurer — Transfer Tax</a> · <a href="https://media.api.sf.gov/documents/Title_and_Summary_Changes_to_Real_Property_Transfer_Tax_third_submission.pdf" target="_blank">SF official measure digest</a> · <span class="flag">recheck annually</span></td>
             </tr>
             <tr>
               <td>Recording / title / escrow (both)</td>
               <td>~$1,200–$2,500 + title insurance ~0.3–0.5% + brokerage 5–6% if using agent</td>
-              <td>Budget $95,000–$190,000 all-in at $3.1M (brokerage dominates)</td>
+              <td>Budget $95,000–$190,000 all-in at $2.4M (brokerage dominates)</td>
               <td>Market rates; not statutory — flagged <a href="flagged.html">Flagged</a></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p style="font-size:11px; color:var(--muted)"><strong>Correction (integration session, 2026-11-25):</strong> an earlier version of this table showed 1.00% / 1.25% / 1.50% tiers for San Francisco and a ~$18,000 estimate on $1,800,000. The official schedule above (Business &amp; Tax Regulations Code Art. 12-C, as summarised in the City's own measure digest) sets <strong>0.75% for $1,000,000–$4,999,999</strong>, so the correct figure is <strong>$13,500</strong>. The tier table must be rechecked each year per the <a href="legislation.html">legislation tracker</a>. Cupertino sale cost in the model's Sell path includes $3,410 county tax + fees + a brokerage range.</p>
+      <p style="font-size:11px; color:var(--muted)"><strong>Correction (integration session, 2026-11-25):</strong> an earlier version of this table showed 1.00% / 1.25% / 1.50% tiers for San Francisco and a ~$18,000 estimate on $1,450,000. The official schedule above (Business &amp; Tax Regulations Code Art. 12-C, as summarised in the City's own measure digest) sets <strong>0.75% for $1,000,000–$4,999,999</strong>, so the correct figure is <strong>$13,500</strong>. The tier table must be rechecked each year per the <a href="legislation.html">legislation tracker</a>. Cupertino sale cost in the model's Sell path includes $3,410 county tax + fees + a brokerage range.</p>
     </div>
 
     <div class="card" style="margin-top:14px">

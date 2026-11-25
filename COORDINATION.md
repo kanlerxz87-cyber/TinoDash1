@@ -1,6 +1,6 @@
 # COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy rule:** All figures rounded to nearest **$10**, placeholders only (Property A Cupertino 95014 / Property B SF 94122). Private inventory never committed (.gitignored).
+> **Privacy rule:** All figures rounded to nearest **$10**, placeholders only (Property A / Property B — synthetic demo ZIP 00000). Private inventory never committed (.gitignored).
 
 ## Session Registry
 | Session ID | Branch | Status | Last heartbeat |
@@ -23,7 +23,7 @@
 | T07 | Imputed rent + primary-residence exclusion (§121) + Prop 19 carry-forward + Prop H transfer tax | done | arena-43f9846f | paths.html, property-tax.html, docs/tax-legal.html | Imputed rent input; §121 toggle $250k/$500k; Prop 19 allowance $1,044,586 (2025-27 BOE LTA 2025/009) carried forward; SCC $1.10/$1k vs SF 0.75% tier + Prop H $249/$65 |
 | T08 | Property A TRA + assessed value / property-tax projections (ranges, rounded $10) | done | arena-43f9846f | property-tax.html, properties.html, data/model.json | TRA via SCC TRA Book ~1.16-1.25% mid 1.18%; history 2014-2026 rounded; 2040 scenarios |
 | T09 | Private estate inventory + estate tax vs basis vs assessment separation + liquidity + portability | done | arena-43f9846f + ef80c5c0 | estate.html, docs/tax-legal.html | Three-way table: IRS estate $15M/$30M (PL 119-21) vs BOE assessed vs FTB basis; CA no estate tax; inventory template private; portability/709; liquidity plan |
-| T10 | 5-year maintenance & capital plan for both buildings + insurance research (95014 & 94122) | done | arena-43f9846f | insurance-maintenance.html, properties.html | 5-yr tables; HO-3 $1.5-2.1k vs DP-3 $1.5-2.5k +EQ; NEM 2.0/3.0; sewer lateral/roof |
+| T10 | 5-year maintenance & capital plan for both buildings + insurance research (demo ZIP 00000) | done | arena-43f9846f | insurance-maintenance.html, properties.html | 5-yr tables; HO-3 $1.5-2.1k vs DP-3 $1.5-2.5k +EQ; NEM 2.0/3.0; sewer lateral/roof |
 | T11 | Property B leases / SF rent control & local rules verification | done | arena-43f9846f | sf-property.html, properties.html | SF Rent Ordinance pre-1979, 60% CPI cap 7%, AB12 deposits, legal units/permits |
 | T12 | Deadlines timeline (Prop 19, reassessment, filing, etc.) | done | arena-43f9846f | timeline.html, docs/process-timeline.html | DOD+1yr Prop 19 BOE-502-A/19-P, 9mo 706, same-year sale, appeals Jul-Sep, §121 2-of-5, annual re-run |
 | T13 | Legislation tracker — enacted vs proposals (federal/state/local) with recheck cadence | done | arena-43f9846f | legislation.html | TCJA sunset/PL 119-21, Prop 19, SF Prop H, AB12, NEM 3.0 as Enacted; extension/wealth-tax as Proposed; log 2026-11-25→2027-02-25 |
@@ -73,7 +73,7 @@ Work done on branch `arena/f58323fd-tinodash1`, then PR to `main`.
 |---|---|---|
 | 1 | `index.html`, `flagged.html`, `briefing.html` were committed to `main` **with Git conflict markers** (`<<<<<<<`, `=======`, `>>>>>>>`), so the landing page and briefing sheet were structurally broken | All three rebuilt cleanly on the site's own design system and nav |
 | 2 | **Wrong law: 2026 federal exclusion shown as ~$7M "TCJA sunset"** in `estate.html`, `legislation.html`, `sources.html`, `glossary.html`, `briefing.html`, `flagged.html` | Corrected to **$15,000,000 per person** (Rev. Proc. 2025-32), indexed and **permanent under P.L. 119-21 §70106**. The sunset was repealed before taking effect |
-| 3 | **Invented SF transfer-tax rates** (1.00% / 1.25% / 1.50%) in `property-tax.html` **and** in `js/app.js` `calcTransferTaxSF`, giving ~$18,000 on $1,800,000 | Corrected to the official schedule (0.75% for $1M–$4,999,999 → **$13,500**); function rewritten and unit-checked at seven price points |
+| 3 | **Invented SF transfer-tax rates** (1.00% / 1.25% / 1.50%) in `property-tax.html` **and** in `js/app.js` `calcTransferTaxSF`, giving a materially overstated figure on a $1.45M demo sale | Corrected to the official schedule (0.75% for $1M–$4,999,999 → **$13,500**); function rewritten and unit-checked at seven price points |
 | 4 | **Dashboard figures not reproducible** — index showed "$3.5M–$18.4M" ranges that no engine output produced | Comparison table regenerated **directly from `docs/data/model_output.json`**, 6 paths × 5 date/horizon columns |
 | 5 | `properties.html` tables had no data arrays at all (empty `<tbody>`) | Confirmed arrays present in `assets/data.js`; page verified rendering 13 + 10 rows |
 | 6 | `js/app.js` charts plotted **hard-coded outcomes** dressed as simulation | Replaced with seeded Monte-Carlo (600 paired paths) and a labelled 1929-style reconstruction |
@@ -105,3 +105,44 @@ to each item.
 Selling in the year of death wins on the engine's own assumptions, because the §1014 step-up makes the gain
 approximately zero while the house is assumed to appreciate at 4.0% against 7.5% equities.
 **This is assumption-driven, not proven:** insurance and market rent for Property A remain blank.
+
+## URGENT — privacy gate compliance (owner instruction, 2026-11-25)
+
+The repository owner placed a **privacy gate** on this public repo and its Pages site (issue #1) and closed
+PR #7 pending compliance. Their position, which supersedes the earlier "$10 rounding is sufficient" approach:
+**rounding does not anonymise; household-specific inputs, histories, parcel identifiers, ZIP-plus-detail
+combinations and derived results must not be published on a public site.** This session complied immediately.
+
+### What changed
+
+| Control | Before | Now |
+|---|---|---|
+| Property values | Real estimates ($2.4M / $1.45M demo equivalents had been the real figures) | **Synthetic** demo values, invented for illustration |
+| Assessment histories | The real 2014–2026 tax/assessment series for both parcels | **Synthetic** series (shape of a Prop 13 parcel, invented numbers) |
+| Rent roll | Real two-unit total | **Synthetic** demo rent |
+| ZIP codes | Real ZIPs in every page, chart, nav and briefing | **`00000`** placeholder everywhere |
+| Banner | "Privacy-first, rounded to $10" | **Red banner on all 21 pages**: "SYNTHETIC DEMONSTRATION — no real household data" |
+| Build gate | Checked links + identifiers | Additionally **fails** on real ZIPs, real property values, real assessments, real rent roll, parcel-number patterns, missing banner, or conflict markers |
+| Legacy `docs/` copy | Carried the real figures | **Regenerated** from the synthetic model |
+| Private inventory | Described as "in this repo, gitignored" | Explicitly held **offline, outside the repository** |
+
+### What is preserved
+All analytical content, the model, the tax-law citations, the black-swan tests, the briefing sheet, the
+questions and the flagged register survive unchanged — they now run on synthetic inputs. **State and federal
+rates remain real and cited**, because they are public law, not household data.
+
+### Residual risk that this session cannot fix (needs owner/admin action)
+1. **Git history still contains the real figures.** Scrubbing requires a history rewrite plus a force-push,
+   which is a destructive action on a shared repo. **Recommended:** make the repo private (or delete and
+   recreate it), which the owner has already attempted and which returned 403 for the integration.
+2. **The live Pages site serves the previous commit** until `main` is updated. Because the exposed content
+   is already public, updating `main` is an improvement — it replaces real figures with synthetic ones —
+   but it does not retract what was published.
+3. **GitHub caches and third-party mirrors/forks** may retain the earlier commit. Only owner/admin access
+   can address that.
+
+### Session decision
+I have **not** merged to `main` and have **not** force-pushed. Per the owner's instruction, a single final
+integration owner must be nominated before any further merge or deployment. This branch
+(`arena/f58323fd-tinodash1`) is ready, verified, and synthetic-only, and can be merged by whoever is
+nominated. Awaiting that nomination.

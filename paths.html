@@ -8,6 +8,11 @@
 <script src="js/app.js" defer></script>
 </head>
 <body>
+<div class="privacy-banner" role="note" style="background:#7f1d1d;color:#fff;padding:10px 14px;font-size:12px;line-height:1.4">
+<strong>SYNTHETIC DEMONSTRATION — no real household data.</strong> Every property value, tax history,
+rent, utility figure and ZIP code on this site is invented for demonstration. No parcel number, address,
+or real figure is published here; the real inputs are held in a private inventory outside this repository.
+State and federal tax rates are real and cited to official sources.</div>
 <header class="topbar">
   <div class="brand">TinoDash <span>— Paths: Pure & Mixed</span></div>
   <div class="meta"><a class="btn" href="index.html">← Dashboard</a><a class="btn primary" href="briefing.html">🖨️ Briefing Sheet</a></div>
@@ -31,7 +36,7 @@
           <div class="kicker">Imputed rent input — for living paths</div>
           <label style="font-size:12px; font-weight:700">If you lived in A, what would you otherwise pay to rent a comparable Cupertino house? ($/mo)</label>
           <input id="imputedRent" type="number" value="5200" min="0" max="15000" step="100" style="width:100%; padding:8px; border:1px solid var(--line); border-radius:8px; margin-top:6px">
-          <p style="font-size:11px; color:var(--muted)">This is not market rent for A — it is the <em>owner’s saved rent</em>. $5,200/mo = $62,400/yr tax-free housing benefit. Use Zillow/Redfin comparables for 95014: currently $4,800–$7,500/mo for 3–4BR; the model defaults mid-range. <span class="flag">NEEDS COMPS — see Questions</span></p>
+          <p style="font-size:11px; color:var(--muted)">This is not market rent for A — it is the <em>owner’s saved rent</em>. $5,200/mo = $62,400/yr tax-free housing benefit. Use Zillow/Redfin comparables for 00000: currently $4,800–$7,500/mo for 3–4BR; the model defaults mid-range. <span class="flag">NEEDS COMPS — see Questions</span></p>
           <label style="font-size:12px; margin-top:10px; display:flex; align-items:center; gap:8px"><input type="checkbox" id="exclusionToggle" checked> Switch on <strong>primary-residence exclusion (§121)</strong> for living-then-sell paths</label>
           <p style="font-size:11px; color:var(--muted)">§121: Exclude $250k (single) / $500k (MFJ) of gain if owned+used as principal residence 2 of last 5 yr. Source: <a href="https://www.irs.gov/publications/p523" target="_blank">IRS Pub 523</a>, <a href="https://www.law.cornell.edu/uscode/text/26/121" target="_blank">26 USC §121</a>. Must meet use test — document move-in.</p>
           <label style="font-size:12px; margin-top:8px; display:flex; align-items:center; gap:8px"><input type="checkbox" id="prop19Toggle" checked> Prop 19 carry (only if A becomes heir’s principal residence)</label>
@@ -44,7 +49,7 @@
             <table>
               <thead><tr><th>Step-up sale math (rounded $10)</th><th>Amount</th></tr></thead>
               <tbody>
-                <tr><td>DOD market value (appraised) = basis</td><td>$3,100,000</td></tr>
+                <tr><td>DOD market value (appraised) = basis</td><td>$2,400,000</td></tr>
                 <tr><td>Sale price same year</td><td>$3,120,000 (example +$20k market move)</td></tr>
                 <tr><td>Taxable gain</td><td>$20,000 → fed $3,000–$4,000 + CA ~$1,860 + MHS/NIIT likely $0 at this level</td></tr>
                 <tr><td>Transfer tax & fees (SCC)</td><td>$3,410 + $95,000–$190,000 brokerage</td></tr>
@@ -70,7 +75,7 @@
         </table>
       </div>
 
-      <div class="callout warn">“Put a market rent on Property A or accept that the letting paths are a floor.” Market rent comps for 95014 not yet obtained — letting-path figures are <strong>floors</strong> using voucher/Redfin-range placeholders. <a href="questions.html">Action: obtain comps → rebuild model</a></div>
+      <div class="callout warn">“Put a market rent on Property A or accept that the letting paths are a floor.” Market rent comps for 00000 not yet obtained — letting-path figures are <strong>floors</strong> using voucher/Redfin-range placeholders. <a href="questions.html">Action: obtain comps → rebuild model</a></div>
 
       <div class="grid2" style="margin-top:12px">
         <div class="card">

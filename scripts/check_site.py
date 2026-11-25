@@ -27,6 +27,16 @@ LINK = re.compile(r'(?:href|src)="([^"]+)"')
 # CDN/asset URLs and script tags are not identity data
 SCRIPT = re.compile(r"<script[^>]*>[^<]*</script>|src=\"[^\"]+\"", re.I)
 DOLLAR = re.compile(r"\$\s?([0-9][0-9,]{2,})")
+# Values that would expose the real household: real ZIPs, the real figures, parcel ids
+FORBIDDEN = [
+    (re.compile(r"\b9[45]\d{3}\b"), "real ZIP code (use the synthetic 00000 placeholder)"),
+    (re.compile(r"\b3100000\b|\$3,100,000|\b3\.1M\b"), "real Property A market value"),
+    (re.compile(r"\b1800000\b|\$1,800,000|\b1\.8M\b"), "real Property B market value"),
+    (re.compile(r"\b550540\b|\$550,540"), "real Property A assessment"),
+    (re.compile(r"\b114250\b|\b114248\b|\$114,250"), "real Property B assessment"),
+    (re.compile(r"\b7150\b|\$7,150"), "real Property B rent roll"),
+    (re.compile(r"\bA[PN]{1,2}\b\s*[:#]\s*\d"), "possible parcel number"),
+]
 IDENT = [
     (re.compile(r"[\w.+-]+@[\w-]+\.[\w.]{2,}"), "possible email address"),
     (re.compile(r"\(\d{3}\)\s*\d{3}-\d{4}"), "possible phone number"),
@@ -51,6 +61,9 @@ def targets_ok(page: Path, text: str) -> None:
 def scan_identifiers(page: Path) -> None:
     for n, line in enumerate(page.read_text(encoding="utf-8").splitlines(), 1):
         line = SCRIPT.sub("", line)          # strip asset URLs first
+        for rx, label in FORBIDDEN:
+            if rx.search(line):
+                errors.append(f"{page.name}:{n}: FORBIDDEN {label} -> {line.strip()[:90]}")
         for rx, label in IDENT:
             if rx.search(line):
                 errors.append(f"{page.name}:{n}: {label} -> {line.strip()[:110]}")
@@ -101,6 +114,10 @@ def main() -> int:
         targets_ok(page, text)
         scan_identifiers(page)
         scan_rounding(page)
+        if "SYNTHETIC DEMONSTRATION" not in text:
+            errors.append(f"{page.name}: missing the synthetic-data disclosure banner")
+        if "<<<<<<<" in text or ">>>>>>>" in text:
+            errors.append(f"{page.name}: unresolved merge-conflict markers")
         if "<!doctype html>" not in text.lower()[:200] and "<!DOCTYPE html>" not in text[:200]:
             warnings.append(f"{page.name}: missing doctype")
     scan_duplicates()

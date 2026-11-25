@@ -9,9 +9,9 @@
   },
   "properties": {
     "A": {
-      "label": "Property A — Cupertino (95014)",
+      "label": "Property A — Cupertino (00000)",
       "estimatedValue2026": 3100000,
-      "assessedValue2026": 550540,
+      "assessedValue2026": 620000,
       "propertyTax2025": 7210,
       "traNote": "TRA lookup required — Santa Clara County published rate ~1.18% total (1% base + local bonds/parcels). See property-tax.html for official TRA lookup steps.",
       "waterMonthly": [100, 150],
@@ -21,7 +21,7 @@
       "hoaMonthly": null
     },
     "B": {
-      "label": "Property B — San Francisco (94122, Outer Sunset)",
+      "label": "Property B — San Francisco (00000, Outer Sunset)",
       "estimatedValue2026": 1800000,
       "assessedValue2025": 114250,
       "propertyTax2025": 2440,

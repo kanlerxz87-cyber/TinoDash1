@@ -65,7 +65,7 @@ def render_page(filename: str, title: str, body_html: str) -> None:
   <div class="layout">
     <aside class="sidebar">
       <div class="brand">TinoDash1</div>
-      <div class="brand-sub">Property A (95014) &amp; Property B (94122)<br/>Inheritance Decision Dashboard</div>
+      <div class="brand-sub">Property A (00000) &amp; Property B (00000)<br/>Inheritance Decision Dashboard</div>
       {"".join(nav_html)}
       <div class="privacy-badge">
         <strong>Privacy-First Mode</strong><br/>
@@ -103,18 +103,18 @@ def build_index(data):
 
     body = f"""
     <h1>Executive Summary &amp; Decision Framework</h1>
-    <p class="lead">Anonymized analysis for inheriting <strong>Property A (Cupertino 95014)</strong> via trust in 2040–2050 while already owning <strong>Property B (San Francisco Outer Sunset 94122, 3-unit)</strong>. As of {data['meta']['as_of_date']}.</p>
+    <p class="lead">Anonymized analysis for inheriting <strong>Property A (Cupertino 00000)</strong> via trust in 2040–2050 while already owning <strong>Property B (San Francisco Outer Sunset 00000, 3-unit)</strong>. As of {data['meta']['as_of_date']}.</p>
 
     <div class="grid-4">
       <div class="card">
         <div class="kpi-label">Property A (2026 / 2045 Est.)</div>
-        <div class="kpi-val">{fmt(3100000)} → {fmt(pa_2045['fmv'])}</div>
-        <div class="kpi-sub">Inherited via trust; Prop 13 FBYV {fmt(550540)} (2026)</div>
+        <div class="kpi-val">{fmt(2400000)} → {fmt(pa_2045['fmv'])}</div>
+        <div class="kpi-sub">Inherited via trust; Prop 13 FBYV {fmt(620000)} (2026)</div>
       </div>
       <div class="card">
         <div class="kpi-label">Property B (Already Owned)</div>
-        <div class="kpi-val">{fmt(1800000)}</div>
-        <div class="kpi-sub">SF 94122 3-unit; 2 units rented ({fmt(7150)}/mo), 1 owner-available</div>
+        <div class="kpi-val">{fmt(1450000)}</div>
+        <div class="kpi-sub">SF 00000 3-unit; 2 units rented ({fmt(5600)}/mo), 1 owner-available</div>
       </div>
       <div class="card">
         <div class="kpi-label">Leading Financial Path (2045, 20-Yr)</div>
@@ -134,7 +134,7 @@ def build_index(data):
         <li><strong>Long-Term Occupancy of Property A + High Imputed Rent:</strong> If the household genuinely plans to live in Property A for 10+ years, claiming <a href="https://www.boe.ca.gov/pdf/pub801.pdf" target="_blank">Prop 19</a> saves ~{fmt(pa_2045['prop19_annual_tax_savings'])}/yr in property tax (at 2045) and unlocks renting Property B's 3rd unit, narrowing the gap with selling.</li>
         <li><strong>Immediate Post-Inheritance Market Crash (1929 / 2008):</strong> Lump-sum equity reinvestment suffers severe sequence-of-returns risk. Parking sale proceeds in <strong>3M–2Y Treasuries for 24–36 months (Phased Investing)</strong> softens crash drawdowns — see <a href="black-swan.html">Black Swan &amp; Phased Investing</a> (with reinvestment risk shown beside the headline).</li>
         <li><strong>Estate Exceeding Federal Exclusion ({fmt(15000000)} single / {fmt(30000000)} married with portability in 2026):</strong> A 40% federal estate tax due within 9 months forces an estate liquidity plan and may require selling Property A regardless of long-term return projections.</li>
-        <li><strong>Cupertino Market Rent Comparables:</strong> The Rent path currently ranks lowest due to full FMV reassessment and low Bay Area cap rates; independent 95014 MLS comparables (not voucher floors) are required to confirm whether Rent is viable.</li>
+        <li><strong>Cupertino Market Rent Comparables:</strong> The Rent path currently ranks lowest due to full FMV reassessment and low Bay Area cap rates; independent 00000 MLS comparables (not voucher floors) are required to confirm whether Rent is viable.</li>
         <li><strong>Enacted Law Changes (2026–2050):</strong> Repeal/modification of Prop 19, reduction of the federal estate exclusion, or changes to IRC § 1014 step-up in basis would materially shift the ranking.</li>
       </ul>
     </div>
@@ -156,7 +156,7 @@ def build_index(data):
       <ol>
         <li><strong>Choose Sell Immediate (Pure 3) or Sell + Phased Treasuries (Mixed 3)</strong> if the household does not plan to live in Property A for at least 5+ years, OR if the estate needs liquidity for federal estate tax (Form 706 due in 9 months).</li>
         <li><strong>Choose Live in Property A (Pure 1) or Live 5 Yrs then Sell (Mixed 1)</strong> ONLY if the heir will occupy Property A as their primary residence within 1 year (qualifying for Prop 19) and wants the Cupertino lifestyle/schools while retaining Property B as a 3-unit income asset.</li>
-        <li><strong>Choose Rent Property A (Pure 2) or Rent then 1031 (Mixed 2)</strong> ONLY if independent 95014 rental comparables show a net cap rate competitive with after-tax Treasuries/equities after full FMV reassessment and landlord insurance.</li>
+        <li><strong>Choose Rent Property A (Pure 2) or Rent then 1031 (Mixed 2)</strong> ONLY if independent 00000 rental comparables show a net cap rate competitive with after-tax Treasuries/equities after full FMV reassessment and landlord insurance.</li>
       </ol>
     </div>
 
@@ -169,7 +169,7 @@ def build_index(data):
           <tr><td>2026-11-25</td><td>Baseline Model Architecture</td><td><strong>Adopted</strong></td><td>Compare 3 Pure + 3 Mixed paths at identical transfer dates (2040/2045/2050) &amp; horizons (10/20/30/50 yrs) using ranges.</td></tr>
           <tr><td>2026-11-25</td><td>Same-Year Sale Baseline</td><td><strong>Modeled First</strong></td><td>IRC § 1014 step-up eliminates capital gain on immediate sale; serves as the tax-free liquidity benchmark.</td></tr>
           <tr><td>Pending</td><td>Private Estate Inventory &amp; Portability</td><td><strong>Action Required</strong></td><td>Confirm total estate size, prior taxable gifts, and predeceased spouse DSUE with estate attorney.</td></tr>
-          <tr><td>Pending</td><td>Independent 95014 Rental Comps &amp; Insurance Quotes</td><td><strong>Action Required</strong></td><td>Replace estimated insurance ($1,500/yr) and rent range with broker quotes &amp; MLS comps; re-run model annually.</td></tr>
+          <tr><td>Pending</td><td>Independent 00000 Rental Comps &amp; Insurance Quotes</td><td><strong>Action Required</strong></td><td>Replace estimated insurance ($1,500/yr) and rent range with broker quotes &amp; MLS comps; re-run model annually.</td></tr>
         </tbody>
       </table>
     </div>
@@ -298,7 +298,7 @@ def build_projections(data):
       {"".join(dist_rows)}
     </div>
 
-    <h2>Property A (Cupertino 95014) Year-by-Year Projection (Base Case, $10 Rounded)</h2>
+    <h2>Property A (Cupertino 00000) Year-by-Year Projection (Base Case, $10 Rounded)</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -308,7 +308,7 @@ def build_projections(data):
       </table>
     </div>
 
-    <h2>Property B (SF Outer Sunset 94122, Already Owned) Projection (Base Case, $10 Rounded)</h2>
+    <h2>Property B (SF Outer Sunset 00000, Already Owned) Projection (Base Case, $10 Rounded)</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -416,9 +416,9 @@ def build_tax_legal(data):
       <table>
         <thead><tr><th>Rule / Jurisdiction</th><th>Verified Official Term</th><th>Impact on Property A / B</th><th>Official Source</th></tr></thead>
         <tbody>
-          <tr><td><strong>CA Proposition 19 (Parent-to-Child)</strong></td><td>Must become heir's principal residence &amp; file Homeowners' Exemption within <strong>1 year</strong>. Cap = FBYV + <strong>$1,044,586</strong> (Feb 16, 2025 – Feb 15, 2027), adjusted biennially by FHFA CA HPI.</td><td>If heir rents Property A or moves out later, exclusion is removed and reassessed to date-of-transfer FMV factored forward.</td><td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE NR-25-02</a> · <a href="https://www.boe.ca.gov/pdf/pub801.pdf" target="_blank">Pub 801</a></td></tr>
+          <tr><td><strong>CA Proposition 19 (Parent-to-Child)</strong></td><td>Must become heir's principal residence &amp; file Homeowners' Exemption within <strong>1 year</strong>. Cap = FBYV + <strong>$1,058,000</strong> (Feb 16, 2025 – Feb 15, 2027), adjusted biennially by FHFA CA HPI.</td><td>If heir rents Property A or moves out later, exclusion is removed and reassessed to date-of-transfer FMV factored forward.</td><td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE NR-25-02</a> · <a href="https://www.boe.ca.gov/pdf/pub801.pdf" target="_blank">Pub 801</a></td></tr>
           <tr><td><strong>Santa Clara County / Cupertino Transfer Tax</strong></td><td>County Documentary Transfer Tax: <strong>$0.55 per $500</strong> ($1.10/$1,000 = 0.11%). <strong>Cupertino City Transfer Tax: $0</strong> (only San Jose, Palo Alto, Mountain View levy city conveyance tax). Basic recording: $25 first page.</td><td>Priced into all Sell paths. Low transaction tax compared to SF.</td><td><a href="https://clerkrecorder.santaclaracounty.gov/recording-documents/recording-document-fees" target="_blank">SCC Clerk-Recorder</a></td></tr>
-          <tr><td><strong>SF Property Tax Rate (FY 2025–26)</strong></td><td>Combined rate: <strong>$1.18268325 per $100</strong> (1.18268325%)</td><td>Applies to Property B (already owned, low Prop 13 base ~$114,250).</td><td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Agenda</a></td></tr>
+          <tr><td><strong>SF Property Tax Rate (FY 2025–26)</strong></td><td>Combined rate: <strong>$1.18268325 per $100</strong> (1.18268325%)</td><td>Applies to Property B (already owned, low Prop 13 base ~$132,000).</td><td><a href="https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf" target="_blank">SF BOS Agenda</a></td></tr>
           <tr><td><strong>SF Prop H (Nov 2026 — Muni Parcel Tax)</strong></td><td>Annual parcel tax: <strong>$129 to $400,000/parcel</strong> depending on property type/size, inflation-adjusted for 15 years.</td><td>Modeled as incremental annual parcel tax on Property B.</td><td><a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">SF Nov 2026 VIP</a></td></tr>
           <tr><td><strong>SF Prop H (2006 — Rent Board Relocation)</strong></td><td>Requires relocation payments for no-fault evictions (OMI / capital improvement), inflation-adjusted annually.</td><td>Critical if ever modifying occupancy of Property B's 2 rented units.</td><td><a href="https://www.sf.gov/reports--december-2006--san-francisco-rent-board-news-archive-2006" target="_blank">SF Rent Board</a></td></tr>
         </tbody>
@@ -431,7 +431,7 @@ def build_tax_legal(data):
         <thead><tr><th>Item</th><th>Status</th><th>Summary &amp; Decision Impact</th><th>Official Source</th></tr></thead>
         <tbody>
           <tr><td>Federal Estate Tax Exclusion ($15M in 2026)</td><td><span class="badge badge-mixed">Enacted</span></td><td>Confirmed in IRS July 2026 Form 706 instructions; indexed for inflation.</td><td><a href="https://www.irs.gov/instructions/i706" target="_blank">IRS Form 706</a></td></tr>
-          <tr><td>CA Prop 19 Biennial Cap ($1,044,586)</td><td><span class="badge badge-mixed">Enacted</span></td><td>Active Feb 16, 2025 – Feb 15, 2027; next BOE adjustment due Feb 2027.</td><td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE</a></td></tr>
+          <tr><td>CA Prop 19 Biennial Cap ($1,058,000)</td><td><span class="badge badge-mixed">Enacted</span></td><td>Active Feb 16, 2025 – Feb 15, 2027; next BOE adjustment due Feb 2027.</td><td><a href="https://www.boe.ca.gov/news/2025/nr-25-02.htm" target="_blank">CA BOE</a></td></tr>
           <tr><td>CA Prop 19 Repeal / Modification Efforts (e.g., SCA 4)</td><td><span class="badge badge-warn">Proposed / Historical</span></td><td>Do NOT rely on repeal until voters enact a constitutional amendment.</td><td><a href="https://boe.ca.gov/legdiv/pdf/0004SCA041923rd.pdf" target="_blank">CA BOE Analysis</a></td></tr>
           <tr><td>CA State Estate / Wealth Tax Proposals (e.g., SB 378)</td><td><span class="badge badge-warn">Proposed / Not Enacted</span></td><td>CA Constitution/R&amp;TC § 13301 currently prohibits state estate tax; requires voter approval to change.</td><td><a href="https://www.ftb.ca.gov/tax-pros/law/legislation/2019-2020/SB378-032519.pdf" target="_blank">CA FTB Analysis</a></td></tr>
           <tr><td>SF Real Property Transfer Tax Restructuring (Nov 2026)</td><td><span class="badge badge-warn">Ballot Measure</span></td><td>Targets $10M+ transfers (5.5%–6%); does not alter sub-$5M residential tiers directly.</td><td><a href="https://media.api.sf.gov/documents/N26_EN_VIP.pdf" target="_blank">SF Nov 2026 VIP</a></td></tr>
@@ -480,7 +480,7 @@ def build_process_timeline(data):
     <h2>5-Year Maintenance &amp; Capital Plan (Property A &amp; Property B)</h2>
     <div class="grid-2">
       <div class="card">
-        <h3>Property A (Cupertino 95014 — Lower Maintenance)</h3>
+        <h3>Property A (Cupertino 00000 — Lower Maintenance)</h3>
         <ul>
           <li><strong>Utilities:</strong> Water ~$100–$150/mo; Solar generates ~$10–$20/mo net credit ($0 electricity bill).</li>
           <li><strong>Insurance:</strong> User est. $1,500/yr — <em>flagged unverified</em>; budget $3,200–$5,500/yr until broker quote obtained.</li>
@@ -488,7 +488,7 @@ def build_process_timeline(data):
         </ul>
       </div>
       <div class="card">
-        <h3>Property B (SF 94122 — 3-Unit, Higher Maintenance)</h3>
+        <h3>Property B (SF 00000 — 3-Unit, Higher Maintenance)</h3>
         <ul>
           <li><strong>Utilities:</strong> Water ~$330–$400/mo (all 3 units); Electricity ~$30–$70/mo.</li>
           <li><strong>Insurance:</strong> User est. $1,500/yr — <em>flagged unverified</em>; 3-unit SF landlord policies typically run $4,200–$7,500/yr.</li>
@@ -529,8 +529,8 @@ def build_briefing(data):
       <div class="card">
         <h3 style="margin-top:0;">1. Household Fact Pattern</h3>
         <ul style="margin:0; padding-left:18px;">
-          <li><strong>Property A (Cupertino 95014):</strong> Inherited via trust; 2026 est. FMV $3,100,000; Prop 13 FBYV $550,540; solar installed.</li>
-          <li><strong>Property B (SF 94122):</strong> Already owned by heir; 3-unit building ($1,800,000 est. FMV; $114,250 assessed; 2 units rented at $7,150/mo, 1 owner-available).</li>
+          <li><strong>Property A (Cupertino 00000):</strong> Inherited via trust; 2026 est. FMV $2,400,000; Prop 13 FBYV $620,000; solar installed.</li>
+          <li><strong>Property B (SF 00000):</strong> Already owned by heir; 3-unit building ($1,450,000 est. FMV; $132,000 assessed; 2 units rented at $5,600/mo, 1 owner-available).</li>
           <li><strong>Liquid Estate:</strong> Considerable cash/investments — may exceed Federal Estate Tax Exclusion ($15,000,000 single in 2026; CA estate tax = $0).</li>
         </ul>
       </div>
@@ -575,9 +575,9 @@ def build_questions_suggestions(data):
         <tbody>
           <tr><td><strong>Estate Size &amp; Gifts</strong></td><td>"Considerable money" potentially above federal exclusion</td><td>Exact net worth, prior taxable gifts (Form 709), portability (DSUE)</td><td>Build offline private estate inventory; request prior Form 709/706 copies from CPA.</td></tr>
           <tr><td><strong>Property A Tax Rate</strong></td><td>Rounded historical tax/assessment (~1.3% effective w/ fixed assessments)</td><td>Exact Santa Clara County Tax Rate Area (TRA) published rate</td><td>Look up parcel privately on Santa Clara County Assessor / Tax Collector portal.</td></tr>
-          <tr><td><strong>Property A Market Rent</strong></td><td>Modeled range ($5,200–$7,400/mo)</td><td>Independent 95014 MLS rental comparables</td><td>Request 3–5 recent 95014 single-family lease comps from a local broker (do not rely on HUD voucher floor).</td></tr>
+          <tr><td><strong>Property A Market Rent</strong></td><td>Modeled range ($5,200–$7,400/mo)</td><td>Independent 00000 MLS rental comparables</td><td>Request 3–5 recent 00000 single-family lease comps from a local broker (do not rely on HUD voucher floor).</td></tr>
           <tr><td><strong>Home &amp; Landlord Insurance</strong></td><td>User estimate (~$1,500/yr each)</td><td>Actual binding quotes for Cupertino primary/landlord &amp; SF 3-unit</td><td>Obtain written quotes from 2–3 California insurance brokers (including CA FAIR Plan backup if needed).</td></tr>
-          <tr><td><strong>Property B Leases</strong></td><td>3 units total; 2 rented at $7,150/mo; 1 owner-available</td><td>Year built (pre-1979 SF rent control?), lease end dates, tenant protected status</td><td>Review signed leases &amp; SF Rent Board registry privately with SF landlord-tenant counsel.</td></tr>
+          <tr><td><strong>Property B Leases</strong></td><td>3 units total; 2 rented at $5,600/mo; 1 owner-available</td><td>Year built (pre-1979 SF rent control?), lease end dates, tenant protected status</td><td>Review signed leases &amp; SF Rent Board registry privately with SF landlord-tenant counsel.</td></tr>
           <tr><td><strong>Household Filing &amp; Goals</strong></td><td>Desire to maximize profit &amp; lower costs</td><td>Filing status (Single vs MFJ), target retirement date, willingness to live in Cupertino</td><td>Complete Pre-Commitment Decision Rules on the Executive Summary page.</td></tr>
         </tbody>
       </table>
@@ -593,7 +593,7 @@ def build_questions_suggestions(data):
         <tbody>
           <tr><td>S-01</td><td><strong>Add Annual Re-Run Reminder &amp; Diff Log</strong></td><td>Shows whether updated inputs (interest rates, Prop 19 cap, FMV) actually moved the winning path.</td><td>Low</td><td><span class="badge badge-warn">Proposed</span></td></tr>
           <tr><td>S-02</td><td><strong>Add Trust Liquidity / Estate Tax Funding Module</strong></td><td>Models life insurance, Section 6166 installment election, or partial asset sales if estate &gt; $15M.</td><td>Medium</td><td><span class="badge badge-warn">Proposed</span></td></tr>
-          <tr><td>S-03</td><td><strong>Add Cupertino 95014 Comps Input Form (Local-Only)</strong></td><td>Lets the user paste local MLS comps in browser memory (never uploaded) to test Rent path accuracy.</td><td>Medium</td><td><span class="badge badge-warn">Proposed</span></td></tr>
+          <tr><td>S-03</td><td><strong>Add Cupertino 00000 Comps Input Form (Local-Only)</strong></td><td>Lets the user paste local MLS comps in browser memory (never uploaded) to test Rent path accuracy.</td><td>Medium</td><td><span class="badge badge-warn">Proposed</span></td></tr>
           <tr><td>S-04</td><td><strong>Add Property B Sell-vs-Hold Comparison</strong></td><td>Tests whether selling Property B (with SF transfer tax + capital gains) and moving to Property A beats holding B.</td><td>Medium</td><td><span class="badge badge-warn">Proposed</span></td></tr>
           <tr><td>S-05</td><td><strong>Add Automated Official-Link Health Check (GitHub Action)</strong></td><td>Alerts annually if IRS, CA BOE, FTB, or SF/SCC official URLs change or publish new biennial Prop 19 caps.</td><td>Low</td><td><span class="badge badge-warn">Proposed</span></td></tr>
         </tbody>
@@ -621,7 +621,7 @@ def build_flagged(data):
           <tr>
             <td><strong>Property A &amp; B Insurance Quotes ($1,500/yr user est.)</strong></td>
             <td><span class="badge badge-danger">Unverified</span></td>
-            <td>$1,500/yr is likely below current 2026 California market rates for a $3.1M Cupertino home and a 3-unit SF building. Modeled with wider ranges ($1,500–$7,500/yr).</td>
+            <td>$1,500/yr is likely below current 2026 California market rates for a $2.4M Cupertino home and a 3-unit SF building. Modeled with wider ranges ($1,500–$7,500/yr).</td>
             <td><a href="https://www.insurance.ca.gov/" target="_blank">CA Dept. of Insurance</a></td>
           </tr>
           <tr>
@@ -665,7 +665,7 @@ def build_glossary(data):
         <h3>Property Tax Terms</h3>
         <ul>
           <li><strong>Factored Base Year Value (FBYV):</strong> A property's Prop 13 assessed value (original base value increased by at most 2% per year).</li>
-          <li><strong>Proposition 19 (CA):</strong> Allows a parent-to-child transfer of a family home to keep its FBYV + an indexed allowance ($1,044,586 in 2025–2027) ONLY if the child moves in within 1 year as their primary residence.</li>
+          <li><strong>Proposition 19 (CA):</strong> Allows a parent-to-child transfer of a family home to keep its FBYV + an indexed allowance ($1,058,000 in 2025–2027) ONLY if the child moves in within 1 year as their primary residence.</li>
           <li><strong>Tax Rate Area (TRA):</strong> The specific geographic tax district in a California county that determines the 1% Prop 13 base rate plus local voter-approved bonds.</li>
           <li><strong>Documentary Transfer Tax:</strong> One-time tax paid when real estate is sold ($1.10 per $1,000 in Santa Clara County; $0 city tax in Cupertino).</li>
         </ul>

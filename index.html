@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Executive Summary — TinoDash</title>
-<meta name="description" content="Private, anonymised dashboard: Property A (Cupertino 95014) inheritance by trust 2040-2050 versus Property B (San Francisco 94122) already owned. Pure and mixed paths compared at the same dates and horizons.">
+<meta name="description" content="Private, anonymised dashboard: Property A (Cupertino 00000) inheritance by trust 2040-2050 versus Property B (San Francisco 00000) already owned. Pure and mixed paths compared at the same dates and horizons.">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="js/app.js" defer></script>
 </head>
 <body>
+<div class="privacy-banner" role="note" style="background:#7f1d1d;color:#fff;padding:10px 14px;font-size:12px;line-height:1.4">
+<strong>SYNTHETIC DEMONSTRATION — no real household data.</strong> Every property value, tax history,
+rent, utility figure and ZIP code on this site is invented for demonstration. No parcel number, address,
+or real figure is published here; the real inputs are held in a private inventory outside this repository.
+State and federal tax rates are real and cited to official sources.</div>
 <header class="topbar">
   <div class="brand">TinoDash <span>— Inheritance Decision Lab</span></div>
   <div class="meta">
@@ -29,17 +34,17 @@
 
     <div class="kicker">Executive summary</div>
     <h1>What should the household do with Property A?</h1>
-    <p class="lede">Property A (Cupertino 95014, est. <strong>$3,100,000</strong>) passes to the heir through a
-    trust around <strong>2040–2050</strong>. Property B (San Francisco 94122, est. <strong>$1,800,000</strong>) is
-    <strong>already owned</strong> by the heir: three units, two let at about <strong>$7,150/mo</strong>, one
+    <p class="lede">Property A (Cupertino 00000, est. <strong>$2,400,000</strong>) passes to the heir through a
+    trust around <strong>2040–2050</strong>. Property B (San Francisco 00000, est. <strong>$1,450,000</strong>) is
+    <strong>already owned</strong> by the heir: three units, two let at about <strong>$5,600/mo</strong>, one
     occupiable. The question is whether to <strong>live in A, rent A, or sell A and reinvest</strong> — after
     estate tax, income tax, property tax, insurance, utilities, maintenance, and liquidity.</p>
 
     <div class="callout">
       <strong>The one-line answer.</strong> On the model's base assumptions, <strong>selling Property A in the
       inheritance year and investing the proceeds</strong> ends ahead of keeping it — about
-      <strong>$23,413,400</strong> of net wealth after 20 years, versus <strong>$17,187,640</strong> for living in
-      it and <strong>$13,804,840</strong> for renting it. But the margin is assumption-driven, not proven:
+      <strong>$18,126,390</strong> of net wealth after 20 years, versus <strong>$14,664,820</strong> for living in
+      it and <strong>$11,359,360</strong> for renting it. But the margin is assumption-driven, not proven:
       both insurance and market rent for A are still <strong>blank</strong>. No path should be chosen until those
       are filled in.
     </div>
@@ -49,7 +54,7 @@
       <div class="callout">
         <strong>1 · Prop 19 occupancy</strong><br>
         Occupying A within one year keeps the factored base plus only the excess over the
-        <strong>$1,044,586</strong> allowance (2025–2027). Renting it out triggers full reassessment to market.
+        <strong>$1,058,000</strong> allowance (2025–2027). Renting it out triggers full reassessment to market.
         Source: <a href="https://www.boe.ca.gov/prop19/">BOE Prop 19</a>.
       </div>
       <div class="callout">
@@ -76,8 +81,8 @@
       <strong>Reinvestment risk, stated next to the headline.</strong> Phasing sale proceeds through 24–36 months of
       Treasuries reduces the chance of buying at a crash peak — it does not remove risk, it swaps crash-entry risk
       for the risk that markets rise while the money waits. In the 20-year base comparison the phased path
-      (<strong>$22,191,860</strong>) trails lump-sum (<strong>$23,413,400</strong>) by about
-      <strong>$1,221,540</strong> precisely because no crash occurred in the base case.
+      (<strong>$17,180,690</strong>) trails lump-sum (<strong>$18,126,390</strong>) by about
+      <strong>$945,700</strong> precisely because no crash occurred in the base case.
       See <a href="blackswan.html">Black-Swan &amp; phased investing</a>.
     </div>
 
@@ -101,54 +106,54 @@
           </tr>
         </thead>
         <tbody>
-              <tr>
-                <td><strong>A — Live in A (Prop 19)</strong><br><span class="source">Occupy A; Prop 19 allowance carried forward; imputed rent counted</span></td>
-                <td>$8,774,080</td><td>$24,281,300</td>
-                <td>$17,187,640</td><td>$80,737,390</td>
-                <td>$33,222,190</td>
-                <td><span class="tag">Low — house-rich</span></td>
-                <td><a href="property-tax.html">Prop 13/19</a> · <a href="sources.html#prop13">BOE</a></td>
-              </tr>
-              <tr>
-                <td><strong>B — Rent A; heir lives in B's vacant unit</strong><br><span class="source">Full reassessment; 27.5-yr depreciation then 25% recapture</span></td>
-                <td>$7,871,100</td><td>$17,009,840</td>
-                <td>$13,804,840</td><td>$41,339,820</td>
-                <td>$23,585,950</td>
-                <td><span class="tag">Illiquid</span></td>
-                <td><a href="property-tax.html">Assessment</a> · IRS Pub 527</td>
-              </tr>
-              <tr>
-                <td><strong>C — Sell A in year 1 → lump-sum stocks</strong><br><span class="source">§1014 step-up ⇒ gain ≈ $0; transfer tax and costs priced</span></td>
-                <td>$9,874,590</td><td>$37,503,600</td>
-                <td>$23,413,400</td><td>$173,298,840</td>
-                <td>$55,514,970</td>
-                <td><span class="tag">High — fully liquid</span></td>
-                <td><a href="sources.html#irs-basis">IRS §1014</a> · <a href="property-tax.html#transfer">Transfer tax</a></td>
-              </tr>
-              <tr>
-                <td><strong>D — Live 5 yrs → sell (§121) → invest</strong><br><span class="source">Uses the $500k MFJ exclusion; Prop 19 during occupancy</span></td>
-                <td>$8,906,440</td><td>$33,826,610</td>
-                <td>$20,860,830</td><td>$154,405,510</td>
-                <td>$48,916,570</td>
-                <td><span class="tag">High after year 5</span></td>
-                <td><a href="sources.html#irs121">IRS §121 / Pub 523</a></td>
-              </tr>
-              <tr>
-                <td><strong>E — Rent 10 yrs → §1031 exchange</strong><br><span class="source">Defers gain and recapture; capital stays in real estate</span></td>
-                <td>$7,425,170</td><td>$23,769,130</td>
-                <td>$16,005,180</td><td>$91,367,070</td>
-                <td>$34,449,970</td>
-                <td><span class="tag">Illiquid</span></td>
-                <td>IRS Form 8824</td>
-              </tr>
-              <tr>
-                <td><strong>F — Sell year 1 → Treasuries 30 mo → stocks</strong><br><span class="source">Softens a 1929/2008-style entry; carries reinvestment risk</span></td>
-                <td>$9,359,400</td><td>$35,546,940</td>
-                <td>$22,191,860</td><td>$164,257,400</td>
-                <td>$52,618,620</td>
-                <td><span class="tag">High — staged</span></td>
-                <td><a href="blackswan.html">Black-swan test</a> · <a href="sources.html#treasury">Treasury</a></td>
-              </tr>
+          <tr>
+            <td><strong>A — Live in A (Prop 19)</strong><br><span class="source">Occupy A; Prop 19 allowance carried forward; imputed rent counted</span></td>
+            <td>$7,151,840</td><td>$21,719,430</td>
+            <td>$14,664,820</td><td>$78,505,430</td>
+            <td>$29,621,060</td>
+            <td><span class="tag">Low — house-rich</span></td>
+            <td><a href="property-tax.html">Prop 13/19</a> · BOE</td>
+          </tr>
+          <tr>
+            <td><strong>B — Rent A; heir lives in B's vacant unit</strong><br><span class="source">Full reassessment; 27.5-yr depreciation then 25% recapture</span></td>
+            <td>$6,269,140</td><td>$14,574,380</td>
+            <td>$11,359,360</td><td>$39,353,630</td>
+            <td>$20,189,850</td>
+            <td><span class="tag">Illiquid</span></td>
+            <td>Assessment · IRS Pub 527</td>
+          </tr>
+          <tr>
+            <td><strong>C — Sell A in year 1 → lump-sum stocks</strong><br><span class="source">§1014 step-up ⇒ gain ≈ $0; transfer tax and costs priced</span></td>
+            <td>$7,644,760</td><td>$29,034,750</td>
+            <td>$18,126,390</td><td>$134,165,990</td>
+            <td>$42,979,100</td>
+            <td><span class="tag">High — fully liquid</span></td>
+            <td>IRS §1014 · Transfer tax</td>
+          </tr>
+          <tr>
+            <td><strong>D — Live 5 yrs → sell (§121) → invest</strong><br><span class="source">Uses the $500k MFJ exclusion; Prop 19 during occupancy</span></td>
+            <td>$7,148,980</td><td>$27,151,780</td>
+            <td>$16,704,360</td><td>$123,640,550</td>
+            <td>$39,084,440</td>
+            <td><span class="tag">High after year 5</span></td>
+            <td>IRS §121 / Pub 523</td>
+          </tr>
+          <tr>
+            <td><strong>E — Rent 10 yrs → §1031 exchange</strong><br><span class="source">Defers gain and recapture; capital stays in real estate</span></td>
+            <td>$5,923,860</td><td>$19,067,890</td>
+            <td>$12,788,110</td><td>$73,674,360</td>
+            <td>$27,568,770</td>
+            <td><span class="tag">Illiquid</span></td>
+            <td>IRS Form 8824</td>
+          </tr>
+          <tr>
+            <td><strong>F — Sell year 1 → Treasuries 30 mo → stocks</strong><br><span class="source">Softens a 1929/2008-style entry; carries reinvestment risk</span></td>
+            <td>$7,245,920</td><td>$27,519,940</td>
+            <td>$17,180,690</td><td>$127,166,210</td>
+            <td>$40,736,770</td>
+            <td><span class="tag">High — staged</span></td>
+            <td>Black-swan test · Treasury</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -173,7 +178,7 @@
           <tr><td>California estate / inheritance tax</td><td><strong>None</strong></td>
               <td>Only the federal tax applies; there is no state inheritance tax to plan around.</td>
               <td><a href="https://www.ftb.ca.gov">FTB</a></td></tr>
-          <tr><td>Prop 19 parent-child allowance</td><td><strong>$1,044,586</strong> (transfers 2/16/2025–2/15/2027)</td>
+          <tr><td>Prop 19 parent-child allowance</td><td><strong>$1,058,000</strong> (transfers 2/16/2025–2/15/2027)</td>
               <td>Added to the factored base year value — but only if the child occupies within one year.</td>
               <td><a href="https://www.boe.ca.gov/prop19/">BOE Prop 19</a></td></tr>
           <tr><td>Prop 13 annual assessment cap</td><td><strong>2%</strong> or CPI, whichever is lower</td>

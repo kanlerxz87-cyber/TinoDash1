@@ -2,7 +2,7 @@
   "meta": {
     "as_of_date": "2026-11-25",
     "rounding_increment_usd": 10,
-    "privacy_mode": "anonymized_placeholders",
+    "privacy_mode": "SYNTHETIC_DEMONSTRATION",
     "base_year": 2026,
     "transfer_years": [
       2040,
@@ -14,7 +14,8 @@
       20,
       30,
       50
-    ]
+    ],
+    "privacy_note": "Every property-specific figure on this site is synthetic demonstration data. No real market value, assessment history, rent roll, utility bill, parcel number or ZIP code is published. Real household inputs live in a private inventory held outside this repository."
   },
   "sources": [
     {
@@ -75,12 +76,12 @@
   ],
   "properties_input": {
     "property_a": {
-      "label": "Property A (Cupertino, CA 95014 \u2014 Inherited via Trust)",
+      "label": "Property A (illustrative Bay Area single-family home \u2014 SYNTHETIC DEMO)",
       "ownership_status": "To be inherited via trust (2040\u20132050)",
-      "zip": "95014",
-      "estimated_fmv_2026": 3100000,
-      "assessed_value_2026": 550540,
-      "property_tax_2025": 7210,
+      "zip": "00000",
+      "estimated_fmv_2026": 2400000,
+      "assessed_value_2026": 620000,
+      "property_tax_2025": 8120,
       "effective_tax_rate_base": 0.012,
       "effective_tax_rate_range": [
         0.011,
@@ -89,9 +90,9 @@
       ],
       "fixed_parcel_assessments_2026": 730,
       "water_monthly_range": [
-        100,
-        130,
-        150
+        90,
+        120,
+        140
       ],
       "electricity_monthly_range": [
         -20,
@@ -115,14 +116,14 @@
         0.01
       ],
       "market_rent_monthly_range": [
-        5200,
-        6200,
-        7400
+        4800,
+        5600,
+        6600
       ],
       "imputed_rent_monthly_range": [
-        5200,
-        6200,
-        7400
+        4800,
+        5600,
+        6600
       ],
       "vacancy_rate": 0.05,
       "property_mgmt_pct": 0.07,
@@ -131,81 +132,83 @@
         {
           "year": 2026,
           "tax": null,
-          "assessment": 550540,
-          "note": "Rounded to $10; 2026 tax bill pending"
+          "assessment": 620000,
+          "note": "Synthetic demo; 2026 bill pending"
         },
         {
           "year": 2025,
-          "tax": 7210,
-          "assessment": 539740
+          "tax": 7320,
+          "assessment": 620000
         },
         {
           "year": 2024,
-          "tax": 7000,
-          "assessment": 529160
+          "tax": 7170,
+          "assessment": 607840.0
         },
         {
           "year": 2023,
-          "tax": 6920,
-          "assessment": 518790
+          "tax": 7030,
+          "assessment": 595920.0
         },
         {
           "year": 2022,
-          "tax": 6760,
-          "assessment": 508610
+          "tax": 6890,
+          "assessment": 584240.0
         },
         {
           "year": 2021,
-          "tax": 6660,
-          "assessment": 498640
+          "tax": 6760,
+          "assessment": 572780.0
         },
         {
           "year": 2020,
-          "tax": 6570,
-          "assessment": 493530
+          "tax": 6630,
+          "assessment": 561550.0
         },
         {
           "year": 2019,
-          "tax": 6570,
-          "assessment": 483850
+          "tax": 6500,
+          "assessment": 550540.0
         },
         {
           "year": 2018,
-          "tax": 6380,
-          "assessment": 474370
+          "tax": 6370,
+          "assessment": 539750.0
         },
         {
           "year": 2017,
-          "tax": 6380,
-          "assessment": 465070
+          "tax": 6240,
+          "assessment": 529170.0
         },
         {
           "year": 2016,
-          "tax": 6410,
-          "assessment": 455950
+          "tax": 6120,
+          "assessment": 518790.0
         },
         {
           "year": 2015,
-          "tax": 6130,
-          "assessment": 449100
+          "tax": 6000,
+          "assessment": 508620.0
         },
         {
           "year": 2014,
-          "tax": 5970,
-          "assessment": 440310
+          "tax": 5880,
+          "assessment": 498650.0
         }
-      ]
+      ],
+      "zip_note": "Synthetic placeholder. The real parcel's ZIP, APN and Tax Rate Area are withheld and kept offline.",
+      "market_reference_note": "Synthetic demonstration inputs. Real market value, assessment history and utility figures are held in a private offline inventory and are not published."
     },
     "property_b": {
-      "label": "Property B (San Francisco Outer Sunset, CA 94122 \u2014 Already Owned, 3-Unit)",
+      "label": "Property B (illustrative 3-unit rental \u2014 SYNTHETIC DEMO)",
       "ownership_status": "Already owned by heir (3 livable units; 2 rented, 1 owner-available)",
-      "zip": "94122",
-      "estimated_fmv_2026": 1800000,
-      "assessed_value_2025": 114250,
-      "property_tax_2025": 2440,
+      "zip": "00000",
+      "estimated_fmv_2026": 1450000,
+      "assessed_value_2025": 132000,
+      "property_tax_2025": 1690,
       "sf_combined_tax_rate_fy2526": 0.0118268325,
       "fixed_parcel_assessments_2025": 1090,
-      "monthly_rent_2_units_2026": 7150,
+      "monthly_rent_2_units_2026": 5600,
       "monthly_rent_3rd_unit_if_rented_range": [
         2400,
         3000,
@@ -287,7 +290,9 @@
           "tax": 1680,
           "assessment": 96560
         }
-      ]
+      ],
+      "zip_note": "Synthetic placeholder. The real parcel's ZIP and APN are withheld and kept offline.",
+      "market_reference_note": "Synthetic demonstration inputs. Real value, assessment and rent roll are held in a private offline inventory and are not published."
     }
   },
   "tax_and_legal": {
@@ -358,780 +363,780 @@
   "property_a_projection": [
     {
       "year": 2026,
-      "fmv": 3100000,
-      "fbyv": 550540,
+      "fmv": 2400000,
+      "fbyv": 620000,
       "prop19_allowance": 1044590,
-      "assessed_prop19": 2055410,
-      "assessed_no_prop19": 3100000,
-      "tax_prop19": 25390,
-      "tax_no_prop19": 37930,
+      "assessed_prop19": 1355410,
+      "assessed_no_prop19": 2400000,
+      "tax_prop19": 16990,
+      "tax_no_prop19": 29530,
       "prop19_annual_tax_savings": 12540,
-      "water_yr": 1560,
+      "water_yr": 1440,
       "elec_yr": -120,
       "ins_primary_yr": 3200,
       "ins_landlord_yr": 4000,
-      "maint_yr": 18600,
-      "market_rent_yr": 74400,
-      "imputed_rent_yr": 74400
+      "maint_yr": 14400,
+      "market_rent_yr": 67200,
+      "imputed_rent_yr": 67200
     },
     {
       "year": 2027,
-      "fmv": 3224000,
-      "fbyv": 561550,
+      "fmv": 2496000,
+      "fbyv": 632400,
       "prop19_allowance": 1070700,
-      "assessed_prop19": 2153300,
-      "assessed_no_prop19": 3224000,
-      "tax_prop19": 26590,
-      "tax_no_prop19": 39440,
+      "assessed_prop19": 1425300,
+      "assessed_no_prop19": 2496000,
+      "tax_prop19": 17850,
+      "tax_no_prop19": 30700,
       "prop19_annual_tax_savings": 12850,
-      "water_yr": 1600,
+      "water_yr": 1480,
       "elec_yr": -120,
       "ins_primary_yr": 3290,
       "ins_landlord_yr": 4110,
-      "maint_yr": 19340,
-      "market_rent_yr": 76630,
-      "imputed_rent_yr": 76630
+      "maint_yr": 14980,
+      "market_rent_yr": 69220,
+      "imputed_rent_yr": 69220
     },
     {
       "year": 2028,
-      "fmv": 3352960,
-      "fbyv": 572780,
+      "fmv": 2595840,
+      "fbyv": 645050,
       "prop19_allowance": 1097470,
-      "assessed_prop19": 2255490,
-      "assessed_no_prop19": 3352960,
-      "tax_prop19": 27840,
-      "tax_no_prop19": 41010,
+      "assessed_prop19": 1498370,
+      "assessed_no_prop19": 2595840,
+      "tax_prop19": 18750,
+      "tax_no_prop19": 31920,
       "prop19_annual_tax_savings": 13170,
-      "water_yr": 1650,
+      "water_yr": 1520,
       "elec_yr": -130,
       "ins_primary_yr": 3380,
       "ins_landlord_yr": 4230,
-      "maint_yr": 20120,
-      "market_rent_yr": 78930,
-      "imputed_rent_yr": 78930
+      "maint_yr": 15580,
+      "market_rent_yr": 71290,
+      "imputed_rent_yr": 71290
     },
     {
       "year": 2029,
-      "fmv": 3487080,
-      "fbyv": 584240,
+      "fmv": 2699670,
+      "fbyv": 657950,
       "prop19_allowance": 1124900,
-      "assessed_prop19": 2362170,
-      "assessed_no_prop19": 3487080,
-      "tax_prop19": 29140,
-      "tax_no_prop19": 42640,
+      "assessed_prop19": 1574770,
+      "assessed_no_prop19": 2699670,
+      "tax_prop19": 19690,
+      "tax_no_prop19": 33190,
       "prop19_annual_tax_savings": 13500,
-      "water_yr": 1690,
+      "water_yr": 1560,
       "elec_yr": -130,
       "ins_primary_yr": 3480,
       "ins_landlord_yr": 4350,
-      "maint_yr": 20920,
-      "market_rent_yr": 81300,
-      "imputed_rent_yr": 81300
+      "maint_yr": 16200,
+      "market_rent_yr": 73430,
+      "imputed_rent_yr": 73430
     },
     {
       "year": 2030,
-      "fmv": 3626560,
-      "fbyv": 595920,
+      "fmv": 2807660,
+      "fbyv": 671110,
       "prop19_allowance": 1153030,
-      "assessed_prop19": 2473530,
-      "assessed_no_prop19": 3626560,
-      "tax_prop19": 30500,
-      "tax_no_prop19": 44330,
+      "assessed_prop19": 1654630,
+      "assessed_no_prop19": 2807660,
+      "tax_prop19": 20670,
+      "tax_no_prop19": 34510,
       "prop19_annual_tax_savings": 13840,
-      "water_yr": 1740,
+      "water_yr": 1610,
       "elec_yr": -130,
       "ins_primary_yr": 3570,
       "ins_landlord_yr": 4470,
-      "maint_yr": 21760,
-      "market_rent_yr": 83740,
-      "imputed_rent_yr": 83740
+      "maint_yr": 16850,
+      "market_rent_yr": 75630,
+      "imputed_rent_yr": 75630
     },
     {
       "year": 2031,
-      "fmv": 3771620,
-      "fbyv": 607840,
+      "fmv": 2919970,
+      "fbyv": 684530,
       "prop19_allowance": 1181850,
-      "assessed_prop19": 2589770,
-      "assessed_no_prop19": 3771620,
-      "tax_prop19": 31920,
-      "tax_no_prop19": 46100,
+      "assessed_prop19": 1738110,
+      "assessed_no_prop19": 2919970,
+      "tax_prop19": 21700,
+      "tax_no_prop19": 35880,
       "prop19_annual_tax_savings": 14180,
-      "water_yr": 1790,
+      "water_yr": 1650,
       "elec_yr": -140,
       "ins_primary_yr": 3670,
       "ins_landlord_yr": 4590,
-      "maint_yr": 22630,
-      "market_rent_yr": 86250,
-      "imputed_rent_yr": 86250
+      "maint_yr": 17520,
+      "market_rent_yr": 77900,
+      "imputed_rent_yr": 77900
     },
     {
       "year": 2032,
-      "fmv": 3922490,
-      "fbyv": 620000,
+      "fmv": 3036770,
+      "fbyv": 698220,
       "prop19_allowance": 1211400,
-      "assessed_prop19": 2711090,
-      "assessed_no_prop19": 3922490,
-      "tax_prop19": 33390,
-      "tax_no_prop19": 47930,
+      "assessed_prop19": 1825370,
+      "assessed_no_prop19": 3036770,
+      "tax_prop19": 22770,
+      "tax_no_prop19": 37300,
       "prop19_annual_tax_savings": 14540,
-      "water_yr": 1840,
+      "water_yr": 1700,
       "elec_yr": -140,
       "ins_primary_yr": 3780,
       "ins_landlord_yr": 4720,
-      "maint_yr": 23530,
-      "market_rent_yr": 88840,
-      "imputed_rent_yr": 88840
+      "maint_yr": 18220,
+      "market_rent_yr": 80240,
+      "imputed_rent_yr": 80240
     },
     {
       "year": 2033,
-      "fmv": 4079390,
-      "fbyv": 632400,
+      "fmv": 3158240,
+      "fbyv": 712190,
       "prop19_allowance": 1241680,
-      "assessed_prop19": 2837700,
-      "assessed_no_prop19": 4079390,
-      "tax_prop19": 34940,
-      "tax_no_prop19": 49840,
+      "assessed_prop19": 1916550,
+      "assessed_no_prop19": 3158240,
+      "tax_prop19": 23880,
+      "tax_no_prop19": 38780,
       "prop19_annual_tax_savings": 14900,
-      "water_yr": 1890,
+      "water_yr": 1750,
       "elec_yr": -150,
       "ins_primary_yr": 3880,
       "ins_landlord_yr": 4850,
-      "maint_yr": 24480,
-      "market_rent_yr": 91500,
-      "imputed_rent_yr": 91500
+      "maint_yr": 18950,
+      "market_rent_yr": 82650,
+      "imputed_rent_yr": 82650
     },
     {
       "year": 2034,
-      "fmv": 4242560,
-      "fbyv": 645050,
+      "fmv": 3284570,
+      "fbyv": 726430,
       "prop19_allowance": 1272730,
-      "assessed_prop19": 2969840,
-      "assessed_no_prop19": 4242560,
-      "tax_prop19": 36550,
-      "tax_no_prop19": 51820,
+      "assessed_prop19": 2011840,
+      "assessed_no_prop19": 3284570,
+      "tax_prop19": 25050,
+      "tax_no_prop19": 40330,
       "prop19_annual_tax_savings": 15270,
-      "water_yr": 1950,
+      "water_yr": 1800,
       "elec_yr": -150,
       "ins_primary_yr": 3990,
       "ins_landlord_yr": 4990,
-      "maint_yr": 25460,
-      "market_rent_yr": 94250,
-      "imputed_rent_yr": 94250
+      "maint_yr": 19710,
+      "market_rent_yr": 85130,
+      "imputed_rent_yr": 85130
     },
     {
       "year": 2035,
-      "fmv": 4412270,
-      "fbyv": 657950,
+      "fmv": 3415950,
+      "fbyv": 740960,
       "prop19_allowance": 1304540,
-      "assessed_prop19": 3107720,
-      "assessed_no_prop19": 4412270,
-      "tax_prop19": 38230,
-      "tax_no_prop19": 53880,
+      "assessed_prop19": 2111400,
+      "assessed_no_prop19": 3415950,
+      "tax_prop19": 26270,
+      "tax_no_prop19": 41930,
       "prop19_annual_tax_savings": 15650,
-      "water_yr": 2000,
+      "water_yr": 1850,
       "elec_yr": -150,
       "ins_primary_yr": 4100,
       "ins_landlord_yr": 5130,
-      "maint_yr": 26470,
-      "market_rent_yr": 97080,
-      "imputed_rent_yr": 97080
+      "maint_yr": 20500,
+      "market_rent_yr": 87680,
+      "imputed_rent_yr": 87680
     },
     {
       "year": 2036,
-      "fmv": 4588760,
-      "fbyv": 671110,
+      "fmv": 3552590,
+      "fbyv": 755780,
       "prop19_allowance": 1337160,
-      "assessed_prop19": 3251600,
-      "assessed_no_prop19": 4588760,
-      "tax_prop19": 39980,
-      "tax_no_prop19": 56030,
+      "assessed_prop19": 2215430,
+      "assessed_no_prop19": 3552590,
+      "tax_prop19": 27550,
+      "tax_no_prop19": 43590,
       "prop19_annual_tax_savings": 16050,
-      "water_yr": 2060,
+      "water_yr": 1900,
       "elec_yr": -160,
       "ins_primary_yr": 4220,
       "ins_landlord_yr": 5270,
-      "maint_yr": 27530,
-      "market_rent_yr": 99990,
-      "imputed_rent_yr": 99990
+      "maint_yr": 21320,
+      "market_rent_yr": 90310,
+      "imputed_rent_yr": 90310
     },
     {
       "year": 2037,
-      "fmv": 4772310,
-      "fbyv": 684530,
+      "fmv": 3694690,
+      "fbyv": 770890,
       "prop19_allowance": 1370590,
-      "assessed_prop19": 3401720,
-      "assessed_no_prop19": 4772310,
-      "tax_prop19": 41810,
-      "tax_no_prop19": 58260,
+      "assessed_prop19": 2324100,
+      "assessed_no_prop19": 3694690,
+      "tax_prop19": 28880,
+      "tax_no_prop19": 45330,
       "prop19_annual_tax_savings": 16450,
-      "water_yr": 2110,
+      "water_yr": 1950,
       "elec_yr": -160,
       "ins_primary_yr": 4340,
       "ins_landlord_yr": 5420,
-      "maint_yr": 28630,
-      "market_rent_yr": 102990,
-      "imputed_rent_yr": 102990
+      "maint_yr": 22170,
+      "market_rent_yr": 93020,
+      "imputed_rent_yr": 93020
     },
     {
       "year": 2038,
-      "fmv": 4963200,
-      "fbyv": 698220,
+      "fmv": 3842480,
+      "fbyv": 786310,
       "prop19_allowance": 1404850,
-      "assessed_prop19": 3558350,
-      "assessed_no_prop19": 4963200,
-      "tax_prop19": 43720,
-      "tax_no_prop19": 60580,
+      "assessed_prop19": 2437630,
+      "assessed_no_prop19": 3842480,
+      "tax_prop19": 30270,
+      "tax_no_prop19": 47130,
       "prop19_annual_tax_savings": 16860,
-      "water_yr": 2170,
+      "water_yr": 2010,
       "elec_yr": -170,
       "ins_primary_yr": 4460,
       "ins_landlord_yr": 5570,
-      "maint_yr": 29780,
-      "market_rent_yr": 106080,
-      "imputed_rent_yr": 106080
+      "maint_yr": 23050,
+      "market_rent_yr": 95810,
+      "imputed_rent_yr": 95810
     },
     {
       "year": 2039,
-      "fmv": 5161730,
-      "fbyv": 712180,
+      "fmv": 3996180,
+      "fbyv": 802040,
       "prop19_allowance": 1439970,
-      "assessed_prop19": 3721750,
-      "assessed_no_prop19": 5161730,
-      "tax_prop19": 45710,
-      "tax_no_prop19": 62990,
+      "assessed_prop19": 2556200,
+      "assessed_no_prop19": 3996180,
+      "tax_prop19": 31720,
+      "tax_no_prop19": 49000,
       "prop19_annual_tax_savings": 17280,
-      "water_yr": 2230,
+      "water_yr": 2060,
       "elec_yr": -170,
       "ins_primary_yr": 4580,
       "ins_landlord_yr": 5730,
-      "maint_yr": 30970,
-      "market_rent_yr": 109260,
-      "imputed_rent_yr": 109260
+      "maint_yr": 23980,
+      "market_rent_yr": 98690,
+      "imputed_rent_yr": 98690
     },
     {
       "year": 2040,
-      "fmv": 5368200,
-      "fbyv": 726430,
+      "fmv": 4156020,
+      "fbyv": 818080,
       "prop19_allowance": 1475970,
-      "assessed_prop19": 3892220,
-      "assessed_no_prop19": 5368200,
-      "tax_prop19": 47780,
-      "tax_no_prop19": 65490,
+      "assessed_prop19": 2680050,
+      "assessed_no_prop19": 4156020,
+      "tax_prop19": 33240,
+      "tax_no_prop19": 50950,
       "prop19_annual_tax_savings": 17710,
-      "water_yr": 2300,
+      "water_yr": 2120,
       "elec_yr": -180,
       "ins_primary_yr": 4710,
       "ins_landlord_yr": 5890,
-      "maint_yr": 32210,
-      "market_rent_yr": 112540,
-      "imputed_rent_yr": 112540
+      "maint_yr": 24940,
+      "market_rent_yr": 101650,
+      "imputed_rent_yr": 101650
     },
     {
       "year": 2041,
-      "fmv": 5582920,
-      "fbyv": 740950,
+      "fmv": 4322260,
+      "fbyv": 834440,
       "prop19_allowance": 1512870,
-      "assessed_prop19": 4070050,
-      "assessed_no_prop19": 5582920,
-      "tax_prop19": 49950,
-      "tax_no_prop19": 68100,
+      "assessed_prop19": 2809390,
+      "assessed_no_prop19": 4322260,
+      "tax_prop19": 34820,
+      "tax_no_prop19": 52970,
       "prop19_annual_tax_savings": 18150,
-      "water_yr": 2360,
+      "water_yr": 2180,
       "elec_yr": -180,
       "ins_primary_yr": 4840,
       "ins_landlord_yr": 6050,
-      "maint_yr": 33500,
-      "market_rent_yr": 115910,
-      "imputed_rent_yr": 115910
+      "maint_yr": 25930,
+      "market_rent_yr": 104700,
+      "imputed_rent_yr": 104700
     },
     {
       "year": 2042,
-      "fmv": 5806240,
-      "fbyv": 755770,
+      "fmv": 4495150,
+      "fbyv": 851130,
       "prop19_allowance": 1550690,
-      "assessed_prop19": 4255550,
-      "assessed_no_prop19": 5806240,
-      "tax_prop19": 52200,
-      "tax_no_prop19": 70810,
+      "assessed_prop19": 2944460,
+      "assessed_no_prop19": 4495150,
+      "tax_prop19": 36470,
+      "tax_no_prop19": 55080,
       "prop19_annual_tax_savings": 18610,
-      "water_yr": 2430,
+      "water_yr": 2240,
       "elec_yr": -190,
       "ins_primary_yr": 4980,
       "ins_landlord_yr": 6220,
-      "maint_yr": 34840,
-      "market_rent_yr": 119390,
-      "imputed_rent_yr": 119390
+      "maint_yr": 26970,
+      "market_rent_yr": 107840,
+      "imputed_rent_yr": 107840
     },
     {
       "year": 2043,
-      "fmv": 6038490,
-      "fbyv": 770890,
+      "fmv": 4674960,
+      "fbyv": 868150,
       "prop19_allowance": 1589460,
-      "assessed_prop19": 4449030,
-      "assessed_no_prop19": 6038490,
-      "tax_prop19": 54560,
-      "tax_no_prop19": 73630,
+      "assessed_prop19": 3085500,
+      "assessed_no_prop19": 4674960,
+      "tax_prop19": 38190,
+      "tax_no_prop19": 57270,
       "prop19_annual_tax_savings": 19070,
-      "water_yr": 2490,
+      "water_yr": 2300,
       "elec_yr": -190,
       "ins_primary_yr": 5120,
       "ins_landlord_yr": 6400,
-      "maint_yr": 36230,
-      "market_rent_yr": 122970,
-      "imputed_rent_yr": 122970
+      "maint_yr": 28050,
+      "market_rent_yr": 111070,
+      "imputed_rent_yr": 111070
     },
     {
       "year": 2044,
-      "fmv": 6280030,
-      "fbyv": 786310,
+      "fmv": 4861960,
+      "fbyv": 885510,
       "prop19_allowance": 1629200,
-      "assessed_prop19": 4650830,
-      "assessed_no_prop19": 6280030,
-      "tax_prop19": 57010,
-      "tax_no_prop19": 76560,
+      "assessed_prop19": 3232760,
+      "assessed_no_prop19": 4861960,
+      "tax_prop19": 39990,
+      "tax_no_prop19": 59540,
       "prop19_annual_tax_savings": 19550,
-      "water_yr": 2560,
+      "water_yr": 2370,
       "elec_yr": -200,
       "ins_primary_yr": 5260,
       "ins_landlord_yr": 6580,
-      "maint_yr": 37680,
-      "market_rent_yr": 126660,
-      "imputed_rent_yr": 126660
+      "maint_yr": 29170,
+      "market_rent_yr": 114400,
+      "imputed_rent_yr": 114400
     },
     {
       "year": 2045,
-      "fmv": 6531230,
-      "fbyv": 802030,
+      "fmv": 5056440,
+      "fbyv": 903220,
       "prop19_allowance": 1669930,
-      "assessed_prop19": 4861300,
-      "assessed_no_prop19": 6531230,
-      "tax_prop19": 59570,
-      "tax_no_prop19": 79610,
+      "assessed_prop19": 3386510,
+      "assessed_no_prop19": 5056440,
+      "tax_prop19": 41870,
+      "tax_no_prop19": 61910,
       "prop19_annual_tax_savings": 20040,
-      "water_yr": 2640,
+      "water_yr": 2430,
       "elec_yr": -200,
       "ins_primary_yr": 5410,
       "ins_landlord_yr": 6760,
-      "maint_yr": 39190,
-      "market_rent_yr": 130460,
-      "imputed_rent_yr": 130460
+      "maint_yr": 30340,
+      "market_rent_yr": 117840,
+      "imputed_rent_yr": 117840
     },
     {
       "year": 2046,
-      "fmv": 6792480,
-      "fbyv": 818070,
+      "fmv": 5258700,
+      "fbyv": 921290,
       "prop19_allowance": 1711680,
-      "assessed_prop19": 5080810,
-      "assessed_no_prop19": 6792480,
-      "tax_prop19": 62240,
-      "tax_no_prop19": 82780,
+      "assessed_prop19": 3547020,
+      "assessed_no_prop19": 5258700,
+      "tax_prop19": 43830,
+      "tax_no_prop19": 64370,
       "prop19_annual_tax_savings": 20540,
-      "water_yr": 2710,
+      "water_yr": 2500,
       "elec_yr": -210,
       "ins_primary_yr": 5560,
       "ins_landlord_yr": 6950,
-      "maint_yr": 40750,
-      "market_rent_yr": 134370,
-      "imputed_rent_yr": 134370
+      "maint_yr": 31550,
+      "market_rent_yr": 121370,
+      "imputed_rent_yr": 121370
     },
     {
       "year": 2047,
-      "fmv": 7064180,
-      "fbyv": 834430,
+      "fmv": 5469040,
+      "fbyv": 939710,
       "prop19_allowance": 1754470,
-      "assessed_prop19": 5309710,
-      "assessed_no_prop19": 7064180,
-      "tax_prop19": 65020,
-      "tax_no_prop19": 86070,
+      "assessed_prop19": 3714580,
+      "assessed_no_prop19": 5469040,
+      "tax_prop19": 45880,
+      "tax_no_prop19": 66930,
       "prop19_annual_tax_savings": 21050,
-      "water_yr": 2790,
+      "water_yr": 2570,
       "elec_yr": -210,
       "ins_primary_yr": 5710,
       "ins_landlord_yr": 7140,
-      "maint_yr": 42390,
-      "market_rent_yr": 138410,
-      "imputed_rent_yr": 138410
+      "maint_yr": 32810,
+      "market_rent_yr": 125010,
+      "imputed_rent_yr": 125010
     },
     {
       "year": 2048,
-      "fmv": 7346750,
-      "fbyv": 851120,
+      "fmv": 5687810,
+      "fbyv": 958510,
       "prop19_allowance": 1798330,
-      "assessed_prop19": 5548420,
-      "assessed_no_prop19": 7346750,
-      "tax_prop19": 67920,
-      "tax_no_prop19": 89500,
+      "assessed_prop19": 3889480,
+      "assessed_no_prop19": 5687810,
+      "tax_prop19": 48010,
+      "tax_no_prop19": 69590,
       "prop19_annual_tax_savings": 21580,
-      "water_yr": 2860,
+      "water_yr": 2640,
       "elec_yr": -220,
       "ins_primary_yr": 5870,
       "ins_landlord_yr": 7340,
-      "maint_yr": 44080,
-      "market_rent_yr": 142560,
-      "imputed_rent_yr": 142560
+      "maint_yr": 34130,
+      "market_rent_yr": 128760,
+      "imputed_rent_yr": 128760
     },
     {
       "year": 2049,
-      "fmv": 7640620,
-      "fbyv": 868150,
+      "fmv": 5915320,
+      "fbyv": 977680,
       "prop19_allowance": 1843290,
-      "assessed_prop19": 5797330,
-      "assessed_no_prop19": 7640620,
-      "tax_prop19": 70950,
-      "tax_no_prop19": 93070,
+      "assessed_prop19": 4072030,
+      "assessed_no_prop19": 5915320,
+      "tax_prop19": 50240,
+      "tax_no_prop19": 72360,
       "prop19_annual_tax_savings": 22120,
-      "water_yr": 2940,
+      "water_yr": 2720,
       "elec_yr": -230,
       "ins_primary_yr": 6040,
       "ins_landlord_yr": 7550,
-      "maint_yr": 45840,
-      "market_rent_yr": 146830,
-      "imputed_rent_yr": 146830
+      "maint_yr": 35490,
+      "market_rent_yr": 132630,
+      "imputed_rent_yr": 132630
     },
     {
       "year": 2050,
-      "fmv": 7946240,
-      "fbyv": 885510,
+      "fmv": 6151930,
+      "fbyv": 997230,
       "prop19_allowance": 1889370,
-      "assessed_prop19": 6056870,
-      "assessed_no_prop19": 7946240,
-      "tax_prop19": 74100,
-      "tax_no_prop19": 96770,
+      "assessed_prop19": 4262560,
+      "assessed_no_prop19": 6151930,
+      "tax_prop19": 52570,
+      "tax_no_prop19": 75240,
       "prop19_annual_tax_savings": 22670,
-      "water_yr": 3030,
+      "water_yr": 2790,
       "elec_yr": -230,
       "ins_primary_yr": 6210,
       "ins_landlord_yr": 7760,
-      "maint_yr": 47680,
-      "market_rent_yr": 151240,
-      "imputed_rent_yr": 151240
+      "maint_yr": 36910,
+      "market_rent_yr": 136600,
+      "imputed_rent_yr": 136600
     }
   ],
   "property_b_projection": [
     {
       "year": 2026,
-      "fmv": 1800000,
-      "assessed": 116540,
-      "prop_tax": 2850,
+      "fmv": 1450000,
+      "assessed": 134640,
+      "prop_tax": 3060,
       "prop_h_parcel_tax": 350,
-      "rent_2_units_yr": 85800,
+      "rent_2_units_yr": 67200,
       "rent_3rd_unit_yr": 36000,
       "water_yr": 4440,
       "elec_yr": 600,
       "ins_yr": 4200,
-      "maint_yr": 21600
+      "maint_yr": 17400
     },
     {
       "year": 2027,
-      "fmv": 1863000,
-      "assessed": 118870,
-      "prop_tax": 2920,
+      "fmv": 1500750,
+      "assessed": 137330,
+      "prop_tax": 3140,
       "prop_h_parcel_tax": 360,
-      "rent_2_units_yr": 88370,
+      "rent_2_units_yr": 69220,
       "rent_3rd_unit_yr": 37080,
       "water_yr": 4560,
       "elec_yr": 620,
       "ins_yr": 4320,
-      "maint_yr": 22360
+      "maint_yr": 18010
     },
     {
       "year": 2028,
-      "fmv": 1928200,
-      "assessed": 121240,
-      "prop_tax": 2990,
+      "fmv": 1553280,
+      "assessed": 140080,
+      "prop_tax": 3210,
       "prop_h_parcel_tax": 370,
-      "rent_2_units_yr": 91030,
+      "rent_2_units_yr": 71290,
       "rent_3rd_unit_yr": 38190,
       "water_yr": 4690,
       "elec_yr": 630,
       "ins_yr": 4440,
-      "maint_yr": 23140
+      "maint_yr": 18640
     },
     {
       "year": 2029,
-      "fmv": 1995690,
-      "assessed": 123670,
-      "prop_tax": 3060,
+      "fmv": 1607640,
+      "assessed": 142880,
+      "prop_tax": 3290,
       "prop_h_parcel_tax": 380,
-      "rent_2_units_yr": 93760,
+      "rent_2_units_yr": 73430,
       "rent_3rd_unit_yr": 39340,
       "water_yr": 4820,
       "elec_yr": 650,
       "ins_yr": 4560,
-      "maint_yr": 23950
+      "maint_yr": 19290
     },
     {
       "year": 2030,
-      "fmv": 2065540,
-      "assessed": 126140,
-      "prop_tax": 3130,
+      "fmv": 1663910,
+      "assessed": 145740,
+      "prop_tax": 3370,
       "prop_h_parcel_tax": 390,
-      "rent_2_units_yr": 96570,
+      "rent_2_units_yr": 75630,
       "rent_3rd_unit_yr": 40520,
       "water_yr": 4960,
       "elec_yr": 670,
       "ins_yr": 4690,
-      "maint_yr": 24790
+      "maint_yr": 19970
     },
     {
       "year": 2031,
-      "fmv": 2137840,
-      "assessed": 128660,
-      "prop_tax": 3210,
+      "fmv": 1722150,
+      "assessed": 148650,
+      "prop_tax": 3450,
       "prop_h_parcel_tax": 400,
-      "rent_2_units_yr": 99470,
+      "rent_2_units_yr": 77900,
       "rent_3rd_unit_yr": 41730,
       "water_yr": 5100,
       "elec_yr": 690,
       "ins_yr": 4820,
-      "maint_yr": 25650
+      "maint_yr": 20670
     },
     {
       "year": 2032,
-      "fmv": 2212660,
-      "assessed": 131240,
-      "prop_tax": 3290,
+      "fmv": 1782420,
+      "assessed": 151630,
+      "prop_tax": 3530,
       "prop_h_parcel_tax": 410,
-      "rent_2_units_yr": 102450,
+      "rent_2_units_yr": 80240,
       "rent_3rd_unit_yr": 42990,
       "water_yr": 5240,
       "elec_yr": 710,
       "ins_yr": 4960,
-      "maint_yr": 26550
+      "maint_yr": 21390
     },
     {
       "year": 2033,
-      "fmv": 2290100,
-      "assessed": 133860,
-      "prop_tax": 3370,
+      "fmv": 1844800,
+      "assessed": 154660,
+      "prop_tax": 3610,
       "prop_h_parcel_tax": 420,
-      "rent_2_units_yr": 105520,
+      "rent_2_units_yr": 82650,
       "rent_3rd_unit_yr": 44280,
       "water_yr": 5390,
       "elec_yr": 730,
       "ins_yr": 5100,
-      "maint_yr": 27480
+      "maint_yr": 22140
     },
     {
       "year": 2034,
-      "fmv": 2370260,
-      "assessed": 136540,
-      "prop_tax": 3450,
+      "fmv": 1909370,
+      "assessed": 157750,
+      "prop_tax": 3700,
       "prop_h_parcel_tax": 440,
-      "rent_2_units_yr": 108690,
+      "rent_2_units_yr": 85130,
       "rent_3rd_unit_yr": 45600,
       "water_yr": 5540,
       "elec_yr": 750,
       "ins_yr": 5240,
-      "maint_yr": 28440
+      "maint_yr": 22910
     },
     {
       "year": 2035,
-      "fmv": 2453220,
-      "assessed": 139270,
-      "prop_tax": 3530,
+      "fmv": 1976200,
+      "assessed": 160910,
+      "prop_tax": 3790,
       "prop_h_parcel_tax": 450,
-      "rent_2_units_yr": 111950,
+      "rent_2_units_yr": 87680,
       "rent_3rd_unit_yr": 46970,
       "water_yr": 5690,
       "elec_yr": 770,
       "ins_yr": 5390,
-      "maint_yr": 29440
+      "maint_yr": 23710
     },
     {
       "year": 2036,
-      "fmv": 2539080,
-      "assessed": 142060,
-      "prop_tax": 3620,
+      "fmv": 2045370,
+      "assessed": 164130,
+      "prop_tax": 3880,
       "prop_h_parcel_tax": 460,
-      "rent_2_units_yr": 115310,
+      "rent_2_units_yr": 90310,
       "rent_3rd_unit_yr": 48380,
       "water_yr": 5850,
       "elec_yr": 790,
       "ins_yr": 5540,
-      "maint_yr": 30470
+      "maint_yr": 24540
     },
     {
       "year": 2037,
-      "fmv": 2627950,
-      "assessed": 144900,
-      "prop_tax": 3710,
+      "fmv": 2116960,
+      "assessed": 167410,
+      "prop_tax": 3970,
       "prop_h_parcel_tax": 470,
-      "rent_2_units_yr": 118770,
+      "rent_2_units_yr": 93020,
       "rent_3rd_unit_yr": 49830,
       "water_yr": 6020,
       "elec_yr": 810,
       "ins_yr": 5690,
-      "maint_yr": 31540
+      "maint_yr": 25400
     },
     {
       "year": 2038,
-      "fmv": 2719920,
-      "assessed": 147790,
-      "prop_tax": 3800,
+      "fmv": 2191050,
+      "assessed": 170760,
+      "prop_tax": 4070,
       "prop_h_parcel_tax": 490,
-      "rent_2_units_yr": 122330,
+      "rent_2_units_yr": 95810,
       "rent_3rd_unit_yr": 51330,
       "water_yr": 6180,
       "elec_yr": 840,
       "ins_yr": 5850,
-      "maint_yr": 32640
+      "maint_yr": 26290
     },
     {
       "year": 2039,
-      "fmv": 2815120,
-      "assessed": 150750,
-      "prop_tax": 3890,
+      "fmv": 2267740,
+      "assessed": 174170,
+      "prop_tax": 4170,
       "prop_h_parcel_tax": 500,
-      "rent_2_units_yr": 126000,
+      "rent_2_units_yr": 98690,
       "rent_3rd_unit_yr": 52870,
       "water_yr": 6360,
       "elec_yr": 860,
       "ins_yr": 6010,
-      "maint_yr": 33780
+      "maint_yr": 27210
     },
     {
       "year": 2040,
-      "fmv": 2913650,
-      "assessed": 153770,
-      "prop_tax": 3980,
+      "fmv": 2347110,
+      "assessed": 177650,
+      "prop_tax": 4270,
       "prop_h_parcel_tax": 520,
-      "rent_2_units_yr": 129780,
+      "rent_2_units_yr": 101650,
       "rent_3rd_unit_yr": 54450,
       "water_yr": 6540,
       "elec_yr": 880,
       "ins_yr": 6180,
-      "maint_yr": 34960
+      "maint_yr": 28170
     },
     {
       "year": 2041,
-      "fmv": 3015630,
-      "assessed": 156840,
-      "prop_tax": 4080,
+      "fmv": 2429260,
+      "assessed": 181210,
+      "prop_tax": 4370,
       "prop_h_parcel_tax": 530,
-      "rent_2_units_yr": 133670,
+      "rent_2_units_yr": 104700,
       "rent_3rd_unit_yr": 56090,
       "water_yr": 6720,
       "elec_yr": 910,
       "ins_yr": 6360,
-      "maint_yr": 36190
+      "maint_yr": 29150
     },
     {
       "year": 2042,
-      "fmv": 3121170,
-      "assessed": 159980,
-      "prop_tax": 4180,
+      "fmv": 2514280,
+      "assessed": 184830,
+      "prop_tax": 4470,
       "prop_h_parcel_tax": 540,
-      "rent_2_units_yr": 137680,
+      "rent_2_units_yr": 107840,
       "rent_3rd_unit_yr": 57770,
       "water_yr": 6910,
       "elec_yr": 930,
       "ins_yr": 6530,
-      "maint_yr": 37450
+      "maint_yr": 30170
     },
     {
       "year": 2043,
-      "fmv": 3230420,
-      "assessed": 163180,
-      "prop_tax": 4280,
+      "fmv": 2602280,
+      "assessed": 188530,
+      "prop_tax": 4580,
       "prop_h_parcel_tax": 560,
-      "rent_2_units_yr": 141810,
+      "rent_2_units_yr": 111070,
       "rent_3rd_unit_yr": 59500,
       "water_yr": 7100,
       "elec_yr": 960,
       "ins_yr": 6720,
-      "maint_yr": 38760
+      "maint_yr": 31230
     },
     {
       "year": 2044,
-      "fmv": 3343480,
-      "assessed": 166440,
-      "prop_tax": 4390,
+      "fmv": 2693360,
+      "assessed": 192300,
+      "prop_tax": 4690,
       "prop_h_parcel_tax": 580,
-      "rent_2_units_yr": 146070,
+      "rent_2_units_yr": 114400,
       "rent_3rd_unit_yr": 61290,
       "water_yr": 7300,
       "elec_yr": 990,
       "ins_yr": 6900,
-      "maint_yr": 40120
+      "maint_yr": 32320
     },
     {
       "year": 2045,
-      "fmv": 3460500,
-      "assessed": 169770,
-      "prop_tax": 4490,
+      "fmv": 2787630,
+      "assessed": 196150,
+      "prop_tax": 4800,
       "prop_h_parcel_tax": 590,
-      "rent_2_units_yr": 150450,
+      "rent_2_units_yr": 117840,
       "rent_3rd_unit_yr": 63130,
       "water_yr": 7500,
       "elec_yr": 1010,
       "ins_yr": 7100,
-      "maint_yr": 41530
+      "maint_yr": 33450
     },
     {
       "year": 2046,
-      "fmv": 3581620,
-      "assessed": 173160,
-      "prop_tax": 4600,
+      "fmv": 2885190,
+      "assessed": 200070,
+      "prop_tax": 4920,
       "prop_h_parcel_tax": 610,
-      "rent_2_units_yr": 154960,
+      "rent_2_units_yr": 121370,
       "rent_3rd_unit_yr": 65020,
       "water_yr": 7710,
       "elec_yr": 1040,
       "ins_yr": 7300,
-      "maint_yr": 42980
+      "maint_yr": 34620
     },
     {
       "year": 2047,
-      "fmv": 3706980,
-      "assessed": 176630,
-      "prop_tax": 4720,
+      "fmv": 2986180,
+      "assessed": 204070,
+      "prop_tax": 5040,
       "prop_h_parcel_tax": 630,
-      "rent_2_units_yr": 159610,
+      "rent_2_units_yr": 125010,
       "rent_3rd_unit_yr": 66970,
       "water_yr": 7930,
       "elec_yr": 1070,
       "ins_yr": 7500,
-      "maint_yr": 44480
+      "maint_yr": 35830
     },
     {
       "year": 2048,
-      "fmv": 3836720,
-      "assessed": 180160,
-      "prop_tax": 4830,
+      "fmv": 3090690,
+      "assessed": 208150,
+      "prop_tax": 5160,
       "prop_h_parcel_tax": 640,
-      "rent_2_units_yr": 164400,
+      "rent_2_units_yr": 128760,
       "rent_3rd_unit_yr": 68980,
       "water_yr": 8150,
       "elec_yr": 1100,
       "ins_yr": 7710,
-      "maint_yr": 46040
+      "maint_yr": 37090
     },
     {
       "year": 2049,
-      "fmv": 3971010,
-      "assessed": 183760,
-      "prop_tax": 4950,
+      "fmv": 3198870,
+      "assessed": 212310,
+      "prop_tax": 5290,
       "prop_h_parcel_tax": 660,
-      "rent_2_units_yr": 169330,
+      "rent_2_units_yr": 132630,
       "rent_3rd_unit_yr": 71050,
       "water_yr": 8380,
       "elec_yr": 1130,
       "ins_yr": 7930,
-      "maint_yr": 47650
+      "maint_yr": 38390
     },
     {
       "year": 2050,
-      "fmv": 4109990,
-      "assessed": 187440,
-      "prop_tax": 5070,
+      "fmv": 3310830,
+      "assessed": 216560,
+      "prop_tax": 5410,
       "prop_h_parcel_tax": 680,
-      "rent_2_units_yr": 174410,
+      "rent_2_units_yr": 136600,
       "rent_3rd_unit_yr": 73180,
       "water_yr": 8610,
       "elec_yr": 1160,
       "ins_yr": 8150,
-      "maint_yr": 49320
+      "maint_yr": 39730
     }
   ],
   "comparison_matrix": {
@@ -1140,52 +1145,52 @@
         "low": {
           "transfer_year": 2040,
           "horizon": 10,
-          "property_a_t0_fmv": 4380220,
+          "property_a_t0_fmv": 3391140,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 6244350,
-              "property_value": 5607050,
-              "liquid_portfolio": 637290,
+              "ending_wealth": 5099640,
+              "property_value": 4340950,
+              "liquid_portfolio": 758690,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 5630940,
-              "ending_wealth_liquidated": 4703710,
-              "property_value": 5607050,
-              "liquid_portfolio": 23890,
+              "ending_wealth": 4496480,
+              "ending_wealth_liquidated": 3780860,
+              "property_value": 4340950,
+              "liquid_portfolio": 155530,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 6705880,
-              "initial_net_proceeds": 4156240,
-              "transfer_tax": 4820,
-              "tx_costs": 223980,
+              "ending_wealth": 5191590,
+              "initial_net_proceeds": 3217700,
+              "transfer_tax": 3730,
+              "tx_costs": 173440,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 6315550,
+              "ending_wealth": 5031350,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 5344270,
+              "ending_wealth": 4274500,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 6434340,
-              "reinvestment_risk_drag": 271540,
+              "ending_wealth": 4981380,
+              "reinvestment_risk_drag": 210220,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1193,52 +1198,52 @@
         "base": {
           "transfer_year": 2040,
           "horizon": 10,
-          "property_a_t0_fmv": 5368200,
+          "property_a_t0_fmv": 4156020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 8774080,
-              "property_value": 7946250,
-              "liquid_portfolio": 827840,
+              "ending_wealth": 7151840,
+              "property_value": 6151920,
+              "liquid_portfolio": 999920,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 7871100,
-              "ending_wealth_liquidated": 6274340,
-              "property_value": 7946250,
-              "liquid_portfolio": -75140,
+              "ending_wealth": 6269140,
+              "ending_wealth_liquidated": 5035170,
+              "property_value": 6151920,
+              "liquid_portfolio": 117210,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 9874590,
-              "initial_net_proceeds": 5066890,
-              "transfer_tax": 5910,
-              "tx_costs": 301310,
+              "ending_wealth": 7644760,
+              "initial_net_proceeds": 3922720,
+              "transfer_tax": 4570,
+              "tx_costs": 233300,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 8906440,
+              "ending_wealth": 7148980,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 7425170,
+              "ending_wealth": 5923860,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 9359400,
-              "reinvestment_risk_drag": 515180,
+              "ending_wealth": 7245920,
+              "reinvestment_risk_drag": 398850,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1246,52 +1251,52 @@
         "high": {
           "transfer_year": 2040,
           "horizon": 10,
-          "property_a_t0_fmv": 6559880,
+          "property_a_t0_fmv": 5078620,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 12104420,
-              "property_value": 11205220,
-              "liquid_portfolio": 899200,
+              "ending_wealth": 9887340,
+              "property_value": 8675020,
+              "liquid_portfolio": 1212320,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 10734160,
-              "ending_wealth_liquidated": 8102850,
-              "property_value": 11205220,
-              "liquid_portfolio": -471060,
+              "ending_wealth": 8554000,
+              "ending_wealth_liquidated": 6519090,
+              "property_value": 8675020,
+              "liquid_portfolio": -121020,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 14370250,
-              "initial_net_proceeds": 6126120,
-              "transfer_tax": 7220,
-              "tx_costs": 433760,
+              "ending_wealth": 11125290,
+              "initial_net_proceeds": 4742770,
+              "transfer_tax": 5590,
+              "tx_costs": 335850,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 12227730,
+              "ending_wealth": 9817300,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 9993350,
+              "ending_wealth": 7980430,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 13408090,
-              "reinvestment_risk_drag": 962160,
+              "ending_wealth": 10380390,
+              "reinvestment_risk_drag": 744900,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1301,52 +1306,52 @@
         "low": {
           "transfer_year": 2040,
           "horizon": 20,
-          "property_a_t0_fmv": 4380220,
+          "property_a_t0_fmv": 3391140,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 8967360,
-              "property_value": 7177500,
-              "liquid_portfolio": 1789860,
+              "ending_wealth": 7693920,
+              "property_value": 5556780,
+              "liquid_portfolio": 2137150,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 7229920,
-              "ending_wealth_liquidated": 5367820,
-              "property_value": 7177500,
-              "liquid_portfolio": 52420,
+              "ending_wealth": 5985510,
+              "ending_wealth_liquidated": 4546120,
+              "property_value": 5556780,
+              "liquid_portfolio": 428730,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 10819580,
-              "initial_net_proceeds": 4156240,
-              "transfer_tax": 4820,
-              "tx_costs": 223980,
+              "ending_wealth": 8376370,
+              "initial_net_proceeds": 3217700,
+              "transfer_tax": 3730,
+              "tx_costs": 173440,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 10189820,
+              "ending_wealth": 8117830,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 8300930,
+              "ending_wealth": 6647580,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 10381470,
-              "reinvestment_risk_drag": 438110,
+              "ending_wealth": 8037190,
+              "reinvestment_risk_drag": 339180,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1354,52 +1359,52 @@
         "base": {
           "transfer_year": 2040,
           "horizon": 20,
-          "property_a_t0_fmv": 5368200,
+          "property_a_t0_fmv": 4156020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 14506340,
-              "property_value": 11762390,
-              "liquid_portfolio": 2743950,
+              "ending_wealth": 12405920,
+              "property_value": 9106350,
+              "liquid_portfolio": 3299560,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 11567150,
-              "ending_wealth_liquidated": 8050110,
-              "property_value": 11762390,
-              "liquid_portfolio": -195240,
+              "ending_wealth": 9533470,
+              "ending_wealth_liquidated": 6812840,
+              "property_value": 9106350,
+              "liquid_portfolio": 427120,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 19244030,
-              "initial_net_proceeds": 5066890,
-              "transfer_tax": 5910,
-              "tx_costs": 301310,
+              "ending_wealth": 14898450,
+              "initial_net_proceeds": 3922720,
+              "transfer_tax": 4570,
+              "tx_costs": 233300,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 17357270,
+              "ending_wealth": 13932250,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 13285480,
+              "ending_wealth": 10627260,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 18240020,
-              "reinvestment_risk_drag": 1004010,
+              "ending_wealth": 14121160,
+              "reinvestment_risk_drag": 777290,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1407,52 +1412,52 @@
         "high": {
           "transfer_year": 2040,
           "horizon": 20,
-          "property_a_t0_fmv": 6559880,
+          "property_a_t0_fmv": 5078620,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 22686570,
-              "property_value": 19140140,
-              "liquid_portfolio": 3546430,
+              "ending_wealth": 19533290,
+              "property_value": 14818180,
+              "liquid_portfolio": 4715110,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 17501810,
-              "ending_wealth_liquidated": 11144820,
-              "property_value": 19140140,
-              "liquid_portfolio": -1638330,
+              "ending_wealth": 14490820,
+              "ending_wealth_liquidated": 9571520,
+              "property_value": 14818180,
+              "liquid_portfolio": -327360,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 33708800,
-              "initial_net_proceeds": 6126120,
-              "transfer_tax": 7220,
-              "tx_costs": 433760,
+              "ending_wealth": 26096960,
+              "initial_net_proceeds": 4742770,
+              "transfer_tax": 5590,
+              "tx_costs": 335850,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 28683010,
+              "ending_wealth": 23028770,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 20462500,
+              "ending_wealth": 16413460,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 31451810,
-              "reinvestment_risk_drag": 2256980,
+              "ending_wealth": 24349630,
+              "reinvestment_risk_drag": 1747330,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1462,52 +1467,52 @@
         "low": {
           "transfer_year": 2040,
           "horizon": 30,
-          "property_a_t0_fmv": 4380220,
+          "property_a_t0_fmv": 3391140,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 12984550,
-              "property_value": 9187810,
-              "liquid_portfolio": 3796740,
+              "ending_wealth": 11659210,
+              "property_value": 7113150,
+              "liquid_portfolio": 4546060,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 9269800,
-              "ending_wealth_liquidated": 6386030,
-              "property_value": 9187810,
-              "liquid_portfolio": 81990,
+              "ending_wealth": 7980320,
+              "ending_wealth_liquidated": 5749970,
+              "property_value": 7113150,
+              "liquid_portfolio": 867180,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 17456830,
-              "initial_net_proceeds": 4156240,
-              "transfer_tax": 4820,
-              "tx_costs": 223980,
+              "ending_wealth": 13514830,
+              "initial_net_proceeds": 3217700,
+              "transfer_tax": 3730,
+              "tx_costs": 173440,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 16440740,
+              "ending_wealth": 13097690,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 12893420,
+              "ending_wealth": 10338660,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 16749960,
-              "reinvestment_risk_drag": 706870,
+              "ending_wealth": 12967580,
+              "reinvestment_risk_drag": 547240,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1515,52 +1520,52 @@
         "base": {
           "transfer_year": 2040,
           "horizon": 30,
-          "property_a_t0_fmv": 5368200,
+          "property_a_t0_fmv": 4156020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 24281300,
-              "property_value": 17411210,
-              "liquid_portfolio": 6870100,
+              "ending_wealth": 21719430,
+              "property_value": 13479620,
+              "liquid_portfolio": 8239810,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 17009840,
-              "ending_wealth_liquidated": 10938890,
-              "property_value": 17411210,
-              "liquid_portfolio": -401370,
+              "ending_wealth": 14574380,
+              "ending_wealth_liquidated": 9876530,
+              "property_value": 13479620,
+              "liquid_portfolio": 1094750,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 37503600,
-              "initial_net_proceeds": 5066890,
-              "transfer_tax": 5910,
-              "tx_costs": 301310,
+              "ending_wealth": 29034750,
+              "initial_net_proceeds": 3922720,
+              "transfer_tax": 4570,
+              "tx_costs": 233300,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 33826610,
+              "ending_wealth": 27151780,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 23769130,
+              "ending_wealth": 19067890,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 35546940,
-              "reinvestment_risk_drag": 1956660,
+              "ending_wealth": 27519940,
+              "reinvestment_risk_drag": 1514820,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1568,52 +1573,52 @@
         "high": {
           "transfer_year": 2040,
           "horizon": 30,
-          "property_a_t0_fmv": 6559880,
+          "property_a_t0_fmv": 5078620,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 43155060,
-              "property_value": 32694120,
-              "liquid_portfolio": 10460940,
+              "ending_wealth": 39150910,
+              "property_value": 25311590,
+              "liquid_portfolio": 13839310,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 28138250,
-              "ending_wealth_liquidated": 15872860,
-              "property_value": 32694120,
-              "liquid_portfolio": -4555870,
+              "ending_wealth": 24550950,
+              "ending_wealth_liquidated": 15057390,
+              "property_value": 25311590,
+              "liquid_portfolio": -760650,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 79071870,
-              "initial_net_proceeds": 6126120,
-              "transfer_tax": 7220,
-              "tx_costs": 433760,
+              "ending_wealth": 61216540,
+              "initial_net_proceeds": 4742770,
+              "transfer_tax": 5590,
+              "tx_costs": 335850,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 67282720,
+              "ending_wealth": 54019370,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 41859260,
+              "ending_wealth": 33747830,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 73777590,
-              "reinvestment_risk_drag": 5294280,
+              "ending_wealth": 57117770,
+              "reinvestment_risk_drag": 4098770,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1623,52 +1628,52 @@
         "low": {
           "transfer_year": 2040,
           "horizon": 50,
-          "property_a_t0_fmv": 4380220,
+          "property_a_t0_fmv": 3391140,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 27974530,
-              "property_value": 15055290,
-              "liquid_portfolio": 12919230,
+              "ending_wealth": 27201300,
+              "property_value": 11655720,
+              "liquid_portfolio": 15545580,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 15157110,
-              "ending_wealth_liquidated": 9907920,
-              "property_value": 15055290,
-              "liquid_portfolio": 101820,
+              "ending_wealth": 14225810,
+              "ending_wealth_liquidated": 10164150,
+              "property_value": 11655720,
+              "liquid_portfolio": 2570100,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 45443850,
-              "initial_net_proceeds": 4156240,
-              "transfer_tax": 4820,
-              "tx_costs": 223980,
+              "ending_wealth": 35181980,
+              "initial_net_proceeds": 3217700,
+              "transfer_tax": 3730,
+              "tx_costs": 173440,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 42798750,
+              "ending_wealth": 34096070,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 31107160,
+              "ending_wealth": 25011430,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 43603730,
-              "reinvestment_risk_drag": 1840120,
+              "ending_wealth": 33757390,
+              "reinvestment_risk_drag": 1424600,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1676,52 +1681,52 @@
         "base": {
           "transfer_year": 2040,
           "horizon": 50,
-          "property_a_t0_fmv": 5368200,
+          "property_a_t0_fmv": 4156020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 70828800,
-              "property_value": 38150100,
-              "liquid_portfolio": 32678700,
+              "ending_wealth": 68674590,
+              "property_value": 29535520,
+              "liquid_portfolio": 39139070,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 36610670,
-              "ending_wealth_liquidated": 22113780,
-              "property_value": 38150100,
-              "liquid_portfolio": -1539430,
+              "ending_wealth": 34406000,
+              "ending_wealth_liquidated": 23184860,
+              "property_value": 29535520,
+              "liquid_portfolio": 4870490,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 142438400,
-              "initial_net_proceeds": 5066890,
-              "transfer_tax": 5910,
-              "tx_costs": 301310,
+              "ending_wealth": 110273780,
+              "initial_net_proceeds": 3922720,
+              "transfer_tax": 4570,
+              "tx_costs": 233300,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 128473210,
+              "ending_wealth": 103122240,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 76062190,
+              "ending_wealth": 61416330,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 135007020,
-              "reinvestment_risk_drag": 7431380,
+              "ending_wealth": 104520520,
+              "reinvestment_risk_drag": 5753270,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1729,52 +1734,52 @@
         "high": {
           "transfer_year": 2040,
           "horizon": 50,
-          "property_a_t0_fmv": 6559880,
+          "property_a_t0_fmv": 5078620,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 163802340,
-              "property_value": 95393520,
-              "liquid_portfolio": 68408820,
+              "ending_wealth": 164774280,
+              "property_value": 73853100,
+              "liquid_portfolio": 90921180,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 65304250,
-              "ending_wealth_liquidated": 27170540,
-              "property_value": 95393520,
-              "liquid_portfolio": -30089270,
+              "ending_wealth": 69058790,
+              "ending_wealth_liquidated": 39538130,
+              "property_value": 73853100,
+              "liquid_portfolio": -4794310,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 435090520,
-              "initial_net_proceeds": 6126120,
-              "transfer_tax": 7220,
-              "tx_costs": 433760,
+              "ending_wealth": 336842080,
+              "initial_net_proceeds": 4742770,
+              "transfer_tax": 5590,
+              "tx_costs": 335850,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 370221070,
+              "ending_wealth": 297239920,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 174559950,
+              "ending_wealth": 142520310,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 405958920,
-              "reinvestment_risk_drag": 29131610,
+              "ending_wealth": 314288730,
+              "reinvestment_risk_drag": 22553360,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1786,52 +1791,52 @@
         "low": {
           "transfer_year": 2045,
           "horizon": 10,
-          "property_a_t0_fmv": 4955820,
+          "property_a_t0_fmv": 3836760,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 7028420,
-              "property_value": 6343870,
-              "liquid_portfolio": 684550,
+              "ending_wealth": 5735820,
+              "property_value": 4911380,
+              "liquid_portfolio": 824440,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 6345100,
-              "ending_wealth_liquidated": 5294730,
-              "property_value": 6343870,
-              "liquid_portfolio": 1230,
+              "ending_wealth": 5063820,
+              "ending_wealth_liquidated": 4252860,
+              "property_value": 4911380,
+              "liquid_portfolio": 152440,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 7587120,
-              "initial_net_proceeds": 4702430,
-              "transfer_tax": 5450,
-              "tx_costs": 253390,
+              "ending_wealth": 5873840,
+              "initial_net_proceeds": 3640550,
+              "transfer_tax": 4220,
+              "tx_costs": 196210,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 7125980,
+              "ending_wealth": 5674370,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 6020780,
+              "ending_wealth": 4812700,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 7279900,
-              "reinvestment_risk_drag": 307220,
+              "ending_wealth": 5635990,
+              "reinvestment_risk_drag": 237840,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1839,52 +1844,52 @@
         "base": {
           "transfer_year": 2045,
           "horizon": 10,
-          "property_a_t0_fmv": 6531230,
+          "property_a_t0_fmv": 5056440,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 10534040,
-              "property_value": 9667820,
-              "liquid_portfolio": 866220,
+              "ending_wealth": 8570260,
+              "property_value": 7484770,
+              "liquid_portfolio": 1085500,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 9494970,
-              "ending_wealth_liquidated": 7550120,
-              "property_value": 9667820,
-              "liquid_portfolio": -172840,
+              "ending_wealth": 7554690,
+              "ending_wealth_liquidated": 6051230,
+              "property_value": 7484770,
+              "liquid_portfolio": 69920,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 12014000,
-              "initial_net_proceeds": 6164680,
-              "transfer_tax": 7180,
-              "tx_costs": 366550,
+              "ending_wealth": 9301100,
+              "initial_net_proceeds": 4772620,
+              "transfer_tax": 5560,
+              "tx_costs": 283820,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 10704210,
+              "ending_wealth": 8571420,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 8952460,
+              "ending_wealth": 7134640,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 11387190,
-              "reinvestment_risk_drag": 626800,
+              "ending_wealth": 8815840,
+              "reinvestment_risk_drag": 485260,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1892,52 +1897,52 @@
         "high": {
           "transfer_year": 2045,
           "horizon": 10,
-          "property_a_t0_fmv": 8573510,
+          "property_a_t0_fmv": 6637550,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 15502100,
-              "property_value": 14644790,
-              "liquid_portfolio": 857300,
+              "ending_wealth": 12629090,
+              "property_value": 11337890,
+              "liquid_portfolio": 1291200,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 13851800,
-              "ending_wealth_liquidated": 10409730,
-              "property_value": 14644790,
-              "liquid_portfolio": -793000,
+              "ending_wealth": 11024110,
+              "ending_wealth_liquidated": 8361530,
+              "property_value": 11337890,
+              "liquid_portfolio": -313780,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 18781470,
-              "initial_net_proceeds": 8006650,
-              "transfer_tax": 9430,
-              "tx_costs": 566860,
+              "ending_wealth": 14540400,
+              "initial_net_proceeds": 6198660,
+              "transfer_tax": 7300,
+              "tx_costs": 438890,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 15712490,
+              "ending_wealth": 12581790,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 12883630,
+              "ending_wealth": 10274530,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 17523960,
-              "reinvestment_risk_drag": 1257520,
+              "ending_wealth": 13566850,
+              "reinvestment_risk_drag": 973560,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -1947,52 +1952,52 @@
         "low": {
           "transfer_year": 2045,
           "horizon": 20,
-          "property_a_t0_fmv": 4955820,
+          "property_a_t0_fmv": 3836760,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 10042390,
-              "property_value": 8120690,
-              "liquid_portfolio": 1921700,
+              "ending_wealth": 8608810,
+              "property_value": 6286980,
+              "liquid_portfolio": 2321840,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 8106940,
-              "ending_wealth_liquidated": 5998840,
-              "property_value": 8120690,
-              "liquid_portfolio": -13750,
+              "ending_wealth": 6705410,
+              "ending_wealth_liquidated": 5075570,
+              "property_value": 6286980,
+              "liquid_portfolio": 418430,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 12241420,
-              "initial_net_proceeds": 4702430,
-              "transfer_tax": 5450,
-              "tx_costs": 253390,
+              "ending_wealth": 9477130,
+              "initial_net_proceeds": 3640550,
+              "transfer_tax": 4220,
+              "tx_costs": 196210,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 11497390,
+              "ending_wealth": 9155310,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 9350160,
+              "ending_wealth": 7483190,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 11745740,
-              "reinvestment_risk_drag": 495680,
+              "ending_wealth": 9093380,
+              "reinvestment_risk_drag": 383750,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2000,52 +2005,52 @@
         "base": {
           "transfer_year": 2045,
           "horizon": 20,
-          "property_a_t0_fmv": 6531230,
+          "property_a_t0_fmv": 5056440,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 17187640,
-              "property_value": 14310730,
-              "liquid_portfolio": 2876910,
+              "ending_wealth": 14664820,
+              "property_value": 11079280,
+              "liquid_portfolio": 3585540,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 13804840,
-              "ending_wealth_liquidated": 9523690,
-              "property_value": 14310730,
-              "liquid_portfolio": -505890,
+              "ending_wealth": 11359360,
+              "ending_wealth_liquidated": 8047150,
+              "property_value": 11079280,
+              "liquid_portfolio": 280080,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 23413400,
-              "initial_net_proceeds": 6164680,
-              "transfer_tax": 7180,
-              "tx_costs": 366550,
+              "ending_wealth": 18126390,
+              "initial_net_proceeds": 4772620,
+              "transfer_tax": 5560,
+              "tx_costs": 283820,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 20860830,
+              "ending_wealth": 16704360,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 16005180,
+              "ending_wealth": 12788110,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 22191860,
-              "reinvestment_risk_drag": 1221540,
+              "ending_wealth": 17180690,
+              "reinvestment_risk_drag": 945700,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2053,52 +2058,52 @@
         "high": {
           "transfer_year": 2045,
           "horizon": 20,
-          "property_a_t0_fmv": 8573510,
+          "property_a_t0_fmv": 6637550,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 28441250,
-              "property_value": 25015420,
-              "liquid_portfolio": 3425830,
+              "ending_wealth": 24415050,
+              "property_value": 19366760,
+              "liquid_portfolio": 5048290,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 22189840,
-              "ending_wealth_liquidated": 13878450,
-              "property_value": 25015420,
-              "liquid_portfolio": -2825590,
+              "ending_wealth": 18338340,
+              "ending_wealth_liquidated": 11905960,
+              "property_value": 19366760,
+              "liquid_portfolio": -1028420,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 44056350,
-              "initial_net_proceeds": 8006650,
-              "transfer_tax": 9430,
-              "tx_costs": 566860,
+              "ending_wealth": 34107920,
+              "initial_net_proceeds": 6198660,
+              "transfer_tax": 7300,
+              "tx_costs": 438890,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 36857320,
+              "ending_wealth": 29513530,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 26327790,
+              "ending_wealth": 21086790,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 41106540,
-              "reinvestment_risk_drag": 2949800,
+              "ending_wealth": 31824220,
+              "reinvestment_risk_drag": 2283710,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2108,52 +2113,52 @@
         "low": {
           "transfer_year": 2045,
           "horizon": 30,
-          "property_a_t0_fmv": 4955820,
+          "property_a_t0_fmv": 3836760,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 14469850,
-              "property_value": 10395170,
-              "liquid_portfolio": 4074690,
+              "ending_wealth": 12985740,
+              "property_value": 8047860,
+              "liquid_portfolio": 4937880,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 10331720,
-              "ending_wealth_liquidated": 7067700,
-              "property_value": 10395170,
-              "liquid_portfolio": -63440,
+              "ending_wealth": 8891180,
+              "ending_wealth_liquidated": 6366440,
+              "property_value": 8047860,
+              "liquid_portfolio": 843320,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 19750890,
-              "initial_net_proceeds": 4702430,
-              "transfer_tax": 5450,
-              "tx_costs": 253390,
+              "ending_wealth": 15290860,
+              "initial_net_proceeds": 3640550,
+              "transfer_tax": 4220,
+              "tx_costs": 196210,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 18550440,
+              "ending_wealth": 14771610,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 14520630,
+              "ending_wealth": 11636040,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 18951140,
-              "reinvestment_risk_drag": 799760,
+              "ending_wealth": 14671700,
+              "reinvestment_risk_drag": 619160,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2161,52 +2166,52 @@
         "base": {
           "transfer_year": 2045,
           "horizon": 30,
-          "property_a_t0_fmv": 6531230,
+          "property_a_t0_fmv": 5056440,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 28394620,
-              "property_value": 21183380,
-              "liquid_portfolio": 7211240,
+              "ending_wealth": 25359270,
+              "property_value": 16400040,
+              "liquid_portfolio": 8959220,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 20024350,
-              "ending_wealth_liquidated": 12635970,
-              "property_value": 21183380,
-              "liquid_portfolio": -1159020,
+              "ending_wealth": 17150210,
+              "ending_wealth_liquidated": 11432410,
+              "property_value": 16400040,
+              "liquid_portfolio": 750170,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 45629060,
-              "initial_net_proceeds": 6164680,
-              "transfer_tax": 7180,
-              "tx_costs": 366550,
+              "ending_wealth": 35325500,
+              "initial_net_proceeds": 4772620,
+              "transfer_tax": 5560,
+              "tx_costs": 283820,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 40654510,
+              "ending_wealth": 32554180,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 28609620,
+              "ending_wealth": 22923090,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 43248480,
-              "reinvestment_risk_drag": 2380580,
+              "ending_wealth": 33482480,
+              "reinvestment_risk_drag": 1843020,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2214,52 +2219,52 @@
         "high": {
           "transfer_year": 2045,
           "horizon": 30,
-          "property_a_t0_fmv": 8573510,
+          "property_a_t0_fmv": 6637550,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 52885730,
-              "property_value": 42729960,
-              "liquid_portfolio": 10155780,
+              "ending_wealth": 47931530,
+              "property_value": 33081230,
+              "liquid_portfolio": 14850300,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 34764250,
-              "ending_wealth_liquidated": 18730810,
-              "property_value": 42729960,
-              "liquid_portfolio": -7965710,
+              "ending_wealth": 30323040,
+              "ending_wealth_liquidated": 17912310,
+              "property_value": 33081230,
+              "liquid_portfolio": -2758190,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 103344480,
-              "initial_net_proceeds": 8006650,
-              "transfer_tax": 9430,
-              "tx_costs": 566860,
+              "ending_wealth": 80008120,
+              "initial_net_proceeds": 6198660,
+              "transfer_tax": 7300,
+              "tx_costs": 438890,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 86457470,
+              "ending_wealth": 69230900,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 53732820,
+              "ending_wealth": 43250990,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 96425020,
-              "reinvestment_risk_drag": 6919460,
+              "ending_wealth": 74651150,
+              "reinvestment_risk_drag": 5356970,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2269,52 +2274,52 @@
         "low": {
           "transfer_year": 2045,
           "horizon": 50,
-          "property_a_t0_fmv": 4955820,
+          "property_a_t0_fmv": 3836760,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 30888140,
-              "property_value": 17033690,
-              "liquid_portfolio": 13854450,
+              "ending_wealth": 30066450,
+              "property_value": 13187360,
+              "liquid_portfolio": 16879090,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 16609900,
-              "ending_wealth_liquidated": 10669610,
-              "property_value": 17033690,
-              "liquid_portfolio": -423790,
+              "ending_wealth": 15675230,
+              "ending_wealth_liquidated": 11078530,
+              "property_value": 13187360,
+              "liquid_portfolio": 2487870,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 51415790,
-              "initial_net_proceeds": 4702430,
-              "transfer_tax": 5450,
-              "tx_costs": 253390,
+              "ending_wealth": 39805360,
+              "initial_net_proceeds": 3640550,
+              "transfer_tax": 4220,
+              "tx_costs": 196210,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 48290760,
+              "ending_wealth": 38453650,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 35020230,
+              "ending_wealth": 28138780,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 49333850,
-              "reinvestment_risk_drag": 2081940,
+              "ending_wealth": 38193560,
+              "reinvestment_risk_drag": 1611810,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2322,52 +2327,52 @@
         "base": {
           "transfer_year": 2045,
           "horizon": 50,
-          "property_a_t0_fmv": 6531230,
+          "property_a_t0_fmv": 5056440,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 80737390,
-              "property_value": 46415380,
-              "liquid_portfolio": 34322000,
+              "ending_wealth": 78505430,
+              "property_value": 35934520,
+              "liquid_portfolio": 42570910,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 41339820,
-              "ending_wealth_liquidated": 23700000,
-              "property_value": 46415380,
-              "liquid_portfolio": -5075560,
+              "ending_wealth": 39353630,
+              "ending_wealth_liquidated": 25699220,
+              "property_value": 35934520,
+              "liquid_portfolio": 3419110,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 173298840,
-              "initial_net_proceeds": 6164680,
-              "transfer_tax": 7180,
-              "tx_costs": 366550,
+              "ending_wealth": 134165990,
+              "initial_net_proceeds": 4772620,
+              "transfer_tax": 5560,
+              "tx_costs": 283820,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 154405510,
+              "ending_wealth": 123640550,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 91367070,
+              "ending_wealth": 73674360,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 164257400,
-              "reinvestment_risk_drag": 9041440,
+              "ending_wealth": 127166210,
+              "reinvestment_risk_drag": 6999780,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2375,52 +2380,52 @@
         "high": {
           "transfer_year": 2045,
           "horizon": 50,
-          "property_a_t0_fmv": 8573510,
+          "property_a_t0_fmv": 6637550,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 190900950,
-              "property_value": 124675650,
-              "liquid_portfolio": 66225300,
+              "ending_wealth": 194033830,
+              "property_value": 96522990,
+              "liquid_portfolio": 97510830,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 71912080,
-              "ending_wealth_liquidated": 22069750,
-              "property_value": 124675650,
-              "liquid_portfolio": -52763560,
+              "ending_wealth": 78467940,
+              "ending_wealth_liquidated": 39882590,
+              "property_value": 96522990,
+              "liquid_portfolio": -18055060,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 568649790,
-              "initial_net_proceeds": 8006650,
-              "transfer_tax": 9430,
-              "tx_costs": 566860,
+              "ending_wealth": 440242190,
+              "initial_net_proceeds": 6198660,
+              "transfer_tax": 7300,
+              "tx_costs": 438890,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 475729520,
+              "ending_wealth": 380940880,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 222774550,
+              "ending_wealth": 181557590,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 530575690,
-              "reinvestment_risk_drag": 38074100,
+              "ending_wealth": 410765650,
+              "reinvestment_risk_drag": 29476540,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2432,52 +2437,52 @@
         "low": {
           "transfer_year": 2050,
           "horizon": 10,
-          "property_a_t0_fmv": 5607050,
+          "property_a_t0_fmv": 4340940,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 7911990,
-              "property_value": 7177500,
-              "liquid_portfolio": 734500,
+              "ending_wealth": 6452130,
+              "property_value": 5556770,
+              "liquid_portfolio": 895360,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 7150430,
-              "ending_wealth_liquidated": 5960730,
-              "property_value": 7177500,
-              "liquid_portfolio": -27060,
+              "ending_wealth": 5703040,
+              "ending_wealth_liquidated": 4784220,
+              "property_value": 5556770,
+              "liquid_portfolio": 146270,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 8584150,
-              "initial_net_proceeds": 5320380,
-              "transfer_tax": 6170,
-              "tx_costs": 286670,
+              "ending_wealth": 6645740,
+              "initial_net_proceeds": 4118970,
+              "transfer_tax": 4780,
+              "tx_costs": 221970,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 8041000,
+              "ending_wealth": 6400030,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 6783510,
+              "ending_wealth": 5418940,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 8236560,
-              "reinvestment_risk_drag": 347590,
+              "ending_wealth": 6376640,
+              "reinvestment_risk_drag": 269100,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2485,52 +2490,52 @@
         "base": {
           "transfer_year": 2050,
           "horizon": 10,
-          "property_a_t0_fmv": 7946240,
+          "property_a_t0_fmv": 6151930,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 12653600,
-              "property_value": 11762380,
-              "liquid_portfolio": 891220,
+              "ending_wealth": 10275530,
+              "property_value": 9106360,
+              "liquid_portfolio": 1169170,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 11457800,
-              "ending_wealth_liquidated": 9089430,
-              "property_value": 11762380,
-              "liquid_portfolio": -304580,
+              "ending_wealth": 9106980,
+              "ending_wealth_liquidated": 7275640,
+              "property_value": 9106360,
+              "liquid_portfolio": 620,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 14616930,
-              "initial_net_proceeds": 7500310,
-              "transfer_tax": 8740,
-              "tx_costs": 445930,
+              "ending_wealth": 11316270,
+              "initial_net_proceeds": 5806660,
+              "transfer_tax": 6770,
+              "tx_costs": 345270,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 12879580,
+              "ending_wealth": 10290820,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 10797780,
+              "ending_wealth": 8595960,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 13854320,
-              "reinvestment_risk_drag": 762600,
+              "ending_wealth": 10725870,
+              "reinvestment_risk_drag": 590400,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2538,52 +2543,52 @@
         "high": {
           "transfer_year": 2050,
           "horizon": 10,
-          "property_a_t0_fmv": 11205230,
+          "property_a_t0_fmv": 8675020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 19875850,
-              "property_value": 19140150,
-              "liquid_portfolio": 735700,
+              "ending_wealth": 16150840,
+              "property_value": 14818190,
+              "liquid_portfolio": 1332650,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 17885400,
-              "ending_wealth_liquidated": 13383730,
-              "property_value": 19140150,
-              "liquid_portfolio": -1254750,
+              "ending_wealth": 14216090,
+              "ending_wealth_liquidated": 10733160,
+              "property_value": 14818190,
+              "liquid_portfolio": -602100,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 24546730,
-              "initial_net_proceeds": 10464410,
-              "transfer_tax": 12330,
-              "tx_costs": 740820,
+              "ending_wealth": 19003850,
+              "initial_net_proceeds": 8101450,
+              "transfer_tax": 9540,
+              "tx_costs": 573570,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 20228540,
+              "ending_wealth": 16154160,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 16620090,
+              "ending_wealth": 13236460,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 22903200,
-              "reinvestment_risk_drag": 1643530,
+              "ending_wealth": 17731440,
+              "reinvestment_risk_drag": 1272410,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2593,52 +2598,52 @@
         "low": {
           "transfer_year": 2050,
           "horizon": 20,
-          "property_a_t0_fmv": 5607050,
+          "property_a_t0_fmv": 4340940,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 11248720,
-              "property_value": 9187800,
-              "liquid_portfolio": 2060910,
+              "ending_wealth": 9634080,
+              "property_value": 7113140,
+              "liquid_portfolio": 2520940,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 9091640,
-              "ending_wealth_liquidated": 6705220,
-              "property_value": 9187800,
-              "liquid_portfolio": -96160,
+              "ending_wealth": 7512340,
+              "ending_wealth_liquidated": 5667030,
+              "property_value": 7113140,
+              "liquid_portfolio": 399210,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 13850080,
-              "initial_net_proceeds": 5320380,
-              "transfer_tax": 6170,
-              "tx_costs": 286670,
+              "ending_wealth": 10722550,
+              "initial_net_proceeds": 4118970,
+              "transfer_tax": 4780,
+              "tx_costs": 221970,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 12973740,
+              "ending_wealth": 10326120,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 10532950,
+              "ending_wealth": 8424300,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 13289260,
-              "reinvestment_risk_drag": 560820,
+              "ending_wealth": 10288370,
+              "reinvestment_risk_drag": 434180,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2646,52 +2651,52 @@
         "base": {
           "transfer_year": 2050,
           "horizon": 20,
-          "property_a_t0_fmv": 7946240,
+          "property_a_t0_fmv": 6151930,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 20378750,
-              "property_value": 17411190,
-              "liquid_portfolio": 2967560,
+              "ending_wealth": 17346120,
+              "property_value": 13479640,
+              "liquid_portfolio": 3866480,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 16484930,
-              "ending_wealth_liquidated": 11274100,
-              "property_value": 17411190,
-              "liquid_portfolio": -926260,
+              "ending_wealth": 13542020,
+              "ending_wealth_liquidated": 9510060,
+              "property_value": 13479640,
+              "liquid_portfolio": 62380,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 28486110,
-              "initial_net_proceeds": 7500310,
-              "transfer_tax": 8740,
-              "tx_costs": 445930,
+              "ending_wealth": 22053640,
+              "initial_net_proceeds": 5806660,
+              "transfer_tax": 6770,
+              "tx_costs": 345270,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 25100300,
+              "ending_wealth": 20055190,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 19289050,
+              "ending_wealth": 15394150,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 26999910,
-              "reinvestment_risk_drag": 1486190,
+              "ending_wealth": 20903040,
+              "reinvestment_risk_drag": 1150590,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2699,52 +2704,52 @@
         "high": {
           "transfer_year": 2050,
           "horizon": 20,
-          "property_a_t0_fmv": 11205230,
+          "property_a_t0_fmv": 8675020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 35706720,
-              "property_value": 32694140,
-              "liquid_portfolio": 3012570,
+              "ending_wealth": 30559830,
+              "property_value": 25311600,
+              "liquid_portfolio": 5248230,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 28158710,
-              "ending_wealth_liquidated": 17293030,
-              "property_value": 32694140,
-              "liquid_portfolio": -4535430,
+              "ending_wealth": 23226510,
+              "ending_wealth_liquidated": 14816610,
+              "property_value": 25311600,
+              "liquid_portfolio": -2085090,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 57580110,
-              "initial_net_proceeds": 10464410,
-              "transfer_tax": 12330,
-              "tx_costs": 740820,
+              "ending_wealth": 44577980,
+              "initial_net_proceeds": 8101450,
+              "transfer_tax": 9540,
+              "tx_costs": 573570,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 47450780,
+              "ending_wealth": 37893380,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 33897300,
+              "ending_wealth": 27109340,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 53724820,
-              "reinvestment_risk_drag": 3855290,
+              "ending_wealth": 41593250,
+              "reinvestment_risk_drag": 2984730,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2754,52 +2759,52 @@
         "low": {
           "transfer_year": 2050,
           "horizon": 30,
-          "property_a_t0_fmv": 5607050,
+          "property_a_t0_fmv": 4340940,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 16129020,
-              "property_value": 11761170,
-              "liquid_portfolio": 4367850,
+              "ending_wealth": 14465530,
+              "property_value": 9105420,
+              "liquid_portfolio": 5360110,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 11517050,
-              "ending_wealth_liquidated": 7822810,
-              "property_value": 11761170,
-              "liquid_portfolio": -244120,
+              "ending_wealth": 9906110,
+              "ending_wealth_liquidated": 7048290,
+              "property_value": 9105420,
+              "liquid_portfolio": 800690,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 22346390,
-              "initial_net_proceeds": 5320380,
-              "transfer_tax": 6170,
-              "tx_costs": 286670,
+              "ending_wealth": 17300280,
+              "initial_net_proceeds": 4118970,
+              "transfer_tax": 4780,
+              "tx_costs": 221970,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 20932450,
+              "ending_wealth": 16660660,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 16354720,
+              "ending_wealth": 13096950,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 21441530,
-              "reinvestment_risk_drag": 904850,
+              "ending_wealth": 16599750,
+              "reinvestment_risk_drag": 700530,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2807,52 +2812,52 @@
         "base": {
           "transfer_year": 2050,
           "horizon": 30,
-          "property_a_t0_fmv": 7946240,
+          "property_a_t0_fmv": 6151930,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 33222190,
-              "property_value": 25772820,
-              "liquid_portfolio": 7449380,
+              "ending_wealth": 29621060,
+              "property_value": 19953150,
+              "liquid_portfolio": 9667900,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 23585950,
-              "ending_wealth_liquidated": 14594710,
-              "property_value": 25772820,
-              "liquid_portfolio": -2186860,
+              "ending_wealth": 20189850,
+              "ending_wealth_liquidated": 13231120,
+              "property_value": 19953150,
+              "liquid_portfolio": 236690,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 55514970,
-              "initial_net_proceeds": 7500310,
-              "transfer_tax": 8740,
-              "tx_costs": 445930,
+              "ending_wealth": 42979100,
+              "initial_net_proceeds": 5806660,
+              "transfer_tax": 6770,
+              "tx_costs": 345270,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 48916570,
+              "ending_wealth": 39084440,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 34449970,
+              "ending_wealth": 27568770,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 52618620,
-              "reinvestment_risk_drag": 2896360,
+              "ending_wealth": 40736770,
+              "reinvestment_risk_drag": 2242330,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2860,52 +2865,52 @@
         "high": {
           "transfer_year": 2050,
           "horizon": 30,
-          "property_a_t0_fmv": 11205230,
+          "property_a_t0_fmv": 8675020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 64857010,
-              "property_value": 55846320,
-              "liquid_portfolio": 9010690,
+              "ending_wealth": 58720320,
+              "property_value": 43235880,
+              "liquid_portfolio": 15484440,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 42959340,
-              "ending_wealth_liquidated": 22001250,
-              "property_value": 55846320,
-              "liquid_portfolio": -12886980,
+              "ending_wealth": 37453060,
+              "ending_wealth_liquidated": 21229680,
+              "property_value": 43235880,
+              "liquid_portfolio": -5782810,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 135067640,
-              "initial_net_proceeds": 10464410,
-              "transfer_tax": 12330,
-              "tx_costs": 740820,
+              "ending_wealth": 104568100,
+              "initial_net_proceeds": 8101450,
+              "transfer_tax": 9540,
+              "tx_costs": 573570,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 111306920,
+              "ending_wealth": 88887790,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 69025440,
+              "ending_wealth": 55471100,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 126024150,
-              "reinvestment_risk_drag": 9043490,
+              "ending_wealth": 97566710,
+              "reinvestment_risk_drag": 7001390,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2915,52 +2920,52 @@
         "low": {
           "transfer_year": 2050,
           "horizon": 50,
-          "property_a_t0_fmv": 5607050,
+          "property_a_t0_fmv": 4340940,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 34111100,
-              "property_value": 19272040,
-              "liquid_portfolio": 14839060,
+              "ending_wealth": 33235410,
+              "property_value": 14920280,
+              "liquid_portfolio": 18315120,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 18197920,
-              "ending_wealth_liquidated": 11475740,
-              "property_value": 19272040,
-              "liquid_portfolio": -1074120,
+              "ending_wealth": 17267470,
+              "ending_wealth_liquidated": 12065430,
+              "property_value": 14920280,
+              "liquid_portfolio": 2347190,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 58172410,
-              "initial_net_proceeds": 5320380,
-              "transfer_tax": 6170,
-              "tx_costs": 286670,
+              "ending_wealth": 45036310,
+              "initial_net_proceeds": 4118970,
+              "transfer_tax": 4780,
+              "tx_costs": 221970,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 54491630,
+              "ending_wealth": 43371240,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 39429400,
+              "ending_wealth": 31659020,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 55816880,
-              "reinvestment_risk_drag": 2355530,
+              "ending_wealth": 43212690,
+              "reinvestment_risk_drag": 1823620,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -2968,52 +2973,52 @@
         "base": {
           "transfer_year": 2050,
           "horizon": 50,
-          "property_a_t0_fmv": 7946240,
+          "property_a_t0_fmv": 6151930,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 91953380,
-              "property_value": 56471410,
-              "liquid_portfolio": 35481970,
+              "ending_wealth": 89676030,
+              "property_value": 43719820,
+              "liquid_portfolio": 45956210,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 46586770,
-              "ending_wealth_liquidated": 25123090,
-              "property_value": 56471410,
-              "liquid_portfolio": -9884650,
+              "ending_wealth": 44967150,
+              "ending_wealth_liquidated": 28352340,
+              "property_value": 43719820,
+              "liquid_portfolio": 1247330,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 210845450,
-              "initial_net_proceeds": 7500310,
-              "transfer_tax": 8740,
-              "tx_costs": 445930,
+              "ending_wealth": 163234300,
+              "initial_net_proceeds": 5806660,
+              "transfer_tax": 6770,
+              "tx_costs": 345270,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 185784760,
+              "ending_wealth": 148442410,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 109802210,
+              "ending_wealth": 88418170,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 199845110,
-              "reinvestment_risk_drag": 11000350,
+              "ending_wealth": 154717950,
+              "reinvestment_risk_drag": 8516350,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -3021,52 +3026,52 @@
         "high": {
           "transfer_year": 2050,
           "horizon": 50,
-          "property_a_t0_fmv": 11205230,
+          "property_a_t0_fmv": 8675020,
           "paths": {
             "live_a": {
               "name": "Pure 1: Live in Property A (Prop 19)",
               "type": "pure",
-              "ending_wealth": 221373610,
-              "property_value": 162946020,
-              "liquid_portfolio": 58427590,
+              "ending_wealth": 227725260,
+              "property_value": 126151800,
+              "liquid_portfolio": 101573460,
               "notes": "Claims Prop 19; includes imputed rent + optional 3rd SF unit rent"
             },
             "rent_a": {
               "name": "Pure 2: Rent Property A (Reassessed)",
               "type": "pure",
-              "ending_wealth": 77443470,
-              "ending_wealth_liquidated": 12298520,
-              "property_value": 162946020,
-              "liquid_portfolio": -85502550,
+              "ending_wealth": 88001610,
+              "ending_wealth_liquidated": 37569030,
+              "property_value": 126151800,
+              "liquid_portfolio": -38150190,
               "notes": "No Prop 19; 27.5-yr depreciation; liquidated value reflects \u00a7 1250 recapture + CA MHST"
             },
             "sell_immediate": {
               "name": "Pure 3: Sell Immediate & Invest (Lump Sum)",
               "type": "pure",
-              "ending_wealth": 743205500,
-              "initial_net_proceeds": 10464410,
-              "transfer_tax": 12330,
-              "tx_costs": 740820,
+              "ending_wealth": 575382710,
+              "initial_net_proceeds": 8101450,
+              "transfer_tax": 9540,
+              "tx_costs": 573570,
               "notes": "Same tax year as death: \u00a7 1014 step-up eliminates capital gain; full liquidity"
             },
             "mixed_live_sell": {
               "name": "Mixed 1: Live 5 Yrs (\u00a7 121) then Sell",
               "type": "mixed",
-              "ending_wealth": 612462870,
+              "ending_wealth": 489102280,
               "sec121_applied": true,
               "notes": "Claims Prop 19 during occupancy + $500k MFJ / $250k Single \u00a7 121 exclusion at sale"
             },
             "mixed_rent_1031": {
               "name": "Mixed 2: Rent 10 Yrs then 1031 Exchange",
               "type": "mixed",
-              "ending_wealth": 284547670,
+              "ending_wealth": 231476410,
               "notes": "Defers capital gain & \u00a7 1250 recapture via IRC \u00a7 1031 into replacement investment property"
             },
             "mixed_sell_phased": {
               "name": "Mixed 3: Sell + Phased Treasuries (30m)",
               "type": "mixed",
-              "ending_wealth": 693443970,
-              "reinvestment_risk_drag": 49761530,
+              "ending_wealth": 536857800,
+              "reinvestment_risk_drag": 38524910,
               "notes": "Parks proceeds in 3M\u20132Y Treasuries (CA tax-exempt) & phases into equities; shows reinvestment drag"
             }
           }
@@ -3080,32 +3085,32 @@
     "trials": 500,
     "percentiles": {
       "sell_immediate": {
-        "p10": 7400820,
-        "p25": 11022970,
-        "p50": 18584880,
-        "p75": 30022170,
-        "p90": 45833890
+        "p10": 5729630,
+        "p25": 8533860,
+        "p50": 14388200,
+        "p75": 23242820,
+        "p90": 35484080
       },
       "mixed_sell_phased": {
-        "p10": 7156080,
-        "p25": 10868130,
-        "p50": 17560750,
-        "p75": 27578180,
-        "p90": 39512000
+        "p10": 5540150,
+        "p25": 8413980,
+        "p50": 13595340,
+        "p75": 21350710,
+        "p90": 30589740
       },
       "live_a": {
-        "p10": 11999940,
-        "p25": 14019120,
-        "p50": 16637780,
-        "p75": 20565380,
-        "p90": 24123340
+        "p10": 9290280,
+        "p25": 10853520,
+        "p50": 12880870,
+        "p75": 15921590,
+        "p90": 18676150
       },
       "rent_a": {
-        "p10": 11099550,
-        "p25": 12976040,
-        "p50": 15411110,
-        "p75": 19064260,
-        "p90": 22376210
+        "p10": 8593210,
+        "p25": 10045970,
+        "p50": 11931190,
+        "p75": 14759440,
+        "p90": 17323530
       }
     }
   },
@@ -3117,65 +3122,65 @@
         "id": "1929_depression",
         "name": "1929 Great Depression Entry",
         "description": "Severe deflationary equity crash (-45%, -30%, -15% in yrs 1\u20133) followed by slow recovery; Bay Area real estate drops -25% over 3 yrs.",
-        "sell_lump_sum_end": 7376580,
-        "sell_phased_30m_end": 15704390,
-        "phased_vs_lump_delta": 8327810,
+        "sell_lump_sum_end": 5710860,
+        "sell_phased_30m_end": 12158160,
+        "phased_vs_lump_delta": 6447290,
         "lump_max_drawdown_pct": -67.3,
         "phased_max_drawdown_pct": -30.3,
-        "live_a_end": 11450010,
-        "rent_a_end": 10590630,
+        "live_a_end": 8864530,
+        "rent_a_end": 8199200,
         "reinvestment_risk_note": "Treasury yields fall from 3.5% to 1.0% during deflation; however, avoiding the -67% cumulative equity drawdown dominates."
       },
       {
         "id": "1970s_stagflation",
         "name": "1970s Stagflation & High Inflation",
         "description": "High inflation (8\u201311%), stagnant real equities (-15%, -10%, +5%), high nominal Treasury yields (7\u20139%), strong nominal real estate (+9%/yr).",
-        "sell_lump_sum_end": 14851350,
-        "sell_phased_30m_end": 19541860,
-        "phased_vs_lump_delta": 4690510,
+        "sell_lump_sum_end": 11497750,
+        "sell_phased_30m_end": 15129090,
+        "phased_vs_lump_delta": 3631340,
         "lump_max_drawdown_pct": -23.5,
         "phased_max_drawdown_pct": -0.0,
-        "live_a_end": 21482540,
-        "rent_a_end": 19919720,
+        "live_a_end": 16631650,
+        "rent_a_end": 15421730,
         "reinvestment_risk_note": "High nominal Treasury yields soften equity stagflation, but real purchasing power erodes if inflation exceeds after-tax Treasury yield."
       },
       {
         "id": "2000_dotcom",
         "name": "2000 Dot-Com / Silicon Valley Shock",
         "description": "3-year tech equity bear market (-12%, -18%, -22%); Cupertino rent dips -15% while home values stall before recovering.",
-        "sell_lump_sum_end": 12876010,
-        "sell_phased_30m_end": 17051210,
-        "phased_vs_lump_delta": 4175200,
+        "sell_lump_sum_end": 9968460,
+        "sell_phased_30m_end": 13200850,
+        "phased_vs_lump_delta": 3232390,
         "lump_max_drawdown_pct": -43.7,
         "phased_max_drawdown_pct": -25.5,
-        "live_a_end": 15672140,
-        "rent_a_end": 14514430,
+        "live_a_end": 12133280,
+        "rent_a_end": 11236990,
         "reinvestment_risk_note": "Fed cuts short-term rates sharply (reinvestment risk on maturing 3M\u20132Y Treasuries), yet phased entry buys equities near 2002\u20132003 lows."
       },
       {
         "id": "2008_gfc",
         "name": "2008 Global Financial Crisis",
         "description": "Sharp -38% equity crash in Yr 1, +25% rebound in Yr 2; Bay Area real estate -18% peak-to-trough; Treasury yields drop near 0.2%.",
-        "sell_lump_sum_end": 17381230,
-        "sell_phased_30m_end": 23939160,
-        "phased_vs_lump_delta": 6557930,
+        "sell_lump_sum_end": 13456350,
+        "sell_phased_30m_end": 18533430,
+        "phased_vs_lump_delta": 5077070,
         "lump_max_drawdown_pct": -38.0,
         "phased_max_drawdown_pct": -5.8,
-        "live_a_end": 13271760,
-        "rent_a_end": 12282820,
+        "live_a_end": 10274920,
+        "rent_a_end": 9509290,
         "reinvestment_risk_note": "Severe reinvestment risk: 3M\u20132Y Treasuries roll over near 0.2% after Yr 1, and phasing misses part of the Yr 2 +25% V-shaped rebound."
       },
       {
         "id": "2022_rate_shock",
         "name": "2022 Inflation & Rate-Spike Shock",
         "description": "Stocks -18% and long bonds -15% simultaneously in Yr 1, followed by +22% equity rebound in Yr 2; 3M\u20132Y Treasuries jump to 4.5\u20135.0%.",
-        "sell_lump_sum_end": 22879110,
-        "sell_phased_30m_end": 25754680,
-        "phased_vs_lump_delta": 2875560,
+        "sell_lump_sum_end": 17712750,
+        "sell_phased_30m_end": 19938980,
+        "phased_vs_lump_delta": 2226230,
         "lump_max_drawdown_pct": -18.0,
         "phased_max_drawdown_pct": -1.2,
-        "live_a_end": 15525660,
-        "rent_a_end": 14378250,
+        "live_a_end": 12019880,
+        "rent_a_end": 11131560,
         "reinvestment_risk_note": "Short-duration 3M\u20132Y Treasuries avoid long-bond duration loss, but phasing still trails lump-sum if Yr 2\u20133 equities surge +44%."
       }
     ]
