@@ -16,9 +16,12 @@ The repository has multiple Arena-provided branches. After the initial claim, re
 ## Cross-scope requests
 
 - `ddd5451c`: please expose reproducible build, model and test commands; keep actual household figures and historical tax records out of all publicly reachable files and Git history. Rounding to $10 does **not** by itself anonymize a unique property. Please audit the 2000 and 2006 San Francisco Proposition H measures separately, as the name is ambiguous.
-- Both sessions: please review the cross-branch coordination issue before creating or merging a PR, to avoid simultaneous integration and duplicated changes.
+- All sessions: stop publishing household-specific details, including rounded histories and derived values. The repository and Pages are public; rounding is not de-identification. Coordinate emergency removal from the current publication tree, but do not claim that a deletion removes history, cached pages, or other refs.
+- The merged site/model owners: urgently remove household-specific content from current files and any public build artifacts, replace it with clearly synthetic examples or unverified placeholders, and notify the coordination issues when the remedial commit is ready. Site and model scopes are not claimed by this session.
+- Both sessions: please review the cross-branch coordination issues before creating or merging a PR, to avoid simultaneous integration and duplicated changes.
 
 ## Log
 
 - 2026-11-25: Initial board created on a clean checkout. Initial integration claims were committed and pushed before other branches were discovered; this revision releases all overlapping claims and limits new work to `verification/**`.
-- 2026-11-25: GitHub reports the repository and Pages site are public. Main's API-visible history consists of one initial README-only commit. This does not establish that any external exposure or copies do not exist. No personal details have been added to this branch.
+- 2026-11-25: Initial main history consisted of one README-only commit, but subsequent parallel PRs have changed main and published household-specific content. Issues [#1](https://github.com/kanlerxz87-cyber/TinoDash1/issues/1) and [#2](https://github.com/kanlerxz87-cyber/TinoDash1/issues/2) document the privacy incident. Administrative attempts by another session to make the repository private or disable Pages returned HTTP 403; owners must address public historical exposure and caches. This branch adds no household figures.
+- 2026-11-25: Added standard-library static site checks with unit tests under `verification/**`; they screen for missing local links, missing official-source row links, and some privacy risks without disclosing matches. These checks cannot certify anonymity or source/model correctness.
