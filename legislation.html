@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legislation Tracker — TinoDash</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">TinoDash <span>— Legislation Tracker</span></div><div class="meta"><a class="btn" href="index.html">← Dashboard</a></div></header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group"><h4>Dashboard</h4><div class="nav"><a href="index.html">🏠 Summary</a><a href="timeline.html">⏱️ Deadlines</a><a href="sensitivity.html">🎛️ What-Ifs</a></div></div>
+    <div class="nav-group"><h4>Decide</h4><div class="nav"><a href="paths.html">🔀 Paths</a><a href="blackswan.html">🦢 Black-Swan</a><a href="property-tax.html">🏷️ Prop Tax</a><a href="estate.html">⚖️ Estate vs Basis</a></div></div>
+    <div class="nav-group"><h4>Own & Operate</h4><div class="nav"><a href="sf-property.html">🏢 Property B</a><a href="insurance-maintenance.html">🛡️ 5-Yr Plan</a></div></div>
+    <div class="nav-group"><h4>Verify</h4><div class="nav"><a href="methodology.html">🧪 Methodology</a><a class="active" href="legislation.html">📜 Legislation</a><a href="sources.html">🔗 Sources</a><a href="flagged.html">🚩 Flagged</a></div></div>
+    <div class="nav-group"><h4>Help</h4><div class="nav"><a href="glossary.html">📖 Glossary</a><a href="questions.html">❓ Missing Info</a><a href="suggestions.html">💡 Suggestions</a></div></div>
+  </aside>
+  <main class="main">
+    <div class="card">
+      <div class="kicker">Periodically recheck official federal, state & local authorities — distinguish enacted changes from proposals</div>
+      <h2>Enacted vs Proposed — what actually changed the numbers</h2>
+      <p style="font-size:13px">Re-checked quarterly. Official sources take precedence over this site. Proposals are not modeled as base case — run as sensitivities only.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Status</th><th>Law / proposal</th><th>What it does</th><th>Impact on decision</th><th>Source (official)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge live">Enacted</span></td><td>TCJA sunset — federal exclusion reverts 1/1/2026</td><td>Exclusion ~$13.99M (2025) → ~$7M (2026, indexed). Sunsets automatically unless extended.</td><td>Raises odds estate exceeds exclusion if “considerable money” included — triggers liquidity plan need. <a href="estate.html">Estate plan</a></td><td><a href="https://www.congress.gov/bill/115th-congress/house-bill/1" target="_blank">TCJA §11061</a> · <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax" target="_blank">IRS</a></td></tr>
+            <tr><td><span class="badge live">Enacted</span></td><td>CA Prop 19 (2020, effective 2021)</td><td>Eliminated prior parent-child exclusion; heir keeps assessed value only if both parent’s + heir’s principal residences and claim within 1 yr; $1M allowance indexed.</td><td>Rent path without occupancy ⇒ full reassessment = +$40k–$62k/yr tax. See <a href="property-tax.html">Prop 19 math</a></td><td><a href="https://www.boe.ca.gov/prop19/" target="_blank">BOE Prop 19</a></td></tr>
+            <tr><td><span class="badge live">Enacted</span></td><td>SF Prop H (Nov 2024)</td><td>Transfer tax 5.5% on $10–25M, 6.0% over $25M; lower tiers unchanged. Revenue for affordable housing.</td><td>Locks Sell-B cost higher if B ever sold above $10M; irrelevant to A (Cupertino). Re-check annually. <a href="property-tax.html#transfer">Transfer tax</a></td><td><a href="https://www.sftreasurer.org/transfer-tax" target="_blank">SF Treasurer</a> · <a href="https://www.sf.gov/departments/city-administrator/real-estate-transfer-tax" target="_blank">SF Prop H explainer</a></td></tr>
+            <tr><td><span class="badge live">Enacted</span></td><td>CA AB 12 (2024) — rental deposits</td><td>Deposit ≤1 mo (furnished 2 mo) starting July 1, 2025; small landlords exempt initially.</td><td>Affects B lease drafting; see <a href="sf-property.html">leases</a></td><td><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB12" target="_blank">LegInfo AB 12</a></td></tr>
+            <tr><td><span class="badge live">Enacted</span></td><td>NEM 3.0 (CPUC, Apr 2023)</td><td>Solar export credit reduced ~75% for new systems; existing NEM 2.0 grandfathered 20 yr from PTO.</td><td>A’s solar credit $10–$20/mo valid only if grandfathered NEM 2.0; new owner after inheritance may be NEM 3.0 if system altered — verify PTO date.</td><td><a href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering" target="_blank">CPUC NEM</a></td></tr>
+            <tr><td><span class="badge warn">Proposed</span></td><td>Congressional extension of TCJA exclusion ($13.99M)</td><td>Multiple bills to make $13.99M permanent; none enacted as of Nov 2026. Would keep exclusion high.</td><td>Run as sensitivity: if extended, liquidity plan less urgent. <strong>Do not model as base.</strong></td><td><a href="https://www.congress.gov/search?q=%22estate+tax+exclusion%22" target="_blank">Congress search</a></td></tr>
+            <tr><td><span class="badge warn">Proposed</span></td><td>CA wealth-tax / property-tax reform proposals</td><td>Periodic proposals to repeal/reform Prop 13 or add wealth tax; none enacted.</td><td>No effect until enacted — track as proposal only.</td><td><a href="https://leginfo.legislature.ca.gov/" target="_blank">CA LegInfo</a></td></tr>
+            <tr><td><span class="badge warn">Proposed</span></td><td>Step-up basis repeal / carryover basis</td><td>Proposals to replace §1014 step-up with carryover or deemed realization at death — none enacted.</td><td>Would destroy same-year sale benefit — monitor but model current law.</td><td><a href="https://www.congress.gov/" target="_blank">Congress</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>Recheck cadence:</strong> This tracker rechecked 2026-11-25. Next due 2027-02-25. Add to calendar: Jan (IRS Rev. Proc. for exclusion/brackets), Apr (SCC TRA book), Sept (Assessment Appeals windows), Nov (CA ballot). See <a href="timeline.html">Timeline</a> for annual model re-run.</div>
+      <div class="table-wrap" style="margin-top:12px">
+        <table>
+          <thead><tr><th>Date</th><th>Checked by</th><th>What was checked</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>2026-11-25</td><td>TinoDash agent</td><td>IRS exclusion, BOE Prop 19, SF Treasurer Prop H, FTB 540, CDI, SF Rent Board</td><td>All official links verified; TCJA sunset still current law; Prop H enacted 11/2024 confirmed</td></tr>
+            <tr><td>2027-02-25</td><td>—</td><td>IRS Rev. Proc. 2026-## (2026 exclusion figure), FTB 540 2025 booklet, SCC TRA 2025-26, SF transfer tax table</td><td>Due</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="footer"><a href="index.html">← Dashboard</a> · <a href="sources.html">Sources</a></div>
+  </main>
+</div>
+</body>
+</html>

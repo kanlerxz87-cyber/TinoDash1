@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinoDash1 — Flagged for Review &amp; Glossary</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <h1>Flagged for Review &amp; Glossary</h1>
+    <p class="subtitle">
+      Per verification policy, any value that cannot be confirmed from a public official source without private property details (APN, leases, broker quotes, estate inventory) is explicitly flagged here with official links for manual review.
+    </p>
+
+    <!-- FLAGGED FOR REVIEW TABLE -->
+    <div class="card">
+      <h2 style="margin-top:0;">Flagged for Review (Unverified / Range-Based Items)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Current Model Treatment</th>
+              <th>Why Flagged</th>
+              <th>Official Verification Link</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Property A Exact Tax Rate Area (TRA)</strong></td>
+              <td>1.18% ad valorem + $850 fixed assessments (implied ~1.34% from 2025 rounded $7,210 / $539,740)</td>
+              <td>Exact Cupertino TRA (prefix 013-xxx) requires private APN lookup.</td>
+              <td><a href="https://payments.sccgov.org/propertytax/TaxAllocation/SearchByAddress" target="_blank" rel="noopener">SCC Tax Allocation Lookup</a></td>
+              <td><span class="badge badge-amber">Needs Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>Property A Market Rent Comparables</strong></td>
+              <td>Range $5,200–$6,800/mo ($6,000/mo baseline)</td>
+              <td>No independent Cupertino (95014) CMA yet; rent path should not rely on a floor estimate.</td>
+              <td><a href="https://www.huduser.gov/portal/datasets/fmr.html" target="_blank" rel="noopener">HUD FMR Benchmark</a> (floor only)</td>
+              <td><span class="badge badge-amber">Needs Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>Property A &amp; B Insurance Premiums</strong></td>
+              <td>Prop A: $2,800–$4,500/yr ($3,400); Prop B: $3,500–$5,500/yr ($4,400)</td>
+              <td>CA statewide avg is $1,660 (CDI), but high-value Bay Area homes &amp; 3-unit DP-3 policies require insurer quotes.</td>
+              <td><a href="https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm" target="_blank" rel="noopener">CA Dept. of Insurance</a></td>
+              <td><span class="badge badge-amber">Needs Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>Property B Leases, Rent Control &amp; Prop H Tier</strong></td>
+              <td>1.6% SF Rent Board cap; $200/yr net Prop H landlord cost (2027–2041)</td>
+              <td>Exact pre-1979 rent-control status, lease terms, and exact parcel tax tier require private lease/assessor check.</td>
+              <td><a href="https://www.sf.gov/news--annual-rent-increase-3126-22827-announced" target="_blank" rel="noopener">SF Rent Board</a></td>
+              <td><span class="badge badge-amber">Needs Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>Grantor Total Estate, Prior Gifts &amp; Portability (DSUE)</strong></td>
+              <td>Compared against $15,000,000 (2026) indexed at 2.7% CPI</td>
+              <td>Private estate inventory, Form 709 gift history, and predeceased spouse Form 706 DSUE are unknown.</td>
+              <td><a href="https://www.irs.gov/instructions/i706" target="_blank" rel="noopener">IRS Form 706 Instructions</a></td>
+              <td><span class="badge badge-amber">Needs Review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GLOSSARY -->
+    <div class="card">
+      <h2 style="margin-top:0;">Glossary of Key Terms</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Plain-English Definition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>DSUE / Portability</strong></td><td>Deceased Spousal Unused Exclusion: allows a surviving spouse to inherit a predeceased spouse's unused federal estate tax exclusion if a timely Form 706 was filed.</td></tr>
+            <tr><td><strong>FBYV</strong></td><td>Factored Base Year Value: a California property's Prop 13 assessed value (original base year value compounded by max 2%/yr inflation).</td></tr>
+            <tr><td><strong>Imputed Rent</strong></td><td>The tax-free housing value an owner receives by living in their own home instead of paying market rent elsewhere.</td></tr>
+            <tr><td><strong>IRC §1014 (Step-Up)</strong></td><td>Federal/CA rule resetting an inherited asset's income-tax cost basis to Fair Market Value at Date of Death, wiping out prior unrealized capital gains.</td></tr>
+            <tr><td><strong>IRC §121 Exclusion</strong></td><td>Primary residence capital gains exclusion ($250,000 Single / $500,000 Married Filing Jointly) if owned and occupied 2 of the last 5 years.</td></tr>
+            <tr><td><strong>IRC §1031 Exchange</strong></td><td>Tax-deferred like-kind exchange of investment/rental real estate (strict 45-day identification and 180-day closing clocks).</td></tr>
+            <tr><td><strong>IRC §1250 Recapture</strong></td><td>Federal tax (up to 25% + 3.8% NIIT) on depreciation previously claimed on a rental building when sold without a §1031 exchange.</td></tr>
+            <tr><td><strong>MHSA (Form 540)</strong></td><td>California Mental Health Services Tax: additional 1% state income tax on taxable income above $1,000,000 (bringing top CA rate to 13.3%).</td></tr>
+            <tr><td><strong>Prop 19 Allowance</strong></td><td>CA intergenerational exclusion cap (FBYV + $1,044,586 for 2025–2027, adjusted biennially) available ONLY if heir occupies inherited home as primary residence within 1 year.</td></tr>
+            <tr><td><strong>Prop H (SF, Nov 2026)</strong></td><td>Enacted 15-year San Francisco parcel tax funding SFMTA/Muni; landlords may pass through 50% (up to ~$65/yr) to rent-controlled tenants.</td></tr>
+            <tr><td><strong>Reinvestment Risk</strong></td><td>The risk that parking sale proceeds in short-term Treasuries misses bull-market equity gains (opportunity drag) or faces lower yields when T-bills mature and roll over.</td></tr>
+            <tr><td><strong>TRA (Tax Rate Area)</strong></td><td>Santa Clara County geographic code (Cupertino prefix 013) determining exact local school/voter-approved bond rates on top of the 1% Prop 13 base.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      TinoDash1 · <a href="index.html">Overview</a> · <a href="brief.html">Attorney &amp; CPA Brief</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+<script>renderSidebar("review.html");</script>
+</body>
+</html>

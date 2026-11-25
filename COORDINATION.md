@@ -1,27 +1,45 @@
-# COORDINATION.md — Shared Multi-Session Task Board
+# COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy Rule (Highest Priority):** Never write unrounded personal dollar figures, street addresses, APNs, parcel numbers, or personal names in `COORDINATION.md`, commit messages, data files, or site pages. All property-specific figures must be rounded to the nearest **$10** increment (or represented as anonymized ranges) and labeled only as **Property A** (Inherited Cupertino-Area SFR) and **Property B** (Owned San Francisco 3-Unit Property).
+> **Privacy Rule (Highest Priority):** All personal dollar figures must be rounded to the nearest **$10** increment (or represented as anonymized Low/Base/High ranges), using placeholders only (**Property A** — Inherited Cupertino-Area SFR; **Property B** — Owned San Francisco 3-Unit Property; `[Trustor]`; `[Heir]`; `[Family Revocable Trust]`). Private estate inventory stays strictly local/offline (`.gitignore`d). Never commit unrounded property tax/assessment figures, street addresses, APNs, or personal names.
 
-## Active Integration & Session Registry
+## Session Registry
 
-| Session ID | Branch | Role | Status | Last Updated (UTC) |
+| Session ID | Branch | Role / Scope | Status | Last Updated (UTC) |
 | :--- | :--- | :--- | :--- | :--- |
-| `ddd5451c` | `arena/ddd5451c-tinodash1` | Full Research, Verification, Privacy-First Model, Multi-Page Dashboard & Final Integration | `in progress` | 2026-11-25 |
+| `arena/914b57ba-tinodash1` | `arena/914b57ba-tinodash1` | Reproducible Python model + `docs/` legacy build | `merged` | 2026-11-25 (PR #3 → `6dc4068`) |
+| `arena/ef80c5c0-tinodash1` | `arena/ef80c5c0-tinodash1` | 2026 law verification + `assets/` root build | `merged` | 2026-11-25 (PR #4 → `2009903`) |
+| `arena-43f9846f` | `arena/43f9846f-tinodash1` | 17-page root dashboard + CSS/JS | `merged` | 2026-11-25 (PR #5 → `ac92995`) |
+| `arena/f83e6979-tinodash1` | `arena/f83e6979-tinodash1` | `property-a.html`, `property-b.html`, `costs.html`, `tax-law.html` | `merged` | 2026-11-25 (PR #6 → `a86cb5d`) |
+| `arena-51f65152` | `arena/51f65152-tinodash1` | `model/run_model.py` + `site/` build + `pages.yml` | `merged` | 2026-11-25 (PR #8 → `d889203`) |
+| `ddd5451c` | `arena/ddd5451c-tinodash1` | **Final Integration, Conflict Repair & Line-by-Line Official Verification** | `in progress` | 2026-11-25 |
 
 ---
 
-## Shared Task Board
+## Prior Session Task Board (Preserved)
 
-| Task ID | Task Description | Status | Owning Session | File Scope | Verification & Official Sources |
+| # | Task | Status | Prior Owner(s) | Files / Scope |
+| :--- | :--- | :--- | :--- | :--- |
+| `T01` | Scrub pre-rounding Git history / keep repo privacy-first | `done` | `43f9846f`, `914b57ba` | `.gitignore`, `.nojekyll`, `docs/.nojekyll` |
+| `T02` | Site scaffold + design system + navigation + Pages config | `done` | `43f9846f`, `51f65152` | Root HTML, `docs/*`, `site/*` |
+| `T03`–`T17` | Executive summary, mixed paths, Black Swan phased Treasuries, What-Ifs, Prop 19 / Prop H, 5-yr plan, Legislation tracker, Briefing sheet, Flagged review | `done` | `914b57ba`, `ef80c5c0`, `43f9846f`, `f83e6979`, `51f65152` | Root HTML, `docs/*`, `site/*`, `model/*` |
+
+---
+
+## Final Verification & Integration Tasks (`ddd5451c` — Active)
+
+During line-by-line repo verification of `origin/main` (`d889203`), session `ddd5451c` identified critical defects introduced by concurrent merges and claimed the final integration & verification scope:
+
+| Task ID | Task Description | Status | Owner | Scope | Findings & Verification Plan |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `T-01` | **Privacy Containment & Git Hygiene** — Enforce $10 rounding, placeholder anonymization, zero-PII git history, and private estate inventory template | `in progress` | `ddd5451c` | `PRIVACY.md`, `scripts/check_privacy.py`, `governance.html` | Pending automated PII/rounding scan |
-| `T-02` | **Official Tax, Legal & Regulatory Verification** — Federal (IRC §§1014, 121, 1031, 1250, 2001, 2010, OBBBA, NIIT, Treasury yields), CA (Prop 13 CCPI, Prop 19 BOE LTAs, Form 540 1% MHSF & capital gains, FTB 3840), Local (Santa Clara TRA/transfer tax, SF Rent Ordinance, SF Prop H, SF transfer tax, insurance & utility benchmarks) | `in progress` | `ddd5451c` | `data/verified_sources.json`, `tax-law.html` | In progress — official `.gov` verification |
-| `T-03` | **Quantitative Engine, Range Model & Black Swan Phased-Investing Simulator** — Pure + mixed paths, 24–36m 3M–2Y Treasury buffer for 1929/2008/1973/2000 crashes, depreciation/recapture, imputed rent, §121 toggle, 2040–2050 projections, P10/P50/P90 distributions | `in progress` | `ddd5451c` | `scripts/build_model.py`, `data/model_output.json`, `js/engine.js` | Pending build & sensitivity verification |
-| `T-04` | **Multi-Page Dashboard Site, Interactive What-If Controls & Printable Attorney/CPA Brief** — Clean landing page (with "What Would Change the Answer" + Reinvestment Risk beside headline) + organized category subpages, timeline, 5-yr CapEx, IPS, glossary, suggestions, discovery Q&A, Flagged for Review, and 1-page printable brief | `in progress` | `ddd5451c` | `index.html`, `projections.html`, `black-swan.html`, `properties.html`, `tax-law.html`, `process-timeline.html`, `governance.html`, `suggestions.html`, `flagged-review.html`, `briefing-sheet.html`, `glossary.html`, `css/styles.css`, `js/app.js`, `.nojekyll` | Pending link & build verification |
-| `T-05` | **Final Verification, PR Creation, Merge to `main` & GitHub Pages Live Confirmation** — Line-by-line audit, broken-link check, privacy audit, PR summary, merge, and live Pages deployment verification | `unclaimed` | `ddd5451c` | `COORDINATION.md`, `README.md` | Pending completion of `T-01`–`T-04` |
+| `INT-01` | **Repair Unresolved Git Conflict Markers & Pages Deployment Mismatch** | `in progress` | `ddd5451c` | `index.html`, `briefing.html`, `flagged.html`, `.github/workflows/pages.yml`, `model/__pycache__/` | `origin/main` had raw `<<<<<<< HEAD` conflict markers in `index.html`, `briefing.html`, and `flagged.html`, tracked binary `engine.cpython-311.pyc`, and `.github/workflows/pages.yml` uploading `site/` instead of `/` while repo Pages `build_type` is `legacy` (`/`). |
+| `INT-02` | **Line-by-Line Official `.gov` Source Verification & Non-Official Link Purge** | `in progress` | `ddd5451c` | All root `.html` tables, `sources.html`, `flagged.html`, `scripts/verify_repo.py` | Replace non-official/blog links (`baysano.com`, `gavop.com`, `gethomeinsurancequotes.com`, `lendingtree.com`, `opelon.com`, `taxstra.com`, `reedcorp.tax`, `lawvex.com`, `soferadvisors.com`, `calculatorhub.com`, `rentometer.com`, `santaclara.org`, `lacity.org`, `sce.com`) and 404 SCC/SF URLs with verified official `.gov` URLs; ensure 100% of `<tbody><tr>` rows link to an official source and leave unconfirmed private values blank & flagged. |
+| `INT-03` | **Reconcile Tax, TRA, Prop 19, Prop H & CPUC Solar Rules Against 2026 Official Publications** | `in progress` | `ddd5451c` | `scripts/build_verified_model.py`, `data/model.json`, `property-tax.html`, `estate.html`, `sf-property.html`, `legislation.html`, `insurance-maintenance.html` | Verify IRS Rev. Proc. 2025-32 & Form 706 (07/2026) `$15,000,000` exclusion (P.L. 119-21 §70106); CA BOE LTA 2025/009 `$1,044,586` & LTA 2026/026; CA BOE LTA 2026/002 CCPI series (2014–2026); SCC FY2025–26 Tax Rate Book (`1.16360%` Cupertino TRA `013-003` + fixed parcel assessments vs `0.11%` transfer tax); SF BOS Res. 447-25 (`1.18268325%`), SF Prop H Nov 3, 2026 (`$249` multifamily / `$65` passthrough cap / 2027–2042) + SF Prop H 2006 §37.9C relocation (`$8,245`/`$24,733`/`+$5,497`), SF Prop M Empty Homes Tax injunction (`CGC-23-604600`); HUD FY2026 SAFMR `95014` (`$5,870` 3BR / `$6,390` 4BR floor); CPUC 20-yr NEM legacy sunset (`D.14-03-041`); US Treasury 2026 par yields (`3M–2Y`). |
+| `INT-04` | **Unified Multi-Page Dashboard, Pure + Mixed Paths, Range/Distribution Engine, Black Swan Phased Treasuries & 1-Page Printable Brief** | `in progress` | `ddd5451c` | All root `.html` pages, `css/style.css`, `js/app.js`, `data/model.json` | Unify all root pages (including legacy filenames `black-swan.html`, `property-a.html`, `property-b.html`, `costs.html`, `tax-law.html`, `tax-legal.html`, `decisions.html`, `properties.html`) under one clean, interactive dashboard while preserving `docs/` and `site/` archives intact. |
+| `INT-05` | **Final Audit, PR to `main`, Merge & Live GitHub Pages Verification** | `unclaimed` | `ddd5451c` | `COORDINATION.md`, `README.md` | Run `scripts/verify_repo.py` (0 conflict markers, 0 unrounded leaks, 0 broken links, 100% official row citations), open PR to `main`, merge, verify GitHub Pages live deployment. |
 
 ---
 
 ## Coordination Log
 
-- **2026-11-25 (`ddd5451c`)**: Initialized `COORDINATION.md` on clean repository `kanlerxz87-cyber/TinoDash1` (branched from `8f95825`). Verified zero pre-rounding PII in git history (`Initial commit` contains only `# TinoDash1`). Claimed tasks `T-01` through `T-04` on branch `arena/ddd5451c-tinodash1`.
+- **2026-11-25 (`914b57ba`, `ef80c5c0`, `43f9846f`, `f83e6979`, `51f65152`)**: Prior parallel sessions merged PRs #3, #4, #5, #6, #8 onto `main`.
+- **2026-11-25 (`ddd5451c`)**: Merged `origin/main` (`d889203`) into `arena/ddd5451c-tinodash1` without discarding prior `docs/`, `site/`, or `model/` files. Removed tracked `model/__pycache__/engine.cpython-311.pyc` binary and logged `INT-01`–`INT-05` to repair raw conflict markers on `index.html`/`briefing.html`/`flagged.html` and complete line-by-line official verification.
