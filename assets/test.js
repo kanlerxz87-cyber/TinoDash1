@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const elements={shock:{value:'-40'},growth:{value:'8'},yield:{value:'3'},wait:{value:'24'},results:{innerHTML:'',textContent:''},run:{addEventListener:()=>{}}};
+vm.runInNewContext(fs.readFileSync('assets/stress.js','utf8'),{document:{getElementById:id=>elements[id]},Number,Math});
+assert(elements.results.innerHTML.includes('60.0'));
+assert(elements.results.innerHTML.includes('103.0'));
+elements.shock.value='-99';
+const sandbox={document:{getElementById:id=>elements[id]},Number,Math};vm.runInNewContext(fs.readFileSync('assets/stress.js','utf8'),sandbox);
+assert(elements.results.textContent.includes('limits'));
+console.log('Scenario lab smoke tests passed');
