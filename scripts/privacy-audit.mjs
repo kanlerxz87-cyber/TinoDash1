@@ -29,7 +29,8 @@ const PII_PATTERNS = [
   {
     name: 'Possible email address',
     regex: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g,
-    allowList: ['example@example.com']
+    allowList: ['example@example.com'],
+    ignoreSuffix: 'users.noreply.github.com'
   },
   {
     name: 'Possible phone number',
@@ -67,6 +68,7 @@ for (const filePath of walk(ROOT)) {
     const matches = content.match(rule.regex) || [];
     for (const m of matches) {
       if (rule.allowList.includes(m)) continue;
+      if (rule.ignoreSuffix && m.endsWith(rule.ignoreSuffix)) continue;
       // Ignore standard legislative or tax citations like "Form 1040", "IRC 1031"
       errors.push(`[PII Check] ${rel}: matched "${m}" (${rule.name})`);
     }
@@ -115,6 +117,7 @@ try {
     const matches = diff.match(rule.regex) || [];
     for (const m of matches) {
       if (rule.allowList.includes(m)) continue;
+      if (rule.ignoreSuffix && m.endsWith(rule.ignoreSuffix)) continue;
       errors.push(`[Git History Check] matched "${m}" (${rule.name})`);
     }
   }
