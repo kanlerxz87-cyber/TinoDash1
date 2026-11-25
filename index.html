@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estate Decision Dashboard — Property A (95014) &amp; Property B (94122)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="topbar"></header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Executive Dashboard: Property A (Cupertino, 95014) Inheritance Decision</h1>
+      <p>Comparing Pure &amp; Mixed Paths (2040–2050 Trust Inheritance) with Property B (San Francisco, 94122) Already Owned</p>
+    </div>
+
+    <div class="privacy-banner">
+      <span><strong>Privacy-First Model:</strong> All personal identifiers removed. Historical tax &amp; assessment figures rounded to nearest <strong>$10</strong>.</span>
+      <span class="badge badge-info">2026 Verified Laws</span>
+    </div>
+
+    <!-- What Would Change the Answer (First Screen) -->
+    <div class="card">
+      <h2>What Would Change the Answer? (Top 4 Decision Triggers)</h2>
+      <div class="grid grid-4">
+        <div class="callout good">
+          <strong>1. Prop 19 Occupancy</strong><br />
+          Moving into Property A within 1 year saves ~$25k+/yr in property tax via the <strong>$1,044,586</strong> (2025–2027 indexed) exclusion. Renting triggers full FMV reassessment.
+        </div>
+        <div class="callout">
+          <strong>2. Federal Estate Tax ($15M / $30M)</strong><br />
+          Under 2026 law (PL 119-21), estates above <strong>$15M</strong> single / <strong>$30M</strong> married face 40% federal tax. If liquid assets + Property A exceed this, liquidity planning is urgent.
+        </div>
+        <div class="callout warn">
+          <strong>3. Same-Year Sale vs. Hold</strong><br />
+          Selling in the inheritance year captures 100% <strong>IRC § 1014</strong> step-up in basis ($0 capital gains). Holding and selling later without § 121 triggers up to <strong>13.3% CA</strong> + 23.8% federal tax.
+        </div>
+        <div class="callout">
+          <strong>4. Phased vs. Lump-Sum Investing</strong><br />
+          Parking proceeds in 3M–2Y Treasuries for 24–36 months softens 1929/2008 crash entry risk, but carries <strong>reinvestment &amp; inflation-drag risk</strong> in bull markets.
+        </div>
+      </div>
+    </div>
+
+    <!-- What-If Controls -->
+    <div class="card">
+      <h2>Interactive What-If Controls</h2>
+      <div class="controls-grid">
+        <div class="control-item">
+          <label>Transfer Year <span class="control-val" id="val-transfer-year">2045</span></label>
+          <input type="range" id="ctrl-transfer-year" class="model-ctrl" min="2040" max="2050" step="1" value="2045" />
+        </div>
+        <div class="control-item">
+          <label>Projection Horizon <span class="control-val" id="val-horizon">30 yrs</span></label>
+          <input type="range" id="ctrl-horizon" class="model-ctrl" min="10" max="50" step="5" value="30" />
+        </div>
+        <div class="control-item">
+          <label>Property A Growth <span class="control-val" id="val-prop-growth">4.0%</span></label>
+          <input type="range" id="ctrl-prop-growth" class="model-ctrl" min="2.0" max="7.0" step="0.5" value="4.0" />
+        </div>
+        <div class="control-item">
+          <label>S&amp;P 500 Return <span class="control-val" id="val-stock-return">7.5%</span></label>
+          <input type="range" id="ctrl-stock-return" class="model-ctrl" min="4.0" max="11.0" step="0.5" value="7.5" />
+        </div>
+        <div class="control-item">
+          <label>Inflation Rate <span class="control-val" id="val-inflation">2.8%</span></label>
+          <input type="range" id="ctrl-inflation" class="model-ctrl" min="1.5" max="5.0" step="0.1" value="2.8" />
+        </div>
+        <div class="control-item">
+          <label>Cupertino Market Rent <span class="control-val" id="val-rent">$5,800/mo</span></label>
+          <input type="range" id="ctrl-rent" class="model-ctrl" min="4800" max="7500" step="100" value="5800" />
+        </div>
+        <div class="control-item">
+          <label>Imputed Rent (Live-In) <span class="control-val" id="val-imputed-rent">$5,800/mo</span></label>
+          <input type="range" id="ctrl-imputed-rent" class="model-ctrl" min="4500" max="7500" step="100" value="5800" />
+        </div>
+        <div class="control-item">
+          <label>Filing Status &amp; Prop 19</label>
+          <select id="ctrl-filing" class="model-ctrl">
+            <option value="single">Single ($250k §121 / $15M Estate)</option>
+            <option value="married">Married ($500k §121 / $30M Estate)</option>
+          </select>
+          <select id="ctrl-prop19" class="model-ctrl" style="margin-top:0.35rem;">
+            <option value="yes">Occupy within 1 yr (Prop 19 Eligible)</option>
+            <option value="no">Do Not Occupy (Full Reassessment)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-4" style="margin-bottom:1rem;">
+      <div class="kpi-card">
+        <div class="kpi-label">Property A Est. FMV at Transfer</div>
+        <div class="kpi-value" id="kpi-fmv">—</div>
+        <div class="kpi-sub">2026 Baseline: $3,100,000</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Prop 19 Assessed Value</div>
+        <div class="kpi-value" id="kpi-prop19">—</div>
+        <div class="kpi-sub">vs. Full FMV if Rented</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Pure Sell (S&amp;P 500) End Wealth</div>
+        <div class="kpi-value" id="kpi-sell">—</div>
+        <div class="kpi-sub">Reinvestment Risk: Sequence/Entry</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Pure Rent (Hold) End Wealth</div>
+        <div class="kpi-value" id="kpi-rent">—</div>
+        <div class="kpi-sub">Includes Property + After-Tax NOI</div>
+      </div>
+    </div>
+
+    <!-- Pure & Mixed Paths Comparison -->
+    <div class="card">
+      <h2>Pure &amp; Mixed Paths Comparison (Same Transfer Date &amp; Horizon)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Strategy Path</th>
+              <th>Projected End Wealth</th>
+              <th>Tax &amp; Basis Profile</th>
+              <th>Liquidity, Capital &amp; Reinvestment Risk</th>
+            </tr>
+          </thead>
+          <tbody id="paths-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Wealth Projection Over Horizon</h2>
+        <canvas id="proj-chart" width="580" height="270"></canvas>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">
+          <span style="color:#1d4ed8;font-weight:700;">■ Pure Sell (S&amp;P)</span> &nbsp;
+          <span style="color:#0891b2;font-weight:700;">■ Phased (T-Bills→S&amp;P)</span> &nbsp;
+          <span style="color:#d97706;font-weight:700;">■ Pure Rent</span> &nbsp;
+          <span style="color:#15803d;font-weight:700;">■ Pure Live-In</span>
+        </p>
+      </div>
+      <div class="card">
+        <h2>End-of-Horizon Distribution Comparison</h2>
+        <canvas id="dist-chart" width="580" height="270"></canvas>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="card">
+      <h2>Executive Summary &amp; Strategic Recommendation</h2>
+      <p>
+        Because the heir <strong>already owns Property B (San Francisco, 94122)</strong>—a 3-unit building generating ~$7,150/mo from 2 rented units while allowing owner-occupancy in the 3rd unit—retaining Property B as the primary residence preserves cash flow and avoids disrupting a low Prop 13 base (~$114,250 assessed).
+      </p>
+      <p>
+        <strong>Default Baseline Winner:</strong> Under standard 7.5% equity vs. 4.0% real estate assumptions, <strong>Pure Sell (Same Tax Year)</strong> or <strong>Phased Investing (24–36 mo 3M–2Y Treasuries → S&amp;P 500)</strong> maximizes liquid after-tax wealth by capturing the full <strong>IRC § 1014</strong> step-up in basis at death and avoiding Prop 19 reassessment on a rental. If the heir genuinely wants to relocate to Cupertino long-term, <strong>Live-In 3+ Years → Sell (IRC § 121)</strong> captures both Prop 19 and the $250k/$500k primary-residence exclusion.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

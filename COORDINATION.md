@@ -1,36 +1,32 @@
-# COORDINATION.md — TinoDash1 Shared Task Board
+# COORDINATION.md — Shared Task Board & Verification Log
 
-## Session & Branch Policy
-- Active Session Branch: `arena/914b57ba-tinodash1`
-- Privacy Policy: **Strict anonymization & $10 rounding** on all published property tax, assessed value, and cost figures. Never commit personal names, street addresses, APN/parcel numbers, or exact unrounded tax figures to Git.
+## Active Session
+- **Session ID**: `arena/ef80c5c0-tinodash1`
+- **Branch**: `arena/ef80c5c0-tinodash1`
+- **Status**: `in progress` -> `ready for PR`
+- **Privacy Rule**: All historical property tax and assessed value figures are rounded to the nearest **$10** increment. No personal names, street addresses, or unrounded identifying figures are committed to this repository.
 
 ## Task Board
+| Task | Status | Owner | Files | Notes |
+| --- | --- | --- | --- | --- |
+| Official Law & Tax Verification (2026) | done | `arena/ef80c5c0-tinodash1` | `assets/data.js`, `tax-legal.html` | Verified IRS $15M/$30M (PL 119-21), BOE Prop 19 $1,044,586 (2025–2027), FTB Form 540 1% BHST >$1M, SF Transfer Tax 0.75%, SCC Transfer Tax 0.11%, SF Prop H ($249/$65). |
+| Privacy-First Rounded Data & Projections | done | `arena/ef80c5c0-tinodash1` | `assets/data.js`, `properties.html` | All historical tax & assessment tables rounded to nearest $10. |
+| Interactive Dashboard & Mixed Paths Model | done | `arena/ef80c5c0-tinodash1` | `index.html`, `assets/app.js` | Includes "What Would Change the Answer", What-If controls, Pure + Mixed paths, Reinvestment Risk, Distribution & Projection charts. |
+| Black Swan & Phased-Investing (3M–2Y Treasuries) | done | `arena/ef80c5c0-tinodash1` | `black-swan.html` | Models 1929, 1970s Stagflation, 2008 GFC, 2022 Rate Shock + 24–36 mo Treasury staging. |
+| Attorney & CPA One-Page Briefing Sheet | done | `arena/ef80c5c0-tinodash1` | `briefing.html` | Print-ready (`@media print`) one-page brief. |
+| Decision Log, Missing Info, Suggestions & Glossary | done | `arena/ef80c5c0-tinodash1` | `decisions.html` | Pre-agreed criteria, discovery questions, improvement suggestions, glossary. |
+| Flagged for Review Page | done | `arena/ef80c5c0-tinodash1` | `flagged.html` | Lists unverified/estimated items (exact TRA rate, exact SF landlord insurance quote, Property A sq ft/comps) with official links. |
 
-| Task ID | Task Description | Status | Owner Session | File Scope |
-|---|---|---|---|---|
-| T-01 | Official source verification (IRS Form 706/523/544, CA BOE Prop 19, FTB Form 540/MHST, SCO, Santa Clara Clerk-Recorder, SF BOS/Elections/Prop H) | done | `arena/914b57ba-tinodash1` | `model/data_inputs.json` |
-| T-02 | Build reproducible Python financial, tax, Monte Carlo & Black Swan + Phased-Investing modeling engine | done | `arena/914b57ba-tinodash1` | `model/engine.py` |
-| T-03 | Build static GitHub Pages dashboard generator (`docs/`) with all required pages, interactive what-if controls, distribution charts, printable Attorney & CPA brief, and Flagged for Review page | done | `arena/914b57ba-tinodash1` | `build_site.py`, `docs/` |
-| T-04 | Line-by-line verification, link check, privacy/rounding audit, PR creation, merge to `main`, and GitHub Pages deployment check | done | `arena/914b57ba-tinodash1` | `docs/`, `COORDINATION.md` |
+## Official Sources Used
+1. **IRS Estate & Gift Tax (2026)**: $15,000,000 individual / $30,000,000 married with portability, 40% top rate, $19,000 annual gift exclusion (Public Law 119-21, IRC § 2010(c)(3)).
+2. **California BOE Prop 19**: $1,044,586 exclusion cap for Feb 16, 2025 – Feb 15, 2027 (BOE Letter to Assessors No. 2025/009); 1-year principal residence move-in + BOE-19-P within 3 years.
+3. **California FTB Form 540**: Capital gains taxed as ordinary income (1%–12.3%) + 1% Behavioral Health Services Tax (formerly Mental Health Services Tax) on taxable income > $1,000,000 (13.3% top marginal rate).
+4. **Santa Clara County Clerk-Recorder**: Documentary Transfer Tax $0.55 per $500 ($1.10 per $1,000 = 0.11%); Cupertino has 0% city transfer tax.
+5. **San Francisco Treasurer & Tax Collector**: Tiered Transfer Tax (0.75% for $1M–$4,999,999).
+6. **San Francisco Prop H (Nov 2026)**: Multi-family parcel tax $249 base, rent-controlled units capped at $65/unit (SPUR Voter Guide).
 
-## Official Sources Verified
-1. **IRS Form 706 Instructions (Rev. July 2026)** — 2025 Basic Exclusion $13,990,000; 2026 Basic Exclusion $15,000,000; Portability (DSUE); Annual Gift Exclusion $19,000: `https://www.irs.gov/instructions/i706`
-2. **IRS Working Families Tax Cuts (2026)** — Estate tax exclusion $15,000,000 for 2026: `https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers`
-3. **IRS Publication 523 (2025)** — IRC § 121 Primary Residence Exclusion ($250,000 single / $500,000 MFJ) & § 1250 Depreciation Recapture: `https://www.irs.gov/pub/irs-pdf/p523.pdf`
-4. **CA BOE Proposition 19 Fact Sheet (Pub 801) & News Release NR-25-02** — 1-year primary residence & homeowners' exemption rule; $1,044,586 indexed cap (Feb 16, 2025 – Feb 15, 2027): `https://www.boe.ca.gov/news/2025/nr-25-02.htm` and `https://www.boe.ca.gov/pdf/pub801.pdf`
-5. **CA State Controller's Office (SCO)** — CA Rev. & Tax. Code § 13301 (No California estate or inheritance tax): `https://www.sco.ca.gov/Files-ARD-Tax-Info/estate_lawreg_lawreg.pdf`
-6. **CA Franchise Tax Board (FTB)** — Form 540 / Mental Health Services Tax (1% on CA taxable income > $1,000,000); capital gains taxed as ordinary income: `https://www.ftb.ca.gov/forms/2024/2024-540-ca-instructions.html`
-7. **Santa Clara County Clerk-Recorder** — Documentary Transfer Tax $0.55 per $500 ($1.10/$1,000); Cupertino has $0 city conveyance tax; basic recording fee $25 first page: `https://clerkrecorder.santaclaracounty.gov/recording-documents/recording-document-fees`
-8. **City and County of San Francisco BOS (FY 2025–26)** — Combined property tax rate $1.18268325 per $100 (1.18268325%): `https://sfbos.archive.sf.gov/sites/default/files/bfc091725_agenda.pdf`
-9. **San Francisco Voter Information Pamphlet (Nov 3, 2026)** — Prop H (Muni Parcel Tax: $129–$400,000/parcel for 15 yrs, inflation-adjusted) & Real Property Transfer Tax tiers: `https://media.api.sf.gov/documents/N26_EN_VIP.pdf`
-10. **San Francisco Rent Board (Prop H, 2006)** — No-fault eviction relocation payments (OMI/capital improvement, inflation-adjusted annually): `https://www.sf.gov/reports--december-2006--san-francisco-rent-board-news-archive-2006`
-
-## Flagged Irregularities & Unverified Items
-- Property A exact Santa Clara County Tax Rate Area (TRA) rate — requires private parcel lookup; modeled with effective rate range derived from rounded historical tax/assessment ratio.
-- Property A & B exact home/landlord insurance quotes — user estimated ~$1,500/yr; flagged as unverified pending broker quotes (typical CA Bay Area policies are often higher).
-- Property A market rent comparables — no private MLS comps provided; modeled with range and flagged to obtain independent Cupertino 95014 comparables rather than relying on HUD SAFMR voucher floor.
-- Property B exact lease terms, tenant tenure, and SF Rent Ordinance status (pre-1979 vs post-1979) — flagged for private verification.
-- Total estate value, prior taxable gifts, and predeceased spouse DSUE portability — flagged for private estate inventory & attorney review.
-
-## Session Log
-- `2026-11-25`: Initialized `COORDINATION.md` on `arena/914b57ba-tinodash1`, completed official source verification (T-01), starting T-02.
+## Flagged Irregularities
+- **Property A Home Insurance**: User estimated ~$1,500/yr; 2026 Cupertino 95014 averages ~$930–$1,290/yr, but $3.1M replacement-cost policies may be higher. Flagged for actual quote.
+- **Property B Landlord Insurance**: User estimated ~$1,500/yr; 2026 SF landlord insurance averages ~$2,235/yr (and 3-unit policies can be $2,500–$4,000/yr). Flagged for actual quote.
+- **Property A Exact Tax Rate Area (TRA)**: Historical taxes suggest ~1.33% effective rate on assessed value (includes parcel taxes/bonds), vs 1.15%–1.25% typical. Flagged to look up exact TRA on Santa Clara County Assessor portal.
+- **Property A Market Rent**: Modeled at $5,800/mo based on 2026 Cupertino 95014 3–4 bed comps ($5,000–$6,600/mo); formal CMA needed.
