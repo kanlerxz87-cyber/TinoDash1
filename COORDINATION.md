@@ -74,3 +74,9 @@ If editing across scopes, log request here instead of directly editing another s
 | F6 | Time check — deadline integration | done | arena/f83e6979-tinodash1 | timeline.html, COORDINATION.md | Prop 19 occupancy 1y, transfer 2040–2050, annual review |
 
 ## Session 796979 — conflicts resolved (2026-11-25): for duplicate filenames (index/paths/questions/flagged/README/COORDINATION) we kept origin/main's versions; this session's files retained where unique.
+
+## Merge log
+
+- PR #6: https://github.com/kanlerxz87-cyber/TinoDash1/pull/6 — merged to main, merge commit a86cb5d (2026-11-25).
+- GitHub Pages: built (main), https://kanlerxz87-cyber.github.io/TinoDash1/ — deploy verified via gh api repos/kanlerxz87-cyber/TinoDash1/pages status=built.
+- Rebase note: branch rebased onto origin/main (ac92995 → a86cb5d); duplicates kept main's versions; session files retained (property-a.html, property-b.html, costs.html, script.js, style.css, tax-law.html, COORDINATION.md additions).
