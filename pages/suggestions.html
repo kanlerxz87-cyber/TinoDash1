@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suggestions (Evaluate Before Implementing) — Bay Area Inheritance Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <div id="privacy-strip" class="privacy-strip"></div>
+
+  <main class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <h1>Suggestions for Site &amp; Decision-Making Improvements</h1>
+        <p class="lead">Evaluate and prioritize proposed enhancements <strong>before</strong> implementing changes. Reviewers can record their evaluation status and export the selection.</p>
+      </div>
+      <button id="export-suggestions-btn" type="button" class="btn btn-primary">Export Evaluated Suggestions JSON</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Proposed Improvement</th>
+            <th>Decision-Making Benefit</th>
+            <th>Effort</th>
+            <th style="width:190px;">Reviewer Status</th>
+          </tr>
+        </thead>
+        <tbody id="suggestions-tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script type="module" src="../assets/js/pages-suggestions.js"></script>
+</body>
+</html>
