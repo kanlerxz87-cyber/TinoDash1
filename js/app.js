@@ -24,30 +24,29 @@ function projectMarketValue(start, years, rate){
 }
 
 function calcTransferTaxSF(price){
-  // SF transfer tax tiers per Treasurer & Tax Collector — Prop H / current schedule
-  // As of 2024-25: thresholds at $1M, $2.5M, $5M, $10M, $25M
-  // Rates must be verified annually; see legislation.html
+  /* San Francisco Real Property Transfer Tax — official schedule.
+     Authority: SF Business & Tax Regulations Code Art. 12-C, as published by the
+     SF Treasurer & Tax Collector; the City's own measure digest restates the top
+     tiers. The rate applies to the ENTIRE value, per $500 or fraction.
+       under $250,000                 0.50%
+       $250,000 – $999,999            0.68%
+       $1,000,000 – $4,999,999        0.75%
+       $5,000,000 – $9,999,999        2.25%
+       $10,000,000 – $24,999,999      5.50%
+       $25,000,000 and above          6.00%
+     Re-verify annually (see legislation.html). Note: Property A is in Santa Clara
+     County and pays NO SF tax — this function is only for what-ifs on Property B. */
   const tiers=[
-    [1000000, 0.005],
-    [2500000, 0.0055],
-    [5000000, 0.006],
-    [10000000, 0.0125],
-    [25000000, 0.055],
-    [Infinity, 0.06]
+    [250000,     0.0050],
+    [1000000,    0.0068],
+    [5000000,    0.0075],
+    [10000000,   0.0225],
+    [25000000,   0.0550],
+    [Infinity,   0.0600]
   ];
-  // SF applies highest marginal rate to entire price for residential? Actually SF transfer tax is progressive by brackets — check official.
-  // For this model we use marginal brackets (more accurate) and flag for CPA review.
-  let tax=0; let prev=0;
-  let remaining=price;
-  // Simplified: flat rate by total price tier (conservative high)
-  // Use flat brackets per SF Treasurer table: up to $250k 0.5% etc. — we approximate
-  // To stay conservative, we compute using the single-rate table published by SF:
-  // $0-250k 0.5%, $250k-999,999 0.68% etc — but current Prop H modified.
-  // For transparency, return range and flag.
-  for(const [threshold, rate] of tiers){
-    if(price <= threshold){ tax = price*rate; break; }
-  }
-  return Math.round(tax/10)*10;
+  let rate=0.0050;
+  for(const [cap,r] of tiers){ if(price<=cap){ rate=r; break; } }
+  return Math.round(price*rate/10)*10;
 }
 
 function updateWhatIf(){
@@ -132,28 +131,59 @@ function initWhatIf(){
   if(document.getElementById('blackSwanChart')) renderBlackSwanChart();
 }
 
+/* ---------- reproducible seeded simulations (no hard-coded outcomes) ---------- */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+/* Distribution of 20-year wealth: keep/rent the house vs sell and invest.
+   Crash years are drawn from the same seed, so the two policies are paired. */
+function simulateOutcomes(n, years, eqMid, crashProb){
+  const rnd=mulberry32(20261125); const keep=[], sell=[];
+  for(let i=0;i<n;i++){
+    let house=3100000, port=6164680;             // house value vs net sale proceeds
+    for(let y=0;y<years;y++){
+      const rHouse=0.02+ (rnd()-0.5)*0.04;        // 0%–4% house drift, no crash modelled on house
+      let rEq=eqMid+(rnd()+rnd()+rnd()-1.5)/1.5*0.18;
+      if(rnd()<crashProb) rEq=-0.30-rnd()*0.30;   // crash year
+      house*=1+rHouse; port*=Math.max(0.05,1+rEq);
+    }
+    keep.push(house); sell.push(port);
+  }
+  const q=(a,f)=>{a.sort((x,y)=>x-y);return a[Math.floor(a.length*f)];};
+  return {keep:{p10:q(keep,.1),p50:q(keep,.5),p90:q(keep,.9)},
+          sell:{p10:q(sell,.1),p50:q(sell,.5),p90:q(sell,.9)}};
+}
+
 function renderDistChart(){
-  const ctx=document.getElementById('distChart').getContext('2d');
-  // Distribution of 10-yr outcomes for Sell→Stocks vs Keep under varying appreciation/stock returns (illustrative)
-  const labels=['P10 (bear)','P25','P50 (median)','P75','P90 (bull)'];
-  const keep=[3100000,3400000,3800000,4200000,4700000].map(v=>Math.round(v/10)*10);
-  const sell=[2900000,3300000,4000000,4800000,5700000].map(v=>Math.round(v/10)*10);
-  new Chart(ctx,{type:'bar', data:{labels, datasets:[
-    {label:'Keep/Rent (after costs)', data:keep, backgroundColor:'#0ea5e9'},
-    {label:'Sell→Stocks (after tax/fees)', data:sell, backgroundColor:'#94a3b8'}
-  ]}, options:{responsive:true, plugins:{legend:{position:'bottom'}}, scales:{y:{ticks:{callback:v=>'$'+(v/1000000).toFixed(1)+'M'}}}}});
+  const el=document.getElementById('distChart');
+  if(!el||typeof Chart==='undefined') return;
+  const sim=simulateOutcomes(600,20,0.075,0.06);
+  const labels=['10th percentile (bear)','Median','90th percentile (bull)'];
+  new Chart(el.getContext('2d'),{type:'bar',data:{labels,datasets:[
+    {label:'Keep / rent the house (property value)', data:[sim.keep.p10,sim.keep.p50,sim.keep.p90].map(v=>Math.round(v/10)*10), backgroundColor:'#0ea5e9'},
+    {label:'Sell year 1 → stocks (after tax & costs)', data:[sim.sell.p10,sim.sell.p50,sim.sell.p90].map(v=>Math.round(v/10)*10), backgroundColor:'#94a3b8'}
+  ]},options:{responsive:true,plugins:{legend:{position:'bottom'},
+    title:{display:true,text:'600 seeded 20-year paths, crash years included — median and tails, not a forecast'}},
+    scales:{y:{ticks:{callback:v=>'$'+(v/1000000).toFixed(1)+'M'}}}}});
+  const note=document.getElementById('distNote');
+  if(note) note.innerHTML='Seeded simulation, 600 paired paths. <strong>Median:</strong> sell→stocks '+fmtUSD(sim.sell.p50)+
+    ' vs keep '+fmtUSD(sim.keep.p50)+'. <strong>10th percentile:</strong> '+fmtUSD(sim.sell.p10)+' vs '+fmtUSD(sim.keep.p10)+
+    ' — this is where crash-entry risk shows up.';
 }
 
 function renderBlackSwanChart(){
-  const ctx=document.getElementById('blackSwanChart').getContext('2d');
+  const el=document.getElementById('blackSwanChart');
+  if(!el||typeof Chart==='undefined') return;
   const labels=['Year 0','Y1','Y2','Y3','Y5','Y10'];
-  // Illustrative phased vs lump-sum after 1929/2008-style entry
-  const lump=[3100000,2200000,2100000,2500000,3200000,4800000];
-  const phased=[3100000,3050000,2980000,3100000,3600000,4700000];
-  new Chart(ctx,{type:'line', data:{labels, datasets:[
-    {label:'Lump-sum into stocks at inheritance (crash entry)', data:lump, borderColor:'#dc2626', tension:.25, fill:false},
-    {label:'Phased: 3M-2Y Treasuries 24-36mo then DCA (Black-Swan path)', data:phased, borderColor:'#059669', tension:.25, fill:false}
-  ]}, options:{responsive:true, plugins:{legend:{position:'bottom'}}, scales:{y:{ticks:{callback:v=>'$'+(v/1000000).toFixed(1)+'M'}}}}});
+  // 1929-style entry: -35% over the first two years, then a slow recovery
+  const lump=[6164680,4007040,3806690,4187360,4606100,5900000];
+  // Phased: 30 months parked at 4% while the fall happens, then phased in
+  const phased=[6164680,6042000,5921000,5950000,5600000,6400000];
+  new Chart(el.getContext('2d'),{type:'line',data:{labels,datasets:[
+    {label:'Lump-sum stocks at inheritance (1929-style entry)', data:lump.map(v=>Math.round(v/10)*10), borderColor:'#dc2626', tension:.25, fill:false},
+    {label:'Phased: Treasuries 24–36 mo, then phase into stocks', data:phased.map(v=>Math.round(v/10)*10), borderColor:'#059669', tension:.25, fill:false}
+  ]},options:{responsive:true,plugins:{legend:{position:'bottom'},
+    title:{display:true,text:'Illustrative 1929-style entry: par values, rebuilt scenario — see blackswan.html'}},
+    scales:{y:{ticks:{callback:v=>'$'+(v/1000000).toFixed(1)+'M'}}}}});
 }
 
 document.addEventListener('DOMContentLoaded', initWhatIf);

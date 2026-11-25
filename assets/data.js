@@ -8,11 +8,25 @@ const SITE_NAV = [
   ]},
   { group: "Analysis", items: [
     { href: "black-swan.html", label: "Black Swan & Phased" },
-    { href: "tax-legal.html", label: "Tax, Prop 19 & Timeline" }
+    { href: "blackswan.html", label: "Black Swan (full analysis)" },
+    { href: "tax-legal.html", label: "Tax, Prop 19 & Timeline" },
+    { href: "property-tax.html", label: "Property Tax & Prop 19" },
+    { href: "estate.html", label: "Estate vs Basis vs Assessment" },
+    { href: "paths.html", label: "Paths — Pure & Mixed" },
+    { href: "sensitivity.html", label: "What-If Controls" },
+    { href: "timeline.html", label: "Deadlines" }
   ]},
   { group: "Action", items: [
     { href: "briefing.html", label: "Attorney & CPA Brief" },
     { href: "decisions.html", label: "Decisions & Glossary" },
+    { href: "questions.html", label: "Missing Information" },
+    { href: "suggestions.html", label: "Suggestions" },
+    { href: "glossary.html", label: "Glossary" },
+    { href: "insurance-maintenance.html", label: "Insurance & 5-Yr Plan" },
+    { href: "sf-property.html", label: "Property B & Leases" },
+    { href: "sources.html", label: "All Sources" },
+    { href: "methodology.html", label: "Methodology" },
+    { href: "legislation.html", label: "Legislation Tracker" },
     { href: "flagged.html", label: "Flagged for Review", isFlag: true }
   ]}
 ];
