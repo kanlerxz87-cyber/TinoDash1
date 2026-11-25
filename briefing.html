@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -98,5 +99,76 @@
     </div>
   </main>
 </div>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attorney &amp; CPA Briefing Sheet — Estate Decision Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="topbar"></header>
+
+  <main class="container">
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+      <div>
+        <h1>One-Page Attorney &amp; CPA Briefing Sheet</h1>
+        <p>Anonymized summary for legal &amp; tax counsel. Separated by Estate Tax, Income-Tax Basis, and Property-Tax Assessment.</p>
+      </div>
+      <button class="btn no-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <div class="card">
+      <h2>1. Asset &amp; Ownership Profile (Anonymized)</h2>
+      <ul>
+        <li><strong>Property A (Cupertino, CA 95014):</strong> Single-family residence, Est. FMV $3,100,000 (Nov 2026), 2026 Assessed Value ~$550,540 (rounded to $10). Held in Trust; projected transfer 2040–2050.</li>
+        <li><strong>Property B (San Francisco, CA 94122):</strong> 3-unit residential building, Est. FMV $1,800,000 (Nov 2026), 2025 Assessed Value ~$114,250. Already owned by heir; 2 units rented (~$7,150/mo), 1 unit available for owner-occupancy.</li>
+        <li><strong>Liquid / Other Estate Assets:</strong> Considerable liquid assets; total estate may approach or exceed federal exclusion.</li>
+      </ul>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h2>2. Estate Tax (Federal &amp; CA)</h2>
+        <ul>
+          <li><strong>2026 Federal Exemption:</strong> $15,000,000 individual / $30,000,000 married (PL 119-21, 40% top rate).</li>
+          <li><strong>CA Estate Tax:</strong> $0.</li>
+          <li><strong>Action:</strong> Confirm portability election (Form 706) &amp; prior taxable gifts (&gt;$19,000/yr).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>3. Income-Tax Basis (IRC § 1014)</h2>
+        <ul>
+          <li><strong>Step-Up at Death:</strong> Property A receives 100% FMV step-up at Date of Death.</li>
+          <li><strong>Same-Year Sale:</strong> $0 capital gains if sold near DOD value.</li>
+          <li><strong>CA Form 540:</strong> Post-death gains taxed as ordinary income up to 12.3% + 1% BHST &gt;$1M (13.3%).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>4. Property Tax (Prop 19)</h2>
+        <ul>
+          <li><strong>2025–2027 Cap:</strong> $1,044,586 (indexed biennially).</li>
+          <li><strong>Requirement:</strong> Heir must occupy Property A as primary residence within 1 year &amp; file BOE-19-P within 3 years.</li>
+          <li><strong>If Rented:</strong> $0 exclusion; full FMV reassessment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>5. Key Questions for Counsel &amp; Liquidity Plan</h2>
+      <ol>
+        <li><strong>Portability &amp; Prior Gifts:</strong> Were any Form 709 gift returns filed, and is DSUE portability available from a predeceased spouse?</li>
+        <li><strong>Estate Liquidity Plan:</strong> If gross estate exceeds $15M/$30M, how will the 40% federal tax (due 9 months post-DOD) be funded without forced fire-sale of Property A?</li>
+        <li><strong>1031 Exchange vs. Same-Year Sale:</strong> Confirm whether a same-year sale (capturing § 1014 step-up) is strictly superior to holding and later doing a 1031 exchange.</li>
+        <li><strong>Investment Policy Statement (IPS):</strong> Draft IPS for sale proceeds (e.g., 24–36 mo 3M–2Y Treasury ladder vs. immediate equity allocation) before funds arrive.</li>
+      </ol>
+    </div>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => renderNav("briefing.html"));</script>
+>>>>>>> origin/main
 </body>
 </html>
