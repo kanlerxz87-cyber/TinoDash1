@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Projections & Scenarios | Estate Decision Dashboard</title><link rel="stylesheet" href="../assets/style.css">
+<style>
+.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0}
+@media (max-width:1100px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.controls{grid-template-columns:1fr}}
+.control{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
+.control label{display:block;font-size:.78rem;font-weight:650;color:var(--muted);margin-bottom:4px}
+.control input,.control select{width:100%;padding:8px;border:1px solid #cfd9e4;border-radius:8px;font:inherit}
+.control .hint{font-size:.75rem;color:var(--muted);margin-top:4px}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1000px){.scenario-grid{grid-template-columns:1fr}}
+.metric{font-size:.85rem;color:var(--muted)} .metric strong{color:var(--text);font-size:1rem}
+.risk-box{background:#fff7f7;border:1px solid #efc2c2;border-radius:10px;padding:10px;margin:10px 0;font-size:.88rem}
+.headline-row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <p class="brand">Estate Decision Dashboard</p><p class="brand-sub">Privacy-first analysis. No personal identifiers.</p>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-group">Overview</div><a href="../index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="briefing-sheet.html">Attorney &amp; CPA Briefing Sheet</a>
+      <div class="nav-group">Analysis</div><a href="inheritance-process.html">Inheritance Process</a><a href="property-comparison.html">Property Comparison</a><a href="projections.html">Projections &amp; Scenarios</a><a href="black-swan.html">Black Swan Scenarios</a><a href="tax-legal.html">Tax &amp; Legal Rules</a><a href="timeline.html">Deadlines Timeline</a>
+      <div class="nav-group">Decision Support</div><a href="decision-framework.html">Decision Framework</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions &amp; Improvements</a>
+      <div class="nav-group">Reference</div><a href="glossary.html">Glossary</a><a href="sources.html">Sources Registry</a><a href="flagged-review.html">Flagged for Review</a><a href="privacy.html">Privacy &amp; Data Handling</a>
+    </nav>
+  </aside>
+  <main class="main" id="content">
+    <header class="page-header">
+      <p class="eyebrow">Model &amp; Comparison</p>
+      <h1>Projections &amp; Scenarios</h1>
+      <p class="lead">Interactive, range-based model comparing pure and mixed paths for Property A at the same transfer dates and horizons. All defaults are assumptions rounded to nearest $10; replace with private verified ranges before deciding.</p>
+    </header>
+
+    <div class="banner banner-danger"><strong>Model limits:</strong> This is a planning model, not a valuation, appraisal, tax return, or investment recommendation. Outputs depend on assumptions. Real date-of-death value, Prop 19 eligibility, debt, rent, capex, tax status, and market returns can change outcomes.</div>
+    <div class="banner banner-info"><strong>Rounding/privacy:</strong> All displayed currency is rounded to nearest $10. No exact addresses, ZIP codes, or parcel IDs are used.</div>
+
+    <section class="section">
+      <h2>What-If Controls</h2>
+      <p class="small muted">Adjust assumptions. Results update immediately. Use ranges from professionals where possible.</p>
+      <div class="controls">
+        <div class="control"><label for="fmv">Property A FMV at transfer ($)</label><input id="fmv" type="number" step="10" value="3100000"><div class="hint">Default: ~$3,100,000 (user estimate, unverified).</div></div>
+        <div class="control"><label for="fbyv">Property A factored base year value ($)</label><input id="fbyv" type="number" step="10" value="550540"><div class="hint">Rounded from historical assessed value; confirm actual FBYV.</div></div>
+        <div class="control"><label for="prop19">Prop 19 exclusion eligible?</label><select id="prop19"><option value="no">No / not claimed</option><option value="yes">Yes - primary residence</option></select><div class="hint">Requires occupancy + filings.</div></div>
+        <div class="control"><label for="horizon">Horizon (years)</label><select id="horizon"><option>5</option><option selected>10</option><option>20</option><option>30</option></select><div class="hint">Same horizon across all paths.</div></div>
+        <div class="control"><label for="appreciation">Home appreciation (%/yr)</label><input id="appreciation" type="number" step="0.1" value="3.0"><div class="hint">Range assumption; not forecast.</div></div>
+        <div class="control"><label for="rent">Market rent for Property A ($/mo)</label><input id="rent" type="number" step="10" value="6500"><div class="hint">Placeholder - obtain comparables. User did not provide.</div></div>
+        <div class="control"><label for="imputedRent">Imputed rent if living in A ($/mo)</label><input id="imputedRent" type="number" step="10" value="6500"><div class="hint">Economic value of occupancy; can differ from market rent.</div></div>
+        <div class="control"><label for="vacancy">Vacancy/collection loss (%)</label><input id="vacancy" type="number" step="0.1" value="5.0"><div class="hint">Rent path only.</div></div>
+        <div class="control"><label for="opEx">Operating expenses (% of gross rent)</label><input id="opEx" type="number" step="0.1" value="28.0"><div class="hint">Excludes capex, mortgage, income tax.</div></div>
+        <div class="control"><label for="capex">CapEx reserve (% of property value/yr)</label><input id="capex" type="number" step="0.1" value="1.0"><div class="hint">Long-run maintenance/capital reserve.</div></div>
+        <div class="control"><label for="insA">Property A insurance ($/yr)</label><input id="insA" type="number" step="10" value="1800"><div class="hint">Placeholder estimate; obtain quote.</div></div>
+        <div class="control"><label for="waterA">Property A water ($/mo)</label><input id="waterA" type="number" step="10" value="130"><div class="hint">User range $100-$150/mo, rounded midpoint.</div></div>
+        <div class="control"><label for="elecA">Property A electricity net ($/mo)</label><input id="elecA" type="number" step="10" value="-20"><div class="hint">User indicated small solar credit; verify.</div></div>
+        <div class="control"><label for="stockReturn">Stock return (%/yr)</label><input id="stockReturn" type="number" step="0.1" value="7.0"><div class="hint">Nominal assumption; volatile. See Black Swan.</div></div>
+        <div class="control"><label for="treasuryReturn">Treasury ladder return (%/yr)</label><input id="treasuryReturn" type="number" step="0.1" value="4.0"><div class="hint">Assumed for phased parking; reinvestment risk applies.</div></div>
+        <div class="control"><label for="sellCost">Sale cost (% of price)</label><input id="sellCost" type="number" step="0.1" value="6.0"><div class="hint">Agent, closing, staging etc.; verify.</div></div>
+        <div class="control"><label for="transferTax">Transfer/recording taxes+fees (% of price)</label><input id="transferTax" type="number" step="0.1" value="0.2"><div class="hint">Placeholder; confirm county/city actual.</div></div>
+        <div class="control"><label for="capGainTax">Effective cap gain+NIIT+state tax on sale (%)</label><input id="capGainTax" type="number" step="0.1" value="20.0"><div class="hint">Highly fact-dependent; include CA 1% over $1M where relevant.</div></div>
+        <div class="control"><label for="sameYearSale">Sell in same tax year as inheritance?</label><select id="sameYearSale"><option value="no">No</option><option value="yes">Yes - model separately</option></select><div class="hint">Can change income/tax outcome.</div></div>
+        <div class="control"><label for="sec121">§121 exclusion available (living then sell)?</label><select id="sec121"><option value="no">No / not yet qualified</option><option value="yes">Yes - model exclusion</option></select><div class="hint">Requires ownership/use tests; fact-dependent.</div></div>
+      </div>
+      <div class="callout callout-warn"><strong>Reinvestment risk (headline):</strong> Any "sell and invest" result assumes future returns that may not occur. A bad entry year (e.g., 1929/2008 analogue) can dominate long-run averages. See <a href="black-swan.html">Black Swan Scenarios</a> for phased Treasury parking (24-36 months) and drawdown stress tests.</div>
+    </section>
+
+    <section class="section">
+      <h2>Comparison at Same Horizon (All Paths)</h2>
+      <div class="table-wrap">
+        <table id="compareTable">
+          <caption>Same transfer date assumption, same horizon, rounded to nearest $10. Values are model outputs, not predictions.</caption>
+          <thead><tr><th>Path</th><th class="num">Est. annual carrying cost</th><th class="num">Est. annual net cash flow/benefit</th><th class="num">Est. end value (net)</th><th class="num">Liquidity</th><th>Key risks</th></tr></thead>
+          <tbody id="compareBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mixed Paths (Not Only Pure Choices)</h2>
+      <div class="scenario-grid" id="mixedCards"></div>
+    </section>
+
+    <section class="section">
+      <h2>Distribution / Uncertainty View</h2>
+      <p class="small muted">Simple 3-point distribution (conservative/base/optimistic) for end net value. This is illustrative; run Monte Carlo with private adviser/model for real decisions.</p>
+      <div class="card">
+        <div id="distChart"></div>
+        <div class="legend">
+          <span><i class="swatch" style="background:#8fb3d9"></i>Conservative</span>
+          <span><i class="swatch" style="background:#1a5fb4"></i>Base</span>
+          <span><i class="swatch" style="background:#164a8a"></i>Optimistic</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Same-Tax-Year Sale &amp; §121 / Prop 19 Notes</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Sale in same tax year as inheritance</h3>
+          <p class="small">If Property A is sold in the same tax year as the date-of-death/inheritance period, model the combined income: any gain above stepped-up basis, depreciation recapture (if rented before sale), NIIT, CA ordinary income/capital gain treatment, and the 1% Behavioral Health Services Tax on taxable income above $1,000,000. Do not assume zero tax just because of step-up.</p>
+          <p class="small"><strong>Model switch:</strong> "Sell in same tax year" increases caution flag and recommends CPA scenario run before listing.</p>
+        </div>
+        <div class="card">
+          <h3>Living then sell (§121) and Prop 19 carry-forward</h3>
+          <p class="small">A living-then-sell path may qualify for §121 exclusion only if ownership/use tests are met; inherited-property rules are fact-specific. If Prop 19 exclusion is obtained, the excluded base carries forward while eligibility continues; losing primary-residence status can trigger reassessment. Model both: property-tax savings during occupancy and potential tax on later sale.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer"><p>Model outputs are illustrative. Replace defaults with private ranges and professional advice. Last draft: 2026-11-25.</p></footer>
+  </main>
+</div>
+<script>
+function r10(x){return Math.round((Number(x)||0)/10)*10;}
+function fmt(x){var n=r10(x); return (n<0?'-':'')+'$'+Math.abs(n).toLocaleString('en-US');}
+function pct(x){return (Number(x)||0).toFixed(1)+'%';}
+function g(id){return document.getElementById(id);}
+function val(id){return Number(g(id).value);}
+function sel(id){return g(id).value;}
+function annualPropTax(fmv,fbyv,prop19){
+  // Simplified: if Prop 19 eligible, use fbyv + cap portion approximation; else reassess to fmv.
+  // Base 1% + 0.2% local assessments assumption. Real TRA required.
+  var cap=1044586;
+  var assessed = prop19==='yes' ? Math.min(fmv, fbyv + cap) : fmv;
+  return assessed * 0.012;
+}
+function calc(){
+  var fmv=val('fmv'), fbyv=val('fbyv'), prop19=sel('prop19'), H=val('horizon');
+  var appr=val('appreciation')/100, rent=val('rent'), imputed=val('imputedRent');
+  var vacancy=val('vacancy')/100, opEx=val('opEx')/100, capexPct=val('capex')/100;
+  var ins=val('insA'), water=val('waterA')*12, elec=val('elecA')*12;
+  var stock=val('stockReturn')/100, treas=val('treasuryReturn')/100;
+  var sellCost=val('sellCost')/100, transfer=val('transferTax')/100, cgTax=val('capGainTax')/100;
+  var sameYear=sel('sameYearSale'), sec121=sel('sec121')==='yes';
+  var baseTax=annualPropTax(fmv,fbyv,prop19);
+  var baseCarry = baseTax + ins + water + elec + (fmv*capexPct);
+  var grossRent=rent*12;
+  var netRent=grossRent*(1-vacancy)*(1-opEx) - baseTax - ins - (fmv*capexPct) - water - elec;
+  var fmvH=fmv*Math.pow(1+appr,H);
+  var sellNetNow = fmv*(1-sellCost-transfer) - Math.max(0,(fmv-fmv)*cgTax); // step-up assumed at transfer for simplicity
+  var sellNetNowAdj = sellNetNow; // same-year flag adds warning, not formula change here
+  var reinvestH = sellNetNowAdj*Math.pow(1+stock,H);
+  // phased: 24 months treasury on 50%, rest DCA into stocks over 24 months, then all stock
+  var phaseYears=Math.min(2,H);
+  var phased = sellNetNowAdj*0.5*Math.pow(1+treas,Math.min(2,H))*Math.pow(1+stock,Math.max(0,H-2)) + sellNetNowAdj*0.5*Math.pow(1,(treas+stock)/2,Math.min(2,H))*Math.pow(1+stock,Math.max(0,H-2));
+  // living then sell after 5 years or horizon if less
+  var liveYears=Math.min(5,H);
+  var fmvLive=fmv*Math.pow(1+appr,liveYears);
+  var gainLive=Math.max(0,fmvLive-fmv); // stepped-up basis simplified
+  var exclusion = sec121 ? 250000 : 0;
+  var taxLive = Math.max(0,gainLive-exclusion)*cgTax;
+  var liveSellNet = fmvLive*(1-sellCost-transfer)-taxLive;
+  var liveThenSell = liveSellNet*Math.pow(1+stock,Math.max(0,H-liveYears));
+  var imputedAnnual = imputed*12 - baseTax - ins - water - elec - (fmv*capexPct);
+  var rentH = fmvH + (netRent * ((Math.pow(1+0.02,H)-1)/0.02)); // rough rent accumulation at 2%
+  var liveH = fmvH + (imputedAnnual * ((Math.pow(1+0.02,H)-1)/0.02));
+  var rows=[
+    {name:'Live in Property A (primary residence)', carry:baseCarry, flow:imputedAnnual, end:liveH, liq:'Low-Medium', risk:'Prop 19 eligibility; opportunity cost; capex/liquidity; occupancy commitment.'},
+    {name:'Rent Property A (market rent)', carry:baseCarry+grossRent*vacancy+grossRent*opEx, flow:netRent, end:rentH, liq:'Low', risk:'Vacancy, repairs, management, reassessment if not Prop 19 eligible, rent uncertainty.'},
+    {name:'Sell & invest (lump sum)', carry:0, flow:0, end:reinvestH, liq:'High', risk:'Reinvestment/sequence risk; tax drag; behavioral timing risk.'},
+    {name:'Sell, Treasury park 24-36m, then phase into stocks', carry:0, flow:0, end:phased, liq:'High', risk:'Lower expected return than full equity in up markets; reinvestment risk reduced but not removed.'},
+    {name:'Live 5 years then sell & invest', carry:baseCarry, flow:imputedAnnual, end:liveThenSell, liq:'Low then High', risk:'Needs §121/Prop 19 qualification; sale timing; future market conditions.'},
+    {name:'Rent 5 years then sell & invest', carry:baseCarry+grossRent*vacancy+grossRent*opEx, flow:netRent, end: (fmv*Math.pow(1+appr,Math.min(5,H))*(1-sellCost-transfer))*Math.pow(1+stock,Math.max(0,H-5)), liq:'Low then High', risk:'Rent/capex uncertainty; sale costs; reinvestment risk at exit.'}
+  ];
+  var tb=g('compareBody'); tb.innerHTML='';
+  rows.forEach(function(r){
+    var tr=document.createElement('tr');
+    var warn = r.name.indexOf('Sell')>-1 ? '<div class="risk-box"><strong>Reinvestment risk:</strong> end value assumes '+pct(stock*100)+' annual return; bad entry-year sequences can materially underperform.</div>' : '';
+    tr.innerHTML='<td><strong>'+r.name+'</strong>'+warn+'</td><td class="num">'+fmt(r.carry)+'</td><td class="num">'+fmt(r.flow)+'</td><td class="num">'+fmt(r.end)+'</td><td>'+r.liq+'</td><td class="small">'+r.risk+(sameYear==='yes'&&r.name.indexOf('Sell')>-1?' <strong>Same-tax-year sale selected: run CPA year-of-sale model.</strong>':'')+'</td>';
+    tb.appendChild(tr);
+  });
+  // mixed cards
+  var mixed=[
+    {t:'Phased Invest (Black Swan aware)', d:'Sell Property A, park 50% in 3M-2Y Treasury ladder for 24 months, DCA remaining 50% over 24 months, then hold target allocation.', end:phased, risk:'Reinvestment risk reduced vs lump sum; may lag in strong early bull market.'},
+    {t:'Live/Rent Hybrid', d:'Occupy Property A if Prop 19 eligible; rent a room/ADU only if legal and insurance/tax/local rules permit. Or live in B and rent A with professional management.', end:prop19==='yes'?liveH:rentH, risk:'Legal/insurance/use restrictions; Prop 19 occupancy must remain bona fide.'},
+    {t:'Partial Liquidity / Heir Equalization', d:'If multiple heirs or liquidity needs exist, consider buyout, partial sale, or loan only after stress testing rates and cash flow. (Fact-dependent.)', end:NaN, risk:'Debt service and family governance risk; not modeled without private terms.'}
+  ];
+  var mc=g('mixedCards'); mc.innerHTML='';
+  mixed.forEach(function(m){
+    var div=document.createElement('div'); div.className='card';
+    div.innerHTML='<h3>'+m.t+'</h3><p class="small">'+m.d+'</p><p class="metric">Illustrative end net value: <strong>'+ (isNaN(m.end)?'Needs private inputs':fmt(m.end)) +'</strong></p><div class="risk-box"><strong>Reinvestment/implementation risk:</strong> '+m.risk+'</div>';
+    mc.appendChild(div);
+  });
+  // distribution chart
+  var base=reinvestH; var cons=base*0.65; var opt=base*1.45;
+  var max=Math.max(cons,base,opt,rentH,liveH)*1.1;
+  function bar(x,label,val,color){
+    var h=160*(val/max); var y=180-h;
+    return '<g><rect x="'+x+'" y="'+y+'" width="90" height="'+h+'" fill="'+color+'"></rect><text x="'+(x+45)+'" y="'+(y-6)+'" text-anchor="middle" font-size="11">'+fmt(val)+'</text><text x="'+(x+45)+'" y="198" text-anchor="middle" font-size="11">'+label+'</text></g>';
+  }
+  var svg='<svg class="chart" viewBox="0 0 760 210" role="img" aria-label="Distribution chart">';
+  svg+='<line x1="30" y1="180" x2="740" y2="180" stroke="#cfd9e4"/>';
+  svg+=bar(50,'Sell/Invest Cons.',cons,'#8fb3d9');
+  svg+=bar(160,'Sell/Invest Base',base,'#1a5fb4');
+  svg+=bar(270,'Sell/Invest Opt.',opt,'#164a8a');
+  svg+=bar(400,'Rent Base',rentH,'#5a8f66');
+  svg+=bar(510,'Live Base',liveH,'#7b6aa6');
+  svg+=bar(620,'Phased Base',phased,'#b07d2a');
+  svg+='</svg><p class="small muted">Chart compares illustrative end net values at selected horizon. Conservative/optimistic are simple +/- stress bands, not statistical forecasts.</p>';
+  g('distChart').innerHTML=svg;
+}
+['fmv','fbyv','prop19','horizon','appreciation','rent','imputedRent','vacancy','opEx','capex','insA','waterA','elecA','stockReturn','treasuryReturn','sellCost','transferTax','capGainTax','sameYearSale','sec121'].forEach(function(id){g(id).addEventListener('input',calc);g(id).addEventListener('change',calc);});
+calc();
+</script>
+</body>
+</html>

@@ -125,3 +125,20 @@ Static decision-support dashboard for anonymized California property planning. T
 ## Local preview
 
 Open `docs/index.html` in a browser, or run a simple static server from `docs/`.
+
+---
+
+## Additional Privacy-First Docs Dashboard (`docs/`)
+
+Session `sess-99b3f90f` added an additive static dashboard in [`docs/`](docs/) (no build step) with:
+
+- [Dashboard](docs/index.html) - "What would change the answer" first
+- [Executive Summary](docs/pages/executive-summary.html)
+- [Printable Attorney & CPA Briefing Sheet](docs/pages/briefing-sheet.html)
+- [Projections & Scenarios](docs/pages/projections.html) - what-if controls, mixed paths, reinvestment risk
+- [Black Swan Scenarios](docs/pages/black-swan.html) - phased 3M-2Y Treasury parking (24-36 months) then DCA
+- [Tax & Legal Rules](docs/pages/tax-legal.html), [Timeline](docs/pages/timeline.html), [Glossary](docs/pages/glossary.html)
+- [Questions & Missing Info](docs/pages/questions.html), [Suggestions](docs/pages/suggestions.html)
+- [Flagged for Review](docs/pages/flagged-review.html), [Sources](docs/pages/sources.html), [Privacy](docs/pages/privacy.html)
+
+Privacy: anonymized Property A/B labels only; all displayed currency rounded to nearest $10; user-supplied values marked unverified. Run `python3 -m http.server 8000 --directory docs` for local preview.

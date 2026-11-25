@@ -111,3 +111,21 @@ Shared task board for parallel agent sessions. Update before starting work.
 
 ## Log
 - 2026-11-25 fd4a10e1: Claimed full scope. Built privacy-first static dashboard in docs/. Added scenarios, black swan phased Treasury+DCA path, timeline, tax/legal references, questions, suggestions, printable brief, glossary, sources, flagged review. Rounded all published figures to nearest $10; anonymized Property A/B. Next: commit, push, PR, merge, deploy GitHub Pages.
+
+
+---
+
+## Session `arena/99b3f90f-tinodash1` — Integration Log (2026-11-25, PR #12)
+- **Branch**: `arena/99b3f90f-tinodash1` (PR #12, base `main`).
+- **Deliverables (additive, privacy-first static dashboard in `docs/`)**:
+  - `docs/index.html` + 15 subpages in `docs/pages/` (executive summary, printable attorney/CPA briefing sheet, inheritance process, property comparison, projections with what-if controls, black swan scenarios, tax/legal rules, timeline, decision framework, questions/missing info, suggestions, glossary, sources registry, flagged for review, privacy/data handling).
+  - `docs/assets/style.css`, `docs/assets/app.js` (shared static UI; no build step).
+  - `docs/data/sources.json`, `docs/templates/private-estate-inventory-template.csv`.
+  - `.github/workflows/pages.yml` (GitHub Pages deploy from `docs/` on push to main / workflow_dispatch). **Note:** main currently uses root-based site; this workflow is additive - verify Pages configuration before relying on it.
+  - Updated `README.md`, `.gitignore`.
+- **Key features**: "What would change the answer" on first screen; mixed paths; phased investing path (3M-2Y Treasuries 24-36 months, then DCA into stocks) in Black Swan; reinvestment risk shown beside headlines; what-if controls; imputed rent input; §121 toggle for living-then-sell; Prop 19 cap carry-forward note; transfer/recording fee in sell path; same-tax-year sale toggle; distribution chart; printable one-page attorney/CPA briefing sheet; deadlines timeline; grouped menu + glossary; suggestions review section; flagged-for-review page.
+- **Privacy**: No names, exact addresses, ZIP codes, parcel/APN IDs, or unrounded personal financial values. All displayed currency rounded to nearest $10. User-supplied historical values marked unverified. Git history audited (initial commit only before work); no ZIPs/raw sensitive values found by grep audit. External prior exposure cannot be proven from this repo.
+- **Verification**: Internal link check 0 missing across 16 docs HTML pages. PII grep audit clean for ZIPs/unrounded raw values.
+- **Sources**: IRS (estate tax, 706, Pub 551/523/527, Topic 701/559, 1031), CA BOE (Prop 19, BOE-19-P, LTA 2025/009 cap $1,044,586 for 2/16/2025-2/15/2027), CA LegInfo RTC §63.2, CA FTB (2025 540 booklet, Behavioral Health Services Tax 1% over $1M, capital gains as ordinary income), CA SCO, Santa Clara County Clerk-Recorder/Assessor, SF Rent Board/SF.gov OMI, Federal Reserve History.
+- **Flagged/unresolved**: Property A/B estimates, historical taxes/assessments, rent/insurance/utilities are user-supplied unverified; Property A market rent missing; TRA/parcel-specific rate requires private lookup; Prop 19 eligibility fact-specific; estate total/prior gifts/portability unknown; "Prop H" measure ambiguous; Property B leases/rent-control status unverified; same-tax-year sale and 1031 need CPA/attorney; external prior data exposure unprovable from repo.
+- **Status**: PR #12 merged after resolving .gitignore/COORDINATION/README conflicts with origin/main; no other-session work discarded.

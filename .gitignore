@@ -1,8 +1,25 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Dependencies / builds
 node_modules/
 __pycache__/
 *.pyc
-.DS_Store
+dist/
+build/
 .cache/
 .playwright-cli/
+
+# Private/local working files - never commit raw PII
+private/
 private-*
+*.private.*
+*.secret.*
 *.local.json
+.env
+.env.*

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy & Data Handling | Estate Decision Dashboard</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="layout">
+  <aside class="sidebar">
+    <p class="brand">Estate Decision Dashboard</p><p class="brand-sub">Privacy-first analysis. No personal identifiers.</p>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-group">Overview</div><a href="../index.html">Dashboard</a><a href="executive-summary.html">Executive Summary</a><a href="briefing-sheet.html">Attorney &amp; CPA Briefing Sheet</a>
+      <div class="nav-group">Analysis</div><a href="inheritance-process.html">Inheritance Process</a><a href="property-comparison.html">Property Comparison</a><a href="projections.html">Projections &amp; Scenarios</a><a href="black-swan.html">Black Swan Scenarios</a><a href="tax-legal.html">Tax &amp; Legal Rules</a><a href="timeline.html">Deadlines Timeline</a>
+      <div class="nav-group">Decision Support</div><a href="decision-framework.html">Decision Framework</a><a href="questions.html">Questions &amp; Missing Info</a><a href="suggestions.html">Suggestions &amp; Improvements</a>
+      <div class="nav-group">Reference</div><a href="glossary.html">Glossary</a><a href="sources.html">Sources Registry</a><a href="flagged-review.html">Flagged for Review</a><a href="privacy.html">Privacy &amp; Data Handling</a>
+    </nav>
+  </aside>
+  <main class="main" id="content">
+    <header class="page-header"><p class="eyebrow">Privacy-First</p><h1>Privacy &amp; Data Handling</h1><p class="lead">Personal information privacy is top priority. This repo/site uses anonymized placeholders and rounded values. No names, exact addresses, ZIP codes, parcel/APN IDs, account numbers, or unrounded personal financial records are published.</p></header>
+
+    <div class="banner banner-danger"><strong>Rule:</strong> Do not commit PII to git, issues, PRs, screenshots, or site pages. If PII is discovered, remove it from files and scrub git history before pushing/publication.</div>
+
+    <section class="section">
+      <h2>Privacy Controls Applied</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Control</th><th>Implementation</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Anonymized property labels</td><td>Property A (Cupertino, Santa Clara County, CA) and Property B (San Francisco, CA). No exact addresses/ZIPs/APNs.</td><td><span class="pill pill-ok">Applied</span></td></tr>
+          <tr><td>Rounding</td><td>All displayed currency values rounded to nearest $10. User-supplied historical tax/assessment values rounded and marked unverified.</td><td><span class="pill pill-ok">Applied</span></td></tr>
+          <tr><td>No PII in site</td><td>No names, emails, phone numbers, account numbers, SSNs, or exact parcel identifiers.</td><td><span class="pill pill-ok">Applied</span></td></tr>
+          <tr><td>Private inventory separation</td><td>Private records should be stored outside repo or in ignored `private/` path; never committed.</td><td><span class="pill pill-warn">Process required</span></td></tr>
+          <tr><td>Git history audit</td><td>Repo audited on 2026-11-25: only initial commit `8f95825` containing `README.md`. Grep audit found no user-supplied ZIP codes or raw sensitive values in tracked files/history at audit time.</td><td><span class="pill pill-ok">Audited (this repo)</span></td></tr>
+          <tr><td>Prior public-data exposure containment</td><td>This repo cannot prove whether data existed elsewhere before this session. Flagged for external review (forks/caches/old copies).</td><td><span class="pill pill-warn">External review needed</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="section">
+      <h2>Git History Scrub Checklist</h2>
+      <div class="card">
+        <ol class="clean">
+          <li>Search tracked files and git history for PII patterns (names, addresses, ZIPs, exact parcel IDs, account numbers).</li>
+          <li>If found, remove from working tree and rewrite history using <code>git filter-repo</code> or equivalent on a clean clone.</li>
+          <li>Force-push rewritten history only with explicit coordination; invalidate caches/forks where possible.</li>
+          <li>Rotate any exposed credentials/secrets immediately (not applicable to normal property data, but mandatory for secrets).</li>
+          <li>Document scrub in COORDINATION.md and Flagged for Review.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Safe Handling Rules</h2>
+      <ul class="clean">
+        <li>Use ranges/rounded figures in public artifacts.</li>
+        <li>Keep appraisals, tax returns, trust documents, leases, and account statements in private storage only.</li>
+        <li>When sharing with advisers, use secure channels and redact unnecessary identifiers.</li>
+        <li>Before every commit, run a PII grep audit.</li>
+      </ul>
+    </section>
+
+    <footer class="footer"><p>Privacy is a process, not a one-time filter. Re-audit before every publish.</p></footer>
+  </main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
