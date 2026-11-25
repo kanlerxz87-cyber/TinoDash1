@@ -110,19 +110,28 @@ if (fs.existsSync(propPath)) {
   checkDivisibleBy10(propData, 'properties');
 }
 
-// 3. Scan git commits added on current branch vs main
+// 3. Scan new diffs introduced over origin/main (or workspace HEAD if origin/main missing)
 try {
-  const diff = execSync('git log -p main..HEAD --no-color', { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 });
-  for (const rule of PII_PATTERNS) {
-    const matches = diff.match(rule.regex) || [];
-    for (const m of matches) {
-      if (rule.allowList.includes(m)) continue;
-      if (rule.ignoreSuffix && m.endsWith(rule.ignoreSuffix)) continue;
-      errors.push(`[Git History Check] matched "${m}" (${rule.name})`);
+  let targetRange = 'origin/main..HEAD';
+  try {
+    execSync('git rev-parse --verify origin/main', { stdio: 'ignore' });
+  } catch {
+    targetRange = 'HEAD~1..HEAD';
+  }
+  const diff = execSync(`git diff --no-color ${targetRange}`, { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 });
+  for (const line of diff.split('\n')) {
+    if (!line.startsWith('+') || line.startsWith('+++')) continue;
+    for (const rule of PII_PATTERNS) {
+      const matches = line.match(rule.regex) || [];
+      for (const m of matches) {
+        if (rule.allowList.includes(m)) continue;
+        if (rule.ignoreSuffix && m.endsWith(rule.ignoreSuffix)) continue;
+        errors.push(`[Branch Diff Check] matched "${m}" (${rule.name})`);
+      }
     }
   }
 } catch {
-  // ignore if no branch commits yet
+  // ignore if single-commit checkout without base ref
 }
 
 if (errors.length > 0) {
