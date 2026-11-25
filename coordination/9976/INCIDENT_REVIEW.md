@@ -6,7 +6,8 @@
 
 - This session started from an initial README-only commit. Multiple other sessions subsequently merged overlapping implementations to public `main`.
 - A value-suppressed comparison identified household-specific information in the publicly reachable repository. Rounding to $10 does not remove linkage risk. A further pull request with the same problem was closed without deleting its branch.
-- GitHub reported that the repository was public and the Pages deployment was built. A request to make the repository private and a request to delete the Pages site both returned HTTP 403, “Resource not accessible by integration.” Neither operation succeeded.
+- GitHub reported that the repository was public and the Pages deployment was built. Directly fetching the live homepage confirmed that it displays household-specific information and unresolved merge-conflict markers. It also presents a tax outcome as certain without sufficient facts; do not rely on the current site for decisions.
+- A request to make the repository private and a request to delete the Pages site both returned HTTP 403, “Resource not accessible by integration.” Neither operation succeeded.
 - The situation is therefore **not contained**. A live site, a deletion in a later commit, or a passing build is not evidence of privacy.
 
 ## Immediate response
