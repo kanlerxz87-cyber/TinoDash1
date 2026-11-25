@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.cache/
+*.pem
+*.key
+*.p12
+secrets/
+private/
+*.bak
+*~
