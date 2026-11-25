@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decisions, Discovery &amp; Glossary — Estate Decision Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="topbar"></header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Decision Log, Missing Information, Suggestions &amp; Glossary</h1>
+      <p>Pre-agreed household decision criteria, discovery checklist, site improvement suggestions, and plain-English definitions.</p>
+    </div>
+
+    <div class="card">
+      <h2>Pre-Agreed Decision Criteria &amp; Decision Log</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Item / Rule</th><th>Trigger / Condition</th><th>Decision</th><th>Date</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Same-Year Sale (Pure or Phased)</strong></td>
+              <td>Heir prefers to remain in Property B (SF) &amp; equities return &gt; net rental yield.</td>
+              <td>Pending Trust Transfer</td>
+              <td>2026-11-25</td>
+            </tr>
+            <tr>
+              <td><strong>Live-In 3+ Yrs → Sell (IRC § 121)</strong></td>
+              <td>Heir wants to relocate to Cupertino long-term; Prop 19 + $250k/$500k § 121 apply.</td>
+              <td>Pending</td>
+              <td>2026-11-25</td>
+            </tr>
+            <tr>
+              <td><strong>Phased Investing (3M–2Y Treasuries)</strong></td>
+              <td>Used if CAPE/valuations are elevated at transfer to soften 1929/2008 crash entry.</td>
+              <td>Adopted in IPS Draft</td>
+              <td>2026-11-25</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Model Re-Run</strong></td>
+              <td>Re-run every year with updated BOE Prop 19 cap, IRS exemption, &amp; FMV.</td>
+              <td>Scheduled Annually</td>
+              <td>2026-11-25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Missing Information &amp; Discovery Questions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Missing Item</th><th>Why It Matters</th><th>How to Discover</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Total Liquid Estate Value &amp; Prior Gifts</strong></td>
+              <td>Determines if estate exceeds $15M/$30M federal exemption (40% tax).</td>
+              <td>Review trust balance sheet &amp; Form 709 gift tax returns with CPA.</td>
+            </tr>
+            <tr>
+              <td><strong>Property A Exact Tax Rate Area (TRA)</strong></td>
+              <td>Confirms exact parcel taxes &amp; bond add-ons (currently ~1.33% effective).</td>
+              <td>Look up APN on Santa Clara County Assessor / Tax Collector portal.</td>
+            </tr>
+            <tr>
+              <td><strong>Property A Formal Rental Comps</strong></td>
+              <td>Replaces $5,800/mo benchmark with exact bed/bath/sq ft market rent.</td>
+              <td>Request CMA from local Cupertino property manager.</td>
+            </tr>
+            <tr>
+              <td><strong>Property B Leases &amp; Rent Control Status</strong></td>
+              <td>Verifies SF Rent Board coverage, allowable annual increases, and Prop H ($65/unit cap).</td>
+              <td>Audit current leases &amp; building permit date (pre/post-1979).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Site Improvement Suggestions (For Review Before Implementing)</h2>
+      <ul>
+        <li><strong>Monte Carlo Simulator:</strong> Add 1,000-run randomized return/inflation simulation to show 10th/50th/90th percentile wealth bands.</li>
+        <li><strong>CPA CSV Export:</strong> Add a one-click CSV export of the 50-year projection table for tax software import.</li>
+        <li><strong>Legislative Tracker Feed:</strong> Add a dedicated tracker for proposed CA Prop 19 amendments and federal estate tax bills.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Glossary</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>IRC § 1014 (Step-Up in Basis)</th><td>Resets the tax basis of inherited property to Fair Market Value at Date of Death, eliminating prior capital gains.</td></tr>
+            <tr><th>Prop 19 (CA)</th><td>Allows parent-to-child exclusion up to $1,044,586 (2025–2027) ONLY if the heir moves in within 1 year as principal residence.</td></tr>
+            <tr><th>IRC § 121</th><td>Excludes $250,000 (single) or $500,000 (married) of capital gain when selling a primary residence lived in 2 of the last 5 years.</td></tr>
+            <tr><th>IRC § 1250 Recapture</th><td>Taxes prior rental depreciation deductions upon sale (up to 25% federal + CA ordinary income).</td></tr>
+            <tr><th>Reinvestment Risk</th><td>The risk that cash/Treasuries earn less than equities or lose purchasing power during a 24–36 month staging window.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => renderNav("decisions.html"));</script>
+</body>
+</html>

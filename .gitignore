@@ -1,16 +1,22 @@
+# Privacy & hygiene
+private/
+_private/
+estate-inventory*.pdf
+estate-inventory*.xlsx
+*.env
 .DS_Store
 Thumbs.db
-*.log
-.env
-.env.*
-!.env.example
-node_modules/
+
+# Build artifacts (keep site static — no build required)
+.node_modules/
 dist/
-.cache/
-*.pem
-*.key
-*.p12
-secrets/
-private/
-*.bak
-*~
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Allow GitHub Pages files
+!.nojekyll
+!docs/

@@ -1,149 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suggestions Review Board · TinoDash1 — Inheritance Decision Lab</title>
-<meta name="description" content="Inheritance decision analysis: Property A (Cupertino) vs Property B (San Francisco) — taxes, Prop 19, reassessment, black-swan reinvestment, projections. Privacy-first; figures rounded to the nearest $10.">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🏠</text></svg>">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions — TinoDash</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="topbar"><span><strong>PRIVACY-FIRST</strong> · Placeholders only (Property A / Property B) · Figures rounded to nearest $10 · Ranges over points · Not legal/tax/financial advice</span><span>As of <strong>Nov 25, 2026</strong> · Re-verify quarterly</span></div>
-<header class="site">
-  <div class="brand">🏠 <span>TinoDash1 — Inheritance Decision Lab<small>Property A (Cupertino, by trust ≈ 2040–2050) vs Property B (Outer Sunset, SF — already owned)</small></span></div>
-</header>
-<nav class="mainnav" aria-label="Main navigation">
-  <div class="navwrap">
-    <div class="navgroup"><button aria-haspopup="true">Overview ▾</button><div class="navdrop" role="menu">
-      <a href="index.html">Executive Summary<span>The answer, the numbers, and what would change it</span></a>
-      <a href="briefing.html">Attorney &amp; CPA Briefing Sheet<span>One page, printable</span></a>
-    </div></div>
-    <div class="navgroup"><button aria-haspopup="true">Properties ▾</button><div class="navdrop" role="menu">
-      <a href="property-a.html">Property A — Cupertino (inherited)<span>95014 · ~$3,100,000 (Nov 2026 est.)</span></a>
-      <a href="property-b.html">Property B — San Francisco (owned)<span>94122 · ~$1,800,000 · 2 of 3 units rented</span></a>
-      <a href="inheritance.html">Inheritance, Step by Step<span>From date of death to reinvestment</span></a>
-    </div></div>
-    <div class="navgroup"><button aria-haspopup="true">Analysis ▾</button><div class="navdrop" role="menu">
-      <a href="compare.html">Compare All Paths<span>Same transfer dates &amp; horizons · same assumptions</span></a>
-      <a href="projections.html">Interactive Projections &amp; What-Ifs<span>Controls, payoffs by year, distribution chart</span></a>
-      <a href="blackswan.html">Black Swan Lab<span>1929 / 1973–74 / 2000–02 / 2008 repriced on Property A</span></a>
-      <a href="taxes.html">Tax Worksheet<span>Federal 2026 · CA incl. 1% BHSA &gt; $1M · step-up · §121</span></a>
-      <a href="prop19.html">Proposition 19, Deconstructed<span>Eligibility, math, forms, carry-forward</span></a>
-      <a href="timeline.html">Deadlines as a Timeline<span>9 mo · 1 yr · 3 yrs · annual</span></a>
-    </div></div>
-    <div class="navgroup"><button aria-haspopup="true">Decisions ▾</button><div class="navdrop" role="menu">
-      <a href="precommit.html">Pre-Commitment Agreement<span>Decide the triggers BEFORE the figures arrive</span></a>
-      <a href="investing-policy.html">Investment Policy Statement<span>For the proceeds, before they exist</span></a>
-      <a href="suggestions.html">Suggestions Review Board<span>Select / approve — nothing auto-implements</span></a>
-      <a href="questions.html">Questions &amp; Missing Info<span>What must be answered first, and how to find it</span></a>
-    </div></div>
-    <div class="navgroup"><button aria-haspopup="true">Reference ▾</button><div class="navdrop" role="menu">
-      <a href="law-tracker.html">Law Tracker<span>Enacted vs proposed · recheck cadence</span></a>
-      <a href="sources.html">Sources &amp; Verification Log<span>Every figure → an official link</span></a>
-      <a href="flagged.html">Flagged for Review<span>Unverified items &amp; irregularities</span></a>
-      <a href="assumptions.html">Assumptions &amp; Method<span>$10 rounding · ranges · model limits</span></a>
-      <a href="glossary.html">Glossary<span>Plain-English definitions</span></a>
-    </div></div>
-  </div>
-</nav>
-<main>
-<div class="kicker">Suggestions &amp; review board · nothing here auto-implements</div>
-<h1 style="margin-top:.2rem">Improve the site and the process — then pick, deliberately</h1>
-<p class="small">Every suggestion below carries a <b>review decision</b>: Approve (queued for a future change), Defer (maybe later), Reject (don’t). Selections are stored only in this browser (localStorage) — nothing is implemented, published, or merged because of a button here. Export your picks and hand them to whoever maintains the site.</p>
-
-<div class="card no-print">
-  <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
-    <button class="btn" id="exportBtn">Export my review (copy)</button>
-    <button class="btn secondary" id="clearBtn">Clear selections</button>
-    <span class="small" id="tally">0 approved · 0 deferred · 0 rejected</span>
-  </div>
-  <textarea id="exportBox" style="width:100%;height:110px;margin-top:.5rem" readonly placeholder="Your export appears here…"></textarea>
+<header class="topbar"><div class="brand">TinoDash <span>— Suggestions to Improve Decision Making</span></div><div class="meta"><a class="btn" href="index.html">← Dashboard</a></div></header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group"><h4>Dashboard</h4><div class="nav"><a href="index.html">🏠 Summary</a><a href="timeline.html">⏱️ Deadlines</a><a href="sensitivity.html">🎛️ What-Ifs</a></div></div>
+    <div class="nav-group"><h4>Decide</h4><div class="nav"><a href="paths.html">🔀 Paths</a><a href="blackswan.html">🦢 Black-Swan</a><a href="property-tax.html">🏷️ Prop Tax</a><a href="estate.html">⚖️ Estate vs Basis</a></div></div>
+    <div class="nav-group"><h4>Own & Operate</h4><div class="nav"><a href="sf-property.html">🏢 Property B</a><a href="insurance-maintenance.html">🛡️ 5-Yr Plan</a></div></div>
+    <div class="nav-group"><h4>Verify</h4><div class="nav"><a href="methodology.html">🧪 Methodology</a><a href="legislation.html">📜 Legislation</a><a href="sources.html">🔗 Sources</a><a href="flagged.html">🚩 Flagged</a></div></div>
+    <div class="nav-group"><h4>Help</h4><div class="nav"><a href="glossary.html">📖 Glossary</a><a href="questions.html">❓ Missing Info</a><a class="active" href="suggestions.html">💡 Suggestions</a></div></div>
+  </aside>
+  <main class="main">
+    <div class="card">
+      <div class="kicker">Make suggestions on how to improve the site to improve decision making — review & choose best path before implementing</div>
+      <h2>Suggestions backlog — vote before building</h2>
+      <p style="font-size:13px">This page is a dedicated section for improvement proposals. Each suggestion states the problem, proposal, and impact. Review quarterly; implement only after choosing the best path. Status = proposed / accepted / done / rejected.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Problem</th><th>Proposal</th><th>Impact</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>S01</td><td>Round-number assumptions made model brittle</td><td>Done: Replace points with ranges (1.5–4.5% appreciation, 5–8% stocks) + distribution chart (P10–P90)</td><td>Prevents false precision; see <a href="index.html">Dashboard</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S02</td><td>Dashboard didn’t say what would change answer</td><td>Done: “What would change the answer” on first screen with pre-commit triggers</td><td>Stops reverse-engineering; <a href="index.html">First screen</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S03</td><td>Mixed paths not modeled (only 3 pure)</td><td>Done: Added Live→Sell w/ §121, Rent→Sell, Phased Treasuries→DCA — same dates/horizons</td><td>Captures realistic households; <a href="paths.html">Paths</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S04</td><td>No crash-entry stress test</td><td>Done: Black-Swan page with 1929/2008 entry + phased 3M-2Y Treasuries 24-36 mo then DCA, reinvestment risk labeled</td><td>Separates fear from math; <a href="blackswan.html">Black-Swan</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S05</td><td>Reinvestment risk hidden beside staging headline</td><td>Done: Reinvestment-risk callout beside every “park in Treasuries” headline with $/yr math</td><td>Makes staging cost visible; <a href="index.html">Dashboard</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S06</td><td>Deadlines scattered</td><td>Done: Visual timeline (DOD+1yr Prop 19, 9-mo 706, same-year sale, §121 2-of-5, appeals, annual re-run)</td><td>Prevents missed filings; <a href="timeline.html">Timeline</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S07</td><td>Menu ungrouped, jargon undefined</td><td>Done: Grouped menu (Decide/Own/Verify) + glossary with 30+ terms</td><td>Usability; <a href="glossary.html">Glossary</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S08</td><td>Comparison not at same dates/horizons</td><td>Done: All paths at 10/20/30/50 yr from same transfer date, with taxes/debt/occupancy/capital/liquidity</td><td>Apples-to-apples; <a href="paths.html">Paths</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S09</td><td>Legislation not distinguished</td><td>Done: Enacted vs Proposed tracker with recheck log & quarterly cadence</td><td>Prevents modeling proposals as law; <a href="legislation.html">Tracker</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S10</td><td>No private inventory</td><td>Done: Private inventory template (not hosted) + guidance to keep encrypted, bring anonymized summary</td><td>Privacy; <a href="estate.html#inventory">Estate</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S11</td><td>No one-page brief for advisers</td><td>Done: Printable Attorney & CPA Briefing Sheet (rounded $10, no PII)</td><td>Adviser meetings; <a href="briefing.html">Briefing</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S12</td><td>Git history exposed prior public data</td><td>Done: Verified single-commit history, privacy-first repo, anonymized values, rounding</td><td>Privacy; <a href="methodology.html">Methodology</a></td><td><span class="badge live">Done</span></td></tr>
+            <tr><td>S13</td><td>Future proposals — not yet built</td><td>Live PDF export of briefing sheet with QR to model; local-only encrypted What-If inputs that never leave browser</td><td>Convenience + privacy</td><td><span class="badge">Proposed</span></td></tr>
+            <tr><td>S14</td><td>Future proposals — not yet built</td><td>Add mortgage/HELOC toggle (rate, balance, IO vs amortizing) — currently assumes no debt (verified? <span class="flag">UNVERIFIED</span>)</td><td>Completes liquidity picture</td><td><span class="badge">Proposed</span></td></tr>
+            <tr><td>S15</td><td>Future proposals — not yet built</td><td>Year-by-year cash-flow table (not only terminal wealth) to show liquidity valleys</td><td>Answers “can I afford carry?”</td><td><span class="badge">Proposed</span></td></tr>
+            <tr><td>S16</td><td>Future proposals — not yet built</td><td>Rent comps ingestion: paste 3 MLS comps → auto-updates Rent path floor vs verified</td><td>Closes biggest missing input</td><td><span class="badge">Proposed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px; color:var(--muted)">To propose a new suggestion: open a GitHub issue on the repo with label “suggestion”. Suggestions are reviewed before implementation — this page is the decision log.</p>
+    </div>
+    <div class="footer"><a href="index.html">← Dashboard</a> · <a href="questions.html">Missing info</a></div>
+  </main>
 </div>
-
-<div id="board"></div>
-
-<h2>Standing decision gates (recap)</h2>
-<div class="callout">Before any suggestion touches the site or the plan: (1) Is it privacy-safe? (2) Is every number either rounded to $10 or from an official, linked source? (3) Does it reverse-engineer an outcome? If yes to (3), reject it. (4) Would the attorney or CPA disagree? Ask them first — the <a href="briefing.html">briefing sheet</a> covers this.</div>
-
-<script>
-const SUGGESTIONS = [
-  ["Site: add one-click PDF/print export for the whole site (window.print + print CSS already added for briefing pages)", "Printable brief for counsel meetings", "Low effort · High value"],
-  ["Site: persist a session-local decision log with date + rationale per suggestion (this board) and print it into the estate binder", "Audit trail for the family and the attorney", "Low effort · High value"],
-  ["Process: order the written date-of-death appraisal BEFORE any occupancy/rent/sale discussion", "Every number on the site keys off FMV; the #1 uncertainty is the value itself", "Zero cost · Decisive"],
-  ["Process: hold the pre-commitment signing with the attorney BEFORE the appraisal is read", "Prevents motivated-reasoning override of the agreed triggers", "Zero cost · Decisive"],
-  ["Process: quarterly calendar reminder to re-check the Law Tracker and re-run Projections", "2040–2050 transfer will face a different statute than today’s", "Low cost · High value"],
-  ["Model: upgrade Monte Carlo to antithetic variates + 10,000 paths and add regime switching (bull/bear/stagflation)", "Tighter distribution tails; better black-swan fidelity", "Medium effort · Medium value (illustrative either way)"],
-  ["Model: replace $55,000 imputed-rent default with actual B-comparable rents for A (2 CMAs)", "Converts the largest unverified input into evidence", "Low cost · High value"],
-  ["Model: add explicit after-tax bond sleeve (CA muni ladder) as a comparator to Treasury ladder", "CA top 13.3% makes munis potentially superior in the phased window; confirm with CPA", "Medium effort · Medium value"],
-  ["Model: add estate-liquidity stress case (estate > exclusion) with forced-sale math", "Completes the edge case the site flags but doesn’t fully solve", "Medium effort · High value if estate is large"],
-  ["Model: add Prop 19 edge case — partial interest transfers to multiple children with one occupying", "Common family structure; exclusion applies pro rata", "Medium effort · Medium value"],
-  ["Data: obtain A’s TRA code + published secured rate; decompose 1.34% effective rate into ad valorem vs direct charges", "Exactness where approximations now stand; strengthens any supplemental protest", "Zero cost · Decisive"],
-  ["Data: decompose B’s 2.14% effective rate (bond/levy changes) — incl. the unexplained 2018 jump", "Explains fixed levies stacking onto Prop H from 2027", "Zero cost · Medium value"],
-  ["Decision: re-quote insurance for both buildings (A high-value HO; B DP-3 landlord) before modeling carry costs again", "Insurance is the most volatile line item in the sheet", "Low cost · High value"],
-  ["Decision: ask CPA to model same-year-sale under community-property double step-up (if deed allows)", "Could save tens/hundreds of thousands if A is CP", "Zero cost · High value"],
-  ["Decision: ask attorney whether §1031 is wanted for any future B sale (held-for-investment after full vacancy?)", "1031 defers but forces reinvestment into real estate; incompatible with Treasury ladder", "Zero cost · Medium value"],
-  ["Design: split projections into “Today snapshot” and “At death” tabs to reduce control clutter", "Usability; less mis-entry risk", "Low effort · Medium value"],
-  ["Design: add a one-page “print all decision pages” bundle (precommit + IPS + briefing)", "One PDF for the binder", "Low effort · Medium value"],
-  ["Content: add a worked “rent A under optimistic 5% rent growth + Prop 13” sensitivity to prove rent still loses", "Kills the rent path conclusively on evidence", "Low effort · Medium value"],
-  ["Content: add a measured “§121-then-sell” worked example with real exclusion math (done on Tax Worksheet — link from Compare)", "Ties paths to statutes", "Done — verify links"],
-  ["Compliance: add automated link-checker to CI (GitHub Action) failing on any broken source link", "“Every table row must have a source link” stays true forever", "Low effort · High value"],
-  ["Compliance: pre-commit a semi-annual PII sweep of git history (git log -p | grep patterns) with results logged", "Privacy-first is a process, not a one-time audit", "Low effort · High value"],
-  ["Review: publish the site only from main after final integration verification; keep this branch until merged", "No half-built site ever goes live", "Zero cost · Mandatory"],
-  ["Offer a “compare CPA vs proposed CPA advice” page — a second-opinion prompt list", "Second readings catch systematic errors", "Low effort · Medium value"],
-];
-const KEY='tinodash1-review-v1';
-const state=JSON.parse(localStorage.getItem(KEY)||'{}');
-const board=document.getElementById('board');
-SUGGESTIONS.forEach((s,i)=>{
-  const id='s'+i;
-  const div=document.createElement('div');
-  div.className='card';
-  div.innerHTML=`<div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap">
-    <div style="flex:1 1 520px"><div class="kicker" style="color:var(--accent2)">S${String(i+1).padStart(2,'0')} · ${s[2]}</div>
-      <div style="font-size:.95rem;font-weight:600;margin:.2rem 0">${s[0]}</div>
-      <div class="small">Why: ${s[1]}</div></div>
-    <div class="seg" data-id="${id}" style="display:flex;gap:.3rem;flex-wrap:wrap">
-      <button class="btn ghost pick" data-v="approve">Approve</button>
-      <button class="btn ghost pick" data-v="defer">Defer</button>
-      <button class="btn ghost pick" data-v="reject">Reject</button>
-    </div></div>`;
-  board.appendChild(div);
-});
-function refresh(){
-  document.querySelectorAll('.seg').forEach(seg=>{
-    const v=state[seg.dataset.id];
-    seg.querySelectorAll('.pick').forEach(b=>{
-      b.classList.toggle('secondary', b.dataset.v===v);
-      b.style.background = b.dataset.v===v ? (v==='approve'?'#146c2e':v==='defer'?'#8a5a00':'#b3261e') : '';
-      b.style.color = b.dataset.v===v ? '#fff' : '';
-    });
-  });
-  const c={approve:0,defer:0,reject:0}; Object.values(state).forEach(v=>c[v]=(c[v]||0)+1);
-  document.getElementById('tally').textContent=`${c.approve} approved · ${c.defer} deferred · ${c.reject} rejected`;
-}
-board.addEventListener('click',e=>{
-  const b=e.target.closest('.pick'); if(!b) return;
-  const id=b.closest('.seg').dataset.id;
-  state[id]=state[id]===b.dataset.v?undefined:b.dataset.v;
-  if(!state[id]) delete state[id];
-  localStorage.setItem(KEY, JSON.stringify(state)); refresh();
-});
-document.getElementById('exportBtn').addEventListener('click',()=>{
-  const c={approve:[],defer:[],reject:[]};
-  SUGGESTIONS.forEach((s,i)=>{const v=state['s'+i]; if(v) c[v].push(`S${String(i+1).padStart(2,'0')}: ${s[0]}`);});
-  const txt=['# TinoDash1 — Suggestions review export ('+new Date().toISOString().slice(0,10)+')','','## Approved',...c.approve,'','## Deferred',...c.defer,'','## Rejected',...c.reject].join('\n');
-  document.getElementById('exportBox').value=txt; txt&&navigator.clipboard&&navigator.clipboard.writeText(txt);
-});
-document.getElementById('clearBtn').addEventListener('click',()=>{Object.keys(state).forEach(k=>delete state[k]);localStorage.removeItem(KEY);refresh();document.getElementById('exportBox').value='';});
-refresh();
-</script>
-</main>
-<footer>
-  <p><strong>TinoDash1 — Inheritance Decision Lab.</strong> Privacy-first: placeholders only · figures rounded to the nearest $10 · nothing here is legal, tax, or financial advice.<br>
-  Official sources: IRS · U.S. Treasury · CA BOE · CA FTB · CA leginfo · CA Attorney General · SF Dept. of Elections / sf.gov · County of Santa Clara · SF Rent Board. Every figure on a page carries its source; unverified items are on the <a href="flagged.html">Flagged for Review</a> page.<br>
-  <a href="sources.html">Sources</a> · <a href="assumptions.html">Method &amp; rounding</a> · <a href="flagged.html">Flagged for Review</a> · <a href="glossary.html">Glossary</a> · Last built 25 Nov 2026 · Re-verify quarterly and before any signing.</p>
-</footer>
-<script src="assets/app.js"></script>
 </body>
 </html>
