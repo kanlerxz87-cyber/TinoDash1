@@ -144,3 +144,4 @@ Shared task board for parallel agent sessions. Update before starting work.
      - Computes all 7 pure & mixed strategies (10/20/30/50-yr horizons, Low/Base/High ranges, 500-run P10–P90 distribution, 5 Black-Swan crash backtests with 24m/36m 3M–2Y U.S. Treasury staging, and 11 sensitivity regimes printing `[MOVED]` vs `[UNCHANGED]`), strictly rounded to nearest **$10**.
      - Wired both `npm run check` and `python3 scripts/build_verified_model.py && python3 scripts/verify_repo.py` into `.github/workflows/ci.yml`.
 - **Verification**: `npm run check` (PII/rounding + ES-module/DOM/subpath link audit + 9/9 unit tests) PASSED; `python3 scripts/verify_repo.py` PASSED.
+- **PR Link & Status**: [PR #14](https://github.com/kanlerxz87-cyber/TinoDash1/pull/14) (`arena/ddd5451c-tinodash1` → `main`) — CI verified green, merged to `main`, and live GitHub Pages (`https://kanlerxz87-cyber.github.io/TinoDash1/`) verified.
