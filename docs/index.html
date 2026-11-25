@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard | TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="topbar"><div class="wrap"><div class="brand">TinoDash1 <span>Estate Decision Dashboard</span></div><nav id="site-nav"></nav></div></header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Inherited Property Decision Dashboard</h1>
+  <p>Privacy-first planning workspace for two anonymized California properties: <strong>Property A</strong> (Cupertino, Santa Clara County; planned to be inherited by trust in a future window) and <strong>Property B</strong> (San Francisco; already owned by the same future inheritor). This dashboard organizes assumptions, official-source checks, projections, risks, and open questions. It is decision support, not legal/tax/investment advice.</p>
+</section>
+
+<div class="callout bad">
+  <strong>What would change the answer (read first):</strong>
+  <ul class="tight">
+    <li><strong>Property A occupancy/Prop 19 eligibility:</strong> If the heir makes Property A their primary residence within 1 year of transfer and files required claims, parent-child exclusion may partially/fully limit reassessment; if not, a market-value reassessment can dominate the outcome.</li>
+    <li><strong>Transfer timing and basis:</strong> A sale in the same tax year as inheritance, trust basis rules, and whether a step-up in basis applies can materially change income/capital-gain tax.</li>
+    <li><strong>Actual market rent and vacancy:</strong> The rent path is weakly supported without independent Cupertino comps; user-provided utility costs and voucher/rent assumptions can flip the ranking.</li>
+    <li><strong>Estate/liquidity size:</strong> If total estate exceeds federal exclusion or has illiquid assets, forced-sale or tax-planning constraints may override “maximize profit” projections.</li>
+    <li><strong>Property B lease/legal constraints:</strong> SF rent control, Prop H/tenant rules, unit legality, and insurance/maintenance realities can change net cash flow and risk.</li>
+    <li><strong>Rates and returns:</strong> Treasury yields, mortgage/borrowing costs, inflation, insurance, capital expenditures, and equity returns (especially sequence-of-returns after sale) can change the 5/10/30-year ranking.</li>
+  </ul>
+</div>
+
+<div class="grid g4 section">
+  <div class="card kpi"><div class="label">Property A</div><div class="value">Inherited (future)</div><div class="note">Cupertino, Santa Clara County, CA. Planned trust transfer window: 2040–2050. Estimated value (user input, rounded): $3,100,000.</div></div>
+  <div class="card kpi"><div class="label">Property B</div><div class="value">Already owned</div><div class="note">San Francisco, CA. Existing primary residence/rental mix. Estimated value (user input, rounded): $1,800,000. Rental income (user input): ~$7,150/mo.</div></div>
+  <div class="card kpi"><div class="label">Primary decision</div><div class="value">Live / Rent / Sell</div><div class="note">For Property A after inheritance. Compare at same dates/horizons with taxes, debt, occupancy, capex, liquidity, and reinvestment risk.</div></div>
+  <div class="card kpi"><div class="label">Privacy status</div><div class="value">Anonymized</div><div class="note">No names, addresses, zip codes, parcel IDs, or account IDs published. All published dollar figures rounded to nearest $10.</div></div>
+</div>
+
+<div class="grid g2 section">
+  <div class="card">
+    <h2>Executive Recommendation (Preliminary, Conditional)</h2>
+    <p><span class="pill warn">Conditional / needs validation</span></p>
+    <p>Based on current user-supplied inputs and general official rules, <strong>no irreversible path should be selected now</strong>. The preferred path is a <strong>decision-gated process</strong>: confirm legal/tax eligibility and real valuations first, then compare mixed paths. If Prop 19 primary-residence exclusion is clearly available and the heir wants to live in Property A, a <strong>live-first or live-then-sell</strong> path may be attractive; if not eligible and independent comps support strong rent, <strong>rent-with-reserves</strong> may compete; if liquidity/diversification is the priority, a <strong>sell-and-phased-invest (Treasury ladder then DCA into diversified portfolio)</strong> path reduces crash-entry timing risk relative to lump-sum investing immediately after sale.</p>
+    <p class="small muted">This is not a final recommendation because key inputs (Prop 19 eligibility, date-of-death value, rent comps, estate size, trust terms, insurance/capex, lease/local rules) are unverified or missing.</p>
+  </div>
+  <div class="card">
+    <h2>First-Screen Controls</h2>
+    <table>
+      <tr><th>Control</th><th>Why it matters</th><th>Status</th></tr>
+      <tr><td>Prop 19 eligibility</td><td>Can prevent/limit reassessment for primary residence</td><td><span class="pill bad">Unverified</span></td></tr>
+      <tr><td>Date-of-death valuation</td><td>Sets basis; affects capital gains and Prop 19 calculation</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>Independent rent/price comps</td><td>Avoids ranking on weak assumptions</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>Estate liquidity/tax plan</td><td>Determines whether selling/borrowing is forced</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>Property B lease/legal review</td><td>Affects net income and occupancy flexibility</td><td><span class="pill bad">Missing</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="grid g3 section">
+  <div class="card"><h3>Compare Paths</h3><p class="muted">Live, rent, sell, and mixed paths (live-then-rent, live-then-sell, rent-then-sell, sell-and-phased-invest).</p><a class="btn" href="scenarios.html">Open scenarios</a></div>
+  <div class="card"><h3>Black Swan Stress Test</h3><p class="muted">Sequence-of-returns, inflation spikes, rate shocks, insurance/capex shocks, and 1929/2008-style entry timing.</p><a class="btn" href="black-swan.html">Open stress tests</a></div>
+  <div class="card"><h3>Attorney & CPA Brief</h3><p class="muted">One-page printable briefing sheet with decisions needed, deadlines, and documents to bring.</p><a class="btn" href="brief.html">Open brief</a></div>
+</div>
+
+<div class="section card">
+  <h2>Decision Menu</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Category</th><th>Question</th><th>Where to review</th><th>Current confidence</th></tr></thead>
+    <tbody>
+      <tr><td>Legal/Trust</td><td>How will Property A be transferred by trust, and what do trust terms allow?</td><td><a href="questions.html">Questions</a></td><td><span class="pill bad">Low</span></td></tr>
+      <tr><td>Property Tax</td><td>Can Prop 19 exclusion apply? What is the reassessment risk?</td><td><a href="tax-legal.html">Tax & Legal</a></td><td><span class="pill warn">Medium (rules), Low (eligibility)</span></td></tr>
+      <tr><td>Income Tax</td><td>What basis, capital gains, NIIT, CA tax, depreciation recapture apply?</td><td><a href="tax-legal.html">Tax & Legal</a></td><td><span class="pill warn">Medium</span></td></tr>
+      <tr><td>Operations</td><td>What are realistic rents, vacancy, insurance, maintenance, capex, management?</td><td><a href="properties.html">Property Details</a></td><td><span class="pill bad">Low</span></td></tr>
+      <tr><td>Portfolio</td><td>If sold, how should proceeds be staged to manage reinvestment/sequence risk?</td><td><a href="black-swan.html">Black Swan</a></td><td><span class="pill warn">Medium (framework)</span></td></tr>
+      <tr><td>Estate</td><td>Will estate exceed federal exclusion? Is liquidity sufficient?</td><td><a href="timeline.html">Timeline</a></td><td><span class="pill warn">Medium (rules), Low (facts)</span></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for Review | TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="topbar"><div class="wrap"><div class="brand">TinoDash1 <span>Estate Decision Dashboard</span></div><nav id="site-nav"></nav></div></header>
+<main class="wrap">
+
+<section class="hero"><h1>Flagged for Review</h1><p>Clearly labeled items that are unverified, incomplete, conflicting, or require professional review. These items do not block publication but must be reviewed before decisions are made.</p></section>
+<div class="callout bad"><strong>Do not treat flagged items as confirmed facts.</strong> This page is intentionally public within the site so reviewers can resolve issues after publication.</div>
+<div class="section card">
+  <h2>Flagged items</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Item</th><th>Why flagged</th><th>Impact</th><th>Required evidence / source</th><th>Owner</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>F-001</td><td>Property A market value ($3,100,000 estimate)</td><td>User estimate; not independently appraised.</td><td>High - affects sale/rent/tax/capex projections.</td><td>Licensed appraisal or broker CMA with comps.</td><td>[TBD]</td><td><span class="pill bad">Unverified</span></td></tr>
+      <tr><td>F-002</td><td>Property B market value ($1,800,000 estimate)</td><td>User estimate; not independently appraised.</td><td>Medium - affects net worth/liquidity planning.</td><td>Independent appraisal/CMA.</td><td>[TBD]</td><td><span class="pill bad">Unverified</span></td></tr>
+      <tr><td>F-003</td><td>Property A rent potential</td><td>No rent comps provided.</td><td>High - rent path cannot be ranked reliably.</td><td>Independent Cupertino rent comps; property manager estimate.</td><td>[TBD]</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>F-004</td><td>Property A/B insurance premiums</td><td>User rough estimate (~$1,500 each).</td><td>Medium - can materially change carrying costs.</td><td>Current declarations pages or insurer quotes.</td><td>[TBD]</td><td><span class="pill bad">Unverified</span></td></tr>
+      <tr><td>F-005</td><td>Prop 19 eligibility at future transfer</td><td>Depends on facts at transfer, trust structure, occupancy, filings.</td><td>Very high - can change property tax by large amount.</td><td>CA BOE rules + county assessor + attorney fact review.</td><td>[TBD]</td><td><span class="pill bad">Unverified</span></td></tr>
+      <tr><td>F-006</td><td>Estate size / federal estate tax exposure</td><td>"Considerable amount of money" unspecified.</td><td>High - may trigger filing/tax/liquidity planning.</td><td>Private estate inventory; CPA/attorney analysis; IRS Form 706 rules.</td><td>[TBD]</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>F-007</td><td>Property B lease legality / rent control / permits</td><td>No lease or legal review provided.</td><td>High - legal/compliance and income risk.</td><td>Leases, SF Rent Board guidance, permit records, counsel review.</td><td>[TBD]</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>F-008</td><td>CA Form 540/1% over $1M and capital gain treatment sensitivity</td><td>Requested specific verification not fully completed against current-year official Form 540 instructions in this session.</td><td>Medium - affects high-gain sale-year tax estimate.</td><td><a href="https://www.ftb.ca.gov/forms/search/">CA FTB Form 540 instructions</a> and <a href="https://www.ftb.ca.gov/file/personal/income-types/mental-health-services-tax.html">FTB MHST page</a>.</td><td>[TBD]</td><td><span class="pill warn">Needs verification</span></td></tr>
+      <tr><td>F-009</td><td>SF transfer tax / Prop H modeling</td><td>Current rate schedule and applicability to hypothetical future sale need confirmation.</td><td>Medium - net sale proceeds.</td><td><a href="https://sfassessor.org/recorder-information/recording-document/transfer-tax">SF Assessor-Recorder Transfer Tax</a>.</td><td>[TBD]</td><td><span class="pill warn">Needs verification</span></td></tr>
+      <tr><td>F-010</td><td>Capex/maintenance plans for both properties</td><td>No inspection-based capex schedule.</td><td>High - can reverse apparent profitability.</td><td>Inspection reports and contractor estimates.</td><td>[TBD]</td><td><span class="pill bad">Missing</span></td></tr>
+      <tr><td>F-011</td><td>Prior public-data exposure containment</td><td>Cannot confirm from this repo alone whether personal data was exposed elsewhere previously.</td><td>High - privacy risk.</td><td>Audit external repos/caches/forks/docs; remove/rotate sensitive data where possible.</td><td>[TBD]</td><td><span class="pill warn">Needs audit</span></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body></html>

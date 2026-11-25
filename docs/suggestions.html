@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions | TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="topbar"><div class="wrap"><div class="brand">TinoDash1 <span>Estate Decision Dashboard</span></div><nav id="site-nav"></nav></div></header>
+<main class="wrap">
+
+<section class="hero"><h1>Suggestions (Review Before Implementing)</h1><p>Dedicated section for improvement ideas. No suggestion should be implemented without review, privacy check, and source verification where applicable.</p></section>
+<div class="callout"><strong>Review gate:</strong> Each suggestion has status <span class="pill info">Proposed</span>. Move to <span class="pill warn">Approved</span> only after review; then <span class="pill good">Implemented</span> with date/owner.</div>
+<div class="section card">
+  <h2>Suggestion backlog</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Suggestion</th><th>Benefit</th><th>Risk / cost</th><th>Privacy check</th><th>Status</th><th>Owner</th><th>Decision/date</th></tr></thead>
+    <tbody>
+      <tr><td>S-001</td><td>Add interactive what-if controls (appreciation, rent, vacancy, capex, tax rate, discount rate, Treasury yield).</td><td>Faster sensitivity testing; improves decision clarity.</td><td>Risk of false precision; must show ranges and warnings.</td><td>No personal data; client-side only.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-002</td><td>Add Monte Carlo distribution chart for 10/30-year outcomes (after-tax, after-cost).</td><td>Shows downside/upside distribution, not just point ranges.</td><td>Model assumptions can mislead; requires clear caveats.</td><td>No personal data.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-003</td><td>Create private encrypted data vault/workflow for estate inventory, trust docs, valuations.</td><td>Keeps sensitive data out of repo while enabling analysis.</td><td>Operational overhead; access control needed.</td><td><span class="pill good">Required for privacy</span></td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-004</td><td>Add annual "law change watch" log with enacted vs proposed sections and effective dates.</td><td>Prevents proposal-driven decisions; keeps model current.</td><td>Maintenance burden.</td><td>Public sources only.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-005</td><td>Add imputed-rent calculator for live-in paths and opportunity-cost comparison.</td><td>Makes live vs rent vs sell more comparable.</td><td>Subjective; needs local rent comps.</td><td>No personal data.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-006</td><td>Add a "decision log" page with immutable date-stamped entries (private or anonymized).</td><td>Prevents reverse-engineering decisions after projections.</td><td>Governance discipline needed.</td><td>Keep private details out of public repo.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-007</td><td>Add PDF export for Attorney/CPA brief and executive summary.</td><td>Easy sharing in meetings.</td><td>Must ensure no personal data leaks into export metadata.</td><td>Check metadata before sharing.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-008</td><td>Add capex schedule builder with inspection-driven line items for both properties.</td><td>Improves realism of net projections.</td><td>Requires inspections/contractor quotes.</td><td>Private property details must stay private.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-009</td><td>Add scenario comparison at fixed dates (2040/2045/2050 transfer; 5/10/30-year horizons).</td><td>Apples-to-apples comparison as requested.</td><td>More model complexity.</td><td>No personal data.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>S-010</td><td>Add source-verification badge automation (official/non-official/unverified) in data tables.</td><td>Reduces hallucination risk; easier audits.</td><td>Needs disciplined data schema.</td><td>No personal data.</td><td><span class="pill info">Proposed</span></td><td>[TBD]</td><td>[TBD]</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body></html>
