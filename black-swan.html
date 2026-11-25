@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Swan — TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <div class="brand">TinoDash1<small>Private inheritance decision dashboard</small></div>
+  <nav class="menu" aria-label="Main menu">
+    <span class="grp">Decide</span>
+    <a href="index.html">Dashboard</a>
+    <a href="model.html">Model &amp; What-Ifs</a>
+    <a href="black-swan.html" aria-current="page">Black Swan</a>
+    <span class="grp">Taxes &amp; Law</span>
+    <a href="taxes.html">Taxes</a>
+    <a href="glossary.html">Glossary</a>
+    <span class="grp">Properties</span>
+    <a href="properties.html">Properties</a>
+    <span class="grp">Process</span>
+    <a href="process.html">Steps &amp; Deadlines</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <span class="grp">For Advisers</span>
+    <a href="briefing.html">Briefing Sheet</a>
+    <a href="flagged.html">Flagged for Review</a>
+  </nav>
+</div></header>
+<main id="main"><div class="wrap">
+
+<h1>Black Swan — real-world economic conditions</h1>
+<p class="lede">Growth and inflation are never consistent over 50 years. This section mimics real conditions
+with historical stress cases and tests the <strong>phased-investing path</strong>: park sale proceeds in
+<strong>3-month–2-year Treasuries for 24–36 months</strong> after inheritance, then phase into stocks — to
+test how it softens 1929 / 2008-style crash-entry risk.</p>
+
+<h2>Historical stress cases (official history)</h2>
+<div class="card">
+<table>
+<thead><tr><th>Case</th><th>What happened</th><th>Lesson for this decision</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1929–1932 crash</td><td>Stocks fell ~89% peak-to-trough; deflation; unemployment ~25%. Recovery took decades.</td><td>Lump-sum entry at a peak can take a generation to recover. Treasury parking avoids buying the peak.</td><td><a href="https://www.federalreserve.gov">Federal Reserve history</a></td></tr>
+<tr><td>1973–1974 stagflation</td><td>Inflation >12% with recession; stocks and bonds fell together. “Stocks for the long run” failed for ~15 years.</td><td>Inflation can erase real returns; property (with rent growth) and TIPS/short Treasuries behaved differently.</td><td><a href="https://www.bls.gov">BLS CPI history</a></td></tr>
+<tr><td>2008 GFC</td><td>S&amp;P 500 −57% peak-to-trough; housing crashed; credit froze. Stocks recovered in ~5 years with policy support.</td><td>Crash-entry risk is real but recovery speed varies. Phasing helps if the crash arrives during parking; hurts if it doesn't.</td><td><a href="https://www.federalreserve.gov">Federal Reserve</a> · <a href="https://fred.stlouisfed.org">FRED</a></td></tr>
+<tr><td>2022 inflation shock</td><td>S&amp;P 500 −19%; bonds fell too (rate shock). Cash/T-bills held value.</td><td>“Diversification” failed when rates drove both assets. Short Treasuries were the hedge.</td><td><a href="https://fiscaldata.treasury.gov">Treasury FiscalData</a></td></tr>
+<tr><td>2020 COVID crash</td><td>−34% in weeks, then rapid recovery.</td><td>Phasing would have <em>hurt</em> here — the classic reinvestment-risk case.</td><td><a href="https://www.federalreserve.gov">Federal Reserve</a></td></tr>
+</tbody></table>
+<p class="note">Figures are rounded historical approximations for planning context. Verify exact peak-to-trough
+numbers against FRED / Federal Reserve series before relying on them (see <a href="flagged.html">Flagged</a> F-09).</p>
+</div>
+
+<h2>Phased-investing test: lump-sum vs. Treasury parking</h2>
+<div class="card">
+<table>
+<thead><tr><th>Scenario</th><th>Lump-sum stocks at sale</th><th>Phased (Treasuries 24–36 mo → stocks)</th><th>Winner</th></tr></thead>
+<tbody>
+<tr><td>Crash (−40%) in year 1 of parking</td><td>Buys the peak; deep drawdown</td><td>Buys after the fall at lower prices</td><td><span class="badge b-ok">Phased</span></td></tr>
+<tr><td>Steady rise (+10%/yr) during parking</td><td>Fully invested in the rise</td><td>Buys higher later; trails lump-sum</td><td><span class="badge b-warn">Lump-sum</span> — reinvestment risk</td></tr>
+<tr><td>Stagflation (high inflation, flat stocks)</td><td>Real return ≈ 0</td><td>Treasury yield tracks inflation better</td><td><span class="badge b-info">Phased, narrowly</span></td></tr>
+<tr><td>Rate shock (stocks &amp; bonds fall)</td><td>Hit on stocks</td><td>Short bills mature at par; reinvest at higher yields</td><td><span class="badge b-ok">Phased</span></td></tr>
+</tbody></table>
+<div class="flag"><strong>Reinvestment risk, stated plainly:</strong> phasing trades crash-entry risk for the risk
+that markets rise while you wait. Over 24–36 months the expected cost is roughly the stock–Treasury return gap
+on the uninvested balance. The household must pre-commit (see <a href="questions.html">Questions</a>) how much
+crash protection it is willing to pay for — before knowing which scenario occurs.</div>
+</div>
+
+<h2>Treasury parking — how it works</h2>
+<div class="card">
+<ul>
+<li><strong>Instruments:</strong> 3-month, 6-month, 1-year, and 2-year Treasury bills/notes — laddered so a
+tranche matures every 3–6 months across the 24–36 month window.</li>
+<li><strong>Why short:</strong> short maturities mature at par regardless of rate moves; long bonds fell in 2022.
+State-tax-exempt interest (federal only) — verify current treatment with CPA.</li>
+<li><strong>Yields are live, not fixed:</strong> check <a href="https://fiscaldata.treasury.gov">Treasury
+FiscalData</a> / <a href="https://home.treasury.gov">TreasuryDirect</a> at the time of sale. The model defaults
+to 4.3% — a placeholder, not a quote (flagged F-10).</li>
+<li><strong>Investment policy first:</strong> write the policy (targets, ladder, rebalancing, tax lots) before
+proceeds arrive — see <a href="questions.html">Questions</a> Q-12 and <a href="taxes.html">Taxes</a>.</li>
+</ul>
+</div>
+
+<h2>50-year baseline — why smooth projections mislead</h2>
+<div class="card">
+<p>Baseline projections in this site use <strong>ranges and regimes</strong>, not a single growth rate:</p>
+<ul>
+<li><strong>Inflation regimes:</strong> 2–3% baseline, with 5–12% stagflation regimes (1970s) and deflation
+regimes (1930s) in the simulation.</li>
+<li><strong>Housing:</strong> Bay Area homes have grown faster than inflation long-term but with deep
+drawdowns (1990–96, 2008–11). The model tests 0–7%/yr.</li>
+<li><strong>Stocks:</strong> long-run ~7–10% nominal with −30% to −60% crash years. The distribution chart on
+the <a href="model.html">Model page</a> embeds these regimes.</li>
+<li><strong>Review annually:</strong> extreme scenarios are re-run every year with updated inputs
+(see <a href="suggestions.html">Suggestions</a> S-04).</li>
+</ul>
+</div>
+
+</div></main>
+<footer><div class="wrap">TinoDash1 · Black Swan planning — not advice · $ rounded to $10</div></footer>
+</body></html>

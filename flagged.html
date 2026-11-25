@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for Review — TinoDash1</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <div class="brand">TinoDash1<small>Private inheritance decision dashboard</small></div>
+  <nav class="menu" aria-label="Main menu">
+    <span class="grp">Decide</span>
+    <a href="index.html">Dashboard</a>
+    <a href="model.html">Model &amp; What-Ifs</a>
+    <a href="black-swan.html">Black Swan</a>
+    <span class="grp">Taxes &amp; Law</span>
+    <a href="taxes.html">Taxes</a>
+    <a href="glossary.html">Glossary</a>
+    <span class="grp">Properties</span>
+    <a href="properties.html">Properties</a>
+    <span class="grp">Process</span>
+    <a href="process.html">Steps &amp; Deadlines</a>
+    <a href="questions.html">Questions</a>
+    <a href="suggestions.html">Suggestions</a>
+    <span class="grp">For Advisers</span>
+    <a href="briefing.html">Briefing Sheet</a>
+    <a href="flagged.html" aria-current="page">Flagged for Review</a>
+  </nav>
+</div></header>
+<main id="main"><div class="wrap">
+
+<h1>Flagged for Review</h1>
+<p class="lede">Everything that is <strong>unverified, irregular, or inferred-free by rule</strong>. Values are
+left blank rather than guessed. Each flag names what would close it and where to get it.</p>
+
+<div class="callout"><strong>No value on this page has been inferred.</strong> If an official source does not
+publish a number, the table shows a dash and a flag. Flagged items do not block the site from going live —
+they are published so they can be reviewed and resolved.</div>
+
+<h2>Open flags</h2>
+<div class="card">
+<table>
+<thead><tr><th>ID</th><th>Item</th><th>What's wrong / missing</th><th>Closing action</th><th>Source</th><th>Severity</th></tr></thead>
+<tbody>
+<tr><td>F-01</td><td>Federal exclusion at death (2040–2050)</td><td>Future and unknowable; only the 2025/2026 published values are citable</td><td>Re-check IRS at the time; track proposals</td><td><a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026">IRS 2026 adjustments</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr class="alt"><td>F-02</td><td>Property A Tax Rate Area and exact rate</td><td>Not yet read from the official tax bill; 95014 typical is ~1.16% but the owner's implied rate is ~1.33%</td><td>Order the current bill; read the TRA and ad-valorem breakdown</td><td><a href="https://www.sccgov.org">Santa Clara County DTT</a></td><td><span class="badge b-bad">High</span></td></tr>
+<tr><td>F-03</td><td>Typical selling costs</td><td>Commission 4–6% and closing costs vary; no single official figure</td><td>Get two listing presentations with written cost sheets</td><td>Broker estimates (not official)</td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr class="alt"><td>F-04</td><td>Cupertino city transfer tax</td><td>Left blank — current municipal fee schedule not read</td><td>Read the Cupertino municipal code / fee schedule</td><td><a href="https://www.cupertino.org">City of Cupertino</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr><td>F-05</td><td>Proposed legislation (federal step-up repeal, CA wealth tax)</td><td>Proposals only; not modeled as law</td><td>Re-check annually at Congress.gov and LegInfo</td><td><a href="https://www.congress.gov">Congress.gov</a> · <a href="https://leginfo.legislature.ca.gov">LegInfo</a></td><td><span class="badge b-info">Low</span></td></tr>
+<tr class="alt"><td>F-06</td><td><strong>Property A implied tax rate anomaly</strong></td><td>Tax ÷ assessed runs ~1.33–1.41% across 2014–2025 vs. a published typical ~1.16% for 95014 — internally consistent, so unexplained, not a rounding issue</td><td>Verify the assessed-value column against the official bill; check for bundled special assessments</td><td><a href="https://www.sccgov.org">County tax bill</a> · <a href="https://www.boe.ca.gov/proptaxes/faqs/proposition13.htm">BOE</a></td><td><span class="badge b-bad">High</span></td></tr>
+<tr><td>F-07</td><td><strong>Property B implied tax rate anomaly</strong></td><td>Implied ~1.7–2.1% vs. typical SF ~1.18%; plus an unexplained <strong>+18.4% tax jump in 2018</strong> with only +2% assessment growth</td><td>Read the official SF bill; check for supplemental assessments or a reclassification</td><td><a href="https://www.sfassessor.org">SF Assessor-Recorder</a></td><td><span class="badge b-bad">High</span></td></tr>
+<tr class="alt"><td>F-08</td><td>Insurance premiums for A and B</td><td>Blank — the ~$1,500/yr figures are unverified guesses; no official premium exists</td><td>Bind quotes for both properties</td><td><a href="https://www.insurance.ca.gov">CA Dept. of Insurance</a></td><td><span class="badge b-bad">High</span></td></tr>
+<tr><td>F-09</td><td>Historical crash magnitudes on the Black Swan page</td><td>Rounded planning approximations, not yet verified against primary series</td><td>Pull exact peak-to-trough from FRED</td><td><a href="https://fred.stlouisfed.org">FRED</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr class="alt"><td>F-10</td><td>Treasury parking yield (model default 4.3%)</td><td>A placeholder, not a quote; yields move daily</td><td>Read the auction/curve at the time of sale</td><td><a href="https://fiscaldata.treasury.gov">Treasury FiscalData</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr><td>F-11</td><td>Market rent for Property A</td><td>Blank in substance — model placeholder only; rent path is a floor</td><td>Three independent rent opinions</td><td><a href="https://www.huduser.gov/portal/datasets/fmr.html">HUD FMR</a> (benchmark only, not used)</td><td><span class="badge b-bad">High</span></td></tr>
+<tr class="alt"><td>F-12</td><td>Debt on A and B</td><td>Model assumes $0; no title report seen</td><td>Order title reports</td><td>Title company</td><td><span class="badge b-bad">High</span></td></tr>
+<tr><td>F-13</td><td>Maintenance and capital budgets</td><td>Wide planning ranges — no public source prices a private building</td><td>Licensed inspection + contractor bids</td><td>Inspection report</td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr class="alt"><td>F-14</td><td>Prop 19 cap after 2/15/2027</td><td>$1,044,586 applies to transfers 2/16/2025–2/15/2027 only; later windows are re-set</td><td>Read the BOE letter in effect at transfer</td><td><a href="https://www.boe.ca.gov/prop19/">BOE Prop 19</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+<tr><td>F-15</td><td>Rent-control status of B's units</td><td>Not verified per unit; affects lawful increases</td><td>Check the Rent Board inventory by address</td><td><a href="https://sf.gov/rent-board-housing-inventory">SF Rent Board</a></td><td><span class="badge b-warn">Medium</span></td></tr>
+</tbody></table>
+</div>
+
+<h2>Resolved / verified this cycle</h2>
+<div class="card">
+<table>
+<thead><tr><th>Item</th><th>Verified value</th><th>Official source</th><th>Checked</th></tr></thead>
+<tbody>
+<tr><td>Federal basic exclusion 2025</td><td>$13,990,000</td><td><a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2025">IRS</a></td><td>2026-11-25</td></tr>
+<tr class="alt"><td>Federal basic exclusion 2026</td><td>$15,000,000</td><td><a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026">IRS</a></td><td>2026-11-25</td></tr>
+<tr><td>Top estate rate</td><td>40%</td><td><a href="https://www.irs.gov/publications/p559">IRS Pub. 559</a></td><td>2026-11-25</td></tr>
+<tr class="alt"><td>CA estate / inheritance tax</td><td>None</td><td><a href="https://www.ftb.ca.gov">FTB</a></td><td>2026-11-25</td></tr>
+<tr><td>Prop 19 cap (2025–2027)</td><td>$1,044,586</td><td><a href="https://www.boe.ca.gov/prop19/">BOE</a></td><td>2026-11-25</td></tr>
+<tr class="alt"><td>Prop 13 annual cap</td><td>2% or CPI, whichever is lower</td><td><a href="https://www.boe.ca.gov/pdf/pub800-10.pdf">BOE Pub. 800-10</a></td><td>2026-11-25</td></tr>
+<tr><td>§121 exclusion</td><td>$250,000 / $500,000</td><td><a href="https://www.irs.gov/publications/p523">IRS Pub. 523</a></td><td>2026-11-25</td></tr>
+<tr class="alt"><td>CA BHST 1% threshold</td><td>Above $1,000,000 CA taxable income</td><td><a href="https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html">FTB 540</a></td><td>2026-11-25</td></tr>
+<tr><td>SF transfer tax at $1.8M</td><td>0.75% → $13,500</td><td><a href="https://www.sftreasurer.org">SF Treasurer</a></td><td>2026-11-25</td></tr>
+<tr class="alt"><td>SF Prop H threshold</td><td>≥$10,000,000 only</td><td><a href="https://media.api.sf.gov/documents/Approved_Digest_-_Changes_to_Real_Property_Transfer_Tax.pdf">SF digest</a></td><td>2026-11-25</td></tr>
+<tr><td>§1250 unrecaptured gain cap</td><td>25%</td><td><a href="https://www.irs.gov/publications/p544">IRS Pub. 544</a></td><td>2026-11-25</td></tr>
+</tbody></table>
+</div>
+
+<h2>Privacy register</h2>
+<div class="card">
+<table>
+<thead><tr><th>Control</th><th>Status</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>No names, addresses, or account numbers on the site</td><td><span class="badge b-ok">Enforced</span></td><td>Placeholders only: Property A/B, Heir, Decedent, Trustee</td></tr>
+<tr><td>All dollars rounded to $10</td><td><span class="badge b-ok">Enforced</span></td><td>Prevents a figure being matched to a public record</td></tr>
+<tr><td>Private estate inventory</td><td><span class="badge b-warn">Offline</span></td><td>Held outside this repository by design</td></tr>
+<tr><td>Git history</td><td><span class="badge b-ok">Clean</span></td><td>No personal data has been committed; history is public and contains only placeholder content</td></tr>
+<tr><td>Prior public-data exposure</td><td><span class="badge b-warn">Under review</span></td><td>Any previously published identifying figure must be removed at source, not just here — action tracked by the household</td></tr>
+</tbody></table>
+</div>
+
+</div></main>
+<footer><div class="wrap">TinoDash1 · Flagged register · nothing inferred · $ rounded to $10</div></footer>
+</body></html>
