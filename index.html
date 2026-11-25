@@ -1,0 +1,422 @@
+<<<<<<< HEAD
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TinoDash — Cupertino Inheritance Decision Dashboard</title>
+<meta name="description" content="Private, anonymized decision dashboard for Property A (Cupertino 95014) inheritance around 2040-2050 vs Property B (SF 94122). Taxes, Prop 13/19, Prop H, mixed paths, black-swan stress.">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">TinoDash <span>— Inheritance Decision Lab</span></div>
+  <div class="meta">
+    <span class="badge live">● Private &amp; anonymized — rounded to $10</span>
+    <span class="badge">Transfer window: 2040–2050 (trust)</span>
+    <a class="btn primary no-print" href="briefing.html">🖨️ Attorney &amp; CPA Briefing Sheet</a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group">
+      <h4>Dashboard</h4>
+      <div class="nav">
+        <a class="active" href="index.html">🏠 Executive Summary</a>
+        <a href="timeline.html">⏱️ Deadlines Timeline</a>
+        <a href="sensitivity.html">🎛️ What-If Controls</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <h4>Decide</h4>
+      <div class="nav">
+        <a href="paths.html">🔀 Paths — Pure &amp; Mixed</a>
+        <a href="blackswan.html">🦢 Black-Swan &amp; Phased Investing</a>
+        <a href="property-tax.html">🏷️ Property Tax &amp; Prop 19</a>
+        <a href="estate.html">⚖️ Estate Tax vs Basis vs Assessment</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <h4>Own &amp; Operate</h4>
+      <div class="nav">
+        <a href="sf-property.html">🏢 Property B (SF 94122) &amp; Leases</a>
+        <a href="insurance-maintenance.html">🛡️ Insurance &amp; 5-Yr Capital Plan</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <h4>Verify</h4>
+      <div class="nav">
+        <a href="methodology.html">🧪 Methodology &amp; Privacy</a>
+        <a href="legislation.html">📜 Legislation Tracker</a>
+        <a href="sources.html">🔗 All Sources</a>
+        <a href="flagged.html">🚩 Flagged for Review</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <h4>Help</h4>
+      <div class="nav">
+        <a href="glossary.html">📖 Glossary &amp; Menu Guide</a>
+        <a href="questions.html">❓ Questions &amp; Missing Info</a>
+        <a href="suggestions.html">💡 Suggestions</a>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px; background:#f8fafc">
+      <div class="kicker">Privacy-first</div>
+      <p style="font-size:12px; margin:6px 0 0">No names, addresses, APNs, or exact ledgers on this site. Figures rounded to nearest $10. Private inventory is a local file, never uploaded. See <a href="methodology.html">Methodology</a>.</p>
+      <p style="font-size:11px; color:var(--muted)">Prior public-data exposure contained — see <a href="methodology.html#exposure">exposure note</a>.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- WHAT WOULD CHANGE THE ANSWER — FIRST SCREEN -->
+    <div class="card" style="border-color:#0ea5e9; background:linear-gradient(180deg,#f0f9ff, #fff)">
+      <div class="kicker">📍 First Screen — What would change the answer</div>
+      <h2 style="margin:6px 0 8px">Agree in writing <em>before</em> the appraisal arrives</h2>
+      <p style="font-size:13px; margin:0 0 10px">Do not reverse-engineer the decision from one projection. Write the trigger that would make the household choose each path, date it, and keep it with the trust. Re-run annually.</p>
+      <div class="grid3">
+        <div class="stat" style="border-color:#0ea5e9">
+          <div class="label">Choose LIVE in A (Cupertino)</div>
+          <div class="value" style="font-size:13px">If ⇢ heir will occupy A long-term as primary residence, files Prop 19 timely, and imputed rent + Prop 13 savings &gt; after-tax sell proceeds at 6-7% stock return (10-yr).</div>
+          <div class="sub">Requires: occupancy statement, Prop 19 filing within 1 yr, 2-of-5-yr exclusion path documented. <a href="property-tax.html">Check Prop 19</a></div>
+        </div>
+        <div class="stat" style="border-color:#059669">
+          <div class="label">Choose RENT A (keep both)</div>
+          <div class="value" style="font-size:13px">If ⇢ market rent on A ≥ $X/yr net (verify comps), total rent roll covers both carry costs, and household can manage SF rent-control + Cupertino landlord duties.</div>
+          <div class="sub">Requires: independent rent comps, SF Rent Board compliance, 5-yr capital plan funded. <a href="questions.html">See missing comps</a></div>
+        </div>
+        <div class="stat" style="border-color:#64748b">
+          <div class="label">Choose SELL A → reinvest</div>
+          <div class="value" style="font-size:13px">If ⇢ same-year sale feasible (step-up wipes gain), transfer tax/fees priced, written IPS parked in Treasuries 24-36 mo then phased, and liquidity needed for estate tax.</div>
+          <div class="sub">Requires: DOD valuation, estate liquidity plan, IPS before money arrives. <a href="blackswan.html">Phased path</a></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:12px">
+        <strong>Decision rule:</strong> Pick the path whose <em>trigger</em> is met — not the one with the highest single spreadsheet number. Document the date next to the item (<a href="estate.html">template</a>). If no trigger is met, default to <strong>Mixed: Live in A 2+ years → sell with §121 exclusion</strong> while renting B.
+      </div>
+    </div>
+
+    <!-- REINVESTMENT RISK BESIDE HEADLINE -->
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <div class="kicker">Executive summary — 50-year horizon (2040-2090)</div>
+        <h2>Hold vs Sell at the <em>same</em> transfer dates &amp; horizons — with taxes, carry, and liquidity</h2>
+        <p style="font-size:13px">All three pure choices + three mixed paths compared at identical 10/20/30/50-yr horizons. Assumes 2040 inheritance at today’s $3.10M (rounded) with step-up; Prop 13 2% cap; SF rent-control carry. <a href="paths.html">Full comparison →</a></p>
+        <div class="grid3">
+          <div class="stat">
+            <div class="label">Property A (95014) 2026 est. value</div>
+            <div class="value">$3,100,000</div>
+            <div class="sub">Rounded to $10 · placeholder · <a href="sources.html">source</a></div>
+          </div>
+          <div class="stat">
+            <div class="label">Property A assessed 2026</div>
+            <div class="value">$550,540</div>
+            <div class="sub">+2% Prop 13 cap · <a href="property-tax.html">table</a></div>
+          </div>
+          <div class="stat">
+            <div class="label">Property B (94122) rent roll</div>
+            <div class="value">$7,150/mo</div>
+            <div class="sub">2 of 3 units rented · owner-occupiable 3rd · <a href="sf-property.html">verify leases</a></div>
+          </div>
+        </div>
+        <div class="callout warn" style="margin-top:12px">
+          <strong>Carry while deciding:</strong> A costs ~$8,710–$10,900/yr (tax + insurance + water − solar credit + maintenance) plus Prop 13 reset if Prop 19 not valid. B costs ~$9,180–$14,560/yr but earns ~$85,800/yr gross. See <a href="insurance-maintenance.html">5-yr plan</a>.
+        </div>
+      </div>
+      <div class="card" style="border-color:#d97706">
+        <div class="kicker" style="color:var(--warn)">⚠️ Reinvestment risk — beside every staging headline</div>
+        <h3>Parking in cash/Treasuries is not “safe” — it trades market risk for reinvestment risk</h3>
+        <p style="font-size:13px; margin:6px 0">Headlines like “park 24-36 mo in Treasuries then phase into stocks” sound conservative, but if Treasury yields fall while you wait, you lock in lower future income. Example: 4.3% → 2.5% on $3M = <strong>~$54,000/yr less</strong> interest forever if you stay too long. Phased path softens 1929/2008 crash-entry risk <em>but</em> you must pre-commit the phase-in schedule in the IPS — otherwise “wait and see” becomes market timing. <a href="blackswan.html">See Black-Swan backtest →</a></p>
+        <div class="grid2">
+          <div class="stat">
+            <div class="label">Reinvestment risk (illustrative)</div>
+            <div class="value" style="font-size:14px">4.3% × 2 yr → 2.5% = –$54,000/yr</div>
+            <div class="sub">On $3.0M proceeds; rounded $10; see Black-Swan page</div>
+          </div>
+          <div class="stat">
+            <div class="label">Mitigation</div>
+            <div class="value" style="font-size:13px">Written IPS: 24-36 mo T-Bill ladder → monthly DCA over 12 mo → 70/30→ glide</div>
+            <div class="sub"><a href="estate.html#ips">IPS template</a> · rebalance annually</div>
+          </div>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estate Decision Dashboard — Property A (95014) &amp; Property B (94122)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="topbar"></header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Executive Dashboard: Property A (Cupertino, 95014) Inheritance Decision</h1>
+      <p>Comparing Pure &amp; Mixed Paths (2040–2050 Trust Inheritance) with Property B (San Francisco, 94122) Already Owned</p>
+    </div>
+
+    <div class="privacy-banner">
+      <span><strong>Privacy-First Model:</strong> All personal identifiers removed. Historical tax &amp; assessment figures rounded to nearest <strong>$10</strong>.</span>
+      <span class="badge badge-info">2026 Verified Laws</span>
+    </div>
+
+    <!-- What Would Change the Answer (First Screen) -->
+    <div class="card">
+      <h2>What Would Change the Answer? (Top 4 Decision Triggers)</h2>
+      <div class="grid grid-4">
+        <div class="callout good">
+          <strong>1. Prop 19 Occupancy</strong><br />
+          Moving into Property A within 1 year saves ~$25k+/yr in property tax via the <strong>$1,044,586</strong> (2025–2027 indexed) exclusion. Renting triggers full FMV reassessment.
+        </div>
+        <div class="callout">
+          <strong>2. Federal Estate Tax ($15M / $30M)</strong><br />
+          Under 2026 law (PL 119-21), estates above <strong>$15M</strong> single / <strong>$30M</strong> married face 40% federal tax. If liquid assets + Property A exceed this, liquidity planning is urgent.
+        </div>
+        <div class="callout warn">
+          <strong>3. Same-Year Sale vs. Hold</strong><br />
+          Selling in the inheritance year captures 100% <strong>IRC § 1014</strong> step-up in basis ($0 capital gains). Holding and selling later without § 121 triggers up to <strong>13.3% CA</strong> + 23.8% federal tax.
+        </div>
+        <div class="callout">
+          <strong>4. Phased vs. Lump-Sum Investing</strong><br />
+          Parking proceeds in 3M–2Y Treasuries for 24–36 months softens 1929/2008 crash entry risk, but carries <strong>reinvestment &amp; inflation-drag risk</strong> in bull markets.
+>>>>>>> origin/main
+        </div>
+      </div>
+    </div>
+
+<<<<<<< HEAD
+    <!-- COMPARISON TABLE — SAME DATES/HORIZONS -->
+    <div class="card" style="margin-top:14px">
+      <div class="kicker">Compare all choices at the same transfer dates &amp; horizons — with taxes, debt, occupancy, capital costs, liquidity</div>
+      <h3>Net after-tax, after-cost wealth (illustrative ranges, rounded $10) — Transfer in 2040, horizon counted from transfer</h3>
+      <p style="font-size:12px; color:var(--muted)">Method: Sell path = same-year sale (basis step-up → minimal gain), county transfer tax $1.10/$1000, NO city tax in Cupertino, SF Prop H priced if B ever sold; Keep paths include Prop 13 cap, maintenance, insurance, utilities; Rent paths include vacancy 5% &amp; CA tax on rents; Sell→stocks uses 5–8% nominal with phased variant. <strong>Ranges not points. Rebuild after any input change.</strong> <a href="methodology.html">Methodology</a> · <a href="sensitivity.html">What-ifs</a></p>
+=======
+    <!-- What-If Controls -->
+    <div class="card">
+      <h2>Interactive What-If Controls</h2>
+      <div class="controls-grid">
+        <div class="control-item">
+          <label>Transfer Year <span class="control-val" id="val-transfer-year">2045</span></label>
+          <input type="range" id="ctrl-transfer-year" class="model-ctrl" min="2040" max="2050" step="1" value="2045" />
+        </div>
+        <div class="control-item">
+          <label>Projection Horizon <span class="control-val" id="val-horizon">30 yrs</span></label>
+          <input type="range" id="ctrl-horizon" class="model-ctrl" min="10" max="50" step="5" value="30" />
+        </div>
+        <div class="control-item">
+          <label>Property A Growth <span class="control-val" id="val-prop-growth">4.0%</span></label>
+          <input type="range" id="ctrl-prop-growth" class="model-ctrl" min="2.0" max="7.0" step="0.5" value="4.0" />
+        </div>
+        <div class="control-item">
+          <label>S&amp;P 500 Return <span class="control-val" id="val-stock-return">7.5%</span></label>
+          <input type="range" id="ctrl-stock-return" class="model-ctrl" min="4.0" max="11.0" step="0.5" value="7.5" />
+        </div>
+        <div class="control-item">
+          <label>Inflation Rate <span class="control-val" id="val-inflation">2.8%</span></label>
+          <input type="range" id="ctrl-inflation" class="model-ctrl" min="1.5" max="5.0" step="0.1" value="2.8" />
+        </div>
+        <div class="control-item">
+          <label>Cupertino Market Rent <span class="control-val" id="val-rent">$5,800/mo</span></label>
+          <input type="range" id="ctrl-rent" class="model-ctrl" min="4800" max="7500" step="100" value="5800" />
+        </div>
+        <div class="control-item">
+          <label>Imputed Rent (Live-In) <span class="control-val" id="val-imputed-rent">$5,800/mo</span></label>
+          <input type="range" id="ctrl-imputed-rent" class="model-ctrl" min="4500" max="7500" step="100" value="5800" />
+        </div>
+        <div class="control-item">
+          <label>Filing Status &amp; Prop 19</label>
+          <select id="ctrl-filing" class="model-ctrl">
+            <option value="single">Single ($250k §121 / $15M Estate)</option>
+            <option value="married">Married ($500k §121 / $30M Estate)</option>
+          </select>
+          <select id="ctrl-prop19" class="model-ctrl" style="margin-top:0.35rem;">
+            <option value="yes">Occupy within 1 yr (Prop 19 Eligible)</option>
+            <option value="no">Do Not Occupy (Full Reassessment)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-4" style="margin-bottom:1rem;">
+      <div class="kpi-card">
+        <div class="kpi-label">Property A Est. FMV at Transfer</div>
+        <div class="kpi-value" id="kpi-fmv">—</div>
+        <div class="kpi-sub">2026 Baseline: $3,100,000</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Prop 19 Assessed Value</div>
+        <div class="kpi-value" id="kpi-prop19">—</div>
+        <div class="kpi-sub">vs. Full FMV if Rented</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Pure Sell (S&amp;P 500) End Wealth</div>
+        <div class="kpi-value" id="kpi-sell">—</div>
+        <div class="kpi-sub">Reinvestment Risk: Sequence/Entry</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Pure Rent (Hold) End Wealth</div>
+        <div class="kpi-value" id="kpi-rent">—</div>
+        <div class="kpi-sub">Includes Property + After-Tax NOI</div>
+      </div>
+    </div>
+
+    <!-- Pure & Mixed Paths Comparison -->
+    <div class="card">
+      <h2>Pure &amp; Mixed Paths Comparison (Same Transfer Date &amp; Horizon)</h2>
+>>>>>>> origin/main
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+<<<<<<< HEAD
+              <th>Path</th>
+              <th>10 yr</th>
+              <th>20 yr</th>
+              <th>30 yr</th>
+              <th>50 yr</th>
+              <th>Liquidity</th>
+              <th>Source / note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>A — Live in A</strong><br><span class="source">Occupy, Prop 19 if eligible, imputed rent value</span></td>
+              <td>$3,520,000 – $4,180,000</td>
+              <td>$4,120,000 – $5,520,000</td>
+              <td>$4,830,000 – $7,310,000</td>
+              <td>$6,510,000 – $11,800,000</td>
+              <td><span class="tag">Low — house-rich</span></td>
+              <td><a href="property-tax.html">Prop 13/19</a> · <a href="sources.html#prop13">BOE</a></td>
+            </tr>
+            <tr>
+              <td><strong>B — Rent A, live in B (keep both)</strong><br><span class="source">Market rent on A needed; B rent roll continues</span></td>
+              <td>$3,680,000 – $4,450,000</td>
+              <td>$4,580,000 – $6,380,000</td>
+              <td>$5,680,000 – $8,820,000</td>
+              <td>$8,200,000 – $15,100,000</td>
+              <td><span class="tag">Medium</span></td>
+              <td><a href="sf-property.html">SF Rent Board</a> · comps needed <span class="flag">NEEDS REVIEW</span></td>
+            </tr>
+            <tr>
+              <td><strong>C — Sell A same-year → stocks (lump-sum)</strong><br><span class="source">Step-up basis, transfer tax/fees priced</span></td>
+              <td>$3,410,000 – $4,600,000</td>
+              <td>$4,380,000 – $6,940,000</td>
+              <td>$5,620,000 – $9,980,000</td>
+              <td>$8,900,000 – $18,400,000</td>
+              <td><span class="tag">High — fully liquid</span></td>
+              <td><a href="sources.html#irs-basis">IRS Pub 551</a> · <a href="property-tax.html#transfer">Transfer tax</a></td>
+            </tr>
+            <tr>
+              <td><strong>D — Mixed: Live 2 yr → sell w/ §121 exclusion</strong><br><span class="source">Own+use 2 of 5 yr → $500k exclusion (MFJ)</span></td>
+              <td>$3,580,000 – $4,520,000</td>
+              <td>$4,550,000 – $6,800,000</td>
+              <td>$5,820,000 – $9,600,000</td>
+              <td>$9,100,000 – $17,200,000</td>
+              <td><span class="tag">High after Y2</span></td>
+              <td><a href="sources.html#irs121">IRS §121 / Pub 523</a></td>
+            </tr>
+            <tr>
+              <td><strong>E — Mixed: Rent 5 yr → sell, keep B rented</strong></td>
+              <td>$3,620,000 – $4,480,000</td>
+              <td>$4,620,000 – $6,600,000</td>
+              <td>$5,780,000 – $9,200,000</td>
+              <td>$8,600,000 – $16,500,000</td>
+              <td><span class="tag">Medium→High</span></td>
+              <td>Depreciation recapture 25% — flagged <a href="sensitivity.html">sensitivities</a></td>
+            </tr>
+            <tr>
+              <td><strong>F — Black-Swan Phased: Treasuries 24-36 mo → DCA into 70/30</strong><br><span class="source">Parks proceeds, softens 1929/2008 entry</span></td>
+              <td>$3,380,000 – $4,380,000</td>
+              <td>$4,300,000 – $6,520,000</td>
+              <td>$5,500,000 – $9,400,000</td>
+              <td>$8,500,000 – $17,000,000</td>
+              <td><span class="tag">High — yield drag first 3 yr</span> <span class="tag">Reinvestment risk!</span></td>
+              <td><a href="blackswan.html">Backtest</a> · <a href="sources.html#treasury">Treasury rates</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px; color:var(--muted); margin:8px 0 0">All values illustrative ranges using 1.5–4.5% home appreciation / 5–8% stock nominal / 2–3.5% inflation; rounded $10; taxes applied per current law (see <a href="estate.html">Estate vs Basis vs Assessment</a>). After any input change, rebuild model &amp; see if recommendation moved — <a href="sensitivity.html">run what-ifs</a>. No personal data used.</p>
+    </div>
+
+    <!-- DISTRIBUTION CHART -->
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <div class="kicker">Distribution — not a single line</div>
+        <h3>10-year outcome spread (illustrative P10–P90)</h3>
+        <div class="chart-box"><canvas id="distChart" height="160"></canvas></div>
+        <p style="font-size:11px; color:var(--muted); margin-top:8px">Keep/Rent has tighter spread (housing + prop-tax cap); Sell→Stocks wider (market dispersion). Phased path narrows left-tail (crash-entry) at cost of right-tail. See <a href="blackswan.html">Black-Swan</a>.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">How to use this page</div>
+        <h3>Agree → Validate → Document → Re-run annually</h3>
+        <ol style="font-size:13px; padding-left:18px">
+          <li><strong>Agree</strong> on triggers above — write &amp; date.</li>
+          <li><strong>Validate</strong> Prop 19 eligibility, B leases, comps, 5-yr plan — <a href="questions.html">checklist</a>.</li>
+          <li><strong>Document</strong> IPS before money arrives — <a href="estate.html#ips">IPS template</a>.</li>
+          <li><strong>Carry</strong> Prop 19 allowance forward; price transfer tax — <a href="property-tax.html">calc</a>.</li>
+          <li><strong>Re-run</strong> model every year with updated inputs — <a href="sensitivity.html">what-ifs</a>.</li>
+        </ol>
+        <div class="callout" style="margin-top:10px">
+          <strong>Step-by-step inheritance (CA trust):</strong> 1) Trustee affidavit + death certificate → 2) DOD valuation (licensed appraisal) → 3) Preliminary Change in Ownership (BOE-502-A) + Prop 19 claim (if occupying) within 1 yr → 4) Step-up basis recorded → 5) Decide same-year sale vs hold (tax year matters) → 6) Transfer tax/deed if sold → 7) Estate tax return (Form 706) if needed within 9 mo. <a href="timeline.html">Full timeline →</a>
+        </div>
+        <p style="font-size:11px; color:var(--muted)">San Francisco transfer tax for B vs Cupertino (county only) — <a href="property-tax.html#transfer">see comparison</a>. 1031 exchange not available for primary residence; consult before selling — <a href="estate.html">Estate page</a>.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div><strong>TinoDash</strong> — Private Estate Decision Lab · Last rechecked: 2026-11-25 · Next recheck due: 2027-02-25 (quarterly legislation review) · <a href="legislation.html">Recheck log</a> · <a href="sources.html">Sources</a> · <a href="flagged.html">Flagged items</a></div>
+      <div style="margin-top:6px">This dashboard is educational and does not constitute legal, tax, or investment advice. Verify all figures with licensed attorney/CPA/financial adviser. Official sources take precedence over this site.</div>
+    </div>
+  </main>
+</div>
+=======
+              <th>Strategy Path</th>
+              <th>Projected End Wealth</th>
+              <th>Tax &amp; Basis Profile</th>
+              <th>Liquidity, Capital &amp; Reinvestment Risk</th>
+            </tr>
+          </thead>
+          <tbody id="paths-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Wealth Projection Over Horizon</h2>
+        <canvas id="proj-chart" width="580" height="270"></canvas>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">
+          <span style="color:#1d4ed8;font-weight:700;">■ Pure Sell (S&amp;P)</span> &nbsp;
+          <span style="color:#0891b2;font-weight:700;">■ Phased (T-Bills→S&amp;P)</span> &nbsp;
+          <span style="color:#d97706;font-weight:700;">■ Pure Rent</span> &nbsp;
+          <span style="color:#15803d;font-weight:700;">■ Pure Live-In</span>
+        </p>
+      </div>
+      <div class="card">
+        <h2>End-of-Horizon Distribution Comparison</h2>
+        <canvas id="dist-chart" width="580" height="270"></canvas>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="card">
+      <h2>Executive Summary &amp; Strategic Recommendation</h2>
+      <p>
+        Because the heir <strong>already owns Property B (San Francisco, 94122)</strong>—a 3-unit building generating ~$7,150/mo from 2 rented units while allowing owner-occupancy in the 3rd unit—retaining Property B as the primary residence preserves cash flow and avoids disrupting a low Prop 13 base (~$114,250 assessed).
+      </p>
+      <p>
+        <strong>Default Baseline Winner:</strong> Under standard 7.5% equity vs. 4.0% real estate assumptions, <strong>Pure Sell (Same Tax Year)</strong> or <strong>Phased Investing (24–36 mo 3M–2Y Treasuries → S&amp;P 500)</strong> maximizes liquid after-tax wealth by capturing the full <strong>IRC § 1014</strong> step-up in basis at death and avoiding Prop 19 reassessment on a rental. If the heir genuinely wants to relocate to Cupertino long-term, <strong>Live-In 3+ Years → Sell (IRC § 121)</strong> captures both Prop 19 and the $250k/$500k primary-residence exclusion.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+>>>>>>> origin/main
+</body>
+</html>

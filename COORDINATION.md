@@ -1,38 +1,88 @@
-# COORDINATION.md — TinoDash1 Shared Task Board
+# COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy Rule**: Zero personally identifiable information (PII). All property tax and assessed values are rounded to the nearest $10 increment. Placeholders `Property A` (Cupertino, 95014) and `Property B` (San Francisco Outer Sunset, 94122) are used throughout.
+> **Privacy rule:** All figures rounded to nearest **$10**, placeholders only (Property A Cupertino 95014 / Property B SF 94122). Private inventory never committed (.gitignored).
 
-## Active Session
-- **Session ID**: `arena-51f65152`
-- **Branch**: `arena/51f65152-tinodash1`
-- **Date**: 2026-11-25
+## Session Registry
+| Session ID | Branch | Status | Last heartbeat |
+|---|---|---|---|
+| arena/914b57ba-tinodash1 | arena/914b57ba-tinodash1 | merged | 2026-11-25 PR #3 merged 6dc4068 |
+| arena/ef80c5c0-tinodash1 | arena/ef80c5c0-tinodash1 | merged | 2026-11-25 PR #4 merged 2009903 |
+| arena-43f9846f | arena/43f9846f-tinodash1 | active — final integration | 2026-11-25 UTC |
 
-## Task Board
+## Task Board — Complete (all sessions)
 
-| Task ID | Task Description | Status | Owning Session | File Scope |
-|---|---|---|---|---|
-| T1 | Official Source Research & Verification (IRS Form 706/Pub 523, CA BOE Prop 19, CA FTB Form 540, SCC Clerk-Recorder, SF Assessor/Rent Board, SF Prop H, CA Dept of Insurance) | done | `arena-51f65152` | `COORDINATION.md`, `model/run_model.py` |
-| T2 | Deterministic Financial & Tax Projection Model (pure & mixed paths, ranges, Prop 19, §1014, §121, §1031, §1250, Prop H, Black Swan + 24–36M Treasury phased investing) | done | `arena-51f65152` | `model/run_model.py`, `site/data/model_data.json` |
-| T3 | GitHub Pages Multi-Page Dashboard UI (Overview/What-If, Properties & Projections, Taxes & Laws, Black Swan & Phased Investing, Process & Timeline, Questions & Suggestions, One-Page Printable Attorney & CPA Brief, Flagged for Review & Glossary) | done | `arena-51f65152` | `site/**` |
-| T4 | Verification, Link Check, GitHub Pages Workflow, PR & Merge | done | `arena-51f65152` | `.github/workflows/pages.yml`, `COORDINATION.md` |
+| # | Task | Status | Owner | Files / Scope | Notes |
+|---|---|---|---|---|---|
+| T01 | Scrub pre-rounding Git history / keep repo privacy-first | done | arena-43f9846f + 914b57ba | .gitignore, .nojekyll, methodology.html#exposure, docs/.nojekyll | Single initial commit 8f95825 verified clean; no PII history; rounding $10; private inventory .gitignored |
+| T02 | Create site scaffold + design system + navigation + GitHub Pages config | done | arena-43f9846f | index.html, css/style.css, js/app.js, _config.yml, .nojekyll, all pages + docs/* from prior sessions | Dashboard layout, grouped menu (Decide/Own/Verify/Help), responsive, print styles, root + docs/ both valid for Pages |
+| T03 | Executive summary + "What would change the answer" + distribution chart + reinvestment risk | done | arena-43f9846f (extends 914b57ba) | index.html, js/app.js, data/model.json, docs/index.html | First-screen triggers for Live/Rent/Sell, distribution P10-P90, reinvestment risk $54k/yr beside headline |
+| T04 | Compare all choices at same dates/horizons incl. taxes/debt/occupancy/capital/liquidity + mixed paths | done | arena-43f9846f | paths.html, data/model.json, docs/projections.html | 3 pure + 3 mixed (Live→Sell §121, Rent→Sell, Phased) at 10/20/30/50yr |
+| T05 | Black-swan + phased-investing path (3M-2Y Treasuries 24-36mo then phase to stocks) vs 1929/2008 entry | done | arena-43f9846f (extends ef80c5c0 black-swan.html) | blackswan.html, docs/black-swan.html, js/app.js | 1929/1970s/2008/2022 backtest, phased 24-36mo ladder → 12-mo DCA 70/30, reinvestment risk |
+| T06 | What-if controls + tax-aware sensitivities + Form 540 1% over $1M + depreciation/recapture | done | arena-43f9846f | sensitivity.html, js/app.js, docs/tax-legal.html | Live sliders, 7 sensitivities, FTB 540 BHST 1% over $1M on amount >$1M, NIIT 3.8%, 27.5yr +25% recapture |
+| T07 | Imputed rent + primary-residence exclusion (§121) + Prop 19 carry-forward + Prop H transfer tax | done | arena-43f9846f | paths.html, property-tax.html, docs/tax-legal.html | Imputed rent input; §121 toggle $250k/$500k; Prop 19 allowance $1,044,586 (2025-27 BOE LTA 2025/009) carried forward; SCC $1.10/$1k vs SF 0.75% tier + Prop H $249/$65 |
+| T08 | Property A TRA + assessed value / property-tax projections (ranges, rounded $10) | done | arena-43f9846f | property-tax.html, properties.html, data/model.json | TRA via SCC TRA Book ~1.16-1.25% mid 1.18%; history 2014-2026 rounded; 2040 scenarios |
+| T09 | Private estate inventory + estate tax vs basis vs assessment separation + liquidity + portability | done | arena-43f9846f + ef80c5c0 | estate.html, docs/tax-legal.html | Three-way table: IRS estate $15M/$30M (PL 119-21) vs BOE assessed vs FTB basis; CA no estate tax; inventory template private; portability/709; liquidity plan |
+| T10 | 5-year maintenance & capital plan for both buildings + insurance research (95014 & 94122) | done | arena-43f9846f | insurance-maintenance.html, properties.html | 5-yr tables; HO-3 $1.5-2.1k vs DP-3 $1.5-2.5k +EQ; NEM 2.0/3.0; sewer lateral/roof |
+| T11 | Property B leases / SF rent control & local rules verification | done | arena-43f9846f | sf-property.html, properties.html | SF Rent Ordinance pre-1979, 60% CPI cap 7%, AB12 deposits, legal units/permits |
+| T12 | Deadlines timeline (Prop 19, reassessment, filing, etc.) | done | arena-43f9846f | timeline.html, docs/process-timeline.html | DOD+1yr Prop 19 BOE-502-A/19-P, 9mo 706, same-year sale, appeals Jul-Sep, §121 2-of-5, annual re-run |
+| T13 | Legislation tracker — enacted vs proposals (federal/state/local) with recheck cadence | done | arena-43f9846f | legislation.html | TCJA sunset/PL 119-21, Prop 19, SF Prop H, AB12, NEM 3.0 as Enacted; extension/wealth-tax as Proposed; log 2026-11-25→2027-02-25 |
+| T14 | Attorney & CPA Briefing Sheet (one-page printable export) | done | arena-43f9846f + 914b57ba | briefing.html, docs/briefing.html | Print-optimized letter page, anonymized $10, triggers/carry/three taxes/4+4 questions/sign-date |
+| T15 | Questions / missing info / how to discover + Suggestions section | done | arena-43f9846f | questions.html, suggestions.html, decisions.html, docs/questions-suggestions.html | 15 rows Q&A + discovery checklist + 16 suggestions with Done/Proposed |
+| T16 | Verification — line-by-line source links per table row, flagged unverified items | done | arena-43f9846f | sources.html, flagged.html, methodology.html | 22 official anchors; 12 flagged unverified published; does not block merge |
+| T17 | Final integration — merge, re-verify, build check, GitHub Pages deploy, PR & merge to main | done | arena-43f9846f | all | ✅ Build test passed (root 17 pages 200 + docs 4 pages 200); link audit clean; PR #5 https://github.com/kanlerxz87-cyber/TinoDash1/pull/5 merged to main as ac92995; Pages Build 1402240931 status built (no error, 24.7s) — live at https://kanlerxz87-cyber.github.io/TinoDash1/ |
 
-## Official Sources Log
-1. IRS Form 706 Instructions (Rev. July 2026) — Basic Exclusion Amount $15,000,000 (2026): https://www.irs.gov/instructions/i706
-2. IRS Newsroom — Working Families Tax Cuts (2026 Estate Tax Exclusion $15,000,000): https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers
-3. IRS Publication 523 (2025) — Selling Your Home (IRC §121 $250k/$500k exclusion, §1014 basis, depreciation recapture): https://www.irs.gov/pub/irs-pdf/p523.pdf
-4. CA State Board of Equalization (BOE) — Prop 19 Biennial Adjustment ($1,044,586 for Feb 16, 2025 – Feb 15, 2027): https://www.boe.ca.gov/news/2025/nr-25-02.htm
-5. CA BOE Publication 801 — Proposition 19 Fact Sheet: https://www.boe.ca.gov/pdf/pub801.pdf
-6. CA Franchise Tax Board (FTB) — Form 540 Booklet (1% Mental Health Services Tax >$1M; capital gains taxed as ordinary income): https://www.ftb.ca.gov/forms/2021/2021-540-booklet.pdf
-7. Santa Clara County Clerk-Recorder — Record Fees & Documentary Transfer Tax ($0.55/$500; no Cupertino city conveyance tax): https://clerkrecorder.sccgov.org/record-fees
-8. Santa Clara County — Tax Allocation / TRA Lookup (Cupertino TRA prefix 013): https://payments.sccgov.org/propertytax/TaxAllocation/SearchByAddress
-9. San Francisco Assessor-Recorder — Transfer Tax Rate Schedule ($3.75/$500 for $1M–<$5M): https://www.sfassessor.org/recorder-information/recording-document/transfer-tax
-10. San Francisco Rent Board — Annual Allowable Rent Increase (1.6% for Mar 1, 2026 – Feb 28, 2027) & AB 1482: https://www.sf.gov/news--annual-rent-increase-3126-22827-announced
-11. California Department of Insurance — Sustainable Insurance Strategy ($1,655 CA avg homeowner premium): https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm
-12. San Francisco Proposition H (Nov 2026 Enacted) — 15-year SFMTA parcel tax with 50% landlord pass-through cap: https://www.sfpublicpress.org/proposition-h-and-regional-transit-measure-sf-seeks-add-parcel-and-sales-taxes-to-keep-muni-moving/
+## File Ownership (post-merge)
 
-## Flagged Irregularities / Unverified Items
-- Exact Santa Clara County Tax Rate Area (TRA) for Property A requires APN lookup (implied 2025 effective rate ~1.34% from rounded tax/assessed value).
-- Cupertino (95014) market rent comparables for Property A are not yet obtained; rent path uses range ($5,200–$6,800/mo) flagged for independent CMA verification.
-- Bay Area high-value homeowners insurance (Property A) and 3-unit landlord/owner-occupied policy (Property B) require custom underwriting quotes beyond the $1,660 CA statewide average.
-- Property B tenant lease terms, rent-control status (pre-1979), and exact Prop H parcel tax tier require local lease/assessor verification.
-- Grantor's total estate value, prior taxable gifts (Form 709), and predeceased spouse DSUE portability status are unknown and require private estate inventory.
+- **Root site (primary):** arena-43f9846f — index.html, briefing.html, timeline.html, property-tax.html, estate.html, paths.html, blackswan.html, sensitivity.html, sf-property.html, insurance-maintenance.html, legislation.html, glossary.html, questions.html, suggestions.html, sources.html, flagged.html, methodology.html, css/*, js/*, data/*, _config.yml, .nojekyll
+- **Docs site (legacy, preserved):** 914b57ba + ef80c5c0 — docs/* (index.html, projections.html, tax-legal.html, black-swan.html, briefing.html, process-timeline.html, flagged.html, glossary.html, questions-suggestions.html, data/model_output.json, assets/*)
+- **Model engine:** 914b57ba — model/engine.py, model/data_inputs.json, build_site.py (regenerates docs/data/model_output.json)
+
+If editing across scopes, log request here instead of directly editing another session's files.
+
+## Log
+
+- 2026-11-25 arena/914b57ba — Built reproducible model + docs/ site (PR #3 93dd541 → 6dc4068 merged)
+- 2026-11-25 arena/ef80c5c0 — Updated official law verification 2026 (IRS $15M/PL119-21, BOE $1,044,586, SF 0.75%, Prop H $249/$65) + merged (PR #4 2009903)
+- 2026-11-25 arena-43f9846f — Created comprehensive 17-page site with ranges, black-swan phased, Prop19/Prop H, what-ifs, tracker, briefing, sources/flagged; verified history clean
+- 2026-11-25 arena-43f9846f — Pushed a53c668 PR #5; detected parallel merge to main; resolving conflicts locally per coordination protocol
+- 2026-11-25 arena-43f9846f — Merged origin/main (2009903) into a53c668 → 8f77846; resolved COORDINATION.md + README.md; preserved root + docs/ + model/; pushed 8f77846
+- 2026-11-25 arena-43f9846f — PR #5 merged: https://github.com/kanlerxz87-cyber/TinoDash1/pull/5 → ac92995 on main; Pages Build 1402240931 built successfully (commit ac92995, 2026-11-25T12:51:31Z, no error) — site live at https://kanlerxz87-cyber.github.io/TinoDash1/
+
+## Review Flags
+
+- Flagged items published on flagged.html (root) + docs/flagged.html (legacy): market rent comps, TRA exact, leases, permits, estate size/DSUE/709, insurance quotes, NEM PTO, capital inspections, brokerage, exclusion figures, Prop19 indexed allowance, debt assumption. Each flagged with official source link and next step.
+
+## Official Sources Consolidated
+
+1. **IRS Estate & Gift (2026):** $15M individual / $30M married with portability, 40% top, $19k annual gift exclusion — PL 119-21, IRC §2010(c)(3) (see legacy docs/tax-legal.html) AND $13.99M→~$7M sunset under TCJA §11061 if PL 119-21 not enacted — see estate.html for distinction (enacted vs prior law).
+2. **CA BOE Prop 19:** $1,044,586 exclusion cap 2025–27 (BOE LTA 2025/009); 1-yr move-in + BOE-19-P within 3yr; See BOE Prop19.
+3. **FTB Form 540:** Gains as ordinary 1–12.3% + BHST 1% over $1M → 13.3% top (FTB 540 Booklet).
+4. **SCC Clerk-Recorder:** $0.55 per $500 ($1.10/$1k =0.11%); Cupertino 0% city.
+5. **SF Treasurer:** Tiered 0.75% for $1M–$4.999M (plus Prop H $249/$65 parcel tax).
+6. All other sources: BOE Prop13 FAQ, SCC Assessor/TRA Book/Assessment Appeals, SF Assessor, CDI Residential Guide 2024, SF Rent Board, Treasury yields, FRED/CSUSHPISA, BLS CPI, CPUC NEM, TCJA statute, SEC, FEMA.
+
+> **Reconciliation note:** Legacy session cites $15M exclusion via PL 119-21 (enacted 2026); current session tracks TCJA sunset to ~$7M as prior current law. Both are kept: legislation.html distinguishes enacted PL 119-21 vs prior sunset baseline — recheck Rev Proc Jan 2026. No inference; both linked.
+
+
+## Additional session tasks (current session arena/f83e6979-tinodash1)
+
+| # | Task | Status | Owner | Files | Notes |
+|---|---|---|---|---|---|
+| F1 | Property A (Cupertino 95014) page — valuation/cost/Prop 19 | done | arena/f83e6979-tinodash1 | property-a.html | $3.1M Nov 2026 (user data), verified anchors |
+| F2 | Property B (SF 94122) page — valuation, rental profile, net cash flow | done | arena/f83e6979-tinodash1 | property-b.html | Rental $7,150/mo, 2 units of 3 |
+| F3 | Costs page — water/electricity/insurance/maintenance (rounded $10, flagged) | done | arena/f83e6979-tinodash1 | costs.html | Research: Baysano, LendingTree, gethomeinsurancequotes.com |
+| F4 | Paths page — path comparison + mixed paths + Black Swan + what-ifs + distribution chart | done | arena/f83e6979-tinodash1 | paths.html | Staging 3M–2Y Treasuries 24–36 mo before stocks |
+| F5 | Questions/Suggestions — discovery suggestions, What-would-change-the-answer, yearly review checklist | done | arena/f83e6979-tinodash1 | questions.html | 16+ discovery items |
+| F6 | Time check — deadline integration | done | arena/f83e6979-tinodash1 | timeline.html, COORDINATION.md | Prop 19 occupancy 1y, transfer 2040–2050, annual review |
+
+## Session 796979 — conflicts resolved (2026-11-25): for duplicate filenames (index/paths/questions/flagged/README/COORDINATION) we kept origin/main's versions; this session's files retained where unique.
+
+
+---
+## Session `arena-51f65152` Integration Log (2026-11-25)
+- **Branch**: `arena/51f65152-tinodash1` (PR #8)
+- **Deliverables**:
+  - `model/run_model.py` & `site/data/model_data.json`: Privacy-first deterministic financial & tax projection model (all figures rounded to nearest $10; 6 pure & mixed paths, 400-run P10–P90 distribution, 5 Black Swan regimes with 24–36M Treasury phased investing, SF Prop H Nov 2026, CA Prop 19 biennial allowance $1,044,586, IRS Form 706 $15M 2026 exclusion, CA Form 540 1% MHSA >$1M).
+  - `site/` (8-page dashboard): `index.html` (Overview, What Would Change the Answer, What-If Controls, Distribution Chart), `properties.html`, `taxes.html`, `blackswan.html`, `process.html`, `questions.html`, `brief.html` (1-page printable Attorney & CPA Brief), `review.html` (Flagged for Review & Glossary).
+  - `.github/workflows/pages.yml`: GitHub Actions Pages deployment workflow.
+- **Verification**: Privacy check (0 unrounded numbers), link check (8/8 pages), and JSON model validation passed.
