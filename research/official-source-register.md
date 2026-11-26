@@ -127,3 +127,18 @@ A scan of every remote ref and every reachable commit, using the raw-figure list
 - Quarterly: Congress.gov status for H.R. 1301 and S. 4196 (F-06, F-07).
 - Annually (after the IRS revenue procedure is published): F-01–F-05.
 - Annually: FTB Form 540 instructions and rate schedules (C-02, C-03).
+
+---
+
+## 9. Live-site observations (fetched 2026-11-26; flagged, not edited here)
+
+Read from the live GitHub Pages landing page (`https://kanlerxz87-cyber.github.io/TinoDash1/`). These are for the integration session (T-07). None is verified in this pass.
+
+| # | Observation | Why flagged | Row |
+| --- | --- | --- | --- |
+| R-12 | Landing page states a "37.1% combined Fed+NIIT+CA" tax on a carryover-basis sale. | The federal top rate (37%, F-03) is verified. The NIIT (3.8%) and CA rates are not verified in this pass, and the stated total does not reconcile with the components named. | F-08, C-03 |
+| R-13 | Landing page shows OMI relocation amounts "$8,245–$24,733" and "$5,497" in other places. | Not multiples of $10, which breaks the project's rounding rule. Source amounts unverified in this pass (S-12). | S-12 |
+| R-14 | Landing page shows "$1,044,586" in full. | Exact unrounded figure in published copy. Use about $1,044,590 (official figure, rounded). | C-08 |
+| R-15 | Landing page states "Prop H Muni Tax passed (74.4%) adding $249/yr (+ $0.195/sqft >5,000 sqft)". | Same as R-05. Preliminary and not certified; rate structure unverified (S-03). | S-01, S-03 |
+| R-16 | Landing page cites Prop 19 "~$20k+/yr" savings and "$21,210" Year-0 savings. | Model output, not sourced to an official figure. Keep the model label and add "modeled, illustrative." | — |
+| R-17 | Landing page shows ZIP codes for both properties (95014 / 94122). | Same as R-08. | — |
