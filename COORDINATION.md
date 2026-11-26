@@ -1,11 +1,11 @@
 # COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `95014`, `Property B` in San Francisco Outer Sunset `94122`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
+> **Privacy & Repo Policy:** This repository is public. Never add personal names, street addresses, exact parcel identifiers, account details, private source documents, or unrounded user-specific figures to the website, repository, commits, or logs. Public property references use only `Property A` (Santa Clara County, CA) and `Property B` (San Francisco, CA); do not publish postal codes or street/neighborhood-level location detail. Property-level dollar figures, if retained for decision utility, must be anonymized, rounded to the nearest **$10**, and clearly labeled as user-supplied/unverified unless confirmed by a cited official source. Do not claim a private value is verified solely because an official page describes the general rule.
 
 ## Session Registry & Active Branch
-- **Active Branch:** `arena/fec96e14-tinodash1` (integrating & reconciling `origin/main` at `d889203`)
-- **Active Session ID:** `fec96e14`
-- **Prior Merged Sessions on `main`:** `914b57ba` (PR #3), `ef80c5c0` (PR #4), `43f9846f` (PR #5), `f83e6979` (PR #6), `51f65152` (PR #8)
+- **Active Branch:** `arena/a11dfc9d-tinodash1` (final integration verification from `c9994bc`)
+- **Active Session ID:** `a11dfc9d`
+- **Prior Merged Sessions on `main`:** see historical integration logs below; all tasks previously marked done are being re-audited before publication.
 - **GitHub Pages Target:** `https://kanlerxz87-cyber.github.io/TinoDash1/` (`main:/` legacy static build)
 
 ---
@@ -20,7 +20,7 @@
 | T-04 | Dashboard UI, grouped navigation, landing page & category subpages | done | `fec96e14` | `index.html`, `pages/*.html`, `assets/css/*.css`, `assets/js/*.js`, `README.md` | 10 clean subpages, SVG charts, interactive What-If controls, Decision/Date log, Flagged for Review, Suggestions, Glossary |
 | T-05 | One-page printable "Attorney & CPA Briefing Sheet" export | done | `fec96e14` | `pages/briefing-sheet.html`, `assets/js/pages-briefing.js`, `assets/css/print.css` | Live-synced print & JSON snapshot view |
 | T-06 | Reconcile `origin/main` merge conflicts, remove conflicting Pages workflow & merge PR #9 | done | `fec96e14` | `.github/workflows/ci.yml`, `COORDINATION.md` | Resolved `<<<<<<< HEAD` markers present on `main` (`index.html`, `briefing.html`, `flagged.html`), removed duplicate `site/` vs `main:/` Pages race & `__pycache__/*.pyc`, updated Nov 2026 verified figures |
-
+| T-07 | Final integration re-audit: remove public postal/neighborhood identifiers, validate legal claims against primary sources, correct model/UI/data inconsistencies, strengthen privacy-history checks, verify Pages deployment | in progress | `a11dfc9d` | `COORDINATION.md`, `PRIVACY.md`, `README.md`, `index.html`, `pages/**`, `assets/js/**`, `data/**`, `scripts/**`, `tests/**`, `.github/workflows/**` | Current branch only (`arena/a11dfc9d-tinodash1`); all earlier board tasks are merged and no active parallel claims were listed at session start. Claim committed before implementation. |
 ---
 
 ## Verification & Irregularities Log
