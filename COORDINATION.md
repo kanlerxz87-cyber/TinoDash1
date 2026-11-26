@@ -3,8 +3,8 @@
 > **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `95014`, `Property B` in San Francisco Outer Sunset `94122`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
 
 ## Session Registry & Active Branch
-- **Active Branch:** `arena/fec96e14-tinodash1` (integrating & reconciling `origin/main` at `d889203`)
-- **Active Session ID:** `fec96e14`
+- **Active Branch (current session):** `arena/32687990-tinodash1` (base `main` @ `c9994bc`, session `32687990`)
+- **Earlier Active Branch (historical):** `arena/fec96e14-tinodash1` (session `fec96e14`)
 - **Prior Merged Sessions on `main`:** `914b57ba` (PR #3), `ef80c5c0` (PR #4), `43f9846f` (PR #5), `f83e6979` (PR #6), `51f65152` (PR #8)
 - **GitHub Pages Target:** `https://kanlerxz87-cyber.github.io/TinoDash1/` (`main:/` legacy static build)
 
@@ -145,3 +145,19 @@ Shared task board for parallel agent sessions. Update before starting work.
      - Wired both `npm run check` and `python3 scripts/build_verified_model.py && python3 scripts/verify_repo.py` into `.github/workflows/ci.yml`.
 - **Verification**: `npm run check` (PII/rounding + ES-module/DOM/subpath link audit + 9/9 unit tests) PASSED; `python3 scripts/verify_repo.py` PASSED.
 - **PR Link & Status**: [PR #14](https://github.com/kanlerxz87-cyber/TinoDash1/pull/14) (`arena/ddd5451c-tinodash1` → `main`) — CI verified green, merged to `main`, and live GitHub Pages (`https://kanlerxz87-cyber.github.io/TinoDash1/`) verified.
+
+---
+
+## Session `32687990` — Claim & Scope (2026-11-26, branch `arena/32687990-tinodash1`)
+
+Tasks claimed (non-overlapping scope; the other sessions listed above are closed):
+
+| Task ID | Task | Status | Owning Session | Files Touched |
+| --- | --- | --- | --- | --- |
+| T-07 | Privacy containment: remove ZIP codes and raw/unrounded identifiers from the published tree | in progress | `32687990` | `README.md`, `PRIVACY.md`, `index.html`, `pages/*.html`, `assets/js/*.js`, `data/*.json`, `scripts/build_verified_model.py`, `COORDINATION.md` |
+| T-08 | Line-by-line verification pass of Nov 2026 facts (ballot results, Treasury curve, SF rate, Prop 19, IRS, FTB, HUD, SCC Tax Rate Book); unverified values blanked or flagged | in progress | `32687990` | `data/verified-sources.json`, `data/properties.json`, `pages/flagged.html`, `pages/properties.html`, `pages/tax-estate.html` |
+| T-09 | Requirements tracker: every item from the owner's request mapped to a page, status, and decision date | in progress | `32687990` | `pages/requirements.html`, `assets/js/pages-requirements.js`, `assets/js/layout.js` (nav entry only) |
+| T-10 | Rebuild model and site after input changes; record whether the recommendation moved | in progress | `32687990` | `scripts/build_verified_model.py`, `data/model.json`, `assets/js/model.js` |
+| T-11 | Integration: checks, PR to `main`, merge, GitHub Pages verification | pending | `32687990` | all |
+
+Not claimed (owner input or fact-specific advice required; see Flagged for Review): Git history rewrite (requires owner approval and a force-push to `main`, which this session may not perform); exact Cupertino TRA rates (Tax Rate Book pages beyond the retrievable range); parcel-level facts; HUD CA rows; insurance quotes.
