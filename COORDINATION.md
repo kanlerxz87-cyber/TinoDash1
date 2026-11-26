@@ -3,19 +3,13 @@
 > **Privacy & Repo Policy:** This repository is public. **Zero** personal names, street addresses, postal codes, trust names, or Assessor Parcel Numbers (APNs) may appear in current site/repository files. Property labels use Property A/B and city-level descriptions only. Financial inputs are rounded to the nearest **$10** increment or presented as ranges/placeholders.
 
 ## Current Session Claim — `arena/8fbf68e6-tinodash1` (2026-11-26)
-- **Status**: in progress
-- **Scope**: privacy containment and consistency of published site (`index.html`, `pages/**`, `assets/**`, `data/**`, `docs/**`, `README.md`, `PRIVACY.md`, `scripts/privacy-audit.mjs`, `COORDINATION.md`); verify selected statutory claims against official sources; run full build/audits.
-- **Constraints**: stay on the active Arena branch; do not include personal identifiers in current public files.
-- **Initial finding**: current and superseded site copies included postal-location identifiers; the main branch advanced while this task was underway, so rebase is integrating that parallel session's coordination update.
-
-## Current Session Claim — `arena/8fbf68e6-tinodash1` (2026-11-26)
 - **Status**: done (historical exposure needs review)
 - **Scope**: Current-site privacy containment, stale archive retirement, FTB source/model correction, and full verification.
 - **Initial finding**: Superseded public pages and earlier commits included postal-location identifiers; files in the current tree are scrubbed, but reachable Git history still contains old commits.
 
 ## Session Registry & Active Branch
 
-- **Active Branch:** `arena/8fbf68e6-tinodash1` (integrating & reconciling `origin/main` at `c9994bc`; branch is identical to `main` — no divergent working tree)
+- **Active Branch:** `arena/8fbf68e6-tinodash1` (working from `origin/main` at `a95a1ac`; contains pending privacy, source, and model updates)
 - **Active Session ID:** `8fbf68e6`
 - **Prior Merged Sessions on `main`:** `914b57ba` (PR #3), `ef80c5c0` (PR #4), `43f9846f` (PR #5), `f83e6979` (PR #6), `51f65152` (PR #8), `fec96e14` (PR #9), `62714618` (PR #10), `99b3f90f` (PR #12), `ddd5451c` (PR #14)
 - **GitHub Pages Target:** `https://kanlerxz87-cyber.github.io/TinoDash1/` (`main:/` legacy static build)
@@ -75,7 +69,7 @@
 - **Deliverables (additive, privacy-first static dashboard in `docs/`)**: `docs/index.html` + 15 subpages in `docs/pages/` (executive summary, printable attorney/CPA briefing sheet, inheritance process, property comparison, projections with what-if controls, black swan scenarios, tax/legal rules, timeline, decision framework, questions/missing info, suggestions, glossary, sources registry, flagged for review, privacy/data handling). `docs/assets/style.css`, `docs/assets/app.js` (shared static UI; no build step). `docs/data/sources.json`, `docs/templates/private-estate-inventory-template.csv`. `.github/workflows/pages.yml` (GitHub Pages deploy from `docs/` on push to main / workflow_dispatch). Updated `README.md`, `.gitignore`.
 - **Key features**: "What would change the answer" on first screen; mixed paths; phased investing path (3M-2Y Treasuries 24-36 months, then DCA into stocks) in Black Swan; reinvestment risk shown beside headlines; what-if controls; imputed rent input; §121 toggle for living-then-sell; Prop 19 cap carry-forward note; transfer/recording fee in sell path; same-tax-year sale toggle; distribution chart; printable one-page attorney/CPA briefing sheet; deadlines timeline; grouped menu + glossary; suggestions review section; flagged-for-review page.
 - **Privacy (original audit corrected 2026-11-26)**: Earlier public commits retain postal-location identifiers in superseded copies. Current files omit them and `/docs/` is retired, but commit history has not been rewritten; see current F-09. Current product figures are rounded to $10 or presented as ranges.
-- **Verification**: Internal link check 0 missing across 16 docs HTML pages. PII grep audit clean for ZIPs/unrounded raw values.
+- **Verification (audit correction 2026-11-26)**: The original grep audit was incomplete; it missed postal-location identifiers in prior commits. The `/docs/` tree is now retired from current files, but those historical commits remain reachable (F-09).
 - **Sources**: IRS (estate tax, 706, Pub 551/523/527, Topic 701/559, 1031), CA BOE (Prop 19, BOE-19-P, LTA 2025/009 cap $1,044,586 for 2/16/2025-2/15/2027), CA LegInfo RTC §63.2, CA FTB (2025 540 booklet, Behavioral Health Services Tax 1% over $1M, capital gains as ordinary income), CA SCO, Santa Clara County Clerk-Recorder/Assessor, SF Rent Board/SF.gov OMI, Federal Reserve History.
 - **Flagged/unresolved**: Property A/B estimates, historical taxes/assessments, rent/insurance/utilities are user-supplied unverified; Property A market rent missing; TRA/parcel-specific rate requires private lookup; Prop 19 eligibility fact-specific; estate total/prior gifts/portability unknown; "Prop H" measure ambiguous; Property B leases/rent-control status unverified; same-tax-year sale and 1031 need CPA/attorney; external prior data exposure unprovable from repo.
 - **Status**: PR #12 & PR #13 merged to `main`. Legacy GitHub Pages build succeeded (`main:/`, https://kanlerxz87-cyber.github.io/TinoDash1/).
