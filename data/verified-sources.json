@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastVerifiedDate": "2026-11-25",
-    "verificationPolicy": "Every row requires an official primary-source URL. Unconfirmed parameters are left explicitly flagged rather than interpolated.",
+    "lastVerifiedDate": "2026-11-26",
+    "verificationPolicy": "Every row requires an official primary-source URL. Values that could not be confirmed from an official source in the 2026-11-26 verification pass are marked UNVERIFIED and are not presented as facts.",
     "roundingPolicy": "All user-supplied dollar values are anonymized and rounded to the nearest $10 increment."
   },
   "federal": {
@@ -19,11 +19,27 @@
       "sec61662PctPortion2026Usd": 1940000,
       "californiaEstateOrInheritanceTaxPct": 0.0,
       "sources": [
-        { "label": "IRS Rev. Proc. 2025-32 (2026 Inflation Adjustments)", "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" },
-        { "label": "IRS Form 706 Instructions (Rev. July 2026)", "url": "https://www.irs.gov/pub/irs-pdf/i706.pdf" },
-        { "label": "IRS Form 4768 Instructions (Extension)", "url": "https://www.irs.gov/instructions/i4768" },
-        { "label": "IRS OBBBA Individual & Estate Provisions", "url": "https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions-individuals-and-workers" }
-      ]
+        {
+          "label": "IRS Rev. Proc. 2025-32 (2026 Inflation Adjustments)",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+        },
+        {
+          "label": "IRS Form 706 Instructions (Rev. July 2026)",
+          "url": "https://www.irs.gov/pub/irs-pdf/i706.pdf"
+        },
+        {
+          "label": "IRS Form 4768 Instructions (Extension)",
+          "url": "https://www.irs.gov/instructions/i4768"
+        },
+        {
+          "label": "IRS OBBBA Individual & Estate Provisions",
+          "url": "https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions-individuals-and-workers"
+        }
+      ],
+      "verification": {
+        "filingThreshold2026_15M": "VERIFIED: irs.gov estate-tax page (fetched 2026-11-26) lists $15,000,000 filing threshold for 2026.",
+        "annualGiftExclusion2026_19K": "CORROBORATED (not fetched from IRS Rev. Proc. 2025-32 this session): reported as $19,000 by multiple secondary sources. Manual check required."
+      }
     },
     "incomeAndCapitalGains2026": {
       "ordinaryTopRatePct": 37.0,
@@ -34,14 +50,33 @@
         "trust": 16000
       },
       "ltcgBrackets2026": {
-        "single": { "zeroPctMax": 49450, "fifteenPctMax": 545500 },
-        "mfj": { "zeroPctMax": 98900, "fifteenPctMax": 613700 },
-        "hoh": { "zeroPctMax": 66200, "fifteenPctMax": 579600 },
-        "mfs": { "zeroPctMax": 49450, "fifteenPctMax": 306850 },
-        "trust": { "zeroPctMax": 3300, "fifteenPctMax": 16250 }
+        "single": {
+          "zeroPctMax": 49450,
+          "fifteenPctMax": 545500
+        },
+        "mfj": {
+          "zeroPctMax": 98900,
+          "fifteenPctMax": 613700
+        },
+        "hoh": {
+          "zeroPctMax": 66200,
+          "fifteenPctMax": 579600
+        },
+        "mfs": {
+          "zeroPctMax": 49450,
+          "fifteenPctMax": 306850
+        },
+        "trust": {
+          "zeroPctMax": 3300,
+          "fifteenPctMax": 16250
+        }
       },
       "niitRatePct": 3.8,
-      "niitThresholds": { "single": 200000, "mfj": 250000, "mfs": 125000 },
+      "niitThresholds": {
+        "single": 200000,
+        "mfj": 250000,
+        "mfs": 125000
+      },
       "saltCap2026Usd": 40400,
       "saltCapMfs2026Usd": 20200,
       "saltPhaseoutStartMagi2026Usd": 505000,
@@ -56,12 +91,30 @@
       "sec1031CloseDays": 180,
       "form8971ConsistentBasisDays": 30,
       "sources": [
-        { "label": "IRS Rev. Proc. 2025-32 (2026 Tax & LTCG Tables)", "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" },
-        { "label": "IRS Form 8960 Instructions (3.8% NIIT)", "url": "https://www.irs.gov/pub/irs-pdf/i8960.pdf" },
-        { "label": "IRS Pub 523 (Selling Your Home / IRC §121)", "url": "https://www.irs.gov/publications/p523" },
-        { "label": "IRS Pub 527 (Residential Rental 27.5-Yr Depreciation)", "url": "https://www.irs.gov/publications/p527" },
-        { "label": "IRS Form 8824 Instructions (IRC §1031)", "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf" },
-        { "label": "IRS Form 8971 Instructions (IRC §1014(f) Basis)", "url": "https://www.irs.gov/pub/irs-pdf/i8971.pdf" }
+        {
+          "label": "IRS Rev. Proc. 2025-32 (2026 Tax & LTCG Tables)",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf"
+        },
+        {
+          "label": "IRS Form 8960 Instructions (3.8% NIIT)",
+          "url": "https://www.irs.gov/pub/irs-pdf/i8960.pdf"
+        },
+        {
+          "label": "IRS Pub 523 (Selling Your Home / IRC §121)",
+          "url": "https://www.irs.gov/publications/p523"
+        },
+        {
+          "label": "IRS Pub 527 (Residential Rental 27.5-Yr Depreciation)",
+          "url": "https://www.irs.gov/publications/p527"
+        },
+        {
+          "label": "IRS Form 8824 Instructions (IRC §1031)",
+          "url": "https://www.irs.gov/pub/irs-pdf/i8824.pdf"
+        },
+        {
+          "label": "IRS Form 8971 Instructions (IRC §1014(f) Basis)",
+          "url": "https://www.irs.gov/pub/irs-pdf/i8971.pdf"
+        }
       ]
     }
   },
@@ -77,11 +130,28 @@
       "form593WithholdingRatePct": 3.33,
       "form3840AnnualTracking": "Required annually after out-of-state §1031 exchange",
       "sources": [
-        { "label": "FTB Form 540 Tax Rate Schedules (Schedules X/Y/Z & 1% >$1M)", "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" },
-        { "label": "FTB Form 540 Booklet Line 62 (Behavioral Health Services Tax)", "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html" },
-        { "label": "FTB Form 593 Real Estate Withholding Instructions (2026)", "url": "https://www.ftb.ca.gov/forms/2026/2026-593-instructions.html" },
-        { "label": "FTB Pub 1016 Nonresident/Out-of-State §1031 Form 3840", "url": "https://www.ftb.ca.gov/forms/misc/1016.html" }
-      ]
+        {
+          "label": "FTB 2025 Form 540 Instructions (line 62, Behavioral Health Services Tax)",
+          "url": "https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html"
+        },
+        {
+          "label": "FTB Form 540 Tax Rate Schedules (Schedules X/Y/Z & 1% >$1M)",
+          "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf"
+        },
+        {
+          "label": "FTB Form 540 Booklet Line 62 (Behavioral Health Services Tax)",
+          "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html"
+        },
+        {
+          "label": "FTB Form 593 Real Estate Withholding Instructions (2026)",
+          "url": "https://www.ftb.ca.gov/forms/2026/2026-593-instructions.html"
+        },
+        {
+          "label": "FTB Pub 1016 Nonresident/Out-of-State §1031 Form 3840",
+          "url": "https://www.ftb.ca.gov/forms/misc/1016.html"
+        }
+      ],
+      "mhstVerification": "VERIFIED: FTB 2025 Form 540 instructions, line 62: 1% x (taxable income - $1,000,000)."
     },
     "prop19": {
       "allowance2025To2027Usd": 1044586,
@@ -92,64 +162,111 @@
       "primaryResidenceRequired": true,
       "repealOnNov2026Ballot": false,
       "sources": [
-        { "label": "CA BOE Proposition 19 Official Guidance", "url": "https://www.boe.ca.gov/prop19/" },
-        { "label": "CA BOE NR-25-02 ($1,044,586 Indexed Exclusion)", "url": "https://www.boe.ca.gov/news/2025/nr-25-02.htm" },
-        { "label": "CA SOS Qualified Statewide Ballot Measures (Nov 2026)", "url": "https://www.sos.ca.gov/elections/ballot-measures/qualified-ballot-measures" }
-      ]
+        {
+          "label": "CA BOE Proposition 19 page (fetched 2026-11-26)",
+          "url": "https://www.boe.ca.gov/prop19/"
+        },
+        {
+          "label": "CA BOE Proposition 19 Official Guidance",
+          "url": "https://www.boe.ca.gov/prop19/"
+        },
+        {
+          "label": "CA BOE NR-25-02 ($1,044,586 Indexed Exclusion)",
+          "url": "https://www.boe.ca.gov/news/2025/nr-25-02.htm"
+        },
+        {
+          "label": "CA SOS Qualified Statewide Ballot Measures (Nov 2026)",
+          "url": "https://www.sos.ca.gov/elections/ballot-measures/qualified-ballot-measures"
+        }
+      ],
+      "verificationNote": "VERIFIED (primary): BOE News Release NR 25-02 (Mar 7, 2025) gives the excludable amount as $1,044,586 for transfers Feb 16, 2025 to Feb 15, 2027 (source: https://www.boe.ca.gov/news/2025/nr-25-02.htm). Next BOE adjustment due before Feb 16, 2027. Homeowners’/veterans’ exemption claim due within one year of transfer.",
+      "exclusionAmountUsd": 1044586,
+      "exclusionSource": "https://www.boe.ca.gov/news/2025/nr-25-02.htm"
     },
     "nov2026StateBallot": [
       {
-        "measure": "CA Proposition 40 (5% One-Time Wealth Tax; Real Estate Excluded)",
-        "status": "Defeated (Nov 3, 2026)",
-        "voteSummary": "No 52.1% / Yes 47.9% (as of Nov 21, 2026 reporting)",
-        "impact": "No California billionaire wealth tax enacted; real estate was already excluded.",
-        "url": "https://electionresults.sos.ca.gov/returns/maps/ballot-measures/prop/40"
+        "measure": "Proposition 40 (one-time billionaire wealth tax)",
+        "status": "FAILED (secondary sources; AP call)",
+        "voteSummary": "No ≈52.8% / Yes ≈47.2% (AP, via CalMatters). Primary SOS certification pending.",
+        "impact": "No state billionaire wealth tax enacted.",
+        "url": "https://calmatters.org/politics/elections/2026/11/prop-40-billionaire-tax-defeated/",
+        "primaryConfirmation": "UNVERIFIED - SOS results page not yet confirmed"
       },
       {
-        "measure": "CA Proposition 3 (Extends High-Income Tax Brackets Permanently)",
-        "status": "Enacted / Passing (Nov 3, 2026)",
-        "voteSummary": "Yes ~60.7% / No ~39.3%",
-        "impact": "Locks in top CA ordinary & capital-gains rates up to 13.3% permanently for high-income sale years.",
-        "url": "https://electionresults.sos.ca.gov/contests/maps/ballot-measures"
+        "measure": "Proposition 41",
+        "status": "FAILED (secondary sources)",
+        "voteSummary": "Yes ≈44.75% (MultiState tally).",
+        "impact": "Subject not confirmed; no model input.",
+        "url": "https://www.multistate.us/elections/results/california-2026",
+        "primaryConfirmation": "UNVERIFIED - subject and primary result not confirmed"
       },
       {
-        "measure": "CA Proposition 43 (Local Revenue Voter Threshold Limits)",
-        "status": "Defeated (Nov 3, 2026)",
-        "voteSummary": "No ~54.9% / Yes ~45.1%",
-        "impact": "Local parcel/transfer taxes remain subject to existing constitutional rules.",
-        "url": "https://electionresults.sos.ca.gov/returns/maps/ballot-measures/prop/43"
+        "measure": "Proposition 42",
+        "status": "CONFLICTING - UNVERIFIED",
+        "voteSummary": "Sources conflict: one tally shows Yes ≈51.16% (Passed); another lists \"Winner: No\".",
+        "impact": "Not used in model until confirmed.",
+        "url": "https://www.multistate.us/elections/results/california-2026",
+        "primaryConfirmation": "UNVERIFIED - do not publish result until SOS confirms"
       },
       {
-        "measure": "Prop 19 Repeal Initiative (LAO 25-0422)",
-        "status": "Did Not Qualify for Nov 2026 Ballot",
-        "voteSummary": "Not on Nov 3, 2026 ballot",
-        "impact": "Prop 19 exclusion cap ($1,044,586 indexed) remains in force; re-check annually.",
-        "url": "https://lao.ca.gov/ballot/2025/250422.pdf"
+        "measure": "Proposition 43",
+        "status": "FAILED (secondary sources)",
+        "voteSummary": "Yes ≈42.28% (MultiState tally).",
+        "impact": "Subject not confirmed in primary sources; no model input.",
+        "url": "https://www.multistate.us/elections/results/california-2026",
+        "primaryConfirmation": "UNVERIFIED - primary confirmation pending"
+      },
+      {
+        "measure": "Proposition 3",
+        "status": "PASSED (secondary sources)",
+        "voteSummary": "Yes ≈60.86% (MultiState tally).",
+        "impact": "Subject per prior research: extension of high-income tax rates; the model keeps current law unless flagged.",
+        "url": "https://www.multistate.us/elections/results/california-2026",
+        "primaryConfirmation": "UNVERIFIED - primary confirmation pending"
+      },
+      {
+        "measure": "Props 44 and 45",
+        "status": "SUBJECTS NOT IDENTIFIED",
+        "voteSummary": "Listed on the SF Dept. of Elections results page without subjects in this session.",
+        "impact": "Cannot rule out a Prop 19 change until identified.",
+        "url": "https://sfelections.org/results/20261103/index.html",
+        "primaryConfirmation": "UNVERIFIED - identify subjects before any Prop 19 conclusion"
       }
-    ]
+    ],
+    "prop19RepealStatus": {
+      "status": "FAILED TO QUALIFY (primary)",
+      "source": "https://elections.cdn.sos.ca.gov/ccrov/2026/may/26138jh.pdf",
+      "fetchedDate": "2026-11-26"
+    }
   },
   "santaClaraCupertino": {
-    "traPrefix": "013-xxx (City of Cupertino)",
-    "publishedAdValoremRateRangePct": { "low": 1.1671, "high": 1.1786 },
+    "traPrefix": "013-xxx (Cupertino) - prefix per prior session; exact TRA and rate UNVERIFIED",
+    "publishedAdValoremRateRangePct": null,
     "scvwdStateWaterProjectPct": 0.0039,
-    "effectiveCombinedAdValoremRangePct": { "low": 1.1710, "high": 1.1825 },
-    "fuhsdParcelTaxUsd": 98,
-    "cusdMeasureAStatus": "Expired June 30, 2023 (verify any subsequent district levies on bill)",
+    "effectiveCombinedAdValoremRangePct": null,
+    "fuhsdParcelTaxUsd": null,
+    "cusdMeasureAStatus": "UNVERIFIED (prior session stated expired June 30, 2023).",
     "countyTransferTaxPer500Usd": 0.55,
     "cupertinoCityConveyanceTaxPct": 0.0,
-    "recordingFirstPageWithDttUsd": 92,
     "recordingAddlPageUsd": 3,
     "regionalMeasureRtmSalesTaxPct": 0.5,
     "sources": [
-      { "label": "Santa Clara County 2025-2026 Tax Rate Book", "url": "https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf" },
-      { "label": "SCC Clerk-Recorder Recording & Transfer Tax Fees", "url": "https://clerkrecorder.sccgov.org/recording-documents-fee" },
-      { "label": "FUHSD Parcel Tax ($98/yr & Senior Exemption)", "url": "https://www.fuhsd.org/quick-links/parcel-tax-exemptions" },
-      { "label": "CUSD Measure A Oversight (Expired June 30, 2023)", "url": "https://www.cusdk8.org/departments/committees/measure-a-parcel-tax-citizens-oversight-committee" }
-    ]
+      {
+        "label": "Santa Clara County FY2025-26 Compilation of Tax Rates (fetched 2026-11-26; Cupertino 013 rows not retrieved)",
+        "url": "https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf"
+      }
+    ],
+    "publishedAdValoremRateStatus": "UNVERIFIED. Prior-session value 1.1671-UNVERIFIED could not be confirmed: the Cupertino rows (013-xxx) of the FY2025-26 Tax Rate Book were beyond the portion retrievable in this session.",
+    "verifiedComponents": {
+      "maximumLevyPct": 1.0,
+      "scvwdStateWaterProjectPct": 0.0039,
+      "note": "VERIFIED in FY2025-26 Tax Rate Book: 1% general levy; SCVWD State Water Project 0.00390 (county-level rows)."
+    },
+    "fuhsdParcelTaxStatus": "UNVERIFIED (prior session stated $98/yr; not confirmed this session).",
+    "countyTransferTaxStatus": "UNVERIFIED this session. Model uses $0.55 per $500 (= $1.10 per $1,000). Confirm with Santa Clara County Clerk-Recorder.",
+    "recordingFirstPageStatus": "UNVERIFIED (prior-session figure not confirmed; no official fee page fetched)."
   },
   "sanFrancisco": {
-    "fy2526AdValoremPct": 1.18268325,
-    "fy2627AdValoremFile260971Pct": 1.18162182,
     "rentControlAnnualCap20262027Pct": 1.6,
     "rentControlEffectiveDates": "March 1, 2026 – February 28, 2027",
     "costaHawkinsCutoffDate": "June 13, 1979",
@@ -158,90 +275,192 @@
     "omiProtectedClassAddOnUsd": 5497,
     "omiMinOccupancyMonths": 36,
     "propHMuniParcelTaxNov2026": {
-      "passed": true,
+      "measure": "SF Measure H (Muni parcel tax; called \"Prop H\" in some sources)",
+      "status": "PASSED - PRELIMINARY (SF Dept. of Elections update Nov 23, 2026; not certified)",
       "yesPct": 74.42,
-      "effectiveDate": "2027-07-01",
-      "multifamilyBaseUsd": 249,
-      "multifamilyPerSqftOver5000Usd": 0.195,
-      "multifamilySqftThreshold": 5000,
-      "multifamilyCapUsd": 50000,
-      "seniorOwnerOccupantDeductionUsd": 249,
-      "cpiIndexed": true
+      "effectiveDate": "July 1, 2027 (per news reports; ordinance text not yet read)",
+      "officialBallotTextRate": "Per official ballot text (sfelections.org): $129 to $400,000 per parcel, CPI-adjusted, about $177M/yr over 15 years.",
+      "conflictingSecondaryRate": "A secondary schedule lists $249 + $0.195/sqft over 5,000 sqft with a $50,000 cap. This conflicts with the ballot text and is NOT used.",
+      "rateStatus": "UNVERIFIED - confirm the rate against the ordinance / SFMTA"
     },
     "regionalMeasureRtmSfSalesTaxPct": 1.0,
-    "emptyHomesTaxStatus": "Invalidated by CA Court of Appeal (A172067, Sept 11, 2026)",
+    "emptyHomesTaxStatus": "BLOCKED: SF Treasurer states the Court of Appeal affirmed the trial-court ruling (Sept 11, 2026, case A172067); the tax is not being collected.",
     "transferTaxTiers": [
-      { "range": "$250,001 – $1,000,000", "ratePct": 0.68 },
-      { "range": "$1,000,001 – $4,999,999", "ratePct": 0.75 },
-      { "range": "$5,000,000 – $9,999,999", "ratePct": 2.25 },
-      { "range": "$10,000,000 – $24,999,999", "ratePct": 5.50 },
-      { "range": "$25,000,000+", "ratePct": 6.00 }
+      {
+        "range": "$250,001 – $1,000,000",
+        "ratePct": 0.68
+      },
+      {
+        "range": "$1,000,001 – $4,999,999",
+        "ratePct": 0.75
+      },
+      {
+        "range": "$5,000,000 – $9,999,999",
+        "ratePct": 2.25
+      },
+      {
+        "range": "$10,000,000 – $24,999,999",
+        "ratePct": 5.5
+      },
+      {
+        "range": "$25,000,000+",
+        "ratePct": 6.0
+      }
     ],
     "sources": [
-      { "label": "SF Board of Supervisors FY25-26 Tax Rate (File r0447-25)", "url": "https://sfbos.archive.sf.gov/sites/default/files/r0447-25.pdf" },
-      { "label": "SF Budget & Finance Committee FY26-27 Rate (File 260971)", "url": "https://media.api.sf.gov/documents/bfc091626_agenda.pdf" },
-      { "label": "SF Department of Elections Nov 3, 2026 Results (Prop H)", "url": "https://sfelections.org/results/20261103/index.html" },
-      { "label": "SF Controller Muni Parcel Tax Economic Impact Report", "url": "https://www.sf.gov/sites/default/files/2026-07/MUNI_parcel_tax_economic_impact_final.pdf" },
-      { "label": "SF Rent Board Topic 204 (Owner Move-In & Relocation Rules)", "url": "https://www.sf.gov/information--evictions-based-owner-or-relative-move" },
-      { "label": "SF Public Works Expedited Condo Conversion Settlement", "url": "https://sfpublicworks.org/node/35233" }
-    ]
+      {
+        "label": "SF Treasurer & Tax Collector - Secured Property Taxes (FY2026-27 rate; fetched 2026-11-26)",
+        "url": "https://sftreasurer.org/property/secured-property-taxes"
+      },
+      {
+        "label": "SF Treasurer - Empty Homes Tax status (fetched 2026-11-26)",
+        "url": "https://sftreasurer.org/business/taxes-fees/empty-homes-tax-eht"
+      },
+      {
+        "label": "SF Dept. of Elections - Nov 3, 2026 results (Measure H & RTM; preliminary, fetched 2026-11-26)",
+        "url": "https://sfelections.org/results/20261103/index.html"
+      },
+      {
+        "label": "SF Rent Board Topic 204 (owner move-in & relocation; not re-fetched)",
+        "url": "https://www.sf.gov/information--evictions-based-owner-or-relative-move"
+      }
+    ],
+    "fy2627SecuredRatePct": 1.18162182,
+    "fy2627SecuredRateVerification": "VERIFIED: SF Treasurer & Tax Collector, secured property tax page (fetched 2026-11-26): FY2026-27 rate 1.18162182%.",
+    "rentControlStatus": "UNVERIFIED this session (prior-session value).",
+    "omiStatus": "UNVERIFIED this session (OMI relocation amounts from prior session).",
+    "transferTaxStatus": "UNVERIFIED this session (tier rates from prior session).",
+    "measureI": {
+      "status": "FAILED - PRELIMINARY",
+      "noPct": 51.62,
+      "yesPct": 48.38,
+      "subject": "half of transfer tax on sales over $10M to affordable housing",
+      "source": "https://sfelections.org/results/20261103/index.html"
+    },
+    "regionalMeasureRtmNote": "RTM passed in the region per news reports; SF-specific percentage NOT recorded (prior invented figure removed)."
   },
   "rentalAndUtilities": {
     "hudFy2026Safmr": {
-      "zip95014": { "br0": 3340, "br1": 3800, "br2": 4440, "br3": 5870, "br4": 6390 },
-      "zip94122": { "br0": 2280, "br1": 2730, "br2": 3310, "br3": 4230, "br4": 4380 },
+      "status": "UNVERIFIED - the HUD FY2026 SAFMR PDF was retrievable only up to Arizona rows; the California rows for the Property A and Property B areas could not be read this session. Prior-session values have been withdrawn from display.",
+      "propertyA": {
+        "br0": null,
+        "br1": null,
+        "br2": null,
+        "br3": null,
+        "br4": null
+      },
+      "propertyB": {
+        "br0": null,
+        "br1": null,
+        "br2": null,
+        "br3": null,
+        "br4": null
+      },
       "sourceUrl": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf"
     },
-    "cupertino95014RentalComps": [
-      { "type": "2BR Benchmark (ZIP 95014 Voucher Floor)", "monthlyUsd": 4440, "source": "HUD FY2026 Small Area FMR (Official 40th-Pctile Floor)", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" },
-      { "type": "Private Cupertino 95014 SFR MLS Comps (3–4BR)", "monthlyUsd": null, "source": "[Blank — Unverified] Obtain 3 private MLS SFR comps; letting paths use HUD SAFMR floor until verified", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" }
+    "cupertinoRentalComps": [
+      {
+        "type": "Voucher benchmark (HUD SAFMR, Property A area)",
+        "monthlyUsd": null,
+        "source": "UNVERIFIED - see hudFy2026Safmr.status",
+        "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf"
+      },
+      {
+        "type": "Private Cupertino SFR MLS comps (3-4BR)",
+        "monthlyUsd": null,
+        "source": "[Blank - Unverified] Obtain 3 private MLS SFR comps; letting paths use the model placeholder until verified",
+        "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf"
+      }
     ],
     "utilitiesAndSolar": {
-      "pgeBundledRar2026UsdPerKwh": 0.345,
-      "sjwcCommodityRateEff20260701UsdPerCcf": 7.253,
-      "sfpucWaterWastewaterFy27IncreasePct": 11.5,
+      "pgeBundledRar2026UsdPerKwh": null,
+      "sjwcCommodityRateEff20260701UsdPerCcf": null,
+      "sfpucWaterWastewaterFy27IncreasePct": null,
       "nem2LegacyYears": 20,
       "sources": [
-        { "label": "CPUC Public Advocates Q2 2026 Electric Rates Report (PG&E)", "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf" },
-        { "label": "City of Cupertino Official Water Utility Providers & Rates", "url": "https://www.cupertino.gov/Residents/Utilities/Water" },
-        { "label": "SFPUC FY26-27 Water & Wastewater Rate Schedule", "url": "https://www.sfpuc.gov/sites/default/files/accounts-and-services/Rates_Schedule_Water_Sewer_2026-7.pdf" },
-        { "label": "CPUC Net Energy Metering (NEM 2.0 20-Yr Sunset to NBT)", "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing" }
-      ]
+        {
+          "label": "CPUC Public Advocates Q2 2026 Electric Rates Report (PG&E)",
+          "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+        },
+        {
+          "label": "City of Cupertino Official Water Utility Providers & Rates",
+          "url": "https://www.cupertino.gov/Residents/Utilities/Water"
+        },
+        {
+          "label": "SFPUC FY26-27 Water & Wastewater Rate Schedule",
+          "url": "https://www.sfpuc.gov/sites/default/files/accounts-and-services/Rates_Schedule_Water_Sewer_2026-7.pdf"
+        },
+        {
+          "label": "CPUC Net Energy Metering (NEM 2.0 20-Yr Sunset to NBT)",
+          "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+        }
+      ],
+      "pgeStatus": "UNVERIFIED (prior-session rate not confirmed).",
+      "sjwcStatus": "UNVERIFIED (prior-session rate not confirmed).",
+      "sfpucStatus": "UNVERIFIED (prior-session 11.5% not confirmed)."
     },
     "insurance": {
-      "californiaCdiStatus": "Sustainable Insurance Strategy expansions (Bulletin 2025-4) while CA FAIR Plan exposures continued growing (+2.4% Q1 2026); $1,500/yr guesses are outdated for Bay Area SFR and 3-unit SF buildings.",
+      "californiaCdiStatus": "UNVERIFIED - no CDI or insurer premium data for these properties was retrieved. Figures below are analyst sensitivity bands, not quotes.",
       "realisticAnnualRangesUsd": {
         "propertyALow": 2800,
         "propertyABase": 4200,
         "propertyAHigh": 6500,
         "propertyBLow": 4800,
         "propertyBBase": 7200,
-        "propertyBHigh": 10500
+        "propertyBHigh": 10500,
+        "status": "ANALYST SENSITIVITY BAND - NOT SOURCED. Obtain two broker quotes."
       },
-      "sourceUrl": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2026/"
+      "sourceUrl": "https://www.insurance.ca.gov/"
     }
   },
   "macroAndMarket": {
-    "treasuryYields20261113": {
-      "asOf": "2026-11-13",
-      "m3Pct": 4.32,
-      "y2Pct": 4.88,
-      "y10Pct": 5.15,
-      "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
-    },
     "fhfaHpi2026Q2": {
-      "sanJoseMsa": { "oneYrPct": -1.62, "fiveYrPct": 11.98, "since1991Q1Pct": 442.30 },
-      "sanFranciscoMsad": { "oneYrPct": -2.42, "fiveYrPct": 4.99, "since1991Q1Pct": 414.37 },
-      "sourceUrl": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q2"
+      "sanJoseMsa": {
+        "oneYrPct": -1.62,
+        "fiveYrPct": 11.98,
+        "since1991Q1Pct": 442.3
+      },
+      "sanFranciscoMsad": {
+        "oneYrPct": -2.42,
+        "fiveYrPct": 4.99,
+        "since1991Q1Pct": 414.37
+      },
+      "sourceUrl": "https://www.fhfa.gov/document/d/hpi/fhfa-house-price-index-report-2026q2",
+      "status": "UNVERIFIED this session (not re-fetched)."
     },
     "blsInflation": {
       "stagflation1968To1983AnnualPct": 7.3,
       "peak1980MarYoYPct": 14.8,
       "peak2022JunYoYPct": 9.1,
       "sourceUrls": [
-        { "label": "BLS Monthly Labor Review: 100 Years of CPI", "url": "https://www.bls.gov/opub/mlr/2014/article/one-hundred-years-of-price-change-the-consumer-price-index-and-the-american-inflation-experience.htm" },
-        { "label": "BLS Beyond the Numbers: 1970s vs 2021-2022 Inflation", "url": "https://www.bls.gov/opub/btn/volume-11/exploring-price-increases-in-2021-and-previous-periods-of-inflation.htm" }
-      ]
+        {
+          "label": "BLS Monthly Labor Review: 100 Years of CPI",
+          "url": "https://www.bls.gov/opub/mlr/2014/article/one-hundred-years-of-price-change-the-consumer-price-index-and-the-american-inflation-experience.htm"
+        },
+        {
+          "label": "BLS Beyond the Numbers: 1970s vs 2021-2022 Inflation",
+          "url": "https://www.bls.gov/opub/btn/volume-11/exploring-price-increases-in-2021-and-previous-periods-of-inflation.htm"
+        }
+      ],
+      "status": "PARTIAL: 1980 and 2022 CPI peaks as listed by prior session, not re-fetched; 1968-83 average 7.3% UNVERIFIED."
+    },
+    "treasuryYields20261125": {
+      "asOf": "2026-11-25",
+      "m3Pct": 4.34,
+      "y2Pct": 4.61,
+      "y10Pct": 4.85,
+      "y30Pct": 5.24,
+      "status": "VERIFIED (Treasury daily par yield curve, fetched 2026-11-26). 1M, 6M and 1Y not recorded this session.",
+      "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+    },
+    "treasuryYields20261124": {
+      "asOf": "2026-11-24",
+      "m3Pct": 4.36,
+      "y2Pct": 4.63,
+      "y10Pct": 4.91,
+      "y30Pct": 5.3,
+      "status": "VERIFIED (same Treasury source)",
+      "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
     }
   }
 }

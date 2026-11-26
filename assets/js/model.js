@@ -1,6 +1,6 @@
 /**
  * Unified Bay Area Real Estate & Trust Inheritance Decision Model
- * Anonymized: Property A (Cupertino, 95014) + Property B (SF Outer Sunset, 94122)
+ * Anonymized: Property A (Cupertino) + Property B (SF)
  * Zero hardcoded PII; all outputs can be rounded cleanly to $10 or displayed as ranges.
  */
 
@@ -24,12 +24,12 @@ export const DEFAULT_INPUTS = {
   indexProp19AllowanceWithHpi: true,
   isHeirAge65PlusAtTransfer: false, // SF Prop H $249 senior owner deduction + FUHSD $98 senior
 
-  // Property A (Cupertino 95014) Inputs (2026$)
+  // Property A (Cupertino) Inputs (2026$)
   propAValue2026Usd: 3100000,
   propAAssessed2026Usd: 550540,
-  propATraRatePct: 1.171, // 1.1671% base + 0.0039% SCVWD State Water Proj
+  propATraRatePct: 1.171, // MODEL PLACEHOLDER (UNVERIFIED): 1% levy + bond add-on not confirmed; + 0.0039% SCVWD (verified)
   propADirectAssessments2026Usd: 910,
-  propARentMonthly2026Usd: 6300, // market comp midpoint vs $5,870-$6,390 SAFMR
+  propARentMonthly2026Usd: 6300, // placeholder; HUD SAFMR CA rows UNVERIFIED
   propAImputedRentPctOfMarket: 100, // living-path imputed rent ratio
   propAImprovementRatioPct: 40, // 40% building depreciable over 27.5 yrs
   propAInsurance2026Usd: 4200, // realistic market vs $1,500 placeholder
@@ -38,7 +38,7 @@ export const DEFAULT_INPUTS = {
   propASellerBrokerageAndClosingPct: 5.5,
   propASaleInSameTaxYear: true,
 
-  // Property B (SF Outer Sunset 94122) Inputs (2026$)
+  // Property B (SF) Inputs (2026$)
   propBValue2026Usd: 1800000,
   propBAssessed2026Usd: 116530, // 2025 $114,250 * 1.02
   propBSqft: 3800,
@@ -62,8 +62,8 @@ export const DEFAULT_INPUTS = {
   sec121EnabledOnMixed: true,
   stagingMonths: 24, // 24 or 36 months
   stagingInstrument: '2y-ladder', // '3m-tbill' | '2y-ladder'
-  treasury3MRatePct: 4.32,
-  treasury2YRatePct: 4.88,
+  treasury3MRatePct: 4.34, // Treasury par curve, 3M, Nov 25, 2026
+  treasury2YRatePct: 4.61, // Treasury par curve, 2Y, Nov 25, 2026
   sec1031TargetYieldPct: 4.8
 };
 

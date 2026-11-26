@@ -4,7 +4,7 @@ Personal information privacy is the top priority of this project.
 
 ## What this repository and site contain
 
-- Placeholder property references only: **Property A** (Cupertino, ZIP 95014) and **Property B** (Outer Sunset, San Francisco, ZIP 94122).
+- Placeholder property references only: **Property A** (Cupertino) and **Property B** (San Francisco).
 - Figures are rounded to the nearest **$10** and published as ranges. No street addresses, parcel numbers, names, trusts, account numbers, or exact figures appear.
 - All tax/legal parameters cited are public law and government guidance, each with a source link.
 
