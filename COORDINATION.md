@@ -97,3 +97,31 @@
 - **Branch pushed**: `git push origin arena/f9c7f2d1-tinodash1` completed (branch exists on origin; identical to `main`, so no mergeable delta to PR).
 - **Privacy**: Zero PII in workspace or Git history (single commit `c9994bc`, pre-audited). All property figures anonymized as Property A (Cupertino 95014) / Property B (SF Outer Sunset 94122) and rounded to nearest $10 or ranges; parcel-specific values flagged unverified on `pages/flagged.html`.
 - **Status**: All requirements implemented and verified. Site live. No further integration delta required on this branch.
+
+## Session `arena/ff8e68dc-tinodash1` — Claim & Log (2026-11-26, started ~13:00 UTC)
+
+**Why a narrow claim:** At claim time at least eight other `arena/*` sessions had open claims on overlapping scopes (final integration `a11dfc9d` T-07; privacy containment `9f552e20` T18 and `8fbf68e6`; verification `3a8491c5`/`9976f73d` on `verification/**`; integration `43f9846f`). To avoid duplicate work and conflicting edits, this session claims only the two items below. Shared site pages, `index.html`, `data/**`, `assets/**`, and navigation are **not** edited here; required corrections are logged as requests for the final integration session.
+
+| Task ID | Task | Status | Owning Session | Files Touched | Notes |
+| --- | --- | --- | --- | --- | --- |
+| T-08 | Official-source verification register: Nov 2026 ballot outcomes (Prop 3, Prop 40, Prop 43, SF Prop H, SF Measure I), Prop 19 repeal status, SF Empty Homes Tax, federal enacted vs proposed estate-tax law, CA MHSA surtax | in progress | `ff8e68dc` | `research/**` | Each row links an official source or is flagged unverified |
+| T-09 | Privacy containment (surgical): remove plain-text raw-figure list from `scripts/verify_repo.py`, move list to a file outside the repo, make the history scan exhaustive | in progress | `ff8e68dc` | `scripts/verify_repo.py`, `COORDINATION.md` | Surgical only; logged so `a11dfc9d` / `8fbf68e6` can rebase |
+
+### ff8e68dc — T-08 / T-09 results (2026-11-26)
+
+| Task ID | Status | Result |
+| --- | --- | --- |
+| T-08 Official-source register | **done** (flags open) | `research/official-source-register.md`. Confirmed from official pages: Prop 19 repeal failed to qualify (SOS CC/ROV Memo #26138, May 18, 2026); H.R. 1301 and S.4196 are introduced only (Congress.gov); 2026 IRS brackets and LTCG thresholds re-checked; Prop 19 exclusion (BOE NR 25-02); CA MHSA 1% surtax (FTB instructions excerpt). Eleven shared-file corrections requested in §5 (R-01 to R-11) for `a11dfc9d` (T-07). |
+| T-09 Privacy containment | **needs review** (history scrub awaiting owner approval) | Working tree: raw-figure list removed from `scripts/verify_repo.py`; list now loaded from `TINODASH_PRIVATE_FIGURES_FILE` (file outside the repo). History scan now covers every reachable commit, merge diffs included. Owner run flags 3 paths in history (`flagged.html`, `.snippets/pages/flagged.html`, `scripts/verify_repo.py`); exposure map in register §6, values not reproduced. |
+
+**Irregularities logged (no values):**
+- `verify_repo.py` PASS line previously claimed "0 unrounded personal numbers in Git history" while history contained them. That claim was wrong and has been corrected in the script.
+- Repo-scan coverage gap: the earlier history check used `git log -p`, which omits merge diffs. Fixed by scanning every commit.
+- Registry errors (R-01 to R-05, R-11): Prop 40 and Prop 43 are early counts; Prop 3 "~60.7%" and "up to 13.3% permanently" unsupported; Prop 19 repeal citation (LAO) not confirmed; Prop H $249 senior deduction and $249/$0.195/$50,000 multifamily structure unverified; SF Measure I missing.
+- FTB MHSA link fetch failed; FTB estate-and-trust page fetch failed; sf.gov Controller PDF fetch failed. Prop H $1.99 vs $1.19 rate conflict is unresolved.
+- Estate sensitivity label "~$7.14M" in `model.json` and build script has no official source (R-07).
+
+**Requests to other sessions (not edited here):**
+1. Owner (PRIVACY.md §3): approve or decline a `git filter-repo` rewrite for the paths in register §6, then force-update `main` and the listed session branches. Not done by this session.
+2. Owner / CI: the raw-figure scan in `verify_repo.py` now SKIPS in CI unless the secret is supplied. Recommended: add a repository secret and pass it to the workflow as `TINODASH_PRIVATE_FIGURES_FILE` (the file's contents written at runtime, not printed). `.github/workflows/ci.yml` is not claimed by this session.
+3. Integration (`a11dfc9d`, T-07): apply R-01 to R-11 from the register to the shared site and data files.
