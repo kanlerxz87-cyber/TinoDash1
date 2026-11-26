@@ -96,4 +96,7 @@
 - **GitHub Pages**: Live at `https://kanlerxz87-cyber.github.io/TinoDash1/` (legacy build, source `main:/`, status `built`, HTTPS enforced).
 - **Branch pushed**: `git push origin arena/f9c7f2d1-tinodash1` completed (branch exists on origin; identical to `main`, so no mergeable delta to PR).
 - **Privacy**: Zero PII in workspace or Git history (single commit `c9994bc`, pre-audited). All property figures anonymized as Property A (Cupertino 95014) / Property B (SF Outer Sunset 94122) and rounded to nearest $10 or ranges; parcel-specific values flagged unverified on `pages/flagged.html`.
-- **Status**: All requirements implemented and verified. Site live. No further integration delta required on this branch.
+- **PR #15**: https://github.com/kanlerxz87-cyber/TinoDash1/pull/15 (`arena/f9c7f2d1-tinodash1` → `main`) — created with summary of changes, sources used, and flagged irregularities.
+- **Merge Result**: MERGED via `gh pr merge 15 --merge`; merge commit `a95a1acfbc5aec14525ae8b235a122070524121d`; `origin/main` advanced `c9994bc` → `a95a1ac`.
+- **GitHub Pages Deploy**: Rebuilt successfully after merge; status `built` at `https://kanlerxz87-cyber.github.io/TinoDash1/` (legacy build, source `main:/`, HTTPS enforced). Site verified live with no broken links (link audit 37/37 pages).
+- **Status**: All requirements implemented, verified, merged to `main`, and site live. No further integration delta required on this branch.
