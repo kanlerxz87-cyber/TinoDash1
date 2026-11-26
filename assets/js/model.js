@@ -1,6 +1,6 @@
 /**
  * Unified Bay Area Real Estate & Trust Inheritance Decision Model
- * Anonymized: Property A (Cupertino, 95014) + Property B (SF Outer Sunset, 94122)
+ * Anonymized: Property A (Cupertino) + Property B (San Francisco Outer Sunset)
  * Zero hardcoded PII; all outputs can be rounded cleanly to $10 or displayed as ranges.
  */
 
@@ -12,7 +12,7 @@ export const DEFAULT_INPUTS = {
   horizonYears: 25,
   filingStatus: 'mfj', // 'single' | 'mfj'
   householdIncomeBase2026Usd: 260000,
-  caTopTaxRatePct: 13.3, // Form 540: 12.3% base + 1.0% Line 62 surtax >$1M
+  caTopTaxRatePct: 13.3, // Verified 2026 FTB top 12.3% bracket + 1.0% Line 62 above $1M
   includeNiit: true, // 3.8% NIIT above $200k/$250k unindexed threshold
 
   // Trust, Estate & Prop 19 Assumptions
@@ -24,7 +24,7 @@ export const DEFAULT_INPUTS = {
   indexProp19AllowanceWithHpi: true,
   isHeirAge65PlusAtTransfer: false, // SF Prop H $249 senior owner deduction + FUHSD $98 senior
 
-  // Property A (Cupertino 95014) Inputs (2026$)
+  // Property A (Cupertino) Inputs (2026$)
   propAValue2026Usd: 3100000,
   propAAssessed2026Usd: 550540,
   propATraRatePct: 1.171, // 1.1671% base + 0.0039% SCVWD State Water Proj
@@ -38,7 +38,7 @@ export const DEFAULT_INPUTS = {
   propASellerBrokerageAndClosingPct: 5.5,
   propASaleInSameTaxYear: true,
 
-  // Property B (SF Outer Sunset 94122) Inputs (2026$)
+  // Property B (SF Outer Sunset) Inputs (2026$)
   propBValue2026Usd: 1800000,
   propBAssessed2026Usd: 116530, // 2025 $114,250 * 1.02
   propBSqft: 3800,
@@ -76,20 +76,43 @@ export function roundTo10(value) {
  * Compute California Form 540 marginal rate on realized gains / ordinary income
  * Includes 1.0% Behavioral Health Services Tax > $1,000,000 (Line 62)
  */
-export function computeCaEffectiveMarginalRate(otherTaxableIncome, additionalGain, maxCapPct = 13.3) {
+export function computeCaEffectiveMarginalRate(
+  otherTaxableIncome,
+  additionalGain,
+  maxCapPct = 13.3,
+  filingStatus = 'mfj'
+) {
   if (additionalGain <= 0) return 0;
-  const total = otherTaxableIncome + additionalGain;
-  const baseTop = Math.min(12.3, maxCapPct);
-  if (total <= 1000000) {
-    // Simplified graduated marginal blend up to 9.3%-11.3% below $1M
-    const marginalBelow1M = total > 742953 ? baseTop : total > 350000 ? 10.3 : 9.3;
-    return marginalBelow1M / 100;
-  }
-  const over1M = Math.min(additionalGain, total - 1000000);
-  const under1M = additionalGain - over1M;
-  const underRate = otherTaxableIncome > 742953 ? baseTop / 100 : 0.108;
-  const overRate = maxCapPct / 100; // includes +1.0% Line 62 surtax
-  return (under1M * underRate + over1M * overRate) / additionalGain;
+
+  // Directly verified against the FTB 2026 Form 540 rate schedules.
+  // The Line 62 Behavioral Health Services Tax mechanics use the latest
+  // retrieved 2025 Form 540 instructions: 1% over $1,000,000, not doubled for joint filers.
+  const schedules = {
+    single: [11456, 27157, 42861, 59498, 75197, 384109, 460927, 768213],
+    mfs: [11456, 27157, 42861, 59498, 75197, 384109, 460927, 768213],
+    mfj: [22912, 54314, 85722, 118996, 150394, 768218, 921854, 1536426],
+    hoh: [22927, 54316, 70018, 86654, 102356, 522385, 626864, 1044771]
+  };
+  const limits = schedules[filingStatus] ?? schedules.mfj;
+  const rates = [1, 2, 4, 6, 8, 9.3, 10.3, 11.3, Math.min(12.3, maxCapPct)];
+  const surtaxRate = Math.max(0, maxCapPct - 12.3);
+
+  const taxAt = (income) => {
+    let tax = 0;
+    let lower = 0;
+    for (let i = 0; i < rates.length; i += 1) {
+      const upper = limits[i] ?? Infinity;
+      const taxableSlice = Math.max(0, Math.min(income, upper) - lower);
+      tax += taxableSlice * (rates[i] / 100);
+      lower = upper;
+      if (income <= upper) break;
+    }
+    if (income > 1000000) tax += (income - 1000000) * (surtaxRate / 100);
+    return tax;
+  };
+
+  const addedTax = taxAt(otherTaxableIncome + additionalGain) - taxAt(otherTaxableIncome);
+  return addedTax / additionalGain;
 }
 
 /**
@@ -456,7 +479,8 @@ function simulateSinglePath({
     const caRate = computeCaEffectiveMarginalRate(
       params.householdIncomeBase2026Usd * cpiIdx,
       saleGain,
-      params.caTopTaxRatePct
+      params.caTopTaxRatePct,
+      params.filingStatus
     );
     const caTax = saleGain * caRate;
     cumulativeCashTaxPaid += fedTax + caTax;
@@ -498,7 +522,8 @@ function simulateSinglePath({
       const caTax = taxableGain * computeCaEffectiveMarginalRate(
         params.householdIncomeBase2026Usd * cpiIdx,
         taxableGain,
-        params.caTopTaxRatePct
+        params.caTopTaxRatePct,
+        params.filingStatus
       );
       cumulativeCashTaxPaid += fedTax + caTax;
       portfolio += Math.max(0, propAVal - friction.totalCost - fedTax - caTax);
@@ -682,7 +707,8 @@ function simulateSinglePath({
       computeCaEffectiveMarginalRate(
         params.householdIncomeBase2026Usd * cpiIdx,
         taxableCapGainA + depRecapA,
-        params.caTopTaxRatePct
+        params.caTopTaxRatePct,
+        params.filingStatus
       );
     terminalTaxesAndFriction += exitFrictionA.totalCost + fedExitA + caExitA;
   }

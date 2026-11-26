@@ -54,7 +54,7 @@ const TERMS = [
   {
     term: 'CA Form 540 Line 62 (+1% >$1M)',
     category: 'CA Income Tax',
-    desc: 'California taxes capital gains at ordinary rates up to 12.3%, PLUS a 1.0% Behavioral Health Services Tax on taxable income over $1,000,000 = 13.3% top marginal rate.',
+    desc: 'California taxes capital gains at ordinary rates. Form 540 Line 62 adds 1% only to taxable income above $1,000,000 (not doubled for MFJ); 13.3% is the combined maximum, reached only when the filer is in the 12.3% ordinary bracket. The model uses the verified 2026 ordinary-rate schedule; the 2026 Line 62 instructions still require confirmation.',
     url: 'https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html'
   },
   {
@@ -72,7 +72,7 @@ const TERMS = [
   {
     term: 'HUD SAFMR (Small Area Fair Market Rent)',
     category: 'Rental Benchmark',
-    desc: 'ZIP-code-level Section 8 housing voucher payment standards; useful floor check, but must be supplemented with active private-market single-family home comparables in Cupertino 95014.',
+    desc: 'ZIP-code-level Section 8 housing voucher payment standards; useful floor check, but must be supplemented with active private-market single-family home comparables in Cupertino area.',
     url: 'https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf'
   },
   {

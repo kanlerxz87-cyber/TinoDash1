@@ -65,7 +65,7 @@ async function init() {
     {
       name: 'CA Form 540 Line 62 & Form 593 Withholding',
       status: 'Enacted Law',
-      terms: 'CA taxes capital gains as ordinary income up to 12.3% + 1.0% Behavioral Health Services Tax >$1M (13.3% top). Form 593 applies 3.33% escrow withholding unless §121/loss/§1031 exemption applies.',
+      terms: 'CA taxes capital gains as ordinary income. Form 540 Line 62 adds 1% only to taxable income over $1M (not doubled for MFJ); 13.3% is the maximum combined rate, not a flat rate on all income over $1M. Verified 2026 ordinary brackets are used; the 2026 Line 62 instructions remain unconfirmed. Form 593 withholding is a separate escrow prepayment.',
       url: 'https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html'
     }
   ];

@@ -20,11 +20,15 @@ test('roundTo10 enforces nearest $10 rounding', () => {
   assert.equal(roundTo10(3214), 3210);
 });
 
-test('CA Form 540 marginal tax reflects 1% Behavioral Health Services Tax over $1M', () => {
-  const rateUnder = computeCaEffectiveMarginalRate(200000, 300000, 13.3);
-  const rateOver = computeCaEffectiveMarginalRate(900000, 1000000, 13.3);
-  assert.ok(rateUnder < 0.123, 'Under $1M gain should be below 12.3%');
-  assert.ok(rateOver > 0.128 && rateOver <= 0.133, 'Gain crossing $1M triggers +1% surtax up to 13.3%');
+test('CA Form 540 uses filing-status brackets and Line 62 1% tax above $1M', () => {
+  const rateUnder = computeCaEffectiveMarginalRate(200000, 300000, 13.3, 'mfj');
+  const rateCrossingMillion = computeCaEffectiveMarginalRate(999000, 10000, 13.3, 'mfj');
+  const rateAboveMillionMfj = computeCaEffectiveMarginalRate(1000000, 100000, 13.3, 'mfj');
+  const rateTopSingle = computeCaEffectiveMarginalRate(1100000, 10000, 13.3, 'single');
+  assert.ok(Math.abs(rateUnder - 0.093) < 1e-9, 'MFJ $200k–$500k incremental income uses 9.3% schedule band');
+  assert.ok(Math.abs(rateCrossingMillion - 0.122) < 1e-9, 'Only the $9,000 above $1M receives the 1% Line 62 tax');
+  assert.ok(Math.abs(rateAboveMillionMfj - 0.123) < 1e-9, '2026 MFJ ordinary bracket is 11.3% here, plus 1% Line 62; threshold is not doubled');
+  assert.ok(Math.abs(rateTopSingle - 0.133) < 1e-9, 'Single filer at top ordinary bracket reaches 13.3% combined');
 });
 
 test('Federal capital gains includes 25% §1250 recapture and 3.8% NIIT', () => {

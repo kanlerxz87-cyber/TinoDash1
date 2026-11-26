@@ -113,44 +113,52 @@ def scc_cupertino_transfer_tax_and_recording(price):
     return dtt + recording
 
 
-def ca_capital_gain_and_mhsf_tax(gain, other_taxable_income=180_000, filing="mfj"):
+def ca_capital_gain_and_form540_tax(gain, other_taxable_income=180_000, filing="mfj"):
     """
-    Official CA Form 540: California taxes capital gains at regular ordinary income rates (up to 12.3%)
-    PLUS Line 62 Mental Health Services Tax: 1% on total CA taxable income exceeding $1,000,000 (not doubled for MFJ).
-    https://www.ftb.ca.gov/forms/2025/2025-540-ca-instructions.html
+    Official FTB 2026 Form 540 tax-rate schedules (Schedules X/Y/Z) apply California
+    ordinary rates to capital gains. The latest retrieved Form 540 Line 62 instructions
+    (2025) add 1% to taxable income over $1,000,000, not doubled for MFJ; reconfirm
+    with 2026 instructions before filing.
+    https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf
+    https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html
+    https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html
     """
     if gain <= 0:
         return 0.0
 
-    # Simplified progressive 2025/2026 CA brackets (MFJ vs Single) before 1% MHSF surcharge
     if filing == "mfj":
         brackets = [
-            (21512, 0.01), (50998, 0.02), (80490, 0.04), (111732, 0.06),
-            (141212, 0.08), (721318, 0.093), (865574, 0.103), (1442628, 0.113),
+            (22_912, 0.01), (54_314, 0.02), (85_722, 0.04), (118_996, 0.06),
+            (150_394, 0.08), (768_218, 0.093), (921_854, 0.103), (1_536_426, 0.113),
             (float("inf"), 0.123),
         ]
-    else:
+    elif filing == "hoh":
         brackets = [
-            (10756, 0.01), (25499, 0.02), (40245, 0.04), (55866, 0.06),
-            (70606, 0.08), (360659, 0.093), (432787, 0.103), (721314, 0.113),
+            (22_927, 0.01), (54_316, 0.02), (70_018, 0.04), (86_654, 0.06),
+            (102_356, 0.08), (522_385, 0.093), (626_864, 0.103), (1_044_771, 0.113),
+            (float("inf"), 0.123),
+        ]
+    else:  # single and married/RDP filing separately, Schedule X
+        brackets = [
+            (11_456, 0.01), (27_157, 0.02), (42_861, 0.04), (59_498, 0.06),
+            (75_197, 0.08), (384_109, 0.093), (460_927, 0.103), (768_213, 0.113),
             (float("inf"), 0.123),
         ]
 
-    def base_ca_tax(ti):
+    def ca_tax(ti):
         t = 0.0
         prev = 0.0
-        for cap, r in brackets:
+        for cap, rate in brackets:
             if ti <= prev:
                 break
-            slice_amt = min(ti, cap) - prev
-            t += slice_amt * r
+            t += (min(ti, cap) - prev) * rate
             prev = cap
-        # Form 540 Line 62: 1% Mental Health Services Tax on taxable income > $1,000,000
+        # Form 540 Line 62: 1% Behavioral Health Services Tax above $1,000,000.
         if ti > 1_000_000:
             t += 0.01 * (ti - 1_000_000)
         return t
 
-    return base_ca_tax(other_taxable_income + gain) - base_ca_tax(other_taxable_income)
+    return ca_tax(other_taxable_income + gain) - ca_tax(other_taxable_income)
 
 
 def fed_real_estate_sale_tax(total_gain, unrecaptured_1250_depr=0.0, other_magi=180_000, filing="mfj"):
@@ -199,7 +207,7 @@ BASE_PARAMS = {
     "prop_b_parcel_2026": 1_090,
     "prop_b_rent_2units_mo_2026": 7_150,
     "prop_b_unit3_mkt_rent_mo_2026": 3_720,
-    "prop_a_rent_safmr_mo_2026": 5_870,   # Official HUD FY2026 95014 3BR SAFMR floor ($6,390 4BR)
+    "prop_a_rent_safmr_mo_2026": 5_870,   # Official HUD FY2026 Cupertino area 3BR SAFMR floor ($6,390 4BR)
     "prop_a_rent_comp_mo_2026": 6_850,    # Base private market SFR comp midpoint (flagged until MLS CMA)
     "prop_a_imputed_rent_mo_2026": 6_850, # Monthly living value of occupying Property A
     "prop_b_imputed_rent_mo_2026": 3_580, # Monthly living value of occupying Property B Unit 3
@@ -399,7 +407,7 @@ def evaluate_all_paths(base_p, horizon=None):
         taxable_appr_gain = max(0.0, appreciation_gain - sec121_excl)
         total_taxable_gain = taxable_appr_gain + min(raw_gain, accum_depr)
         fed_t = fed_real_estate_sale_tax(total_taxable_gain, min(raw_gain, accum_depr), p["other_income"], p["filing"])
-        ca_t = ca_capital_gain_and_mhsf_tax(total_taxable_gain, p["other_income"], p["filing"])
+        ca_t = ca_capital_gain_and_form540_tax(total_taxable_gain, p["other_income"], p["filing"])
         return amt_realized - (fed_t + ca_t), (fed_t + ca_t), sale_price, sell_costs
 
     paths = []
@@ -616,7 +624,7 @@ def evaluate_all_paths(base_p, horizon=None):
     sec121_b = min(b_gain_total / 3.0, 500_000.0 if p["filing"] == "mfj" else 250_000.0)
     b_taxable_gain = max(0.0, b_gain_total - sec121_b)
     b_sale_tax = fed_real_estate_sale_tax(b_taxable_gain, est_b_depr, p["other_income"], p["filing"]) + \
-                 ca_capital_gain_and_mhsf_tax(b_taxable_gain, p["other_income"], p["filing"])
+                 ca_capital_gain_and_form540_tax(b_taxable_gain, p["other_income"], p["filing"])
     net_b0 = b_amt_realized - b_sale_tax
     fin_m3 = liq_after_estate_tax + net_b0
     for y in range(H):
@@ -872,8 +880,8 @@ def main():
     payload = {
         "meta": {
             "version": "2.0.0",
-            "generated": "2026-11-25",
-            "privacy": "Strict $10 rounding on all personal & modeled dollar outputs; placeholders Property A & Property B only; zero PII in Git history.",
+            "generated": "2026-11-26",
+            "privacy": "Strict $10 rounding on personal and modeled dollar outputs; current site uses Property A/B and city-level labels only. Earlier public Git commits retain postal identifiers; see Flagged for Review F-09.",
             "baseYear": 2026,
             "transferWindow": "2040-2050 (default midpoint 2045)",
             "horizons": [10, 20, 30, 50],
