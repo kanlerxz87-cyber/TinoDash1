@@ -31,12 +31,12 @@
             <td><strong>Insurance Guess ($1,500/yr) on Property A &amp; Property B</strong></td>
             <td>Original baseline placeholder of $1,500/yr is severely outdated for 2026 Cupertino SFH and San Francisco 3-unit habitational buildings. Model uses realistic ranges ($2.8k–$6.5k A; $4.8k–$10.5k B).</td>
             <td>Obtain 2 independent broker renewal quotes (including CA FAIR Plan/DIC fallback + umbrella + earthquake comparison).</td>
-            <td><a href="https://www.insurance.ca.gov/0400-news/0100-press-releases/2026/" target="_blank" rel="noopener">CA Dept. of Insurance 2026 Releases ↗</a></td>
+            <td><a href="https://www.insurance.ca.gov/" target="_blank" rel="noopener">CA Dept. of Insurance 2026 Releases ↗</a></td>
           </tr>
           <tr>
             <td><span class="badge badge-flagged">F-02</span></td>
             <td><strong>Property A Exact Cupertino TRA Code (013-xxx) &amp; Direct Fees</strong></td>
-            <td>Santa Clara County confirms prefix <code>013</code> = Cupertino and published rates <strong>1.1671%–1.1786%</strong> + 0.0039% SCVWD + $98 FUHSD. Exact 6-digit TRA &amp; ~$910/yr direct assessment lines require private tax bill.</td>
+            <td>Santa Clara County confirms prefix <code>013</code> = Cupertino and published rates <strong>UNVERIFIED</strong> + 0.0039% SCVWD + $98 FUHSD. Exact 6-digit TRA &amp; ~$910/yr direct assessment lines require private tax bill.</td>
             <td>Inspect actual 2025–2026 / 2026–2027 secured bill offline via Santa Clara County DTAC using private APN.</td>
             <td><a href="https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf" target="_blank" rel="noopener">SCC 2025–2026 Tax Rate Book ↗</a></td>
           </tr>
@@ -50,7 +50,7 @@
           <tr>
             <td><span class="badge badge-flagged">F-04</span></td>
             <td><strong>Property A Beds/SqFt, Land Ratio &amp; Solar NEM 2.0 Interconnection Date</strong></td>
-            <td>Cupertino 95014 rentals span $4,990–$8,000/mo depending on sqft/beds; building depreciation requires land-vs-improvement ratio; NEM 2.0 20-yr legacy sunset turns -$15/mo credit into net grid cost.</td>
+            <td>Cupertino rentals span $4,990–$8,000/mo depending on sqft/beds; building depreciation requires land-vs-improvement ratio; NEM 2.0 20-yr legacy sunset turns -$15/mo credit into net grid cost.</td>
             <td>Check PG&amp;E PTO approval date, Assessor land/improvement split, and local SFH comparables matching Property A's actual size.</td>
             <td><a href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering-and-net-billing" target="_blank" rel="noopener">CPUC NEM 2.0 / NBT ↗</a> · <a href="https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" target="_blank" rel="noopener">HUD SAFMR ↗</a></td>
           </tr>
@@ -81,6 +81,83 @@
             <td>Historical Property B taxes showed an +18.4% step in 2018 and -5.9% dip in 2021 even as assessed values rose 2%/1%. Likely due to voter-approved SF parcel/bond changes or one-time special assessments.</td>
             <td>Check historical SF secured tax bill line-item breakdowns offline to confirm non-recurring direct charges.</td>
             <td><a href="https://sfbos.archive.sf.gov/sites/default/files/r0447-25.pdf" target="_blank" rel="noopener">SF Assessor / BOS Tax Rate File ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-09</span></td>
+            <td><strong>Statewide Nov 3, 2026 ballot results (Props 3, 40–43) and Props 44–45 subjects</strong></td>
+            <td>Secondary sources only. Prop 42 conflicts (Passed 51.16% vs. &quot;Winner: No&quot;); Props 44–45 have no identified subject, so a Prop 19 change cannot be excluded. Prop 41 and 43 subjects unconfirmed.</td>
+            <td>Confirm each measure on the Secretary of State results page and read the Props 44–45 text before changing any Prop 19 assumption.</td>
+            <td><a href="https://electionresults.sos.ca.gov/" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-10</span></td>
+            <td><strong>SF Measure H (Muni parcel tax) rate schedule</strong></td>
+            <td>Preliminary YES 74.42% (SF Elections, Nov 23 update). Official ballot text: $129 to $400,000 per parcel, CPI-adjusted (~$177M/yr). Repo&#x27;s earlier $249 + $0.195/sqft and $50,000 cap conflicts and has been removed from the model.</td>
+            <td>Read the ordinance and the SFMTA rate notice; wait for certification.</td>
+            <td><a href="https://sfelections.org/results/20261103/index.html" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-11</span></td>
+            <td><strong>SF Measure I (half of transfer tax on sales over $10M to housing)</strong></td>
+            <td>Failed preliminary: NO 51.62% / YES 48.38%. No Measure I status was recorded in the repo before this pass.</td>
+            <td>Confirm certification; update the transfer-tax path if it is certified as failed.</td>
+            <td><a href="https://sfelections.org/results/20261103/index.html" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-12</span></td>
+            <td><strong>Santa Clara TRA 013 (Cupertino) rate, FUHSD parcel tax, recording fee, CUSD Measure A status</strong></td>
+            <td>Not in the FY2025-26 Tax Rate Book pages retrieved (chunk 4 unread; chunks 1–3, 5–8 have no 013 row). Prior values 1.1671%–1.1786%, $98 FUHSD and $92 recording removed from the published figures. Only the 1% general levy and SCVWD 0.0039% verified.</td>
+            <td>Read the 013 rows of the Tax Rate Book or the Assessor/Tax Collector bill; do not infer.</td>
+            <td><a href="https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-13</span></td>
+            <td><strong>HUD FY2026 SAFMR rows for Property A and Property B areas</strong></td>
+            <td>The HUD PDF extraction stops at Arizona and contains no California rows. Prior values (3BR $5,870, 2BR $3,310, 4BR $6,390, etc.) are withdrawn from display and used only as a labeled sensitivity input.</td>
+            <td>Export the California rows from the HUD FY2026 SAFMR data tool; record the ZIP-level values privately.</td>
+            <td><a href="https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-14</span></td>
+            <td><strong>SF FY25-26 secured rate and historical tax tables</strong></td>
+            <td>FY26-27 rate 1.18162182% verified (SF Treasurer). FY25-26 rate 1.18268325% and the historical tax table (2014–2026) are unverified; historical table values are rounded to $10 and retained for internal use.</td>
+            <td>Compare against each annual secured bill; mark each year verified or unverified.</td>
+            <td><a href="https://sftreasurer.org/property/secured-property-taxes" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-15</span></td>
+            <td><strong>Utility and water rates (PG&amp;E, SJWC, SFPUC increase)</strong></td>
+            <td>Prior figures ($0.345/kWh, $7.253/CCF, +11.5%) removed from published values; not confirmed on official tariff pages.</td>
+            <td>Confirm on the PG&amp;E electric rate schedules, SJWC rate schedule and SFPUC rate notice.</td>
+            <td><a href="https://www.sfpuc.gov/" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-16</span></td>
+            <td><strong>Insurance placeholders ($1,500/yr) and analyst sensitivity bands</strong></td>
+            <td>No CDI or insurer data retrieved for either property. The model band is an analyst sensitivity, not a quote.</td>
+            <td>Obtain two written broker quotes for each property (incl. FAIR Plan and DIC/umbrella).</td>
+            <td><a href="https://www.insurance.ca.gov/" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-17</span></td>
+            <td><strong>Treasury yields in model</strong></td>
+            <td>Model moved from 3M 4.32% / 2Y 4.88% (Nov 13 entry) to 3M 4.34% / 2Y 4.61% (Nov 25, 2026, Treasury par curve). Nov 24 also recorded. Effect on outputs not yet measured.</td>
+            <td>Re-run model on each rate-curve refresh; record the as-of date on every screen that uses it.</td>
+            <td><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-18</span></td>
+            <td><strong>Prior-session sources and claims in Git history</strong></td>
+            <td>Repo history still contains the private ZIPs and some household figures. Current files are scrubbed, but a history rewrite requires an owner decision and a force-push to main, which this session did not perform. verify_repo.py&#x27;s history check does not detect ZIPs and should not be read as a history clearance.</td>
+            <td>Owner decision: approve a history rewrite (e.g., git filter-repo + force-push) and re-clone, or accept the risk. Rotate any exposure in external caches.</td>
+            <td><a href="https://github.com/kanlerxz87-cyber/TinoDash1/commits/main" target="_blank" rel="noopener">Official source ↗</a></td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-flagged">F-19</span></td>
+            <td><strong>Estate and trust facts (trust type, DSUE, prior gifts, §1014 step-up on the full Property A)</strong></td>
+            <td>Unverified. The model assumes inputs supplied by the owner; none confirmed by an attorney or CPA.</td>
+            <td>Attorney and CPA review before any reliance.</td>
+            <td><a href="https://www.irs.gov/pub/irs-pdf/i706.pdf" target="_blank" rel="noopener">Official source ↗</a></td>
           </tr>
         </tbody>
       </table>

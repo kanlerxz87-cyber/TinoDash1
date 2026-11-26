@@ -42,7 +42,7 @@ export function renderSiteChrome(activeId, basePrefix = '.') {
       <div class="header-inner">
         <a href="${p('index.html')}" class="brand">
           <span class="brand-title">Bay Area Inheritance Decision Dashboard</span>
-          <span class="brand-sub">Property A (Cupertino 95014) · Property B (SF 94122) · Verified Nov 25, 2026</span>
+          <span class="brand-sub">Property A (Cupertino) · Property B (SF) · Partly re-verified Nov 26, 2026 (see Flagged)</span>
         </a>
         <nav class="nav-groups" aria-label="Grouped Main Navigation">
           <a href="${p('index.html')}" class="nav-link ${activeId === 'overview' ? 'active' : ''}">Overview</a>
@@ -104,7 +104,7 @@ export function renderSiteChrome(activeId, basePrefix = '.') {
   if (footerEl) {
     footerEl.innerHTML = `
       <div>
-        Decision-support model only — not legal, tax, or investment advice. Statutory baselines verified November 25, 2026 against IRS, CA FTB, CA BOE, Santa Clara County, SF Assessor/Rent Board/Elections, HUD, BLS, Treasury, and FHFA sources.
+        Decision-support model only — not legal, tax, or investment advice. Partial re-verification on November 26, 2026 against IRS, CA FTB, CA BOE, Santa Clara County, SF Assessor/Rent Board/Elections, HUD, BLS, Treasury, and FHFA sources.
       </div>
     `;
   }

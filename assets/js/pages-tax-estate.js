@@ -53,7 +53,7 @@ async function init() {
     {
       name: 'SF Prop H (Muni Parcel Tax) & Regional Measure RTM',
       status: 'Passed (Nov 3, 2026)',
-      terms: 'SF Prop H passed 74.42% (eff. July 1, 2027: $249 + $0.195/sqft >5,000 sqft). Regional Measure RTM adds +1% sales tax in SF & +0.5% in Santa Clara County.',
+      terms: 'SF Prop H passed (preliminary 74.42%) (eff. July 1, 2027: $249 + $0.195/sqft >5,000 sqft). Regional Measure RTM adds +1% sales tax in SF & +0.5% in Santa Clara County.',
       url: 'https://sfelections.org/results/20261103/index.html'
     },
     {

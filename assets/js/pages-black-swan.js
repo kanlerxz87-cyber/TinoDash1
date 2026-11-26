@@ -33,7 +33,7 @@ function render() {
         <div class="kpi-label">Staging Headline (${activeRegimeMeta.name})</div>
         <div class="kpi-value">${fmtUsd(stagedActive.afterTaxNetWealth)}</div>
         <div class="kpi-sub">
-          ${inputs.stagingMonths}-month Treasury staging via <strong>${inputs.stagingInstrument === '2y-ladder' ? '2Y Treasury Ladder (4.88%)' : '3M T-Bills (4.32%)'}</strong>.
+          ${inputs.stagingMonths}-month Treasury staging via <strong>${inputs.stagingInstrument === '2y-ladder' ? '2Y Treasury Ladder (4.61%)' : '3M T-Bills (4.34%)'}</strong>.
           Net staging advantage/(drag) vs Day-1 Lump Sum: <strong>${diff >= 0 ? '+' : ''}${fmtUsd(diff)}</strong>.
         </div>
       </div>
@@ -41,7 +41,7 @@ function render() {
         <div class="kpi-label" style="color:var(--amber);">Reinvestment Risk Beside Headline</div>
         <div style="font-size:1.25rem;font-weight:700;color:var(--amber);margin:0.15rem 0;">${fmtUsd(stagedActive.reinvestmentRiskDollars)}</div>
         <div style="font-size:0.82rem;color:var(--muted);">
-          Lost Treasury income when Fed cuts short rates during crash entry (3M bills reset downward immediately while 2Y ladder locks 4.88%). Staging Treasury interest earned (0% CA tax): <strong>${fmtUsd(stagedActive.stagingTreasuryYieldEarned)}</strong>.
+          Lost Treasury income when Fed cuts short rates during crash entry (3M bills reset downward immediately while 2Y ladder locks 4.61%). Staging Treasury interest earned (0% CA tax): <strong>${fmtUsd(stagedActive.stagingTreasuryYieldEarned)}</strong>.
         </div>
       </div>
     </div>

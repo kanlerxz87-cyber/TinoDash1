@@ -40,7 +40,7 @@
     "mkt_rent_growth": 0.03,
     "equity_return": 0.072,
     "bond_return": 0.042,
-    "treasury_3m_2y": 0.043,
+    "treasury_3m_2y": 0.0448,
     "phased_months": 30,
     "sell_broker_prep_pct": 0.045,
     "use_sec121_live_sell": true,
@@ -243,7 +243,7 @@
       "tax_chg": "+5.3%",
       "assessed": 114250,
       "assessed_chg": "+2.0%",
-      "note": "SF FY25-26 rate 1.18268325% (~$1,350 ad valorem) + ~$1,090 fixed SF parcel taxes/fees."
+      "note": "SF FY25-26 rate UNVERIFIED; FY26-27 rate 1.18162182% (verified). Fixed parcel taxes/fees UNVERIFIED."
     },
     {
       "year": 2024,
@@ -453,8 +453,8 @@
           "type": "Mixed / Staged",
           "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
           "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
-          "terminal_wealth": 41803390,
-          "financial_wealth": 37188280,
+          "terminal_wealth": 41944620,
+          "financial_wealth": 37329510,
           "real_estate_wealth": 4615110,
           "yr1_prop_a_tax": 0,
           "sale_tax_paid": 0,
@@ -495,8 +495,8 @@
           "type": "Mixed / Staged",
           "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
           "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
-          "terminal_wealth": 42308050,
-          "financial_wealth": 37692940,
+          "terminal_wealth": 42405040,
+          "financial_wealth": 37789930,
           "real_estate_wealth": 4615110,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 0,
@@ -523,8 +523,8 @@
           "type": "Mixed / Staged",
           "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
           "short": "Mixed: Live in A + Sell SF B",
-          "terminal_wealth": 40265920,
-          "financial_wealth": 31123000,
+          "terminal_wealth": 40345760,
+          "financial_wealth": 31202840,
           "real_estate_wealth": 9142920,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 859220,
@@ -568,8 +568,8 @@
           "type": "Mixed / Staged",
           "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
           "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
-          "terminal_wealth": 73706180,
-          "financial_wealth": 67320830,
+          "terminal_wealth": 73953200,
+          "financial_wealth": 67567850,
           "real_estate_wealth": 6385350,
           "yr1_prop_a_tax": 0,
           "sale_tax_paid": 0,
@@ -610,8 +610,8 @@
           "type": "Mixed / Staged",
           "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
           "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
-          "terminal_wealth": 74588860,
-          "financial_wealth": 68203500,
+          "terminal_wealth": 74758500,
+          "financial_wealth": 68373150,
           "real_estate_wealth": 6385350,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 0,
@@ -638,8 +638,8 @@
           "type": "Mixed / Staged",
           "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
           "short": "Mixed: Live in A + Sell SF B",
-          "terminal_wealth": 69280470,
-          "financial_wealth": 56004740,
+          "terminal_wealth": 69420110,
+          "financial_wealth": 56144380,
           "real_estate_wealth": 13275730,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 859220,
@@ -683,8 +683,8 @@
           "type": "Mixed / Staged",
           "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
           "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
-          "terminal_wealth": 129429500,
-          "financial_wealth": 120594870,
+          "terminal_wealth": 129861550,
+          "financial_wealth": 121026920,
           "real_estate_wealth": 8834630,
           "yr1_prop_a_tax": 0,
           "sale_tax_paid": 0,
@@ -725,8 +725,8 @@
           "type": "Mixed / Staged",
           "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
           "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
-          "terminal_wealth": 130973350,
-          "financial_wealth": 122138720,
+          "terminal_wealth": 131270070,
+          "financial_wealth": 122435440,
           "real_estate_wealth": 8834630,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 0,
@@ -753,8 +753,8 @@
           "type": "Mixed / Staged",
           "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
           "short": "Mixed: Live in A + Sell SF B",
-          "terminal_wealth": 119475200,
-          "financial_wealth": 100198530,
+          "terminal_wealth": 119719430,
+          "financial_wealth": 100442760,
           "real_estate_wealth": 19276670,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 859220,
@@ -798,8 +798,8 @@
           "type": "Mixed / Staged",
           "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
           "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
-          "terminal_wealth": 396608160,
-          "financial_wealth": 379696170,
+          "terminal_wealth": 397929890,
+          "financial_wealth": 381017900,
           "real_estate_wealth": 16911990,
           "yr1_prop_a_tax": 0,
           "sale_tax_paid": 0,
@@ -840,8 +840,8 @@
           "type": "Mixed / Staged",
           "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
           "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
-          "terminal_wealth": 401331100,
-          "financial_wealth": 384419110,
+          "terminal_wealth": 402238820,
+          "financial_wealth": 385326830,
           "real_estate_wealth": 16911990,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 0,
@@ -868,8 +868,8 @@
           "type": "Mixed / Staged",
           "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
           "short": "Mixed: Live in A + Sell SF B",
-          "terminal_wealth": 357207350,
-          "financial_wealth": 316564970,
+          "terminal_wealth": 357954500,
+          "financial_wealth": 317312130,
           "real_estate_wealth": 40642380,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 859220,
@@ -1030,8 +1030,8 @@
           "type": "Mixed / Staged",
           "name": "P2 \u00b7 Sell Property A \u2192 30m 3M\u20132Y Treasuries \u2192 12m Equity Phase-In",
           "short": "Sell A \u2192 30m T-Bills \u2192 DCA",
-          "terminal_wealth": 129429500,
-          "financial_wealth": 120594870,
+          "terminal_wealth": 129861550,
+          "financial_wealth": 121026920,
           "real_estate_wealth": 8834630,
           "yr1_prop_a_tax": 0,
           "sale_tax_paid": 0,
@@ -1072,8 +1072,8 @@
           "type": "Mixed / Staged",
           "name": "M1 \u00b7 Occupy Property A 3 Yrs (Prop 19) \u2192 Sell with IRC \u00a7121 ($250k/$500k) \u2192 Phased IPS",
           "short": "Mixed: Live 3y \u2192 Sell (\u00a7121)",
-          "terminal_wealth": 130973350,
-          "financial_wealth": 122138720,
+          "terminal_wealth": 131270070,
+          "financial_wealth": 122435440,
           "real_estate_wealth": 8834630,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 0,
@@ -1100,8 +1100,8 @@
           "type": "Mixed / Staged",
           "name": "M3 \u00b7 Occupy Property A (Prop 19) + Sell Property B (1/3 \u00a7121 + 2/3 Taxable, Exit SF Rent Control)",
           "short": "Mixed: Live in A + Sell SF B",
-          "terminal_wealth": 119475200,
-          "financial_wealth": 100198530,
+          "terminal_wealth": 119719430,
+          "financial_wealth": 100442760,
           "real_estate_wealth": 19276670,
           "yr1_prop_a_tax": 52990,
           "sale_tax_paid": 859220,
@@ -1694,10 +1694,10 @@
       "recommendation_moved": false,
       "estate_tax": 0,
       "p1_sell_lump": 137461380,
-      "p2_sell_phased": 129429500,
+      "p2_sell_phased": 129861550,
       "p3_live_prop19": 130675010,
       "p4_rent_a": 129491260,
-      "m1_live_sell": 130973350
+      "m1_live_sell": 131270070
     },
     {
       "case": "Same-Year Immediate Benchmark (2026 Transfer, 30-Yr Horizon)",
@@ -1706,10 +1706,10 @@
       "recommendation_moved": false,
       "estate_tax": 0,
       "p1_sell_lump": 60953100,
-      "p2_sell_phased": 57627470,
+      "p2_sell_phased": 57806370,
       "p3_live_prop19": 58582920,
       "p4_rent_a": 57730260,
-      "m1_live_sell": 58293240
+      "m1_live_sell": 58417130
     },
     {
       "case": "Early Trust Transfer (2040 Transfer, 30-Yr Horizon)",
@@ -1718,10 +1718,10 @@
       "recommendation_moved": false,
       "estate_tax": 0,
       "p1_sell_lump": 110570900,
-      "p2_sell_phased": 104212060,
+      "p2_sell_phased": 104554120,
       "p3_live_prop19": 105341990,
       "p4_rent_a": 104265330,
-      "m1_live_sell": 105460290
+      "m1_live_sell": 105695670
     },
     {
       "case": "Late Trust Transfer (2050 Transfer, 30-Yr Horizon)",
@@ -1730,10 +1730,10 @@
       "recommendation_moved": false,
       "estate_tax": 27600,
       "p1_sell_lump": 171147830,
-      "p2_sell_phased": 161002640,
+      "p2_sell_phased": 161548360,
       "p3_live_prop19": 162441070,
       "p4_rent_a": 161134860,
-      "m1_live_sell": 162948660
+      "m1_live_sell": 163322880
     },
     {
       "case": "High Cupertino Appreciation (5.1%/yr) + High Imputed Rent ($9,000/mo)",
@@ -1742,22 +1742,22 @@
       "recommendation_moved": true,
       "estate_tax": 0,
       "p1_sell_lump": 117934170,
-      "p2_sell_phased": 113369950,
+      "p2_sell_phased": 113744300,
       "p3_live_prop19": 129348680,
       "p4_rent_a": 124344530,
-      "m1_live_sell": 115493450
+      "m1_live_sell": 115752070
     },
     {
-      "case": "HUD SAFMR Voucher Rent Floor ($5,870/mo) on Letting Path",
+      "case": "UNVERIFIED HUD SAFMR sensitivity ($5,870/mo) on Letting Path",
       "winner_id": "P1_sell_lump",
       "winner_name": "P1 \u00b7 Sell Property A Same Year \u2192 Lump-Sum 70/30 Portfolio (Keep & Live in B)",
       "recommendation_moved": false,
       "estate_tax": 0,
       "p1_sell_lump": 137461380,
-      "p2_sell_phased": 129429500,
+      "p2_sell_phased": 129861550,
       "p3_live_prop19": 130675010,
       "p4_rent_a": 127697320,
-      "m1_live_sell": 130973350
+      "m1_live_sell": 131270070
     },
     {
       "case": "High Liquid Estate ($20M in 2026 $) \u2014 Exceeds Single Federal Exclusion",
@@ -1766,10 +1766,10 @@
       "recommendation_moved": false,
       "estate_tax": 13707290,
       "p1_sell_lump": 260380640,
-      "p2_sell_phased": 243911530,
+      "p2_sell_phased": 244797400,
       "p3_live_prop19": 253594270,
       "p4_rent_a": 252410520,
-      "m1_live_sell": 248190380
+      "m1_live_sell": 248797860
     },
     {
       "case": "High Liquid Estate ($20M in 2026 $) + DSUE Spousal Portability Elected",
@@ -1778,10 +1778,10 @@
       "recommendation_moved": false,
       "estate_tax": 3936020,
       "p1_sell_lump": 312663870,
-      "p2_sell_phased": 292606020,
+      "p2_sell_phased": 293684910,
       "p3_live_prop19": 305877500,
       "p4_rent_a": 304693740,
-      "m1_live_sell": 298048180
+      "m1_live_sell": 298787840
     },
     {
       "case": "Proposed Legislation Sensitivity: Estate Exclusion Rolled Back to ~$7.14M Base",
@@ -1790,10 +1790,10 @@
       "recommendation_moved": false,
       "estate_tax": 6251500,
       "p1_sell_lump": 132048980,
-      "p2_sell_phased": 124388610,
+      "p2_sell_phased": 124800680,
       "p3_live_prop19": 125262610,
       "p4_rent_a": 124078860,
-      "m1_live_sell": 125812030
+      "m1_live_sell": 126095070
     },
     {
       "case": "IRC \u00a7121 Primary-Residence Exclusion Switched OFF on Live-Then-Sell",
@@ -1802,10 +1802,10 @@
       "recommendation_moved": false,
       "estate_tax": 0,
       "p1_sell_lump": 137461380,
-      "p2_sell_phased": 129429500,
+      "p2_sell_phased": 129861550,
       "p3_live_prop19": 130675010,
       "p4_rent_a": 129491260,
-      "m1_live_sell": 130474550
+      "m1_live_sell": 130769950
     },
     {
       "case": "Low Equity Return Regime (5.2%/yr Stocks vs 4.2% Cupertino Appreciation)",
@@ -1814,10 +1814,10 @@
       "recommendation_moved": true,
       "estate_tax": 0,
       "p1_sell_lump": 98343710,
-      "p2_sell_phased": 95880180,
+      "p2_sell_phased": 96188600,
       "p3_live_prop19": 102983420,
       "p4_rent_a": 102107540,
-      "m1_live_sell": 96964950
+      "m1_live_sell": 97176200
     }
   ]
 }

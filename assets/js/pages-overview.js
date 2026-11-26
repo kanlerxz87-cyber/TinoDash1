@@ -56,7 +56,7 @@ async function init() {
   bannerEl.innerHTML = `
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;">
       <div>
-        <strong>Phased Staging Headline (${inputs.stagingMonths}m via ${inputs.stagingInstrument === '2y-ladder' ? '2Y Treasury Ladder 4.88%' : '3M T-Bills 4.32%'}):</strong>
+        <strong>Phased Staging Headline (${inputs.stagingMonths}m via ${inputs.stagingInstrument === '2y-ladder' ? '2Y Treasury Ladder 4.61%' : '3M T-Bills 4.34%'}):</strong>
         After-Tax Ending Wealth <strong>${fmtUsd(phased.afterTaxNetWealth)}</strong> (Treasury interest exempt from CA Form 540 tax).
       </div>
       <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">

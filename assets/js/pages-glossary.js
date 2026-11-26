@@ -60,7 +60,7 @@ const TERMS = [
   {
     term: 'TRA (Tax Rate Area 013-xxx)',
     category: 'Santa Clara County Tax',
-    desc: 'Six-digit code identifying every overlapping city, school, and water bond rate on a parcel. Cupertino starts with 013- (~1.1671%–1.1786% + 0.0039% SCVWD).',
+    desc: 'Six-digit code identifying every overlapping city, school, and water bond rate on a parcel. Cupertino starts with 013- (~UNVERIFIED + 0.0039% SCVWD).',
     url: 'https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf'
   },
   {
@@ -72,7 +72,7 @@ const TERMS = [
   {
     term: 'HUD SAFMR (Small Area Fair Market Rent)',
     category: 'Rental Benchmark',
-    desc: 'ZIP-code-level Section 8 housing voucher payment standards; useful floor check, but must be supplemented with active private-market single-family home comparables in Cupertino 95014.',
+    desc: 'ZIP-code-level Section 8 housing voucher payment standards; useful floor check, but must be supplemented with active private-market single-family home comparables in Cupertino.',
     url: 'https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf'
   },
   {

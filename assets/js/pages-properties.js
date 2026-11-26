@@ -27,7 +27,7 @@ async function init() {
   const localRules = [
     {
       rule: 'Santa Clara County Cupertino TRA (013-xxx)',
-      terms: 'Ad valorem 1.1671% – 1.1786% + 0.0039% SCVWD State Water Proj = ~1.171%–1.183%',
+      terms: 'Ad valorem UNVERIFIED + 0.0039% SCVWD State Water Proj = UNVERIFIED',
       impact: 'Excludes fixed direct fees (~$910/yr implied). Exact 6-digit TRA code flagged for private tax bill check.',
       status: 'Partially Verified',
       url: 'https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf'
@@ -44,17 +44,17 @@ async function init() {
       terms: '$0.55 per $500 (0.11%) county DTT + $0 Cupertino city conveyance tax + $92 1st page recording',
       impact: 'Selling a $3.1M–$5.4M Cupertino home incurs only ~0.11% transfer tax vs 0.75%–2.25% in SF.',
       status: 'Verified',
-      url: 'https://clerkrecorder.sccgov.org/recording-documents-fee'
+      url: 'https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf'
     },
     {
       rule: 'San Francisco Secured Tax Rate (FY25–26 & FY26–27)',
-      terms: 'FY25–26: 1.18268325% (File r0447-25) · FY26–27: 1.18162182% (File 260971)',
+      terms: 'FY26–27: 1.18162182% (SF Treasurer, verified) · FY25–26 rate: UNVERIFIED',
       impact: 'Combined with ~$1,090/yr implied direct assessments on Property B.',
       status: 'Verified',
       url: 'https://media.api.sf.gov/documents/bfc091626_agenda.pdf'
     },
     {
-      rule: 'SF Prop H (Nov 3, 2026 Muni Parcel Tax — PASSED 74.42%)',
+      rule: 'SF Prop H (Nov 3, 2026 Muni Parcel Tax — PASSED, preliminary 74.42%)',
       terms: 'Eff. July 1, 2027: Multifamily $249/yr + $0.195/sqft >5,000 sqft ($50k cap, CPI-indexed). $249 senior 65+ owner deduction.',
       impact: 'Adds ~$249+/yr to Property B; exact sqft >5,000 must be confirmed offline.',
       status: 'Verified Law / SqFt Unverified',
@@ -93,7 +93,7 @@ async function init() {
       terms: 'User placeholder $1,500/yr vs realistic market $2,800–$6,500 (A) & $4,800–$10,500 (B)',
       impact: 'CDI Sustainable Insurance Strategy active, FAIR Plan growing (+2.4% Q1 2026); actual quotes required.',
       status: 'Flagged for Review',
-      url: 'https://www.insurance.ca.gov/0400-news/0100-press-releases/2026/'
+      url: 'https://www.insurance.ca.gov/'
     }
   ];
 
@@ -115,15 +115,15 @@ async function init() {
 
   const safmr = sources.rentalAndUtilities.hudFy2026Safmr;
   const comps = [
-    { name: 'HUD FY2026 SAFMR 95014 — 3BR Voucher Benchmark', rent: safmr.zip95014.br3, note: 'Federal Section 8 benchmark (not private SFH luxury comp)', url: safmr.sourceUrl },
-    { name: 'HUD FY2026 SAFMR 95014 — 4BR Voucher Benchmark', rent: safmr.zip95014.br4, note: 'Federal Section 8 4BR payment benchmark', url: safmr.sourceUrl },
-    ...sources.rentalAndUtilities.cupertino95014RentalComps.map((c) => ({
-      name: `95014 Market Comp: ${c.type}`,
+    { name: 'HUD FY2026 SAFMR — 3BR Voucher Benchmark', rent: safmr.propertyA.br3, note: 'Federal Section 8 benchmark (not private SFH luxury comp)', url: safmr.sourceUrl },
+    { name: 'HUD FY2026 SAFMR — 4BR Voucher Benchmark', rent: safmr.propertyA.br4, note: 'Federal Section 8 4BR payment benchmark', url: safmr.sourceUrl },
+    ...sources.rentalAndUtilities.cupertinoRentalComps.map((c) => ({
+      name: `Property A Market Comp: ${c.type}`,
       rent: c.monthlyUsd,
       note: c.source,
       url: c.url
     })),
-    { name: 'HUD FY2026 SAFMR 94122 — 2BR / 3BR (Property B Reference)', rent: safmr.zip94122.br2, note: `94122 2BR=$3,310 · 3BR=$4,230 (matches 2 units at $7,150/mo)`, url: safmr.sourceUrl }
+    { name: 'HUD FY2026 SAFMR — 2BR / 3BR (Property B Reference)', rent: safmr.propertyB.br2, note: `HUD SAFMR 2BR=$3,310 (Property B area) · 3BR=$4,230 (matches 2 units at $7,150/mo)`, url: safmr.sourceUrl }
   ];
 
   document.getElementById('rental-comps-tbody').innerHTML = comps

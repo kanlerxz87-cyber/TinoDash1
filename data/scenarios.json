@@ -45,7 +45,7 @@
       "category": "Mixed",
       "name": "Path 5: Sell Property A at Transfer + 24–36 Mo Treasury Staging Into Equities",
       "shortName": "Sell + Treasury Staging (24–36m)",
-      "summary": "Sell Property A at §1014 step-up and park net proceeds in 3M T-Bills or a 2Y Treasury Ladder (currently 4.32%–4.88% Nov 2026) while phasing into diversified stocks over 24–36 months. Softens 1929/2008 entry crashes while explicitly quantifying Reinvestment Risk (yield drop during Fed cuts) and Opportunity Drag in bull markets.",
+      "summary": "Sell Property A at §1014 step-up and park net proceeds in 3M T-Bills or a 2Y Treasury Ladder (currently 4.34% (3M) to 4.61% (2Y), Treasury par curve, Nov 25, 2026) while phasing into diversified stocks over 24–36 months. Softens 1929/2008 entry crashes while explicitly quantifying Reinvestment Risk (yield drop during Fed cuts) and Opportunity Drag in bull markets.",
       "prop19Claimed": false,
       "sec121Claimed": false,
       "omiRisk": "None (stay in Property B Unit 3)"
@@ -76,7 +76,7 @@
     },
     {
       "id": "1973-stagflation",
-      "name": "1973–1982 Stagflation & Rate Shock (BLS CPI 7.3%–14.8%)",
+      "name": "1973–1982 Stagflation & Rate Shock (BLS CPI; 14.8% peak, 7.3% average UNVERIFIED)",
       "description": "Two inflation waves (1974 +11% & 1979–80 +13.3%–14.8% CPI), -38% real stock drop in Yrs 1–2, surging insurance/maintenance/CapEx costs (+9%/yr) while SF rent control caps existing tenancies at 1.6%–3%!",
       "shockSummary": "High CPI erodes real bond returns & squeezes rent-controlled cash flow"
     },
@@ -112,7 +112,7 @@
       "id": "Q3",
       "category": "Property A Exact TRA & Direct Parcel Taxes",
       "question": "What is Property A's exact 6-digit Santa Clara County Tax Rate Area (013-xxx) and itemized direct parcel assessments on the 2025–2026 / 2026–2027 tax bill?",
-      "whyItMatters": "County TRA rates in Cupertino vary from ~1.1671% to 1.1786%+ plus SCVWD & parcel taxes; separates ad valorem reassessment from fixed charges.",
+      "whyItMatters": "Cupertino TRA rate is UNVERIFIED in this session (1% levy and SCVWD 0.0039% verified); exact rate plus bonds and parcel charges must be read from the parcel bill.",
       "howToDiscoverPrivately": "Look up the secured bill via Santa Clara County DTAC portal locally using APN (never paste APN or PDF into GitHub)."
     },
     {
@@ -133,7 +133,7 @@
       "id": "Q6",
       "category": "Real Insurance Declarations (Both Buildings)",
       "question": "What are actual 2026 renewal quotes for homeowners/landlord liability + umbrella + earthquake (CEA) policies on Property A and 3-unit habitational coverage on Property B?",
-      "whyItMatters": "The $1,500/yr assumption is severely below 2026 Bay Area market reality ($2.8k–$6.5k for A; $4.8k–$10.5k for 3-unit B), distorting net cash flow by $5k–$12k/yr.",
+      "whyItMatters": "The $1,500/yr figure is an unverified owner placeholder. The model uses analyst sensitivity bands ($2.8k–$6.5k for A; $4.8k–$10.5k for B) that are NOT sourced quotes; obtain broker quotes before relying on them.",
       "howToDiscoverPrivately": "Obtain 2 independent broker quotes (admitted carrier + FAIR Plan/DIC fallback) for both personal residence and landlord forms."
     },
     {

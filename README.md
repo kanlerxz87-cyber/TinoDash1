@@ -2,7 +2,7 @@
 
 **Live GitHub Pages Site:** [https://kanlerxz87-cyber.github.io/TinoDash1/](https://kanlerxz87-cyber.github.io/TinoDash1/)
 
-Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino, ZIP 95014)** (~2040–2050) alongside already-owned **Property B (San Francisco Outer Sunset, ZIP 94122, 3-unit)** and potential liquid trust assets.
+Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino)** (~2040–2050) alongside already-owned **Property B (San Francisco, 3-unit)** and potential liquid trust assets.
 
 ---
 

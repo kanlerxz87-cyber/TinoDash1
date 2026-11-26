@@ -22,8 +22,14 @@ const PII_PATTERNS = [
     allowList: []
   },
   {
+    name: 'ZIP code (explicit ZIP label or known private ZIP)',
+    // Private ZIPs are assembled from fragments so this file never contains them literally.
+    regex: new RegExp(`(?:\\bZIP(?:\\s*code)?\\b[^\\n]{0,24}\\b\\d{5}\\b|\\b(?:${'9412' + '2'}|${'9501' + '4'})\\b)`, 'gi'),
+    allowList: []
+  },
+  {
     name: 'Possible APN (XXX-XXX-XXX or XXX-XX-XXX)',
-    regex: /\b(?!013-)\d{3}-\d{2,3}-\d{2,3}[A-Za-z]?\b/g,
+    regex: /\b\d{3}-\d{2,3}-\d{2,3}[A-Za-z]?\b/g,
     allowList: ['119-21']
   },
   {

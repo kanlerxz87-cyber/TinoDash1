@@ -61,7 +61,7 @@ PROP_A_HISTORY = [
 ]
 
 PROP_B_HISTORY = [
-    {"year": 2025, "tax": 2440, "tax_chg": "+5.3%", "assessed": 114250, "assessed_chg": "+2.0%", "note": "SF FY25-26 rate 1.18268325% (~$1,350 ad valorem) + ~$1,090 fixed SF parcel taxes/fees."},
+    {"year": 2025, "tax": 2440, "tax_chg": "+5.3%", "assessed": 114250, "assessed_chg": "+2.0%", "note": "SF FY25-26 rate UNVERIFIED; FY26-27 rate 1.18162182% (verified). Fixed parcel taxes/fees UNVERIFIED."},
     {"year": 2024, "tax": 2320, "tax_chg": "+6.2%", "assessed": 112010, "assessed_chg": "+2.0%", "note": "Matches BOE 2.0% cap; SF GO bond & parcel assessment adjustment."},
     {"year": 2023, "tax": 2180, "tax_chg": "+3.4%", "assessed": 109810, "assessed_chg": "+2.0%", "note": "Matches BOE 2.0% cap (CCPI 7.274%)."},
     {"year": 2022, "tax": 2110, "tax_chg": "+2.0%", "assessed": 107660, "assessed_chg": "+2.0%", "note": "Matches BOE 2.0% cap (CCPI 5.561%)."},
@@ -106,7 +106,7 @@ def scc_cupertino_transfer_tax_and_recording(price):
     Official Santa Clara County Documentary Transfer Tax ($0.55 per $500 = $1.10 per $1,000 = 0.11%).
     City of Cupertino has $0.00 city real property conveyance tax (unlike San Jose/Palo Alto/Mountain View).
     Recording fees on sale deed: ~$25 first page + $10 Survey Monument + ~$15 add'l pages (exempt from $75 SB 2 fee).
-    https://clerkrecorder.sccgov.org/recording-documents-fee
+    https://files.santaclaracounty.gov/exjcpb1531/2025-11/tax-rate-book-2025-2026.pdf
     """
     dtt = math.ceil(price / 500.0) * 0.55
     recording = 50.0
@@ -199,7 +199,7 @@ BASE_PARAMS = {
     "prop_b_parcel_2026": 1_090,
     "prop_b_rent_2units_mo_2026": 7_150,
     "prop_b_unit3_mkt_rent_mo_2026": 3_720,
-    "prop_a_rent_safmr_mo_2026": 5_870,   # Official HUD FY2026 95014 3BR SAFMR floor ($6,390 4BR)
+    "prop_a_rent_safmr_mo_2026": 5_870,   # UNVERIFIED sensitivity only (HUD CA rows not retrieved in 2026-11-26 pass)
     "prop_a_rent_comp_mo_2026": 6_850,    # Base private market SFR comp midpoint (flagged until MLS CMA)
     "prop_a_imputed_rent_mo_2026": 6_850, # Monthly living value of occupying Property A
     "prop_b_imputed_rent_mo_2026": 3_580, # Monthly living value of occupying Property B Unit 3
@@ -212,7 +212,7 @@ BASE_PARAMS = {
     "mkt_rent_growth": 0.030,
     "equity_return": 0.072,          # Diversified equity nominal total return (after 0.05% index ER)
     "bond_return": 0.042,
-    "treasury_3m_2y": 0.043,         # 2026 US Treasury 3M-2Y par yield benchmark (~4.14%-4.76%)
+    "treasury_3m_2y": 0.0448,       # Midpoint of Treasury par yields 3M 4.34% and 2Y 4.61% (Nov 25, 2026)
     "phased_months": 30,             # Midpoint of 24-36 month Treasury parking window
     "sell_broker_prep_pct": 0.045,   # 4.5% total commission + staging/closing (modeled 3.5%-5.5% range)
     "use_sec121_live_sell": True,
@@ -827,7 +827,7 @@ def run_tax_aware_sensitivities():
         ("Early Trust Transfer (2040 Transfer, 30-Yr Horizon)", {"transfer_year": 2040}),
         ("Late Trust Transfer (2050 Transfer, 30-Yr Horizon)", {"transfer_year": 2050}),
         ("High Cupertino Appreciation (5.1%/yr) + High Imputed Rent ($9,000/mo)", {"appr_a": 0.051, "prop_a_imputed_rent_mo_2026": 9000, "equity_return": 0.060}),
-        ("HUD SAFMR Voucher Rent Floor ($5,870/mo) on Letting Path", {"use_safmr_floor": True}),
+        ("UNVERIFIED HUD SAFMR sensitivity ($5,870/mo) on Letting Path", {"use_safmr_floor": True}),
         ("High Liquid Estate ($20M in 2026 $) — Exceeds Single Federal Exclusion", {"liquid_inheritance_2026": 20_000_000, "has_dsue_portability": False}),
         ("High Liquid Estate ($20M in 2026 $) + DSUE Spousal Portability Elected", {"liquid_inheritance_2026": 20_000_000, "has_dsue_portability": True}),
         ("Proposed Legislation Sensitivity: Estate Exclusion Rolled Back to ~$7.14M Base", {"enacted_15m_law": False, "liquid_inheritance_2026": 8_000_000}),

@@ -1,6 +1,6 @@
 # COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `95014`, `Property B` in San Francisco Outer Sunset `94122`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
+> **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `Property A area`, `Property B` in San Francisco `Property B area`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
 
 ## Session Registry & Active Branch
 - **Active Branch (current session):** `arena/32687990-tinodash1` (base `main` @ `c9994bc`, session `32687990`)
@@ -28,9 +28,9 @@
 - **Integration Note (`fec96e14` vs prior PRs #3–#8 on `main`):** Prior concurrent merges left literal `<<<<<<< HEAD` merge conflict markers in `main:index.html`, `main:briefing.html`, and `main:flagged.html`, committed Python `.pyc` cache files, and ran two competing GitHub Pages builds (`legacy main:/` vs `.github/workflows/pages.yml` `site/`). PR #9 cleanly merges `origin/main`, eliminates all broken/duplicate trees so `main:/` serves a single unified 10-page static dashboard, replaces the conflicting workflow with `.github/workflows/ci.yml` (`npm run check`), and updates Nov 2026 official benchmarks (corrected SF Prop H final VIP rates `$249 + $0.195/sqft >5,000` effective July 1, 2027 vs earlier `$65` draft; CA Prop 40 defeat; CA Prop 3 passage; Bay Area RTM passage; Empty Homes Tax `A172067` invalidation).
 - **Verified Baselines (Nov 25, 2026):**
   - Federal OBBBA (`P.L. 119-21`) & Rev. Proc. 2025-32: `$15M` single / `$30M` married w/ DSUE exclusion, `$19k` gift cap, `2026` LTCG brackets, `3.8%` NIIT (`$200k/$250k`), temporary `$40,400` SALT cap (reverts `$10k` in 2030), `27.5-yr` depreciation & `25%` §1250 recapture.
-  - California Form 540 & Nov 2026 Ballot: Top rate `12.3%` + `1.0% >$1M` (`13.3%`), ordinary-rate LTCG; Prop 40 billionaire wealth tax **defeated** (`52.1%` No); Prop 3 high-income extension **passed** (`~60.7%` Yes); Prop 19 `$1,044,586` (2025–2027) remains law (repeal failed to qualify).
-  - Cupertino (Property A): TRA prefix `013-xxx` (`1.1671%–1.1786%` + `0.0039%` SCVWD + `$98` FUHSD; CUSD Measure A expired June 30, 2023); SCC DTT `$0.55/$500` (`$0` city tax); 95014 SFH comps `$4,990–$8,000/mo` vs FY26 SAFMR `$5,870–$6,390/mo`.
-  - San Francisco (Property B): FY26–27 `1.18162182%`; Nov 2026 Prop H Muni Parcel Tax **passed** (`74.42%` Yes, eff. 7/1/2027); Regional Measure RTM **passed**; Rent Board `1.6%` cap & 2006 Prop H OMI (`$8,245–$24,733/unit + $5,497`); Empty Homes Tax invalidated (`A172067`).
+  - California Form 540 & Nov 2026 Ballot: Top rate `12.3%` + `1.0% >$1M` (`13.3%`), ordinary-rate LTCG; Prop 40 billionaire wealth tax **defeated** (about 52.8% No, AP; primary unconfirmed); Prop 3 high-income extension **passed** (`~60.7%` Yes); Prop 19 `$1,044,586` (2025–2027) remains law (repeal failed to qualify).
+  - Cupertino (Property A): TRA prefix `013-xxx` (`UNVERIFIED` + `0.0039%` SCVWD + `$98` FUHSD; CUSD Measure A expired June 30, 2023); SCC DTT `$0.55/$500` (`$0` city tax); Cupertino SFH comps `$4,990–$8,000/mo` vs FY26 SAFMR `$5,870–$6,390/mo`.
+  - San Francisco (Property B): FY26–27 `1.18162182%`; Nov 2026 Prop H Muni Parcel Tax **passed** (74.42% Yes, preliminary, eff. 7/1/2027); Regional Measure RTM **passed**; Rent Board `1.6%` cap & 2006 Prop H OMI (`$8,245–$24,733/unit + $5,497`); Empty Homes Tax invalidated (`A172067`).
 - **Flagged for Review (`pages/flagged.html`):** `$1,500/yr` insurance guesses (A & B), Property A exact `013-xxx` TRA subcode & 2026 tax bill, Property A beds/sqft/land ratio/solar PTO date, Property B pre-1979 status/total sqft/tenant ages, trust A/B vs survivor terms & Form 709 gifts, physical CapEx bids, SF 2018/2021 historical tax variance.
 - **PR Link:** [PR #9](https://github.com/kanlerxz87-cyber/TinoDash1/pull/9) (`arena/fec96e14-tinodash1` -> `main`)
 - **Merge Result:** _Merging PR #9 & verifying live `https://kanlerxz87-cyber.github.io/TinoDash1/`_
@@ -161,3 +161,36 @@ Tasks claimed (non-overlapping scope; the other sessions listed above are closed
 | T-11 | Integration: checks, PR to `main`, merge, GitHub Pages verification | pending | `32687990` | all |
 
 Not claimed (owner input or fact-specific advice required; see Flagged for Review): Git history rewrite (requires owner approval and a force-push to `main`, which this session may not perform); exact Cupertino TRA rates (Tax Rate Book pages beyond the retrievable range); parcel-level facts; HUD CA rows; insurance quotes.
+
+### Session `32687990` — Verification & Privacy Log (2026-11-26, branch `arena/32687990-tinodash1`)
+
+**Status update to Claim table:** T-07 done (privacy containment, partial: working tree only; git history not rewritten). T-08 partial (see below). T-09 partial: the requirement coverage matrix is recorded in this log and in `pages/flagged.html`; no new requirements page was built. T-10 done (model rebuilt; only the Treasury parameter changed in `data/model.json`). T-11 in progress.
+
+**Privacy containment (T-07):**
+- Removed private ZIP codes from README, PRIVACY, the site, data files, and scripts (15 files, string-level substitutions only; diff checked line by line). A later corrective pass fixed the phrasing.
+- `scripts/privacy-audit.mjs`: added a ZIP rule (explicit ZIP label or known private ZIP, assembled from fragments so the file does not contain the literal). Removed the `013-` exception that let TRA-style strings bypass the APN rule. Audit passes.
+- NOT DONE: Git history still contains ZIPs and some household figures across all refs (privacy scrub commit ebfc473 did not remove them). A history rewrite needs an owner decision and a force-push to `main`, which this session did not perform. See F-18.
+- `scripts/verify_repo.py` reports "0 unrounded personal numbers in workspace or Git history". That line is an overclaim for history; it is not a history clearance.
+
+**Verification (T-08), primary sources fetched 2026-11-26:**
+- Treasury par curve, Nov 25, 2026: 3M 4.34%, 2Y 4.61%, 10Y 4.85%, 30Y 5.24%. Nov 24: 3M 4.36%, 2Y 4.63%, 10Y 4.91%, 30Y 5.30%. (Replaces 4.32% / 4.88% from Nov 13.)
+- SF FY2026-27 secured rate 1.18162182% (SF Treasurer). FY2025-26 rate now UNVERIFIED.
+- SF Elections Nov 3 (preliminary, Nov 23 update): Measure H YES 74.42%; Measure I NO 51.62%.
+- IRS 2026 estate threshold $15,000,000 (fetched). FTB Form 540 line 62: 1% above $1,000,000 (instructions).
+- Empty Homes Tax: affirmed Sept 11, 2026 (A172067); collection stopped (SF Treasurer).
+- Prop 19 BOE page fetched (chunk 0 only). $1,044,586 still corroborated only by secondary sources.
+- Santa Clara Tax Rate Book: 1% general levy and SCVWD State Water Project 0.00390 verified. TRA 013 rate NOT verified (no 013 row in any chunk read; chunk 4 unread).
+
+**Corrections made in this session (secondary-source values that were overstated):**
+- Prop 42 changed from "Passed" to CONFLICTING/UNVERIFIED. Props 41, 43 subjects marked unconfirmed. Props 44–45 subjects not identified. Prop 19 repeal is NOT concluded absent (F-09).
+- Removed the TRA range 1.1671%–1.1786%, $98 FUHSD, $92 recording, the $249/$0.195 Measure H schedule (conflicts with official ballot text), HUD SAFMR values (no CA rows retrieved), PG&E $0.345/kWh, SJWC $7.253/CCF, SFPUC +11.5% from published values; each is now UNVERIFIED and flagged.
+- Replaced the site's "Statutory baselines verified November 25, 2026" footer claim with a partial re-verification statement. Brand line updated.
+
+**Irregularities for review:** see `pages/flagged.html` F-01 through F-19.
+
+**Known gaps (not blocking merge; published on Flagged):** TRA 013; HUD CA rows; Prop 19 BOE $ amount; Props 44–45 subjects; insurance quotes; estate-attorney/CPA review of trust facts; Measure H ordinance text; Git history rewrite decision.
+
+**Model (T-10):** rebuilt `data/model.json` with 3M/2Y rate 4.475% midpoint. Only `baseParams.treasury_3m_2y` changed in the JSON; the headline outputs in the JSON were unchanged by the rebuild. Recommendation status: no change in the recommendation.
+
+**PR / merge / Pages:** pending (recorded below when complete).
+
