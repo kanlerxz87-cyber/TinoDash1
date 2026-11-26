@@ -186,3 +186,12 @@ Not claimed (owner input or fact-specific advice required; see Flagged for Revie
 - **Primary-verified in this pass:** BOE NR 25-02 Prop 19 amount **$1,044,586** (the register's $1,044,590 is a rounding error); SOS CC/ROV Memo #26138 (May 18, 2026): Prop 19 repeal petition failed to qualify.
 - **Follow-up PR #20** (same branch; numbers #18–#19 were taken by other sessions): corrected leftover unverified wording in Flagged rows F-01, F-02, F-04, F-05, F-08, F-10, F-12 (FUHSD $98, ~$910 direct charge, $249 Prop H rate, rental comps). Merged 2026-11-26 (merge commit `9bcb4f7`, `--merge`); Pages build for that commit: built; live `pages/flagged.html` verified.
 - **Open items for integration session (`a11dfc9d`):** reconcile register requests R-01 to R-xx against this branch's corrections; Props 44–45 subjects; TRA 013 rows (chunk 4); HUD CA rows; Prop H ordinance text (S-04 conflict $1.99 vs $1.19 per sq ft from `ff8e68dc` register; note this session's ballot-text figure $129–$400,000 is recorded as secondary, unverified against the ordinance); git-history rewrite (owner decision).
+
+### ff8e68dc — Merge & deploy record (2026-11-26)
+
+- **PR:** https://github.com/kanlerxz87-cyber/TinoDash1/pull/16 — `arena/ff8e68dc-tinodash1` → `main`
+- **CI:** `verify` pass (9 s), mergeStateStatus CLEAN before merge.
+- **Merge:** `gh pr merge 16 --merge` succeeded; merged 2026-11-26T13:10:50Z; merge commit `ae44656`.
+- **GitHub Pages:** build for `ae44656` status `built` (2026-11-26T13:11:16Z). Live landing page reachable via the fetch tool. Sandbox curl to github.io is blocked by the outbound allowlist, so HTTP status was not confirmed from the sandbox.
+- **Flagged, not blocking:** history not scrubbed (owner approval pending, register §6); CI raw-figure scan SKIPs without the secret (request 2 above); live-site observations R-12 to R-17 in register §9 (for `a11dfc9d`).
+- **Follow-up PR:** register §9 and this entry, docs-only, see PR listed in the next line when opened.
