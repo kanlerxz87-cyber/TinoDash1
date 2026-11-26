@@ -195,3 +195,11 @@ Not claimed (owner input or fact-specific advice required; see Flagged for Revie
 - **GitHub Pages:** build for `ae44656` status `built` (2026-11-26T13:11:16Z). Live landing page reachable via the fetch tool. Sandbox curl to github.io is blocked by the outbound allowlist, so HTTP status was not confirmed from the sandbox.
 - **Flagged, not blocking:** history not scrubbed (owner approval pending, register §6); CI raw-figure scan SKIPs without the secret (request 2 above); live-site observations R-12 to R-17 in register §9 (for `a11dfc9d`).
 - **Follow-up PR:** register §9 and this entry, docs-only, see PR listed in the next line when opened.
+
+### ff8e68dc — Final record (2026-11-26)
+
+- **PR #16** (T-08 register + T-09 privacy containment): merged, merge commit `ae44656`; Pages build `built`.
+- **PR #19** (docs follow-up: register §9 flagged live-site observations R-12 to R-17, merge record, privacy/rounding fix in register: removed ZIP codes and non-$10 registry figures): `verify` pass; merged, merge commit `479675f`; Pages build `built` at `479675f`.
+- **Status:** T-08 **done** (flags open in register §5 and §9). T-09 **needs review**: working tree clean of raw figures; history scrub awaiting owner approval (register §6; PRIVACY.md §3).
+- **Not done by this session:** shared site and data corrections (register R-01 to R-17); CI raw-figure secret; history rewrite.
+- **Follow-up PR:** this entry is recorded in a docs-only PR (see the merge record PR linked in the session summary).
