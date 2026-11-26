@@ -106,3 +106,22 @@
 | --- | --- | --- | --- | --- | --- |
 | T-08 | Official-source verification register: Nov 2026 ballot outcomes (Prop 3, Prop 40, Prop 43, SF Prop H, SF Measure I), Prop 19 repeal status, SF Empty Homes Tax, federal enacted vs proposed estate-tax law, CA MHSA surtax | in progress | `ff8e68dc` | `research/**` | Each row links an official source or is flagged unverified |
 | T-09 | Privacy containment (surgical): remove plain-text raw-figure list from `scripts/verify_repo.py`, move list to a file outside the repo, make the history scan exhaustive | in progress | `ff8e68dc` | `scripts/verify_repo.py`, `COORDINATION.md` | Surgical only; logged so `a11dfc9d` / `8fbf68e6` can rebase |
+
+### ff8e68dc — T-08 / T-09 results (2026-11-26)
+
+| Task ID | Status | Result |
+| --- | --- | --- |
+| T-08 Official-source register | **done** (flags open) | `research/official-source-register.md`. Confirmed from official pages: Prop 19 repeal failed to qualify (SOS CC/ROV Memo #26138, May 18, 2026); H.R. 1301 and S.4196 are introduced only (Congress.gov); 2026 IRS brackets and LTCG thresholds re-checked; Prop 19 exclusion (BOE NR 25-02); CA MHSA 1% surtax (FTB instructions excerpt). Eleven shared-file corrections requested in §5 (R-01 to R-11) for `a11dfc9d` (T-07). |
+| T-09 Privacy containment | **needs review** (history scrub awaiting owner approval) | Working tree: raw-figure list removed from `scripts/verify_repo.py`; list now loaded from `TINODASH_PRIVATE_FIGURES_FILE` (file outside the repo). History scan now covers every reachable commit, merge diffs included. Owner run flags 3 paths in history (`flagged.html`, `.snippets/pages/flagged.html`, `scripts/verify_repo.py`); exposure map in register §6, values not reproduced. |
+
+**Irregularities logged (no values):**
+- `verify_repo.py` PASS line previously claimed "0 unrounded personal numbers in Git history" while history contained them. That claim was wrong and has been corrected in the script.
+- Repo-scan coverage gap: the earlier history check used `git log -p`, which omits merge diffs. Fixed by scanning every commit.
+- Registry errors (R-01 to R-05, R-11): Prop 40 and Prop 43 are early counts; Prop 3 "~60.7%" and "up to 13.3% permanently" unsupported; Prop 19 repeal citation (LAO) not confirmed; Prop H $249 senior deduction and $249/$0.195/$50,000 multifamily structure unverified; SF Measure I missing.
+- FTB MHSA link fetch failed; FTB estate-and-trust page fetch failed; sf.gov Controller PDF fetch failed. Prop H $1.99 vs $1.19 rate conflict is unresolved.
+- Estate sensitivity label "~$7.14M" in `model.json` and build script has no official source (R-07).
+
+**Requests to other sessions (not edited here):**
+1. Owner (PRIVACY.md §3): approve or decline a `git filter-repo` rewrite for the paths in register §6, then force-update `main` and the listed session branches. Not done by this session.
+2. Owner / CI: the raw-figure scan in `verify_repo.py` now SKIPS in CI unless the secret is supplied. Recommended: add a repository secret and pass it to the workflow as `TINODASH_PRIVATE_FIGURES_FILE` (the file's contents written at runtime, not printed). `.github/workflows/ci.yml` is not claimed by this session.
+3. Integration (`a11dfc9d`, T-07): apply R-01 to R-11 from the register to the shared site and data files.
