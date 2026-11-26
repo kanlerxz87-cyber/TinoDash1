@@ -97,3 +97,12 @@
 - **Branch pushed**: `git push origin arena/f9c7f2d1-tinodash1` completed (branch exists on origin; identical to `main`, so no mergeable delta to PR).
 - **Privacy**: Zero PII in workspace or Git history (single commit `c9994bc`, pre-audited). All property figures anonymized as Property A (Cupertino 95014) / Property B (SF Outer Sunset 94122) and rounded to nearest $10 or ranges; parcel-specific values flagged unverified on `pages/flagged.html`.
 - **Status**: All requirements implemented and verified. Site live. No further integration delta required on this branch.
+
+## Session `arena/ff8e68dc-tinodash1` — Claim & Log (2026-11-26, started ~13:00 UTC)
+
+**Why a narrow claim:** At claim time at least eight other `arena/*` sessions had open claims on overlapping scopes (final integration `a11dfc9d` T-07; privacy containment `9f552e20` T18 and `8fbf68e6`; verification `3a8491c5`/`9976f73d` on `verification/**`; integration `43f9846f`). To avoid duplicate work and conflicting edits, this session claims only the two items below. Shared site pages, `index.html`, `data/**`, `assets/**`, and navigation are **not** edited here; required corrections are logged as requests for the final integration session.
+
+| Task ID | Task | Status | Owning Session | Files Touched | Notes |
+| --- | --- | --- | --- | --- | --- |
+| T-08 | Official-source verification register: Nov 2026 ballot outcomes (Prop 3, Prop 40, Prop 43, SF Prop H, SF Measure I), Prop 19 repeal status, SF Empty Homes Tax, federal enacted vs proposed estate-tax law, CA MHSA surtax | in progress | `ff8e68dc` | `research/**` | Each row links an official source or is flagged unverified |
+| T-09 | Privacy containment (surgical): remove plain-text raw-figure list from `scripts/verify_repo.py`, move list to a file outside the repo, make the history scan exhaustive | in progress | `ff8e68dc` | `scripts/verify_repo.py`, `COORDINATION.md` | Surgical only; logged so `a11dfc9d` / `8fbf68e6` can rebase |
