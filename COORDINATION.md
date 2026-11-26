@@ -2,6 +2,12 @@
 
 > **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `95014`, `Property B` in San Francisco Outer Sunset `94122`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
 
+## Current Session Claim — `arena/8fbf68e6-tinodash1` (2026-11-26)
+- **Status**: in progress
+- **Scope**: privacy containment and consistency of published site (`index.html`, `pages/**`, `assets/**`, `data/**`, `docs/**`, `README.md`, `PRIVACY.md`, `scripts/privacy-audit.mjs`, `COORDINATION.md`); verify selected statutory claims against official sources; run full build/audits.
+- **Constraints**: stay on the active Arena branch; do not include personal identifiers in current public files.
+- **Initial finding**: current and superseded site copies included postal-location identifiers; the main branch advanced while this task was underway, so rebase is integrating that parallel session's coordination update.
+
 ## Session Registry & Active Branch
 
 - **Active Branch:** `arena/f9c7f2d1-tinodash1` (integrating & reconciling `origin/main` at `c9994bc`; branch is identical to `main` — no divergent working tree)
