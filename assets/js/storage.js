@@ -115,7 +115,7 @@ export const DEFAULT_SUGGESTIONS = [
     id: 'S-03',
     title: 'Add CEA Earthquake Deductible & Soft-Story Seismic Reserve Stress Test',
     category: 'Risk Management',
-    rationale: 'Both Cupertino (95014) and SF Outer Sunset (94122) carry Bay Area seismic exposure; uninsured 15%–25% CEA deductibles materially affect concentrated single-asset risk vs liquid ETFs.',
+    rationale: 'Both Cupertino area and SF Outer Sunset carry Bay Area seismic exposure; uninsured 15%–25% CEA deductibles materially affect concentrated single-asset risk vs liquid ETFs.',
     effort: 'Low',
     decision: 'Proposed for Review'
   },

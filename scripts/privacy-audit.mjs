@@ -41,6 +41,11 @@ const PII_PATTERNS = [
     name: 'Possible SSN',
     regex: /\b\d{3}-\d{2}-\d{4}\b/g,
     allowList: []
+  },
+  {
+    name: 'Postal code attached to a property reference',
+    regex: /(?:\bZIP(?:\s*code)?|\bpostal\s*code)\s*[:#]?\s*\d{5}\b|["']?zip(?:code)?["']?\s*:\s*["']?\d{5}["']?|\b(?:Cupertino|Outer Sunset|San Francisco)[^\n.]{0,48}\b\d{5}\b/gi,
+    allowList: []
   }
 ];
 
@@ -59,8 +64,9 @@ function walk(dir) {
 }
 
 const errors = [];
+let historicalPostalReferences = 0;
 
-// 1. Scan workspace files for PII patterns
+// 1. Scan current workspace files for PII patterns
 for (const filePath of walk(ROOT)) {
   const rel = path.relative(ROOT, filePath);
   const content = fs.readFileSync(filePath, 'utf8');
@@ -73,6 +79,23 @@ for (const filePath of walk(ROOT)) {
       errors.push(`[PII Check] ${rel}: matched "${m}" (${rule.name})`);
     }
   }
+}
+
+// 1a. Report, but do not conceal, postal identifiers retained in already-published Git history.
+// A standard PR removes current files but cannot erase reachable commits on the protected base branch.
+try {
+  const history = execSync('git log --all -p -- .', {
+    encoding: 'utf8',
+    errors: 'ignore',
+    maxBuffer: 100 * 1024 * 1024
+  });
+  const postalRule = PII_PATTERNS.find((rule) => rule.name === 'Postal code attached to a property reference');
+  if (postalRule) {
+    const historyPattern = new RegExp(postalRule.regex.source, postalRule.regex.flags);
+    historicalPostalReferences = (history.match(historyPattern) || []).length;
+  }
+} catch {
+  // A shallow or single-commit checkout may not contain useful history; do not claim it was audited.
 }
 
 // 2. Enforce $10 rounding on all user-asset financial figures in data/properties.json
@@ -139,5 +162,10 @@ if (errors.length > 0) {
   for (const e of [...new Set(errors)]) console.error('  -', e);
   process.exit(1);
 } else {
-  console.log('✅ Privacy & $10-Rounding Audit PASSED (0 leaks, all user asset figures $10-rounded).');
+  console.log('✅ Current workspace privacy and $10-rounding audit passed.');
+  if (historicalPostalReferences > 0) {
+    console.warn(`⚠️ Historical Git exposure remains: ${historicalPostalReferences} postal-code-context matches in reachable commit diffs. See Flagged for Review F-09; the current working tree has been scrubbed, but repository-wide history rewriting is still required.`);
+  } else {
+    console.log('✅ Historical postal-code scan found no matches in reachable commit diffs.');
+  }
 }

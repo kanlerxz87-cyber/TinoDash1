@@ -71,14 +71,19 @@
       "behavioralHealthSurtaxOver1MPct": 1.0,
       "combinedTopRatePct": 13.3,
       "capitalGainsTreatment": "Taxed as ordinary income (no lower LTCG rate in California)",
-      "topBracketSingleOverUsd": 742953,
-      "topBracketMfjOverUsd": 1485906,
+      "topBracketSingleOverUsd": 768213,
+      "topBracketMfjOverUsd": 1536426,
+      "topBracketHohOverUsd": 1044771,
+      "referenceTaxYear": 2026,
+      "status": "Official 2026 FTB rate schedules directly verified. Line 62 threshold mechanics are cited to the latest independently retrieved 2025 Form 540 instructions and should be reconfirmed when 2026 instructions are accessible.",
+      "lastVerifiedDate": "2026-11-26",
       "surtaxThresholdUsd": 1000000,
       "form593WithholdingRatePct": 3.33,
       "form3840AnnualTracking": "Required annually after out-of-state §1031 exchange",
       "sources": [
-        { "label": "FTB Form 540 Tax Rate Schedules (Schedules X/Y/Z & 1% >$1M)", "url": "https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf" },
-        { "label": "FTB Form 540 Booklet Line 62 (Behavioral Health Services Tax)", "url": "https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html" },
+        { "label": "FTB 2026 Form 540 Tax Rate Schedules (Schedules X/Y/Z)", "url": "https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf" },
+        { "label": "FTB 2025 Form 540 Instructions (latest retrieved Line 62: 1% above $1M)", "url": "https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html" },
+        { "label": "FTB Capital Gains and Losses (California ordinary-rate treatment)", "url": "https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html" },
         { "label": "FTB Form 593 Real Estate Withholding Instructions (2026)", "url": "https://www.ftb.ca.gov/forms/2026/2026-593-instructions.html" },
         { "label": "FTB Pub 1016 Nonresident/Out-of-State §1031 Form 3840", "url": "https://www.ftb.ca.gov/forms/misc/1016.html" }
       ]
@@ -188,13 +193,13 @@
   },
   "rentalAndUtilities": {
     "hudFy2026Safmr": {
-      "zip95014": { "br0": 3340, "br1": 3800, "br2": 4440, "br3": 5870, "br4": 6390 },
-      "zip94122": { "br0": 2280, "br1": 2730, "br2": 3310, "br3": 4230, "br4": 4380 },
+      "cupertinoArea": { "br0": 3340, "br1": 3800, "br2": 4440, "br3": 5870, "br4": 6390 },
+      "sanFranciscoArea": { "br0": 2280, "br1": 2730, "br2": 3310, "br3": 4230, "br4": 4380 },
       "sourceUrl": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf"
     },
-    "cupertino95014RentalComps": [
-      { "type": "2BR Benchmark (ZIP 95014 Voucher Floor)", "monthlyUsd": 4440, "source": "HUD FY2026 Small Area FMR (Official 40th-Pctile Floor)", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" },
-      { "type": "Private Cupertino 95014 SFR MLS Comps (3–4BR)", "monthlyUsd": null, "source": "[Blank — Unverified] Obtain 3 private MLS SFR comps; letting paths use HUD SAFMR floor until verified", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" }
+    "cupertinoRentalComps": [
+      { "type": "2BR Benchmark (Cupertino-area Voucher Floor)", "monthlyUsd": 4440, "source": "HUD FY2026 Small Area FMR (Official 40th-Pctile Floor)", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" },
+      { "type": "Private Cupertino area SFR MLS Comps (3–4BR)", "monthlyUsd": null, "source": "[Blank — Unverified] Obtain 3 private MLS SFR comps; letting paths use HUD SAFMR floor until verified", "url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/FY2026_Small_Area_FMR_Schedule.pdf" }
     ],
     "utilitiesAndSolar": {
       "pgeBundledRar2026UsdPerKwh": 0.345,

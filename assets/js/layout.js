@@ -42,7 +42,7 @@ export function renderSiteChrome(activeId, basePrefix = '.') {
       <div class="header-inner">
         <a href="${p('index.html')}" class="brand">
           <span class="brand-title">Bay Area Inheritance Decision Dashboard</span>
-          <span class="brand-sub">Property A (Cupertino 95014) · Property B (SF 94122) · Verified Nov 25, 2026</span>
+          <span class="brand-sub">Property A (Cupertino) · Property B (SF) · Verified Nov 25, 2026</span>
         </a>
         <nav class="nav-groups" aria-label="Grouped Main Navigation">
           <a href="${p('index.html')}" class="nav-link ${activeId === 'overview' ? 'active' : ''}">Overview</a>

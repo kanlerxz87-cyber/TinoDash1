@@ -2,12 +2,12 @@
 
 **Live GitHub Pages Site:** [https://kanlerxz87-cyber.github.io/TinoDash1/](https://kanlerxz87-cyber.github.io/TinoDash1/)
 
-Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino, ZIP 95014)** (~2040–2050) alongside already-owned **Property B (San Francisco Outer Sunset, ZIP 94122, 3-unit)** and potential liquid trust assets.
+Privacy-first, primary-source-verified decision dashboard analyzing trust inheritance of **Property A (Cupertino)** (~2040–2050) alongside already-owned **Property B (San Francisco Outer Sunset, 3-unit)** and potential liquid trust assets. Postal codes and parcel identifiers are omitted.
 
 ---
 
 ## Privacy & Official Verification Standards
-- **Strict Anonymization:** Zero personal names, street addresses, trust titles, emails, phone numbers, or Assessor Parcel Numbers (APNs) anywhere in the site, repository, or Git history (`PRIVACY.md`).
+- **Strict Anonymization:** The current site and files use only Property A/B plus city-level labels; no names, street addresses, postal codes, trust titles, emails, phone numbers, or APNs are present. **Historical exposure remains** in earlier public commits and is flagged for repository-owner coordination; removing files in a normal PR does not erase Git history (`PRIVACY.md`).
 - **Nearest-$10 Rounding:** Every property-level dollar input, historical assessment/tax figure, utility range, rent benchmark, and modeled output in `data/properties.json` and `data/model.json` is rounded to the nearest **$10** increment (`round(x / 10) * 10`), enforced by both `scripts/privacy-audit.mjs` and `scripts/verify_repo.py`.
 - **100% Official `.gov` / Agency Primary Sources:** Every static and dynamic `<tbody><tr>` table row across the dashboard links directly to an official primary source (`irs.gov`, `ftb.ca.gov`, `boe.ca.gov`, `sos.ca.gov`, `santaclaracounty.gov`, `sccgov.org`, `cupertino.gov`, `sf.gov`, `sfmta.com`, `sfelections.org`, `sfassessor.org`, `sfpuc.gov`, `huduser.gov`, `home.treasury.gov`, `bls.gov`, `fhfa.gov`, `insurance.ca.gov`, `cpuc.ca.gov`). Zero commercial real-estate portals are used; unconfirmed parcel-specific parameters are left blank and flagged on [`pages/flagged.html`](./pages/flagged.html).
 
@@ -26,7 +26,7 @@ Privacy-first, primary-source-verified decision dashboard analyzing trust inheri
 - [`pages/suggestions.html`](./pages/suggestions.html) — **Suggestions Backlog** (evaluate before implementing)
 - [`pages/briefing-sheet.html`](./pages/briefing-sheet.html) — **One-Page Printable Attorney & CPA Briefing Sheet**
 - [`pages/glossary.html`](./pages/glossary.html) — **Searchable Tax, Trust & Real-Estate Glossary**
-- *(Preserved secondary static reference archive also available under [`docs/`](./docs/index.html).)*
+- The superseded `/docs/` archive has been retired; `docs/index.html` redirects to the canonical dashboard. The blank private-inventory template remains in `docs/templates/` for offline copying only.
 
 ---
 
@@ -41,7 +41,8 @@ npm run check
 # 2. Re-run deterministic Python model (prints [MOVED] vs [UNCHANGED] across 11 sensitivities -> data/model.json)
 python3 scripts/build_verified_model.py
 
-# 3. Verify 100% official .gov table-row links, 0 commercial links, & 0 unrounded figures in repo/Git history
+# 3. Verify current source links, zero commercial links, and the configured rounding checks
+# Historical postal-location exposure is reported separately; see Flagged for Review F-09.
 python3 scripts/verify_repo.py
 
 # 4. Preview locally

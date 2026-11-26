@@ -115,15 +115,15 @@ async function init() {
 
   const safmr = sources.rentalAndUtilities.hudFy2026Safmr;
   const comps = [
-    { name: 'HUD FY2026 SAFMR 95014 — 3BR Voucher Benchmark', rent: safmr.zip95014.br3, note: 'Federal Section 8 benchmark (not private SFH luxury comp)', url: safmr.sourceUrl },
-    { name: 'HUD FY2026 SAFMR 95014 — 4BR Voucher Benchmark', rent: safmr.zip95014.br4, note: 'Federal Section 8 4BR payment benchmark', url: safmr.sourceUrl },
-    ...sources.rentalAndUtilities.cupertino95014RentalComps.map((c) => ({
-      name: `95014 Market Comp: ${c.type}`,
+    { name: 'HUD FY2026 SAFMR — Cupertino area — 3BR Voucher Benchmark', rent: safmr.cupertinoArea.br3, note: 'Federal Section 8 benchmark (not private SFH luxury comp)', url: safmr.sourceUrl },
+    { name: 'HUD FY2026 SAFMR — Cupertino area — 4BR Voucher Benchmark', rent: safmr.cupertinoArea.br4, note: 'Federal Section 8 4BR payment benchmark', url: safmr.sourceUrl },
+    ...sources.rentalAndUtilities.cupertinoRentalComps.map((c) => ({
+      name: `Cupertino-area Market Comp: ${c.type}`,
       rent: c.monthlyUsd,
       note: c.source,
       url: c.url
     })),
-    { name: 'HUD FY2026 SAFMR 94122 — 2BR / 3BR (Property B Reference)', rent: safmr.zip94122.br2, note: `94122 2BR=$3,310 · 3BR=$4,230 (matches 2 units at $7,150/mo)`, url: safmr.sourceUrl }
+    { name: 'HUD FY2026 SAFMR San Francisco — 2BR / 3BR (Property B Reference)', rent: safmr.sanFranciscoArea.br2, note: `San Francisco 2BR=$3,310 · 3BR=$4,230 (matches 2 units at $7,150/mo)`, url: safmr.sourceUrl }
   ];
 
   document.getElementById('rental-comps-tbody').innerHTML = comps

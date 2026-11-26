@@ -1,6 +1,6 @@
 # COORDINATION.md — Shared Task Board & Verification Log
 
-> **Privacy & Repo Policy:** This repository is public. **Zero** unrounded source figures, personal names, street addresses, trust names, or Assessor Parcel Numbers (APNs) may ever be written to any file, commit, or log. All property-level financial inputs are anonymized (`Property A` in Cupertino `95014`, `Property B` in San Francisco Outer Sunset `94122`) and rounded to the nearest **$10** increment or presented as ranges/placeholders.
+> **Privacy & Repo Policy:** This repository is public. **Zero** personal names, street addresses, postal codes, trust names, or Assessor Parcel Numbers (APNs) may appear in current site/repository files. Property labels use Property A/B and city-level descriptions only. Financial inputs are rounded to the nearest **$10** increment or presented as ranges/placeholders.
 
 ## Current Session Claim — `arena/8fbf68e6-tinodash1` (2026-11-26)
 - **Status**: in progress
@@ -8,10 +8,15 @@
 - **Constraints**: stay on the active Arena branch; do not include personal identifiers in current public files.
 - **Initial finding**: current and superseded site copies included postal-location identifiers; the main branch advanced while this task was underway, so rebase is integrating that parallel session's coordination update.
 
+## Current Session Claim — `arena/8fbf68e6-tinodash1` (2026-11-26)
+- **Status**: done (historical exposure needs review)
+- **Scope**: Current-site privacy containment, stale archive retirement, FTB source/model correction, and full verification.
+- **Initial finding**: Superseded public pages and earlier commits included postal-location identifiers; files in the current tree are scrubbed, but reachable Git history still contains old commits.
+
 ## Session Registry & Active Branch
 
-- **Active Branch:** `arena/f9c7f2d1-tinodash1` (integrating & reconciling `origin/main` at `c9994bc`; branch is identical to `main` — no divergent working tree)
-- **Active Session ID:** `f9c7f2d1`
+- **Active Branch:** `arena/8fbf68e6-tinodash1` (integrating & reconciling `origin/main` at `c9994bc`; branch is identical to `main` — no divergent working tree)
+- **Active Session ID:** `8fbf68e6`
 - **Prior Merged Sessions on `main`:** `914b57ba` (PR #3), `ef80c5c0` (PR #4), `43f9846f` (PR #5), `f83e6979` (PR #6), `51f65152` (PR #8), `fec96e14` (PR #9), `62714618` (PR #10), `99b3f90f` (PR #12), `ddd5451c` (PR #14)
 - **GitHub Pages Target:** `https://kanlerxz87-cyber.github.io/TinoDash1/` (`main:/` legacy static build)
 
@@ -27,6 +32,7 @@
 | T-04 | Dashboard UI, grouped navigation, landing page & category subpages | done | `fec96e14` | `index.html`, `pages/*.html`, `assets/css/*.css`, `assets/js/*.js`, `README.md` | 10 clean subpages, SVG charts, interactive What-If controls, Decision/Date log, Flagged for Review, Suggestions, Glossary |
 | T-05 | One-page printable "Attorney & CPA Briefing Sheet" export | done | `fec96e14` | `pages/briefing-sheet.html`, `assets/js/pages-briefing.js`, `assets/css/print.css` | Live-synced print & JSON snapshot view |
 | T-06 | Reconcile `origin/main` merge conflicts, remove conflicting Pages workflow & merge PR #9 | done | `fec96e14` | `.github/workflows/ci.yml`, `COORDINATION.md` | Resolved `<<<<<<< HEAD` markers present on `main` (`index.html`, `briefing.html`, `flagged.html`), removed duplicate `site/` vs `main:/` Pages race & `__pycache__/*.pyc`, updated Nov 2026 verified figures |
+| T-07 | Privacy containment, retire stale duplicate pages, update FTB rates and disclose history exposure | needs review (history) | `arena/8fbf68e6-tinodash1` | `docs/**`, `pages/flagged.html`, `assets/js/model.js`, `scripts/build_verified_model.py`, `data/**`, `scripts/privacy-audit.mjs` | Current tree scrubbed and tested; older public commits remain reachable (F-09); 2026 Form 540 Line 62 instructions remain flagged (F-10). |
 
 ---
 
@@ -36,7 +42,7 @@
 - **Verified Baselines (Nov 25, 2026):**
   - Federal OBBBA (`P.L. 119-21`) & Rev. Proc. 2025-32: `$15M` single / `$30M` married w/ DSUE exclusion, `$19k` gift cap, `2026` LTCG brackets, `3.8%` NIIT (`$200k/$250k`), temporary `$40,400` SALT cap (reverts `$10k` in 2030), `27.5-yr` depreciation & `25%` §1250 recapture.
   - California Form 540 & Nov 2026 Ballot: Top rate `12.3%` + `1.0% >$1M` (`13.3%`), ordinary-rate LTCG; Prop 40 billionaire wealth tax **defeated** (`52.1%` No); Prop 3 high-income extension **passed** (`~60.7%` Yes); Prop 19 `$1,044,586` (2025–2027) remains law (repeal failed to qualify).
-  - Cupertino (Property A): TRA prefix `013-xxx` (`1.1671%–1.1786%` + `0.0039%` SCVWD + `$98` FUHSD; CUSD Measure A expired June 30, 2023); SCC DTT `$0.55/$500` (`$0` city tax); 95014 SFH comps `$4,990–$8,000/mo` vs FY26 SAFMR `$5,870–$6,390/mo`.
+  - Cupertino (Property A): TRA prefix `013-xxx` (`1.1671%–1.1786%` + `0.0039%` SCVWD + `$98` FUHSD; CUSD Measure A expired June 30, 2023); SCC DTT `$0.55/$500` (`$0` city tax); Cupertino-area SFH comps `$4,990–$8,000/mo` vs FY26 SAFMR `$5,870–$6,390/mo`.
   - San Francisco (Property B): FY26–27 `1.18162182%`; Nov 2026 Prop H Muni Parcel Tax **passed** (`74.42%` Yes, eff. 7/1/2027); Regional Measure RTM **passed**; Rent Board `1.6%` cap & 2006 Prop H OMI (`$8,245–$24,733/unit + $5,497`); Empty Homes Tax invalidated (`A172067`).
 - **Flagged for Review (`pages/flagged.html`):** `$1,500/yr` insurance guesses (A & B), Property A exact `013-xxx` TRA subcode & 2026 tax bill, Property A beds/sqft/land ratio/solar PTO date, Property B pre-1979 status/total sqft/tenant ages, trust A/B vs survivor terms & Form 709 gifts, physical CapEx bids, SF 2018/2021 historical tax variance.
 - **PR Link:** [PR #9](https://github.com/kanlerxz87-cyber/TinoDash1/pull/9) (`arena/fec96e14-tinodash1` -> `main`)
@@ -58,7 +64,7 @@
 
 - **Branch**: `arena/51f65152-tinodash1` (PR #8)
 - **Deliverables**:
-  - `model/run_model.py` & `site/data/model_data.json`: Privacy-first deterministic financial & tax projection model (all figures rounded to nearest $10; 6 pure & mixed paths, 400-run P10–P90 distribution, 5 Black Swan regimes with 24–36M Treasury phased investing, SF Prop H Nov 2026, CA Prop 19 biennial allowance $1,044,586, IRS Form 706 $15M 2026 exclusion, CA Form 540 1% MHSA >$1M).
+  - `model/run_model.py` & `site/data/model_data.json`: Privacy-first deterministic financial & tax projection model (all figures rounded to nearest $10; 6 pure & mixed paths, 400-run P10–P90 distribution, 5 Black Swan regimes with 24–36M Treasury phased investing, SF Prop H Nov 2026, CA Prop 19 biennial allowance $1,044,586, IRS Form 706 $15M 2026 exclusion, CA Form 540 Line 62 Behavioral Health Services Tax 1% >$1M).
   - `site/` (8-page dashboard): `index.html` (Overview, What Would Change the Answer, What-If Controls, Distribution Chart), `properties.html`, `taxes.html`, `blackswan.html`, `process.html`, `questions.html`, `brief.html` (1-page printable Attorney & CPA Brief), `review.html` (Flagged for Review & Glossary).
   - `.github/workflows/pages.yml`: GitHub Actions Pages deployment workflow.
 - **Verification**: Privacy check (0 unrounded numbers), link check (8/8 pages), and JSON model validation passed.
@@ -68,7 +74,7 @@
 - **Branch**: `arena/99b3f90f-tinodash1` (PR #12, base `main`).
 - **Deliverables (additive, privacy-first static dashboard in `docs/`)**: `docs/index.html` + 15 subpages in `docs/pages/` (executive summary, printable attorney/CPA briefing sheet, inheritance process, property comparison, projections with what-if controls, black swan scenarios, tax/legal rules, timeline, decision framework, questions/missing info, suggestions, glossary, sources registry, flagged for review, privacy/data handling). `docs/assets/style.css`, `docs/assets/app.js` (shared static UI; no build step). `docs/data/sources.json`, `docs/templates/private-estate-inventory-template.csv`. `.github/workflows/pages.yml` (GitHub Pages deploy from `docs/` on push to main / workflow_dispatch). Updated `README.md`, `.gitignore`.
 - **Key features**: "What would change the answer" on first screen; mixed paths; phased investing path (3M-2Y Treasuries 24-36 months, then DCA into stocks) in Black Swan; reinvestment risk shown beside headlines; what-if controls; imputed rent input; §121 toggle for living-then-sell; Prop 19 cap carry-forward note; transfer/recording fee in sell path; same-tax-year sale toggle; distribution chart; printable one-page attorney/CPA briefing sheet; deadlines timeline; grouped menu + glossary; suggestions review section; flagged-for-review page.
-- **Privacy**: No names, exact addresses, ZIP codes, parcel/APN IDs, or unrounded personal financial values. All displayed currency rounded to nearest $10. User-supplied historical values marked unverified. Git history audited (initial commit only before work); no ZIPs/raw sensitive values found by grep audit. External prior exposure cannot be proven from this repo.
+- **Privacy (original audit corrected 2026-11-26)**: Earlier public commits retain postal-location identifiers in superseded copies. Current files omit them and `/docs/` is retired, but commit history has not been rewritten; see current F-09. Current product figures are rounded to $10 or presented as ranges.
 - **Verification**: Internal link check 0 missing across 16 docs HTML pages. PII grep audit clean for ZIPs/unrounded raw values.
 - **Sources**: IRS (estate tax, 706, Pub 551/523/527, Topic 701/559, 1031), CA BOE (Prop 19, BOE-19-P, LTA 2025/009 cap $1,044,586 for 2/16/2025-2/15/2027), CA LegInfo RTC §63.2, CA FTB (2025 540 booklet, Behavioral Health Services Tax 1% over $1M, capital gains as ordinary income), CA SCO, Santa Clara County Clerk-Recorder/Assessor, SF Rent Board/SF.gov OMI, Federal Reserve History.
 - **Flagged/unresolved**: Property A/B estimates, historical taxes/assessments, rent/insurance/utilities are user-supplied unverified; Property A market rent missing; TRA/parcel-specific rate requires private lookup; Prop 19 eligibility fact-specific; estate total/prior gifts/portability unknown; "Prop H" measure ambiguous; Property B leases/rent-control status unverified; same-tax-year sale and 1031 need CPA/attorney; external prior data exposure unprovable from repo.
@@ -101,7 +107,7 @@
   - `python3 scripts/verify_repo.py` PASSED — 23 primary HTML/JS modules, 51 static+dynamic `<tr>` templates all linked to official sources, 0 broken ES-module imports, 0 conflict markers, 0 commercial links, 0 unrounded personal numbers in workspace or Git history.
 - **GitHub Pages**: Live at `https://kanlerxz87-cyber.github.io/TinoDash1/` (legacy build, source `main:/`, status `built`, HTTPS enforced).
 - **Branch pushed**: `git push origin arena/f9c7f2d1-tinodash1` completed (branch exists on origin; identical to `main`, so no mergeable delta to PR).
-- **Privacy**: Zero PII in workspace or Git history (single commit `c9994bc`, pre-audited). All property figures anonymized as Property A (Cupertino 95014) / Property B (SF Outer Sunset 94122) and rounded to nearest $10 or ranges; parcel-specific values flagged unverified on `pages/flagged.html`.
+- **Privacy (audit correction, 2026-11-26)**: The prior statement that history contained no PII was inaccurate. Earlier public commits include postal-location identifiers in superseded pages; the current tree omits them, while historical commits remain reachable. See F-09; a complete repository-wide history rewrite is unresolved.
 - **Status**: All requirements implemented and verified. Site live. No further integration delta required on this branch.
 
 ## Session `arena/ff8e68dc-tinodash1` — Claim & Log (2026-11-26, started ~13:00 UTC)
@@ -131,3 +137,14 @@
 1. Owner (PRIVACY.md §3): approve or decline a `git filter-repo` rewrite for the paths in register §6, then force-update `main` and the listed session branches. Not done by this session.
 2. Owner / CI: the raw-figure scan in `verify_repo.py` now SKIPS in CI unless the secret is supplied. Recommended: add a repository secret and pass it to the workflow as `TINODASH_PRIVATE_FIGURES_FILE` (the file's contents written at runtime, not printed). `.github/workflows/ci.yml` is not claimed by this session.
 3. Integration (`a11dfc9d`, T-07): apply R-01 to R-11 from the register to the shared site and data files.
+
+---
+
+## Session `arena/8fbf68e6-tinodash1` — Privacy Containment & FTB Review (2026-11-26)
+- **Branch**: `arena/8fbf68e6-tinodash1`; rebased onto the latest `origin/main` session update before push.
+- **Scope**: Removed postal identifiers from current tracked site/data; retired the divergent duplicate `/docs/` archive while preserving the blank offline inventory template; added F-09/F-10 and current/history audit output.
+- **History**: Full local main history was fetched. Earlier public commits retain postal-location identifiers. A standard PR cannot delete prior commit objects; no force-push/history rewrite was attempted. F-09 remains for repository-owner coordination.
+- **FTB correction**: Directly retrieved FTB 2026 Form 540 rate schedules; 2025 Form 540 Line 62 instructions; and FTB capital-gains guidance. Updated JS/Python brackets by filing status and modeled the separate 1% threshold only above $1M, not doubled for MFJ. The 2026 Line 62 instruction page was not independently retrievable, flagged F-10. Sources: https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf ; https://www.ftb.ca.gov/forms/2025/2025-540-instructions.html ; https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html .
+- **Prop 19 spot-check**: Re-read CA BOE official guidance distinguishing the one-year homeowners exemption filing from the three-year claim window, subject to transfer-to-third-party timing: https://www.boe.ca.gov/prop19/ .
+- **Verification**: `npm run check` passed (current-file privacy/rounding audit, 13-page link/DOM/subpath audit, 9/9 unit tests); Python rebuild and `verify_repo.py` passed. Baseline winner unchanged; two sensitivity cases move.
+- **Status**: Current-tree work complete; historical Git scrub and 2026 Line 62 instruction confirmation remain flagged.
