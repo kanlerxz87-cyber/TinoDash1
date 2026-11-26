@@ -179,7 +179,9 @@
           "url": "https://www.sos.ca.gov/elections/ballot-measures/qualified-ballot-measures"
         }
       ],
-      "verificationNote": "BOE Prop 19 primary page fetched 2026-11-26 (structure, 1-year occupancy, 3-year claim window). The $1,044,586 amount for transfers 2/16/2025-2/15/2027 is corroborated by 3+ secondary sources; BOE LTA 2025/009 not fetched this session. Manual check required."
+      "verificationNote": "VERIFIED (primary): BOE News Release NR 25-02 (Mar 7, 2025) gives the excludable amount as $1,044,586 for transfers Feb 16, 2025 to Feb 15, 2027 (source: https://www.boe.ca.gov/news/2025/nr-25-02.htm). Next BOE adjustment due before Feb 16, 2027. Homeowners’/veterans’ exemption claim due within one year of transfer.",
+      "exclusionAmountUsd": 1044586,
+      "exclusionSource": "https://www.boe.ca.gov/news/2025/nr-25-02.htm"
     },
     "nov2026StateBallot": [
       {
@@ -230,7 +232,12 @@
         "url": "https://sfelections.org/results/20261103/index.html",
         "primaryConfirmation": "UNVERIFIED - identify subjects before any Prop 19 conclusion"
       }
-    ]
+    ],
+    "prop19RepealStatus": {
+      "status": "FAILED TO QUALIFY (primary)",
+      "source": "https://elections.cdn.sos.ca.gov/ccrov/2026/may/26138jh.pdf",
+      "fetchedDate": "2026-11-26"
+    }
   },
   "santaClaraCupertino": {
     "traPrefix": "013-xxx (Cupertino) - prefix per prior session; exact TRA and rate UNVERIFIED",
